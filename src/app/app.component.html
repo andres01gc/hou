@@ -1,49 +1,46 @@
-
-
-  <div class="top-fixed-bar">
-    <div class="menu-btn">
-      <img class="imgbtn" src="/assets/navbar/menu.svg">
-    </div>
-    <img class="imglogo" src="/assets/navbar/logo.svg">
+<div class="top-fixed-bar">
+  <div class="menu-btn">
+    <img class="imgbtn" src="/assets/navbar/menu.svg">
   </div>
 
-  <nav class="nav">
-    <div class="infouser"></div>
+  <img class="imglogo" src="/assets/navbar/logo.svg">
 
-    <div class="item">
-      <div class="icon-container">
-        <img class="icon" src="/assets/navbar/menu.svg">
-      </div>
-      <div class="txt">
-        <p routerLink="/inicio" routerLinkActive="active">
-          <!--routerLink="/nuevo_ingreso" routerLinkActive="active"-->
-          Inicio
-        </p>
-      </div>
-    </div>
+</div>
 
-    <div class="item">
-      <div class="icon-container">
-        <img class="icon" src="/assets/navbar/menu.svg">
-      </div>
-      <div class="txt">
-        <p routerLink="/nuevo_ingreso" routerLinkActive="active">
-          Ingresar paciente
-        </p>
-      </div>
+<nav class="nav">
+  <div class="infouser"></div>
+  <div class="item">
+    <div class="icon-container">
+      <img class="icon" src="/assets/navbar/menu.svg">
     </div>
+    <div class="txt">
+      <p routerLink="/inicio" routerLinkActive="active">
+        Inicio
+      </p>
+    </div>
+  </div>
 
-    <div class="item">
-      <div class="icon-container">
-        <img class="icon" src="/assets/navbar/menu.svg">
-      </div>
-      <div class="txt">
-        <p routerLink="/paciente" routerLinkActive="active">
-          ver paciente
-        </p>
-      </div>
+  <div class="item">
+    <div class="icon-container">
+      <img class="icon" src="/assets/navbar/menu.svg">
     </div>
-  </nav>
+    <div class="txt">
+      <p routerLink="/nuevo_ingreso" routerLinkActive="active">
+        Ingresar paciente
+      </p>
+    </div>
+  </div>
+  <div class="item">
+    <div class="icon-container">
+      <img class="icon" src="/assets/navbar/menu.svg">
+    </div>
+    <div class="txt">
+      <p routerLink="/paciente" routerLinkActive="active">
+        ver paciente
+      </p>
+    </div>
+  </div>
+</nav>
 
 <div class="full">
   <router-outlet></router-outlet>

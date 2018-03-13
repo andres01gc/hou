@@ -7,34 +7,20 @@
   margin: 0;
 }
 
-/*!*.opened {*!*/
-/*!*position: fixed;*!*/
-/*!*width: 300px;*!*/
-/*!*height: 100%;*!*/
-/*!*background-color: #F4F4F4;*!*/
-/*!*padding: 0;*!*/
-/*!*margin: 0;*!*/
-/*!*}*!*/
 
-/*.upname {*/
-/*width: 100%;*/
-/*height: 50px;*/
-/*background-color: rgba(2, 2, 2, 0.09);*/
-/*}*/
 
 .infouser {
   width: 100%;
   height: 240px;
+  margin: 0;
+  padding: 0;
   background-color: rgba(2, 2, 2, 0.03);
 }
 
 .full {
-  /*margin-left: 18em;*/
-  /*padding-left: 18em;*/
   margin-top: 4em;
   position: relative;
   width: 100%;
-  background-color: rgba(2, 2, 2, 0.02);
   transition: all .3s ease-in;
 
 }
@@ -65,6 +51,7 @@
   /*background-color: gold;*/
   display: flex;
 }
+
 
 .txt {
   position: relative;
@@ -203,6 +190,7 @@
   }
 
   .imglogo {
+    /*position: absolute;*/
     display: flex;
   }
 
