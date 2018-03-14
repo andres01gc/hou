@@ -1,3 +1,4 @@
+/*parece ser que todo lo que se coloque fuera de eesto será versión móvil*/
 .container {
   position: fixed;
   width: 17.5em;
@@ -37,6 +38,10 @@
   line-height: 1;
 }
 
+.top-fixed-bar {
+  display: none;
+}
+
 .usermateria {
   font-family: "Lato Black";
   color: #FCFCFC;
@@ -52,14 +57,13 @@
   /*background-color: #FCFCFC;*/
   width: 100%;
   height: 50px;
-  scale: .7;
+  /*scale: .7;*/
   margin: 0 auto;
   box-sizing: border-box;
   display: flex;
-  opacity: .2;
+  /*opacity: .2;*/
   transition: all .3s ease-in;
   /*margin: 10px;*/
-
 }
 
 .bottomside {
@@ -141,7 +145,14 @@
 
 #in-buscar:hover {
   color: #00234E;
+  background-color: rgba(255, 255, 255, 0.29);
+
+}
+
+#in-buscar:focus {
+  color: #00234E;
   background-color: #FCFCFC;
+  opacity: 1;
 }
 
 .txt {
@@ -149,6 +160,8 @@
   display: flex;
   align-items: center;
   width: 60%;
+  color: #FCFCFC;
+
 }
 
 .txt p {
@@ -164,6 +177,12 @@
   width: 15px;
   display: flex;
   margin: 0 auto;
+  opacity: .5;
+}
+
+.imgbtn:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 .imglogo {
@@ -204,15 +223,16 @@
   display: flex;
   align-items: center;
   box-sizing: border-box;
-}
-
-.mnbt {
-  opacity: .2;
+  opacity: .5;
 }
 
 .mnbt:hover {
   cursor: pointer;
   opacity: .8;
+  opacity: .2;
+}
+
+.mnbt {
   opacity: .2;
 }
 
@@ -264,21 +284,15 @@
   width: 30px;
 }
 
-.nav {
-  position: fixed;
-  top: 0;
-  left: -23em;
-  overflow: hidden;
-  /*indica el tamaño en responsive?*/
-  width: 23em;
-  /*padding-top: 4em;*/
-  height: 100%;
-  background: #00234E;
-  transition: all .3s ease-in;
-}
-
 .menu-btn:hover ~ .nav {
   width: 18em;
+}
+
+.top-fixed-bar {
+  display: inline-block;
+  background-color: #00234E;
+  display: flex;
+
 }
 
 /*cuando está en modo tablet*/
@@ -306,8 +320,23 @@
   .nav {
     width: 4em;
     left: 0;
+    /*display: none;*/
+    /*transform: translateX(0px);*/
   }
 
+  /*.nav {*/
+  /*position: fixed;*/
+  /*top: 0;*/
+  /*!*left: -22em;*!*/
+  /*overflow: hidden;*/
+  /*!*indica el tamaño en responsive?*!*/
+  /*width: 23em;*/
+  /*!*padding-top: 4em;*!*/
+  /*height: 100%;*/
+  /*background: #00234E;*/
+  /*margin: 0;*/
+  /*padding: 0;*/
+  /*}*/
   .txt {
     display: none;
     color: #FCFCFC;
@@ -325,10 +354,18 @@
 
   }
 
-  .infouser {
-    visibility: hidden;
-    display: flex;
-  }
+  /*.infouser {*/
+  /*width: 100%;*/
+  /*height: 220px;*/
+  /*margin: 0;*/
+  /*padding: 0;*/
+  /*!*background-color: rgba(2, 2, 2, 1);*!*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+  /*justify-content: center;*/
+  /*display: inline-block;*/
+  /*}*/
 }
 
 /*este query se  que se ejecuta en tamaño desktop*/
@@ -362,10 +399,6 @@
     display: flex;
   }
 
-  .nav {
-    width: 23em;
-  }
-
   .logo {
     display: flex;
   }
@@ -374,9 +407,41 @@
     display: flex;
   }
 
+  .top-fixed-bar {
+    display: none;
+  }
+
   .infouser {
     display: flex;
     visibility: visible;
-
   }
+
 }
+
+.nav {
+  position: fixed;
+  top: 0;
+  /*left: -22em;*/
+  overflow: hidden;
+  /*indica el tamaño en responsive?*/
+  width: 23em;
+  /*padding-top: 4em;*/
+  height: 100%;
+  background: #00234E;
+  transition: all .3s ease-in-out;
+  margin-left: -8px;
+  padding: 0;
+
+  transform: translateX(-23em);
+  /*display: none;*/
+}
+
+/*.active:hover {*/
+/*!*display: inline-block;*!*/
+/*}*/
+
+.active {
+  /*transition: all .3s ease-out;*/
+  transform: translateX(0);
+}
+

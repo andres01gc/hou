@@ -1,22 +1,27 @@
-<!--<div class="top-fixed-bar">-->
-<!--<div class="menu-btn">-->
-<!--<img class="imgbtn" src="/assets/navbar/menu.svg">-->
-<!--</div>-->
+<div class="top-fixed-bar">
+  <div class="menu-btn"  (click)="tonggleMenu(1)">
+    <img class="imgbtn" src="/assets/navbar/menu.svg">
+  </div>
 
-<!--<img class="imglogo" src="/assets/navbar/logo.svg">-->
+  <div class="icon-container logo">
+    <img class="icon logo" src="/assets/navbar/logo.svg">
+  </div>
+  <div class="up-tittles">
+    <p class="uni">Universidad del Valle</p>
+    <!--<app-now></app-now>-->
+    <p class="datsse">{{today | date:'fullDate'}} {{today | date:'shortTime'}}</p>
+  </div>
+</div>
 
-<!--</div>-->
-
-
-<nav class="nav">
+<nav class="nav" [ngClass]="{'active': active }">
   <div class="upp">
     <div class="icon-container mnbt">
       <img class="icon" src="/assets/navbar/menu.svg">
     </div>
-
     <div class="icon-container logo">
       <img class="icon logo" src="/assets/navbar/logo.svg">
     </div>
+
     <div class="up-tittles">
       <p class="uni">Universidad del Valle</p>
       <!--<app-now></app-now>-->
@@ -27,14 +32,14 @@
   </div>
 
 
-  <div class="infouser">
-    <div class="userimg">
+  <!--<div class="infouser">-->
+  <!--<div class="userimg">-->
 
-    </div>
-    <h1 class="username">Carlos Lopez Suarez</h1>
-    <h2 class="usermateria">Pràctica de periodoncia</h2>
+  <!--</div>-->
+  <!--<h1 class="username">Carlos Lopez Suarez</h1>-->
+  <!--<h2 class="usermateria">Pràctica de periodoncia</h2>-->
 
-  </div>
+  <!--</div>-->
 
   <div class="item_container">
     <div class="icon-container">
