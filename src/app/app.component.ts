@@ -7,7 +7,7 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  active = false;
+  active = true;
   today = Date.now();
 
   tonggleMenu() {

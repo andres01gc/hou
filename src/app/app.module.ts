@@ -10,15 +10,27 @@ import {TabComponent} from './utils/tab/tab.component';
 import {TabsComponent} from './utils/tabs/tabs.component';
 import {CitasComponent} from './citas/citas.component';
 import {CardServicioComponent} from './card-servicio/card-servicio.component';
-import { InputComponent } from './utils/input/input.component';
-import { NowComponent } from './now/now.component';
-import { LoginComponent } from './login/login.component';
+import {InputComponent} from './utils/input/input.component';
+import {NowComponent} from './now/now.component';
+import {LoginComponent} from './login/login.component';
+import {AngularFireModule} from 'angularfire2';
 
 const appRoutes: Routes = [
   {path: 'paciente', component: PacienteComponent},
   {path: 'nuevo_ingreso', component: IngresarPacienteComponent},
   {path: 'inicio', component: ActividadComponent}
 ];
+
+// Must export the config
+export const firebaseConfig = {
+  apiKey: 'AIzaSyDFT7LjA-MoKUWIWF4fbD_ZlyjWyT0GB1g',
+  authDomain: 'hou-db.firebaseapp.com',
+  databaseURL: 'https://hou-db.firebaseio.com',
+  projectId: 'hou-db',
+  storageBucket: 'hou-db.appspot.com',
+  messagingSenderId: '874497143789'
+};
+
 
 @NgModule({
   declarations: [
@@ -34,8 +46,7 @@ const appRoutes: Routes = [
     NowComponent,
     LoginComponent],
   imports: [RouterModule.forRoot(appRoutes),
-    BrowserModule
-  ],
+    BrowserModule, AngularFireModule.initializeApp(firebaseConfig)],
   providers: [],
   bootstrap: [AppComponent]
 })
