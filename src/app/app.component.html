@@ -1,95 +1,100 @@
-<div class="top-fixed-bar">
-  <div class="menu-btn"  (click)="tonggleMenu(1)">
-    <img class="imgbtn" src="/assets/navbar/menu.svg">
-  </div>
-
-  <div class="icon-container logo">
-    <img class="icon logo" src="/assets/navbar/logo.svg">
-  </div>
-  <div class="up-tittles">
-    <p class="uni">Universidad del Valle</p>
-    <!--<app-now></app-now>-->
-    <p class="datsse">{{today | date:'fullDate'}} {{today | date:'shortTime'}}</p>
-  </div>
-</div>
-
-<nav class="nav" [ngClass]="{'active': active }">
-  <div class="upp">
-    <div class="icon-container mnbt">
-      <img class="icon" src="/assets/navbar/menu.svg">
-    </div>
-    <div class="icon-container logo">
-      <img class="icon logo" src="/assets/navbar/logo.svg">
-    </div>
-
-    <div class="up-tittles">
-      <p class="uni">Universidad del Valle</p>
-      <!--<app-now></app-now>-->
-
-      <p class="datsse">{{today | date:'fullDate'}} {{today | date:'shortTime'}}</p>
-    </div>
-
-  </div>
+<!--<div class="magicspace"></div>-->
 
 
-  <!--<div class="infouser">-->
-  <!--<div class="userimg">-->
-
+<!--<div class="top-fixed-bar">-->
+  <!--<div class="menu-btn" (click)="tonggleMenu(1)">-->
+    <!--<img class="imgbtn" src="/assets/navbar/menu.svg">-->
   <!--</div>-->
-  <!--<h1 class="username">Carlos Lopez Suarez</h1>-->
-  <!--<h2 class="usermateria">Pràctica de periodoncia</h2>-->
+
+  <!--<div class="icon-container logo">-->
+    <!--<img class="icon logo" src="/assets/navbar/logo.svg">-->
+  <!--</div>-->
+  <!--<div class="up-tittles">-->
+    <!--<p class="uni">Universidad del Valle</p>-->
+    <!--&lt;!&ndash;<app-now></app-now>&ndash;&gt;-->
+    <!--<p class="datsse">{{today | date:'fullDate'}} {{today | date:'shortTime'}}</p>-->
+  <!--</div>-->
+<!--</div>-->
+
+
+
+<!--<nav class="nav" [ngClass]="{'active': active }">-->
+  <!--<div class="upp">-->
+    <!--<div class="icon-container mnbt">-->
+      <!--<img class="icon" src="/assets/navbar/menu.svg">-->
+    <!--</div>-->
+    <!--<div class="icon-container logo">-->
+      <!--<img class="icon logo" src="/assets/navbar/logo.svg">-->
+    <!--</div>-->
+
+    <!--<div class="up-tittles">-->
+      <!--<p class="uni">Universidad del Valle</p>-->
+      <!--&lt;!&ndash;<app-now></app-now>&ndash;&gt;-->
+
+      <!--<p class="datsse">{{today | date:'fullDate'}} {{today | date:'shortTime'}}</p>-->
+    <!--</div>-->
 
   <!--</div>-->
 
-  <div class="item_container">
-    <div class="icon-container">
-      <img class="buscar_icon" src="/assets/navbar/search.svg">
-    </div>
-    <div class="txt">
+
+  <!--&lt;!&ndash;<div class="infouser">&ndash;&gt;-->
+  <!--&lt;!&ndash;<div class="userimg">&ndash;&gt;-->
+
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+  <!--&lt;!&ndash;<h1 class="username">Carlos Lopez Suarez</h1>&ndash;&gt;-->
+  <!--&lt;!&ndash;<h2 class="usermateria">Pràctica de periodoncia</h2>&ndash;&gt;-->
+
+  <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+  <!--<div class="item_container">-->
+    <!--<div class="icon-container">-->
+      <!--<img class="buscar_icon" src="/assets/navbar/search.svg">-->
+    <!--</div>-->
+    <!--<div class="txt">-->
+      <!--&lt;!&ndash;<p routerLink="/inicio" routerLinkActive="active">&ndash;&gt;-->
+      <!--&lt;!&ndash;</p>&ndash;&gt;-->
+      <!--<input ng-model="nombre" type="text" id="in-buscar" name="nombre" placeholder="Buscar">-->
+    <!--</div>-->
+  <!--</div>-->
+
+  <!--<div class="item_container">-->
+    <!--<div class="icon-container">-->
+      <!--<img class="buscar_icon" src="/assets/navbar/new-user.svg">-->
+    <!--</div>-->
+    <!--<div class="txt">-->
       <!--<p routerLink="/inicio" routerLinkActive="active">-->
+        <!--Nuevo ingreso-->
       <!--</p>-->
-      <input ng-model="nombre" type="text" id="in-buscar" name="nombre" placeholder="Buscar">
-    </div>
-  </div>
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="bottomside">-->
+    <!--<div class="item_container">-->
+      <!--<div class="icon-container">-->
+        <!--<img class="buscar_icon" src="/assets/navbar/settigns.svg">-->
+      <!--</div>-->
+      <!--<div class="txt">-->
+        <!--<p routerLink="/inicio" routerLinkActive="active">-->
+          <!--Configuraciones-->
+        <!--</p>-->
+      <!--</div>-->
+    <!--</div>-->
 
-  <div class="item_container">
-    <div class="icon-container">
-      <img class="buscar_icon" src="/assets/navbar/new-user.svg">
-    </div>
-    <div class="txt">
-      <p routerLink="/inicio" routerLinkActive="active">
-        Nuevo ingreso
-      </p>
-    </div>
-  </div>
-  <div class="bottomside">
-    <div class="item_container">
-      <div class="icon-container">
-        <img class="buscar_icon" src="/assets/navbar/settigns.svg">
-      </div>
-      <div class="txt">
-        <p routerLink="/inicio" routerLinkActive="active">
-          Configuraciones
-        </p>
-      </div>
-    </div>
-
-    <div class="item_container">
-      <div class="icon-container">
-        <img class="buscar_icon" src="/assets/navbar/exit.svg">
-      </div>
-      <div class="txt ocultable">
-        <p routerLink="/inicio" routerLinkActive="active">Cerrar sesión</p>
-      </div>
-    </div>
+    <!--<div class="item_container">-->
+      <!--<div class="icon-container">-->
+        <!--<img class="buscar_icon" src="/assets/navbar/exit.svg">-->
+      <!--</div>-->
+      <!--<div class="txt ocultable">-->
+        <!--<p routerLink="/inicio" routerLinkActive="active">Cerrar sesión</p>-->
+      <!--</div>-->
+    <!--</div>-->
 
 
-  </div>
-
-
-</nav>
+  <!--</div>-->
+<!--</nav>-->
 
 
 <!--<div class="full">-->
-<!--<router-outlet></router-outlet>-->
+  <!--<router-outlet></router-outlet>-->
 <!--</div>-->
+
+<app-login></app-login>

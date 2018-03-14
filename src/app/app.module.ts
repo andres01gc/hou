@@ -10,8 +10,9 @@ import {TabComponent} from './utils/tab/tab.component';
 import {TabsComponent} from './utils/tabs/tabs.component';
 import {CitasComponent} from './citas/citas.component';
 import {CardServicioComponent} from './card-servicio/card-servicio.component';
-import { InputComponent } from './input/input.component';
+import { InputComponent } from './utils/input/input.component';
 import { NowComponent } from './now/now.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
   {path: 'paciente', component: PacienteComponent},
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
     CitasComponent,
     CardServicioComponent,
     InputComponent,
-    NowComponent],
+    NowComponent,
+    LoginComponent],
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule
   ],
