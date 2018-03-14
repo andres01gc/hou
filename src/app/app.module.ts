@@ -6,10 +6,12 @@ import {ActividadComponent} from './mainroutes/inicio/inicio.component';
 import {RouterModule, Routes} from '@angular/router';
 import {PacienteComponent} from './mainroutes/paciente/paciente.component';
 import {IngresarPacienteComponent} from './mainroutes/ingresar-paciente/ingresar-paciente.component';
-import { TabComponent } from './utils/tab/tab.component';
-import { TabsComponent } from './utils/tabs/tabs.component';
-import { CitasComponent } from './citas/citas.component';
-import { CardServicioComponent } from './card-servicio/card-servicio.component';
+import {TabComponent} from './utils/tab/tab.component';
+import {TabsComponent} from './utils/tabs/tabs.component';
+import {CitasComponent} from './citas/citas.component';
+import {CardServicioComponent} from './card-servicio/card-servicio.component';
+import { InputComponent } from './input/input.component';
+import { NowComponent } from './now/now.component';
 
 const appRoutes: Routes = [
   {path: 'paciente', component: PacienteComponent},
@@ -26,7 +28,9 @@ const appRoutes: Routes = [
     TabComponent,
     TabsComponent,
     CitasComponent,
-    CardServicioComponent],
+    CardServicioComponent,
+    InputComponent,
+    NowComponent],
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule
   ],

@@ -1,47 +1,90 @@
-<div class="top-fixed-bar">
-  <div class="menu-btn">
-    <img class="imgbtn" src="/assets/navbar/menu.svg">
-  </div>
+<!--<div class="top-fixed-bar">-->
+<!--<div class="menu-btn">-->
+<!--<img class="imgbtn" src="/assets/navbar/menu.svg">-->
+<!--</div>-->
 
-  <img class="imglogo" src="/assets/navbar/logo.svg">
+<!--<img class="imglogo" src="/assets/navbar/logo.svg">-->
 
-</div>
+<!--</div>-->
+
 
 <nav class="nav">
-  <div class="infouser"></div>
-  <div class="item">
-    <div class="icon-container">
+  <div class="upp">
+    <div class="icon-container mnbt">
       <img class="icon" src="/assets/navbar/menu.svg">
+    </div>
+
+    <div class="icon-container logo">
+      <img class="icon logo" src="/assets/navbar/logo.svg">
+    </div>
+    <div class="up-tittles">
+      <p class="uni">Universidad del Valle</p>
+      <!--<app-now></app-now>-->
+
+      <p class="datsse">{{today | date:'fullDate'}} {{today | date:'shortTime'}}</p>
+    </div>
+
+  </div>
+
+
+  <div class="infouser">
+    <div class="userimg">
+
+    </div>
+    <h1 class="username">Carlos Lopez Suarez</h1>
+    <h2 class="usermateria">Pràctica de periodoncia</h2>
+
+  </div>
+
+  <div class="item_container">
+    <div class="icon-container">
+      <img class="buscar_icon" src="/assets/navbar/search.svg">
+    </div>
+    <div class="txt">
+      <!--<p routerLink="/inicio" routerLinkActive="active">-->
+      <!--</p>-->
+      <input ng-model="nombre" type="text" id="in-buscar" name="nombre" placeholder="Buscar">
+    </div>
+  </div>
+
+  <div class="item_container">
+    <div class="icon-container">
+      <img class="buscar_icon" src="/assets/navbar/new-user.svg">
     </div>
     <div class="txt">
       <p routerLink="/inicio" routerLinkActive="active">
-        Inicio
+        Nuevo ingreso
       </p>
     </div>
+  </div>
+  <div class="bottomside">
+    <div class="item_container">
+      <div class="icon-container">
+        <img class="buscar_icon" src="/assets/navbar/settigns.svg">
+      </div>
+      <div class="txt">
+        <p routerLink="/inicio" routerLinkActive="active">
+          Configuraciones
+        </p>
+      </div>
+    </div>
+
+    <div class="item_container">
+      <div class="icon-container">
+        <img class="buscar_icon" src="/assets/navbar/exit.svg">
+      </div>
+      <div class="txt ocultable">
+        <p routerLink="/inicio" routerLinkActive="active">Cerrar sesión</p>
+      </div>
+    </div>
+
+
   </div>
 
-  <div class="item">
-    <div class="icon-container">
-      <img class="icon" src="/assets/navbar/menu.svg">
-    </div>
-    <div class="txt">
-      <p routerLink="/nuevo_ingreso" routerLinkActive="active">
-        Ingresar paciente
-      </p>
-    </div>
-  </div>
-  <div class="item">
-    <div class="icon-container">
-      <img class="icon" src="/assets/navbar/menu.svg">
-    </div>
-    <div class="txt">
-      <p routerLink="/paciente" routerLinkActive="active">
-        ver paciente
-      </p>
-    </div>
-  </div>
+
 </nav>
 
-<div class="full">
-  <router-outlet></router-outlet>
-</div>
+
+<!--<div class="full">-->
+<!--<router-outlet></router-outlet>-->
+<!--</div>-->
