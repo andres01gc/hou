@@ -10,18 +10,22 @@ import {TabsComponent} from './utils/tabs/tabs.component';
 import {CitasComponent} from './citas/citas.component';
 import {CardServicioComponent} from './card-servicio/card-servicio.component';
 import {InputComponent} from './utils/input/input.component';
-import {NowComponent} from './now/now.component';
+import {NowComponent} from './utils/now/now.component';
 import {LoginComponent} from './login/login.component';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
-import {AuthService} from './auth.service';
+import {AuthService} from './services/auth.service';
 import {FormsModule} from '@angular/forms';
-import { SnakbarComponent } from './snakbar/snakbar.component';
+import { SnakbarComponent } from './utils/snakbar/snakbar.component';
+import { PagenotfoundComponent } from './utils/pagenotfound/pagenotfound.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const appRoutes: Routes = [
+  {path: '', component: LoginComponent},
   {path: 'paciente', component: PacienteComponent},
   {path: 'nuevo_ingreso', component: IngresarPacienteComponent},
-  {path: 'inicio', component: ActividadComponent}
+  {path: 'inicio', component: ActividadComponent},
+  {path: '**', component: PagenotfoundComponent}
 ];
 
 export const environment = {
@@ -49,7 +53,9 @@ export const environment = {
     InputComponent,
     NowComponent,
     LoginComponent,
-    SnakbarComponent],
+    SnakbarComponent,
+    PagenotfoundComponent,
+    NavbarComponent],
 
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, AngularFireModule.initializeApp(environment.firebase),
