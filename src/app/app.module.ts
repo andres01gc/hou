@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
-import {ActividadComponent} from './mainroutes/inicio/inicio.component';
+import {ServiciosComponent} from './mainroutes/inicio/inicio.component';
 import {RouterModule, Routes} from '@angular/router';
 import {PacienteComponent} from './mainroutes/paciente/paciente.component';
 import {IngresarPacienteComponent} from './mainroutes/ingresar-paciente/ingresar-paciente.component';
@@ -20,14 +20,34 @@ import {SnakbarComponent} from './utils/snakbar/snakbar.component';
 import {PagenotfoundComponent} from './utils/pagenotfound/pagenotfound.component';
 import {NavbarComponent} from './navbar/navbar.component';
 import {DataService} from './services/data.service';
+import {HomeComponent} from './home/home.component';
 
 const appRoutes: Routes = [
-  {path: '', component: LoginComponent},
-  {path: 'paciente', component: PacienteComponent},
-  {path: 'nuevo_ingreso', component: IngresarPacienteComponent},
-  {path: 'inicio', component: ActividadComponent},
+  // { path: 'test',   redirectTo: '/login',  pathMatch: 'full'},
+  {
+    path: 'home', component: HomeComponent, children: [
+      {
+        path: '',
+        component: ServiciosComponent
+      },
+      {
+        path: 'citas',
+        component: CitasComponent
+      }
+    ]
+  }
+  , {path: 'login', component: LoginComponent},
+  {
+    path: 'bb',
+    outlet: 'bar',
+    component: NavbarComponent
+  },  // {path: 'paciente', component: PacienteComponent},
+  // {path: 'nuevo_ingreso', component: IngresarPacienteComponent},
   {path: '**', component: PagenotfoundComponent}
 ];
+
+// { path: 'home',  component: HomeComponent },
+// { path: 'login',  component: LoginComponent, outlet:'main' }
 
 export const environment = {
   production: false,
@@ -44,7 +64,7 @@ export const environment = {
 @NgModule({
   declarations: [
     AppComponent,
-    ActividadComponent,
+    ServiciosComponent,
     PacienteComponent,
     IngresarPacienteComponent,
     TabComponent,
@@ -56,7 +76,8 @@ export const environment = {
     LoginComponent,
     SnakbarComponent,
     PagenotfoundComponent,
-    NavbarComponent],
+    NavbarComponent,
+    HomeComponent],
 
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, AngularFireModule.initializeApp(environment.firebase),
@@ -66,5 +87,7 @@ export const environment = {
 })
 export class AppModule {
 }
+
+
 
 
