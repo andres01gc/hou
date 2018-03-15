@@ -11,14 +11,15 @@ import {CitasComponent} from './citas/citas.component';
 import {CardServicioComponent} from './card-servicio/card-servicio.component';
 import {InputComponent} from './utils/input/input.component';
 import {NowComponent} from './utils/now/now.component';
-import {LoginComponent} from './login/login.component';
+import {LoginComponent} from './mainroutes/login/login.component';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AuthService} from './services/auth.service';
 import {FormsModule} from '@angular/forms';
-import { SnakbarComponent } from './utils/snakbar/snakbar.component';
-import { PagenotfoundComponent } from './utils/pagenotfound/pagenotfound.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import {SnakbarComponent} from './utils/snakbar/snakbar.component';
+import {PagenotfoundComponent} from './utils/pagenotfound/pagenotfound.component';
+import {NavbarComponent} from './navbar/navbar.component';
+import {DataService} from './services/data.service';
 
 const appRoutes: Routes = [
   {path: '', component: LoginComponent},
@@ -60,7 +61,7 @@ export const environment = {
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule, FormsModule],
-  providers: [AuthService],
+  providers: [AuthService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
