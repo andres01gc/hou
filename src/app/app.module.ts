@@ -1,6 +1,5 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
 import {AppComponent} from './app.component';
 import {ActividadComponent} from './mainroutes/inicio/inicio.component';
 import {RouterModule, Routes} from '@angular/router';
@@ -14,6 +13,10 @@ import {InputComponent} from './utils/input/input.component';
 import {NowComponent} from './now/now.component';
 import {LoginComponent} from './login/login.component';
 import {AngularFireModule} from 'angularfire2';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import {AuthService} from './auth.service';
+import {FormsModule} from '@angular/forms';
+import { SnakbarComponent } from './snakbar/snakbar.component';
 
 const appRoutes: Routes = [
   {path: 'paciente', component: PacienteComponent},
@@ -21,16 +24,17 @@ const appRoutes: Routes = [
   {path: 'inicio', component: ActividadComponent}
 ];
 
-// Must export the config
-export const firebaseConfig = {
-  apiKey: 'AIzaSyDFT7LjA-MoKUWIWF4fbD_ZlyjWyT0GB1g',
-  authDomain: 'hou-db.firebaseapp.com',
-  databaseURL: 'https://hou-db.firebaseio.com',
-  projectId: 'hou-db',
-  storageBucket: 'hou-db.appspot.com',
-  messagingSenderId: '874497143789'
+export const environment = {
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyDFT7LjA-MoKUWIWF4fbD_ZlyjWyT0GB1g',
+    authDomain: 'hou-db.firebaseapp.com',
+    databaseURL: 'https://hou-db.firebaseio.com',
+    projectId: 'hou-db',
+    storageBucket: 'hou-db.appspot.com',
+    messagingSenderId: '874497143789'
+  }
 };
-
 
 @NgModule({
   declarations: [
@@ -44,10 +48,13 @@ export const firebaseConfig = {
     CardServicioComponent,
     InputComponent,
     NowComponent,
-    LoginComponent],
+    LoginComponent,
+    SnakbarComponent],
+
   imports: [RouterModule.forRoot(appRoutes),
-    BrowserModule, AngularFireModule.initializeApp(firebaseConfig)],
-  providers: [],
+    BrowserModule, AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule, FormsModule],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

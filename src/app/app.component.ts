@@ -8,10 +8,13 @@ import {Component} from '@angular/core';
 export class AppComponent {
   title = 'app';
   active = true;
+  activeSnak = true;
+
   today = Date.now();
 
   tonggleMenu() {
     console.log('ddd');
     this.active = !this.active;
   }
+
 }
