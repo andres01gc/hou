@@ -8,7 +8,7 @@ import {IngresarPacienteComponent} from './ingresar-paciente/ingresar-paciente.c
 import {TabComponent} from './utils/tab/tab.component';
 import {TabsComponent} from './utils/tabs/tabs.component';
 import {CitasComponent} from './main_routes/home/main/perfil/citas/citas.component';
-import {CardServicioComponent} from './card-servicio/card-servicio.component';
+import {CardServicioComponent} from './main_routes/home/main/perfil/serviciosC/card-servicio/card-servicio.component';
 import {InputComponent} from './utils/input/input.component';
 import {NowComponent} from './utils/now/now.component';
 import {LoginComponent} from './main_routes/login/login.component';
@@ -56,6 +56,7 @@ const appRoutes: Routes = [
       {path: 'configuraciones', component: ConfiguracionesComponent}
     ]
   },
+  // {path: '', component: LoginComponent},
   {path: '**', component: PagenotfoundComponent}
 ];
 
