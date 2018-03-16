@@ -1,53 +1,63 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
-import {ServiciosComponent} from './mainroutes/inicio/inicio.component';
+import {ServiciosComponent} from './main_routes/home/main/perfil/serviciosC/inicio.component';
 import {RouterModule, Routes} from '@angular/router';
-import {PacienteComponent} from './mainroutes/paciente/paciente.component';
-import {IngresarPacienteComponent} from './mainroutes/ingresar-paciente/ingresar-paciente.component';
+import {PacienteComponent} from './main_routes/paciente/paciente.component';
+import {IngresarPacienteComponent} from './ingresar-paciente/ingresar-paciente.component';
 import {TabComponent} from './utils/tab/tab.component';
 import {TabsComponent} from './utils/tabs/tabs.component';
-import {CitasComponent} from './citas/citas.component';
+import {CitasComponent} from './main_routes/home/main/perfil/citas/citas.component';
 import {CardServicioComponent} from './card-servicio/card-servicio.component';
 import {InputComponent} from './utils/input/input.component';
 import {NowComponent} from './utils/now/now.component';
-import {LoginComponent} from './mainroutes/login/login.component';
+import {LoginComponent} from './main_routes/login/login.component';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AuthService} from './services/auth.service';
 import {FormsModule} from '@angular/forms';
 import {SnakbarComponent} from './utils/snakbar/snakbar.component';
 import {PagenotfoundComponent} from './utils/pagenotfound/pagenotfound.component';
-import {NavbarComponent} from './navbar/navbar.component';
+import {NavbarComponent} from './main_routes/home/main/navbar/navbar.component';
 import {DataService} from './services/data.service';
-import {HomeComponent} from './home/home.component';
+import {MainComponent} from './main_routes/home/main/main.component';
+import {PerfilComponent} from './main_routes/home/main/perfil/perfil.component';
+import {ConfiguracionesComponent} from './configuraciones/configuraciones.component';
+import {MiscComponent} from './misc/misc.component';
+import {AnexosComponent} from './anexos/anexos.component';
+import {HistoriaComponent} from './historia/historia.component';
+import {ResumenComponent} from './resumen/resumen.component';
+import {RegistroComponent} from './registro/registro.component';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {InicioComponent} from './inicio/inicio.component';
 
 const appRoutes: Routes = [
-  // { path: 'test',   redirectTo: '/login',  pathMatch: 'full'},
+  {path: 'login', component: LoginComponent},
+  {path: 'registro', component: RegistroComponent},
   {
-    path: 'home', component: HomeComponent, children: [
+    path: '', component: MainComponent, children: [
       {
-        path: '',
-        component: ServiciosComponent
+        path: '', component: InicioComponent,
+        path: 'perfil', component: PerfilComponent, children: [
+          {path: 'inicio', component: InicioComponent},
+          {path: 'servicios', component: ServiciosComponent},
+          {path: 'citas', component: CitasComponent}
+        ]
       },
       {
-        path: 'citas',
-        component: CitasComponent
-      }
+        path: 'paciente', component: PacienteComponent, children: [
+          {path: 'resumen', component: ResumenComponent},
+          {path: 'anexos', component: AnexosComponent},
+          {path: 'historia', component: HistoriaComponent},
+          {path: 'misc', component: MiscComponent}
+        ]
+      },
+      {path: 'ingreso', component: IngresarPacienteComponent},
+      {path: 'configuraciones', component: ConfiguracionesComponent}
     ]
-  }
-  , {path: 'login', component: LoginComponent},
-  {
-    path: 'bb',
-    outlet: 'bar',
-    component: NavbarComponent
-  },  // {path: 'paciente', component: PacienteComponent},
-  // {path: 'nuevo_ingreso', component: IngresarPacienteComponent},
+  },
   {path: '**', component: PagenotfoundComponent}
 ];
-
-// { path: 'home',  component: HomeComponent },
-// { path: 'login',  component: LoginComponent, outlet:'main' }
 
 export const environment = {
   production: false,
@@ -77,10 +87,17 @@ export const environment = {
     SnakbarComponent,
     PagenotfoundComponent,
     NavbarComponent,
-    HomeComponent],
+    MainComponent,
+    PerfilComponent,
+    ConfiguracionesComponent,
+    MiscComponent,
+    AnexosComponent,
+    HistoriaComponent,
+    ResumenComponent,
+    RegistroComponent,InicioComponent],
 
   imports: [RouterModule.forRoot(appRoutes),
-    BrowserModule, AngularFireModule.initializeApp(environment.firebase),
+    BrowserModule, AngularFireModule.initializeApp(environment.firebase), AngularFireDatabaseModule,
     AngularFireAuthModule, FormsModule],
   providers: [AuthService, DataService],
   bootstrap: [AppComponent]
