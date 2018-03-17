@@ -30,6 +30,7 @@ import {ResumenComponent} from './resumen/resumen.component';
 import {RegistroComponent} from './registro/registro.component';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {InicioComponent} from './inicio/inicio.component';
+import { SelectComponent } from './utils/select/select.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
   {
     path: '', component: MainComponent, children: [
       {
-        path: '', component: InicioComponent,
+        path: '', component: InicioComponent
+      }, {
         path: 'perfil', component: PerfilComponent, children: [
           {path: 'inicio', component: InicioComponent},
           {path: 'servicios', component: ServiciosComponent},
@@ -95,7 +97,7 @@ export const environment = {
     AnexosComponent,
     HistoriaComponent,
     ResumenComponent,
-    RegistroComponent,InicioComponent],
+    RegistroComponent, InicioComponent, SelectComponent],
 
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, AngularFireModule.initializeApp(environment.firebase), AngularFireDatabaseModule,
