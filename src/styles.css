@@ -16,5 +16,32 @@ html {
   height: 100%;
 }
 
+/*** Works on common browsers ***/
+::selection {
+  background-color: #00234E;
+  color: #fff;
+}
 
+/*** Mozilla based browsers ***/
+::-moz-selection {
+  background-color: #00234E;
+  color: #fff;
+}
+
+/*!***For Other Browsers ***!*/
+/*::-o-selection {*/
+  /*background-color: #352e7e;*/
+  /*color: #fff;*/
+/*}*/
+
+/*::-ms-selection {*/
+  /*background-color: #352e7e;*/
+  /*color: #fff;*/
+/*}*/
+
+/*!*** For Webkit ***!*/
+/*::-webkit-selection {*/
+  /*background-color: #352e7e;*/
+  /*color: #fff;*/
+/*}*/
 
