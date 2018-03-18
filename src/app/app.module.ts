@@ -30,7 +30,8 @@ import {ResumenComponent} from './resumen/resumen.component';
 import {RegistroComponent} from './registro/registro.component';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {InicioComponent} from './inicio/inicio.component';
-import { SelectComponent } from './utils/select/select.component';
+import {SelectComponent} from './utils/select/select.component';
+import {ServiciosPacienteComponent} from './servicios-paciente/servicios-paciente.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -48,18 +49,17 @@ const appRoutes: Routes = [
       },
       {
         path: 'paciente', component: PacienteComponent, children: [
-          {path: 'resumen', component: ResumenComponent},
+          {path: '', component: ServiciosPacienteComponent, pathMatch: 'full'},
+          {path: 'resumen', component: ResumenComponent, pathMatch: 'full'},
           {path: 'anexos', component: AnexosComponent},
           {path: 'historia', component: HistoriaComponent},
-          {path: 'misc', component: MiscComponent}
+          {path: 'misc', component: MiscComponent},
         ]
       },
       {path: 'ingreso', component: IngresarPacienteComponent},
       {path: 'configuraciones', component: ConfiguracionesComponent}
     ]
-  },
-  // {path: '', component: LoginComponent},
-  {path: '**', component: PagenotfoundComponent}
+  }, {path: '**', component: PagenotfoundComponent}
 ];
 
 export const environment = {
@@ -97,7 +97,7 @@ export const environment = {
     AnexosComponent,
     HistoriaComponent,
     ResumenComponent,
-    RegistroComponent, InicioComponent, SelectComponent],
+    RegistroComponent, InicioComponent, SelectComponent, ServiciosPacienteComponent],
 
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, AngularFireModule.initializeApp(environment.firebase), AngularFireDatabaseModule,
