@@ -1,0 +1,113 @@
+.main {
+  /*padding: .5em;*/
+  width: available;
+}
+
+.card {
+  margin: .5em;
+  padding: 1em;
+  width: auto;
+  /*height: 18em;*/
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  /*background-color: white;*/
+
+  /*-webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);*/
+  /*-moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);*/
+  /*box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);*/
+}
+
+.up {
+  /*background: #00234E;*/
+}
+
+.ttl_ult {
+  color: #00234E;
+  margin: .5em;
+}
+
+.nombre {
+  font-family: "Lato Medium";
+  color: #00234E;
+}
+
+.ttl_cont {
+  font-family: "Lato SemiBold";
+  color: #00234E;
+  margin: .5em;
+}
+
+.ult_ev {
+  font-size: .8em;
+}
+
+.item {
+  display: flex;
+  width: 100%;
+  opacity: .6;
+  margin: .2em;
+  justify-content: space-between;
+  font-size: .8em;
+
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  background-color: #00234E;
+  box-sizing: border-box;
+  margin: .5em;
+}
+
+.not_icon {
+  width: 1em;
+  height: 1em;
+  /*background-color: #DB3650;*/
+  /*box-sizing: border-box;*/
+  margin: .2em;
+}
+
+.doc {
+  font-family: "Lato Medium";
+  color: #00234E;
+}
+
+.prox_cita {
+  font-family: "Lato Medium";
+  color: white;
+  padding: .5em;
+  /*margin: .5em;*/
+}
+
+.noti_cita {
+  /*position: absolute;*/
+  width: available;
+  height: 1em;
+  display: flex;
+  align-items: center;
+  /*flex-direction: column;*/
+  background-color: #00ABA0;
+  /*padding: .5em;*/
+  padding-top: .5em;
+  padding-bottom: .5em;
+  border-radius: 15px;
+  margin-top: 1em;
+}
+
+.mas_info {
+  font-family: "Lato Medium";
+  color: #00234E;
+}
+
+.img_paciente {
+  width: 8em;
+  height: 8em;
+  border-radius: 100px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin: 2em;
+}
+
+

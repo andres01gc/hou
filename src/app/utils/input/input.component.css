@@ -1,0 +1,41 @@
+.titulo {
+  font-family: "Lato SemiBold", Arial;
+  font-size: .8rem;
+  color: #00ABA0;
+  margin: .6em;
+  padding: 0;
+
+}
+
+.ss {
+  height: 2em;
+  width: available;
+  background-color: #DB3650;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.03);
+  border-radius: 2px;
+  padding-left: 1em;
+}
+
+input {
+  -webkit-appearance: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  font-family: "Lato Medium", Arial;
+  width: 100%;
+  /*padding: 1em;*/
+  /*margin: 1em;*/
+  font-size: 1.1em;
+  color: #00234E;
+  /*background-color: #DB3650;*/
+}
+
+.inn {
+  /*margin: .5em;*/
+}
+
+#fname {
+
+  /*display: flex;*/
+  /*width: available;*/
+}

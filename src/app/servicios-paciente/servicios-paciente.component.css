@@ -1,0 +1,24 @@
+.main {
+  /*padding: .5em;*/
+  padding: 0;
+  margin: 1em;
+  box-sizing: border-box;
+  /*background-color: #FF6D00;*/
+}
+
+.rs_ttl {
+  font-family: "Lato Black";
+  color: rgba(0, 190, 164, 1);
+  margin: .5em;
+  font-size: 1.2em;
+  padding: 1em;
+}
+
+.activos {
+  display: inline-block;
+  /*width: 45em;*/
+  border-radius: 5px;
+  background-color: rgba(0, 190, 164, .05);
+  /*padding-top: .5em;*/
+  /*padding-bottom: .5em;*/
+}

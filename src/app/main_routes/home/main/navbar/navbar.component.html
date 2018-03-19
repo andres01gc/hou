@@ -1,0 +1,82 @@
+<div class="magicnav"></div>
+
+<nav class="nav" [ngClass]="{'active': !active }">
+  <div class="upp desk">
+    <div class="icon-container mnbt">
+      <img class="icon" src="/assets/navbar/menu.svg">
+    </div>
+    <div class="icon-container logo">
+      <img class="icon logo" src="/assets/navbar/logo.svg">
+    </div>
+    <div class="up-tittles">
+      <p class="tittle_entitie">Universidad del Valle</p>
+      <p class="tittle_date">{{today | date:'fullDate'}} {{today | date:'shortTime'}} </p>
+    </div>
+  </div>
+
+  <div class="infouser" routerLink="/perfil/inicio" (click)="tonggleMenu()">
+    <div class="userimg"></div>
+    <div class="inus">
+      <h1 class="username">{{nombre}}</h1>
+      <h2 class="usermateria">{{especialidad}}</h2>
+    </div>
+  </div>
+
+  <div class="item_container">
+    <div class="icon-container">
+      <img class="buscar_icon" src="/assets/navbar/search.svg">
+    </div>
+    <div class="txt">
+      <input (keyup.enter)="buscar($event)" (click)="tonggleMenu()" ng-model="nombre" type="text" id="in-buscar"
+             name="nombre"
+             placeholder="Buscar">
+    </div>
+  </div>
+
+  <div class="item_container">
+    <div class="icon-container">
+      <img class="buscar_icon" src="/assets/navbar/new-user.svg">
+    </div>
+    <div class="txt">
+      <p routerLink="/ingreso" (click)="tonggleMenu()" routerLinkActive="active">
+        Nuevo ingreso
+      </p>
+    </div>
+  </div>
+  <div class="item_container">
+    <div class="icon-container">
+      <img class="buscar_icon" src="/assets/navbar/settigns.svg">
+    </div>
+    <div class="txt">
+      <p routerLink="/configuraciones" (click)="tonggleMenu()" routerLinkActive="active">
+        Configuraciones
+      </p>
+    </div>
+  </div>
+  <div class="item_container">
+    <div class="icon-container">
+      <img class="buscar_icon" src="/assets/navbar/exit.svg">
+    </div>
+    <div class="txt ocultable">
+      <p routerLink="/login" (click)="tonggleMenu()" routerLinkActive="active">Cerrar sesión</p>
+    </div>
+  </div>
+
+</nav>
+
+<div class="magicspace">
+  <div class="fx" (click)="tonggleMenu()">
+    <div class="icon-container mnbt">
+      <img class="icon" src="/assets/navbar/menu.svg">
+    </div>
+    <div class="icon-container logo">
+      <img class="icon logo" src="/assets/navbar/logo.svg">
+    </div>
+    <div class="up-tittles">
+      <p class="tittle_entitie">Universidad del Valle</p>
+      <p class="tittle_date">{{today | date:'fullDate'}} {{today | date:'shortTime'}} </p>
+    </div>
+  </div>
+</div>
+<app-snakbar></app-snakbar>
+

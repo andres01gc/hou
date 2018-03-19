@@ -1,0 +1,18 @@
+<div class="ff">
+</div>
+
+<div class="main_login">
+  <div class="lgn_logo_conatiner">
+    <img class="logo" src="/assets/navbar/logo.svg">
+  </div>
+  <div class="ins">
+    <input type="text" [(ngModel)]="email" placeholder="Correo electrónico">
+    <input type="password" [(ngModel)]="pass" placeholder="Contraseña">
+    <input type="text" [(ngModel)]="nombres" placeholder="Nombre">
+    <input type="text" [(ngModel)]="apellidos" placeholder="Apellidos">
+    <input type="text" [(ngModel)]="sexo" placeholder="Sexo">
+    <input type="text" [(ngModel)]="especialidad" placeholder="especialidad médica">
+    <div class="btn-work" (keyup.enter)="pushData()" (click)="pushData()">¡Registrar!</div>
+  </div>
+  <p class="olvidado">¿Has olvidado tu contraseña?</p>
+</div>

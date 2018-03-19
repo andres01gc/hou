@@ -5,8 +5,6 @@ import {ServiciosComponent} from './main_routes/home/main/perfil/serviciosC/inic
 import {RouterModule, Routes} from '@angular/router';
 import {PacienteComponent} from './main_routes/paciente/paciente.component';
 import {IngresarPacienteComponent} from './ingresar-paciente/ingresar-paciente.component';
-import {TabComponent} from './utils/tab/tab.component';
-import {TabsComponent} from './utils/tabs/tabs.component';
 import {CitasComponent} from './main_routes/home/main/perfil/citas/citas.component';
 import {CardServicioComponent} from './main_routes/home/main/perfil/serviciosC/card-servicio/card-servicio.component';
 import {InputComponent} from './utils/input/input.component';
@@ -80,8 +78,6 @@ export const environment = {
     ServiciosComponent,
     PacienteComponent,
     IngresarPacienteComponent,
-    TabComponent,
-    TabsComponent,
     CitasComponent,
     CardServicioComponent,
     InputComponent,

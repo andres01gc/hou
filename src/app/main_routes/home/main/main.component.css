@@ -1,0 +1,32 @@
+
+.cont {
+  width: auto;
+  height: 100vh;
+  padding-left: 18em;
+  transition: all .3s ease-in-out;
+}
+
+.content {
+  width: 100%;
+  /*height: 500em;*/
+  margin: 0;
+  padding: 0;
+  /*background-color: #DB3650;*/
+}
+
+/*modo tablet*/
+@media only screen and (max-width: 68em) {
+  .cont {
+    padding-left: 4em;
+    padding-top: 0;
+  }
+}
+/*modo movil*/
+@media only screen and (max-width: 42em) {
+  .cont {
+    padding-top: 4em;
+    padding-left: 0;
+    height: available;
+    /*background-color: #DB3650;*/
+  }
+}

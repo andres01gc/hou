@@ -1,0 +1,36 @@
+<div class="top_info">
+  <h1>Nuevo Ingreso</h1>
+  <h2>por Carlos S</h2>
+
+  <div class="loading_line">
+    <div class="loaded"></div>
+  </div>
+</div>
+<div class="magicspace">
+</div>
+<h1 class="ttl">1. Información inicial</h1>
+
+<div class="formulario_ingreso">
+  <div class="item medium">
+    <app-input name="Nombre" placeholder="Nombre" (texted)="nombre = $event"></app-input>
+  </div>
+  <div class="item medium">
+    <app-input name="Apellidos" placeholder="Apellidos" (texted)="apellidos = $event"></app-input>
+  </div>
+
+  <div class="item small">
+    <app-select [data]="['cc','TI','NIT']" titulo="Tipo" (selected)="tipo_doc = $event"></app-select>
+  </div>
+  <div class="item small">
+    <app-input name="Documento" placeholder="Documento" (texted)="documento= $event"></app-input>
+  </div>
+  <div class="line">
+  </div>
+</div>
+
+
+<div class="sttc">
+  <div class="line">
+  </div>
+  <div class="btn" (click)="finalizarIngreso()">Finalizar Ingreso</div>
+</div>

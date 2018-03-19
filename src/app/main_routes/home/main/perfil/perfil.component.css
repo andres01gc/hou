@@ -1,0 +1,36 @@
+.tabs {
+  width: available;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 20px;
+  height: 4em;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.cont {
+  margin: 0;
+  background-color: #FCFCFC;
+  width: 100%;
+  height: 93.35vh;
+}
+
+.tabs li {
+  margin-right: 20px;
+  font-family: "Lato SemiBold",Arial;
+  float: left;
+  opacity: .4;
+  font-size: .9rem;
+  color: #00234E;
+}
+
+.tabs li:hover {
+  opacity: 1;
+  cursor: pointer;
+  color: #00234E;
+}
+
+.active {
+  color: #00ABA0;
+}

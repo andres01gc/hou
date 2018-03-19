@@ -1,0 +1,39 @@
+/*.act-info-usuario-container {*/
+
+/*width: 100%;*/
+/*height: 20%;*/
+/*background-color: gold;*/
+/*}*/
+
+.ini-user_info {
+  /*position: absolute;*/
+  /*no tengo ni puta idea porque debo onderle mas de 101 :/*/
+  width: 101.3%;
+  padding: 0;
+  margin: 0;
+  height: 140px;
+  position: relative;
+  background-color: rgba(2, 2, 2, 0.02);
+}
+
+.servicios-container {
+  width: 60%;
+  /*background-color: grey;*/
+}
+
+.ff {
+  width: available;
+  height: 5em;
+  /*background-color: #DB3650;*/
+}
+
+/*.container_serv {*/
+  /*!*width: 50em;*!*/
+  /*background-color: #FCFCFC;*/
+  /*margin: 0;*/
+  /*padding: 0;*/
+
+  /*width: 100%;*/
+  /*height: 93.35vh;*/
+/*}*/
+
