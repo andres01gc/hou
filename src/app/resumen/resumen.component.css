@@ -1,66 +1,94 @@
 .main {
   /*padding: .5em;*/
   width: available;
-}
-
-.card {
-  margin: .5em;
-  padding: 1em;
+  padding: 0;
+  margin: 0;
   width: auto;
-  /*height: 18em;*/
-  border-radius: 5px;
+
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
-  /*background-color: white;*/
-
-  /*-webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);*/
-  /*-moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);*/
-  /*box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);*/
+  /*padding: 1em;*/
 }
 
-.up {
-  /*background: #00234E;*/
+.card {
+  width: 100%;
+  display: flex;
+  /*height: 4em;*/
+  /*background-color: #00ABA0;*/
+  margin: 0;
+  padding: 1em;
+  flex-direction: column;
+box-sizing: border-box;
+}
+
+
+.tt {
+  font-size: .9em;
+}
+
+
+.rs-tittle {
+  width: 100%;
+  /*background-color: #FF6D00;*/
+  /*border-bottom: 1px solid ;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*font-size: .9em;*/
+  height: 3em;
 }
 
 .ttl_ult {
-  color: #00234E;
-  margin: .5em;
+  font-family: "Fira Sans Light";
+  color: #00ABA0;
+
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  /*margin: .5em;*/
 }
 
 .nombre {
-  font-family: "Lato Medium";
-  color: #00234E;
+  font-family: "Fira Sans Medium";
+  color: #00ABA0;
 }
 
 .ttl_cont {
-  font-family: "Lato SemiBold";
+  font-family: "Fira Sans";
   color: #00234E;
   margin: .5em;
 }
 
 .ult_ev {
   font-size: .8em;
+  font-family: "Fira Sans Light";
+  padding: .5em;
 }
 
 .item {
   display: flex;
   width: 100%;
   opacity: .6;
-  margin: .2em;
+  margin-bottom: .2em;
   justify-content: space-between;
   font-size: .8em;
-
+  padding-left: .5em;
+  padding-right: .5em;
+box-sizing: border-box;
 }
 
 .line {
   width: 100%;
   height: 1px;
-  background-color: #00234E;
-  box-sizing: border-box;
-  margin: .5em;
+  background-color: rgba(0, 0, 0, 0.08);
+  margin-top: 1em;
+  margin-bottom: 1em;
+  /*box-sizing: border-box;*/
 }
+
+
 
 .not_icon {
   width: 1em;
@@ -71,8 +99,9 @@
 }
 
 .doc {
-  font-family: "Lato Medium";
+  font-family: "Fira Sans Light";
   color: #00234E;
+  font-size: .9em;
 }
 
 .prox_cita {
@@ -82,32 +111,47 @@
   /*margin: .5em;*/
 }
 
+.rs-hl {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.noti_content{
+  width: 100%;
+  display: flex;
+  height: 4em;
+
+  /*margin: 1em;*/
+  /*padding: 1em;*/
+  /*background-color: #00ABA0;*/
+}
+
 .noti_cita {
-  /*position: absolute;*/
-  width: available;
-  height: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  height: 1.5em;
   display: flex;
   align-items: center;
-  /*flex-direction: column;*/
-  background-color: #00ABA0;
-  /*padding: .5em;*/
-  padding-top: .5em;
-  padding-bottom: .5em;
-  border-radius: 15px;
-  margin-top: 1em;
+  border-radius: .3em;
+  border: 1px solid rgba(219, 54, 80, .2);
+  margin: 1em;
 }
 
 .mas_info {
-  font-family: "Lato Medium";
+  font-family: "Fira Sans Light";
   color: #00234E;
+  font-size: .9em;
+
 }
 
 .img_paciente {
-  width: 8em;
-  height: 8em;
+  margin-bottom: 1em;
+  width: 7em;
+  height: 7em;
   border-radius: 100px;
-  background-color: rgba(0, 0, 0, 0.1);
-  margin: 2em;
+  background-color: rgba(0, 0, 0, 0.05);
+  /*margin: 1em;*/
 }
 
 
