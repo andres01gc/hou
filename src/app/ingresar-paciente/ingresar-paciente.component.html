@@ -24,10 +24,27 @@
   <div class="item small">
     <app-input name="Documento" placeholder="Documento" (texted)="documento= $event"></app-input>
   </div>
+
+  <div class="item small">
+    <app-input name="Expedida en" placeholder="Lugar" (texted)="documento= $event"></app-input>
+  </div>
+
+  <div class="item small">
+    <app-select [data]="['O+','O-','A+','A+','A-','B+','B-','AB+','AB-']" titulo="Grupo sanguineo"
+                (selected)="tipo_doc = $event"></app-select>
+  </div>
+
   <div class="line">
   </div>
-</div>
 
+  <h1 class="ttl">2. Referencias</h1>
+  <div class="line">
+  </div>
+  <h1 class="ttl">3. Anamnésis</h1>
+  <div class="line">
+  </div>
+  <h1 class="ttl">3. Historia Urgencias en caso de necesitar </h1>
+</div>
 
 <div class="sttc">
   <div class="line">

@@ -7,13 +7,12 @@ import {DataService} from '../services/data.service';
   styleUrls: ['./resumen.component.css']
 })
 export class ResumenComponent implements OnInit {
-  p: any;
+  p: any = this.data.paciente_buscado;
 
   constructor(private data: DataService) {
   }
 
   ngOnInit() {
-    this.p = this.data.paciente_buscado;
   }
 }
 
