@@ -3,14 +3,15 @@
   background-color: white;
   box-sizing: border-box;
   margin: 1em;
-  box-sizing: border-box;
   /*height: auto;*/
   /*border: 1px solid rgba(2, 2, 2, 0.08);*/
   padding: 1em;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
+  border-radius: .2em;
+  -webkit-box-shadow: 3px 4px 18px 0px rgba(0, 0, 0, 0.03);
+  -moz-box-shadow: 3px 4px 18px 0px rgba(0, 0, 0, 0.03);
+  box-shadow: 3px 4px 18px 0px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(2, 2, 2, 0.08);
+
 }
 
 .icon {
@@ -33,41 +34,48 @@
 }
 
 .main-info-container {
-  width: 90%;
+  /*width: 90%;*/
   height: available;
   /*background-color: #FF6D00;*/
   line-height: .1;
+
 }
 
 .resumen {
 
-  font-family: "Lato Medium";
-  opacity: .6;
-  font-size: 1rem;
+  font-family: "Fira Sans";
+  /*opacity: .6;*/
+  font-size: .9em;
   margin: 0;
   padding: 0;
+  font-weight: 300;
+  /*opacity: .8;*/
+  color: rgba(0,0,0,0.5);
   /*height: 50px;*/
 }
 
 .main-info-container .nombre {
-  font-family: "Lato Medium";
-  opacity: .6;
+  font-family: "Fira Sans";
+  /*opacity: .6;*/
+  font-weight: 300;
+
 }
 
 .icon-container {
   width: 3em;
   height: available;
   display: flex;
-  background-color: #00ABA0;
+  border-radius: 1em;
+  background-color: rgba(0, 0, 0, 0.02);
   margin-right: 1em;
-
 }
 
 .main-info-container .especialidad {
-  font-family: "Lato Medium";
+  font-family: "Fira Sans";
   font-size: .7rem;
-  opacity: .4;
-
+  /*opacity: .4;*/
+  font-weight: 400;
+  color: #00ABA0;
 }
 
 .main-info-container .asignado {
@@ -90,7 +98,6 @@
 
 .state {
   background-color: #00ABA0;
-  font-family: "Lato SemiBold";
   color: white;
   padding: .5em;
   display: inline-block;
@@ -100,7 +107,6 @@
 }
 
 .prox-cita {
-  font-family: "Lato Medium";
   font-size: .8rem;
   opacity: .2;
   line-height: 1;
@@ -108,7 +114,6 @@
 }
 
 .btns {
-  font-family: "Lato Medium";
   width: 100%;
 
   font-size: .9rem;
@@ -123,8 +128,6 @@
 .btns p {
   margin-left: 10px;
   opacity: .5;
-  font-family: "Lato Black";
-  opacity: .4;
 }
 
 .btns p:hover {

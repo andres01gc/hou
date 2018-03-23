@@ -30,6 +30,7 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import {InicioComponent} from './inicio/inicio.component';
 import {SelectComponent} from './utils/select/select.component';
 import {ServiciosPacienteComponent} from './servicios-paciente/servicios-paciente.component';
+import {PgOdontogramaComponent} from './pg-odontograma/pg-odontograma.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -50,7 +51,20 @@ const appRoutes: Routes = [
           {path: '', component: ServiciosPacienteComponent, pathMatch: 'full'},
           {path: 'resumen', component: ResumenComponent, pathMatch: 'full'},
           {path: 'anexos', component: AnexosComponent},
-          {path: 'historia', component: HistoriaComponent},
+          {
+            path: 'historia', component: HistoriaComponent, children: [
+              {path: 'odontograma', component: PgOdontogramaComponent}, {
+                path: 'ananmesis',
+                component: PgOdontogramaComponent
+              }, {path: 'antecedentes', component: PgOdontogramaComponent}, {
+                path: 'exame_fisico',
+                component: PgOdontogramaComponent
+              }, {path: 'peiodontograma', component: PgOdontogramaComponent}, {
+                path: 'diagnóstico',
+                component: PgOdontogramaComponent
+              }, {path: 'otro', component: PgOdontogramaComponent}, {path: 'otro', component: PgOdontogramaComponent}
+            ]
+          },
           {path: 'misc', component: MiscComponent},
         ]
       },
@@ -93,7 +107,7 @@ export const environment = {
     AnexosComponent,
     HistoriaComponent,
     ResumenComponent,
-    RegistroComponent, InicioComponent, SelectComponent, ServiciosPacienteComponent],
+    RegistroComponent, InicioComponent, SelectComponent, ServiciosPacienteComponent, PgOdontogramaComponent],
 
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, AngularFireModule.initializeApp(environment.firebase), AngularFireDatabaseModule,

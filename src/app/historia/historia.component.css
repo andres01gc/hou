@@ -1,0 +1,77 @@
+.tabs {
+  /*width: available;*/
+  /*height: 4em;*/
+  list-style: none;
+  padding-left: 20px;
+  /*background-color: #FCFCFC;*/
+  /*background-color: #333333;*/
+  /*height: 50px;*/
+  display: flex;
+  align-items: center;
+  margin: 0;
+  /*position: fixed;*/
+  width: 200em;
+  height: 3em;
+  /*background-color: #00ABA0;*/
+  /*overflow: auto;*/
+  z-index: 1;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
+  -webkit-box-shadow: 3px 4px 83px 0 rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 3px 4px 83px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 3px 4px 83px 0 rgba(0, 0, 0, 0.05);
+
+  font-family: "Fira Sans";
+  font-weight: 400;
+  /*background-color: #00ABA0;*/
+  /*overflow: scroll;*/
+  overflow: hidden;
+
+}
+
+.main_tabs {
+  overflow: hidden;
+  background-color: #FF6D00
+}
+
+.hc_main {
+  /*background-color: #00ABA0;*/
+  width: 70%;
+  overflow: hidden;
+}
+
+.magicspace {
+  width: 100%;
+  height: 3em;
+  /*background-color: #333333;*/
+}
+
+.tabs li {
+  margin-right: 2em;
+  float: left;
+  opacity: .3;
+  font-size: .9em;
+  color: #00234E;
+}
+
+.tabs li:hover {
+  opacity: 1;
+  cursor: pointer;
+  color: #00234E;
+}
+
+.hc_rbar{
+
+  width: 30%;
+  height: 90vh;
+  background-color: rgba(252,252,252,1);
+
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.14);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.14);
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.14);
+  border-left: 1px solid rgba(0,0,0,0.08);
+}
+.hc_hc{
+  display: flex;
+}

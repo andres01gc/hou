@@ -98,7 +98,7 @@
         <div class="nv-ico-buscar">
           <img class="icon nv-ic-not" src="/assets/navbar/search.svg">
         </div>
-        <input type="text" class="nv-text" placeholder="Buscar Documento">
+        <input type="text" class="nv-text" placeholder="Buscar Documento" (keyup.enter)="buscar($event)">
       </div>
     </div>
 
@@ -107,13 +107,13 @@
         <div class="nv-ico-ingresar">
           <img class="icon nv-ic-not" src="/assets/navbar/add_ico.svg">
         </div>
-        <div class="nv-txt-ni">Nuevo Ingreso</div>
+        <div class="nv-txt-ni" routerLink="/ingreso">Nuevo Ingreso</div>
       </div>
     </div>
 
 
     <!--información del usuario-->
-    <div class="nv-info-container">
+    <div class="nv-info-container" routerLink="/perfil">
       <div class="nv-user-container">
         <div class="nv-name">Andrés González C.</div>
         <div class="nv-esp">Code Master Pro</div>
@@ -130,12 +130,11 @@
     </div>
 
     <div class="nv-icon-container">
-      <img class="icon nv-ic-tools" src="/assets/navbar/tools.svg">
+      <img class="icon nv-ic-tools" routerLink="/login" src="/assets/navbar/tools.svg">
     </div>
 
   </div>
 </nav>
 <div class="cc"></div>
-
-<!--<app-snakbar></app-snakbar>-->
+<app-snakbar></app-snakbar>
 

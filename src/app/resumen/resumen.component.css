@@ -20,14 +20,12 @@
   margin: 0;
   padding: 1em;
   flex-direction: column;
-box-sizing: border-box;
+  box-sizing: border-box;
 }
-
 
 .tt {
   font-size: .9em;
 }
-
 
 .rs-tittle {
   width: 100%;
@@ -76,7 +74,7 @@ box-sizing: border-box;
   font-size: .8em;
   padding-left: .5em;
   padding-right: .5em;
-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .line {
@@ -88,8 +86,6 @@ box-sizing: border-box;
   /*box-sizing: border-box;*/
 }
 
-
-
 .not_icon {
   width: 1em;
   height: 1em;
@@ -100,7 +96,7 @@ box-sizing: border-box;
 
 .doc {
   font-family: "Fira Sans Light";
-  color: #00234E;
+  opacity: .6;
   font-size: .9em;
 }
 
@@ -117,7 +113,7 @@ box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0.08);
 }
 
-.noti_content{
+.noti_content {
   width: 100%;
   display: flex;
   height: 4em;
@@ -140,8 +136,10 @@ box-sizing: border-box;
 
 .mas_info {
   font-family: "Fira Sans Light";
-  color: #00234E;
+  /*color: #00234E;*/
+  opacity: .6;
   font-size: .9em;
+  margin-bottom: 1em;
 
 }
 

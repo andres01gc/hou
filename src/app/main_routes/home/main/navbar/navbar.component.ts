@@ -45,7 +45,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
           this.data.paciente_buscado = item;
           this.router.navigate(['/paciente']);
         } else {
-          this.snak.show('Documento de paciente no encontrado :/');
+          this.snak.show('Documento de paciente no encontrado.');
         }
       }
     );

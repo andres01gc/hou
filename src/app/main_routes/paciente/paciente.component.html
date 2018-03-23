@@ -1,14 +1,9 @@
-<!--<div class="paciente_top_container">-->
-<!--<h1 class="ttl">paciente</h1>-->
-<!--</div>-->
-<!--<div class="magicspace_top"></div>-->
 <div class="resum_container">
   <app-resumen></app-resumen>
 </div>
+
 <div class="rs_main_cont">
-
   <div class="main_tabs">
-
     <ul class="tabs">
       <li routerLink="resumen" class="rsm" routerLinkActive="active">
         Resumen
@@ -19,17 +14,14 @@
       <li routerLink="historia" routerLinkActive="active">
         Historia Clínica
       </li>
-      <li routerLink="anexos" routerLinkActive="active">
-        Anexos
-      </li>
-      <li routerLink="misc" routerLinkActive="active">
-        Miscelanea
-      </li>
     </ul>
   </div>
 
   <div class="magicspace"></div>
-  <!--<router-outlet></router-outlet>-->
+  <div class="pct_main_content">
+
+    <router-outlet></router-outlet>
+  </div>
 </div>
 
 
