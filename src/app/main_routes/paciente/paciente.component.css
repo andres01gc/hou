@@ -4,27 +4,20 @@
   list-style: none;
   padding-left: 20px;
   background-color: #FCFCFC;
-  /*background-color: #333333;*/
-  /*height: 50px;*/
   display: flex;
   align-items: center;
   margin: 0;
   position: fixed;
-
   width: 200em;
   height: 3em;
-  /*background-color: #00ABA0;*/
   overflow: auto;
-  z-index: 1;
-
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-
   -webkit-box-shadow: 3px 4px 83px 0 rgba(0, 0, 0, 0.05);
   -moz-box-shadow: 3px 4px 83px 0 rgba(0, 0, 0, 0.05);
   box-shadow: 3px 4px 83px 0 rgba(0, 0, 0, 0.05);
-
   font-family: "Fira Sans";
   font-weight: 400;
+  z-index: 5;
 }
 
 .active {
@@ -57,15 +50,15 @@
 .magicspace {
   width: 100%;
   height: 3em;
-  /*background-color: #333333;*/
 }
 
 .pct_main_content {
-
+  margin: 0;
+  padding: 0;
   width: 100%;
-  height: 90vh;
-  /*background-color: #00ABA0;*/
-  /*overflow-y: scroll;*/
+  height: 90.2vh;
+  /*background-color: #FF6D00;*/
+  overflow-y: scroll;
 }
 
 .resum_container {
@@ -73,15 +66,11 @@
   height: 100%;
   position: fixed;
   background-color: #FFFFFF;
-  /*margin: ;*/
-  /*padding: 1em;*/
   box-sizing: border-box;
-
   -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
-
-  z-index: 5;
+  z-index: 10;
 }
 
 .rout_conunt {
