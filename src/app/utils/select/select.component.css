@@ -4,27 +4,41 @@
   background-color: rgba(0, 0, 0, 0);
   font-family: "Lato Medium";
   width: 100%;
-  /*padding: 1em;*/
-  /*margin: 1em;*/
   font-size: 1.1em;
   color: #00234E;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 2em;
+  border-radius: .4em;
+  padding-left: .8em;
+
+}
+
+.sl_titulo {
+  font-family: "Fira Sans", Arial;
+  font-size: .8rem;
+  color: #00ABA0;
+  /*margin: .6em;*/
+  margin: 0;
+  padding-bottom: .5em;
+  height: 1em;
 }
 
 .slct-container {
-  height: 2em;
-  width: available;
-  background-color: #DB3650;
-  display: flex;
-  background-color: rgba(0, 0, 0, .03);
-  border-radius: 2px;
-  padding-left: 1em;
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  -webkit-appearance: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  font-family: "Fira Sans", Arial;
+  width: 100%;
+  font-size: 1em;
+}
+
+.inn {
+  font-family: "Fira Sans", Arial;
 
 }
-.titulo {
-  font-family: "Lato SemiBold";
-  font-size: .8rem;
-  color: #00ABA0;
-  margin: .6em;
-  padding: 0em;
 
-}

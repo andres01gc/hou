@@ -1,13 +1,7 @@
-<p class="titulo">{{titulo}}</p>
+<div class="sl_titulo">{{titulo}}</div>
 <div class="slct-container">
   <select class="slct" (change)="onChange($event.target.value)">
     <option value="" selected disabled hidden>{{titulo}}</option>
     <option *ngFor="let d of data" value="{{d}}">{{d}}</option>
-    <!--<option value="saab">Saab</option>-->
-    <!--<option value="fiat" selected>Fiat</option>-->
-    <!--<option value="audi">Audi</option>-->
   </select>
 </div>
-<!--<li>-->
-<!--{{ person.name }}-->
-<!--</li>-->

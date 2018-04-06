@@ -1,8 +1,9 @@
 <div class="inn">
-  <p class="titulo">
+  <div class="in_titulo">
     {{name}}
-  </p>
+  </div>
   <div class="ss">
-    <input ng-model="nombre" type="text" id="fname" name="nombre" placeholder="{{placeholder}}" (keyup)="onKey($event)">
+    <input ng-model="nombre" type="{{type}}" id="fname" name="nombre" placeholder="{{placeholder}}"
+           (keyup)="onKey($event)">
   </div>
 </div>

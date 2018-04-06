@@ -8,6 +8,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class InputComponent implements OnInit {
   @Input() name: string;
   @Input() placeholder: string;
+  @Input() type = 'text';
   @Output() texted = new EventEmitter();
 
   constructor() {

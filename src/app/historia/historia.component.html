@@ -1,47 +1,66 @@
 <div class="hc_hc">
+  <ul class="tabs">
+    <li routerLink="basico" class="rsm" routerLinkActive="active">
+      Información_básica
+    </li>
+    <li routerLink="anamnesis" class="rsm" routerLinkActive="active">
+      Anamnesis
+    </li>
+    <li routerLink="antecedentes" routerLinkActive="active">
+      Antecedentes
+    </li>
+    <li routerLink="habitos" routerLinkActive="active">
+      Hábitos
+    </li>
+    <li routerLink="revision-sistema" routerLinkActive="active">
+      Revisión_por_sistema
+    </li>
 
-  <div class="hc_main">
-    <ul class="tabs">
-      <li routerLink="resumen" class="rsm" routerLinkActive="active">
-        Anamnesis
-      </li>
-      <li routerLink="/paciente/" routerLinkActive="active">
-        Antecedentes
-      </li>
+    <li routerLink="ex-fisico" routerLinkActive="active">
+      Exámen_físico
+    </li>
+    <li routerLink="ex-fisico-craneofacial" routerLinkActive="active">
+      Exámen_físico_craneofacial
+    </li>
 
-      <li routerLink="historia" routerLinkActive="active">
-        Revisión sistema
-      </li>
+    <li routerLink="ex-estomatologico" routerLinkActive="active">
+      Examen_estomatológico
+    </li>
 
-      <li routerLink="historia" routerLinkActive="active">
-        Exámen físico
-      </li>
-
-      <li routerLink="historia" routerLinkActive="active">
-        Exámen Estomatológico
-      </li>
-
-      <li routerLink="historia" routerLinkActive="active">
-        Odontograma
-      </li>
-
-      <li routerLink="historia" routerLinkActive="active">
-        Periodontográma
-      </li>
-
-      <li routerLink="historia" routerLinkActive="active">
-        Diagnostico
-      </li>
-      <li routerLink="historia" routerLinkActive="active">
-        Evolución
-      </li>
-    </ul>
-    <div class="magicspace"></div>
-    <div class="hc_mm">
+    <li routerLink="odontograma" routerLinkActive="active">
+      Odontograma
+    </li>
+    <li routerLink="periodontograma" routerLinkActive="active">
+      Periodontograma
+    </li>
+    <li routerLink="ex-periodontal" routerLinkActive="active">
+      Examen periodontal
+    </li>
+    <li routerLink="desc-radiografica" routerLinkActive="active">
+      Descripción_radiográfica
+    </li>
+    <li routerLink="diagnostico" routerLinkActive="active">
+      Diagnóstico
+    </li>
+    <li routerLink="diagnostico-por-diente" routerLinkActive="active">
+      Diagnóstico_por_diente
+    </li>
+    <li routerLink="tratamiento" routerLinkActive="active">
+      tratamiento
+    </li>
+    <li routerLink="consentimiento" routerLinkActive="active">
+      consentimiento
+    </li>
+    <li routerLink="evolucion" routerLinkActive="active">
+      evolución
+    </li>
+  </ul>
+  <div class="magicspace"></div>
+  <div class="hc_content">
+    <div class="hc-lf">
       <router-outlet></router-outlet>
     </div>
-  </div>
-  <div class="hc_rbar"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, beatae culpa cumque deserunt
-    doloremque est et eum id iusto labore nostrum obcaecati quae qui quo rerum, velit vero voluptate, voluptatibus.</p>
+    <!--<div class="hc-rg">-->
+    <!--</div>-->
   </div>
 </div>

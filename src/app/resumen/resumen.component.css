@@ -101,9 +101,10 @@
 }
 
 .prox_cita {
-  font-family: "Lato Medium";
-  color: white;
-  padding: .5em;
+  font-family: "Fira Sans";
+  color: #FF6D00;
+  font-weight: 400;
+  padding: .2em;
   /*margin: .5em;*/
 }
 

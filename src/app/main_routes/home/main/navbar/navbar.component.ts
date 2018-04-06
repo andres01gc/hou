@@ -11,24 +11,16 @@ import {AngularFireDatabase} from 'angularfire2/database';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit, AfterViewInit {
-
   active = false;
   today = Date.now();
-  // houUser: any;
-  nombre = 'Andrés Gc';
-  especialidad = 'master coder';
-
 
   @ViewChild(SnakbarComponent)
   private snak: SnakbarComponent;
-
+  private mostrarIngreso = false;
 
   constructor(private db: AngularFireDatabase, private data: DataService, private router: Router) {
     this.active = data.showmenu;
-    // this.nombre = data.houUser.nombres + ' ' + data.houUser.apellidos;
-    // this.especialidad = data.houUser.especialidad;
   }
-
 
   ngOnInit() {
   }
@@ -51,8 +43,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
     );
   }
 
-  tonggleMenu() {
-    this.active = !this.active;
+  initIngreso() {
+    this.mostrarIngreso = true;
   }
-
 }
