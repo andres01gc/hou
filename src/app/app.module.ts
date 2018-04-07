@@ -54,6 +54,7 @@ import {HcConsentimientoComponent} from './historia/hc-pages/hc-consentimiento/h
 import {ItemReferenciaComponent} from './item-referencia/item-referencia.component';
 import { CntComponent } from './cnt/cnt.component';
 import { ItemDirComponent } from './item-dir/item-dir.component';
+import { AppCheckboxComponent } from './app-checkbox/app-checkbox.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -165,7 +166,8 @@ export const environment = {
     HcConsentimientoComponent,
     ItemReferenciaComponent,
     CntComponent,
-    ItemDirComponent],
+    ItemDirComponent,
+    AppCheckboxComponent],
 
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, AngularFireModule.initializeApp(environment.firebase), AngularFireDatabaseModule,
