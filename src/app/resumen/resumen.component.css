@@ -9,6 +9,7 @@
   flex-direction: column;
   justify-items: center;
   align-items: center;
+
   /*padding: 1em;*/
 }
 
@@ -24,7 +25,8 @@
 }
 
 .tt {
-  font-size: .9em;
+  font-size: 1em;
+  opacity: 0;
 }
 
 .rs-tittle {
@@ -49,8 +51,11 @@
 }
 
 .nombre {
-  font-family: "Fira Sans Medium";
-  color: #00ABA0;
+  font-family: "Fira Sans";
+  font-weight: 500;
+  color: #00234E;
+
+
 }
 
 .ttl_cont {
@@ -60,7 +65,7 @@
 }
 
 .ult_ev {
-  font-size: .8em;
+  font-size: .95em;
   font-family: "Fira Sans Light";
   padding: .5em;
 }
@@ -71,7 +76,7 @@
   opacity: .6;
   margin-bottom: .2em;
   justify-content: space-between;
-  font-size: .8em;
+  font-size: .95em;
   padding-left: .5em;
   padding-right: .5em;
   box-sizing: border-box;
@@ -95,9 +100,11 @@
 }
 
 .doc {
-  font-family: "Fira Sans Light";
-  opacity: .6;
-  font-size: .9em;
+  font-family: "Fira Sans";
+  font-weight: 500;
+  /*opacity: .6;*/
+  font-size: 1em;
+  color: #00ABA0;
 }
 
 .prox_cita {
@@ -136,10 +143,11 @@
 }
 
 .mas_info {
-  font-family: "Fira Sans Light";
+  /*font-family: "Fira Sans Light";*/
   /*color: #00234E;*/
+  font-weight:400;
   opacity: .6;
-  font-size: .9em;
+  font-size: 1em;
   margin-bottom: 1em;
 
 }
