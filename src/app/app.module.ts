@@ -59,6 +59,9 @@ import {MultipleComponent} from './items/multiple/multiple.component';
 import {UserServiciosComponent} from './user-servicios/user-servicios.component';
 import {UserCitasComponent} from './user-citas/user-citas.component';
 import {UserResumenComponent} from './user-resumen/user-resumen.component';
+import { HcRequerimientosComponent } from './hc-requerimientos/hc-requerimientos.component';
+import { UserResponsableComponent } from './user-responsable/user-responsable.component';
+import { CardEvolucionComponent } from './card-evolucion/card-evolucion.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -78,6 +81,11 @@ const appRoutes: Routes = [
           {
             path: '',
             component: ServiciosPacienteComponent
+          }, {
+            path: 'servicios', component: ServiciosPacienteComponent
+          },
+          {
+            path: 'serv', component: PgServicioComponent
           },
           {
             path: 'historia', component: HistoriaComponent, children: [
@@ -172,7 +180,10 @@ export const environment = {
     MultipleComponent,
     UserServiciosComponent,
     UserCitasComponent,
-    UserResumenComponent],
+    UserResumenComponent,
+    HcRequerimientosComponent,
+    UserResponsableComponent,
+    CardEvolucionComponent],
 
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, AngularFireModule.initializeApp(environment.firebase), AngularFireDatabaseModule,

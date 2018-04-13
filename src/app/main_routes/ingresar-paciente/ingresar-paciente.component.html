@@ -8,156 +8,24 @@
 <div class="ip_main">
   <app-tabs>
     <app-tab tabTitle="Información Básica">
-      <div class="ttl">Identificación</div>
-
-      <div class="frm">
-        <div class="item small">
-          <app-select [data]="['CC','TI','NIT','PPT']" titulo="Tipo" (selected)="tipo_doc = $event"></app-select>
-        </div>
-        <div class="item small">
-          <app-input name="Documento" placeholder="Documento" (texted)="documento= $event"></app-input>
-        </div>
-        <div class="item small">
-          <app-input name="Expedida en" placeholder="Lugar" (texted)="documento= $event"></app-input>
-        </div>
-
-        <div class="line"></div>
-
-        <div class="item medium">
-          <app-input name="Nombre" placeholder="Nombre" (texted)="nombre = $event"></app-input>
-        </div>
-
-        <div class="item medium">
-          <app-input name="Apellidos" placeholder="Apellidos" (texted)="apellidos = $event"></app-input>
-        </div>
-        <div class="line"></div>
-        <div class="item small">
-          <app-input name="Nacimiento" placeholder="dd/mm/aa" (texted)="apellidos = $event"></app-input>
-        </div>
-
-        <div class="item small">
-          <app-input name="Lugar Nacimiento" placeholder="lugar" (texted)="apellidos = $event"></app-input>
-        </div>
-        <div class="item small">
-          <app-select [data]="['Hombre','Mujer','Otro']" titulo="Sexo"
-                      (selected)="tipo_doc = $event"></app-select>
-        </div>
-        <div class="item small">
-          <app-select [data]="['O+','O-','A+','A+','A-','B+','B-','AB+','AB-']" titulo="RH"
-                      (selected)="tipo_doc = $event"></app-select>
-        </div>
-
-        <div class="item small">
-          <app-select [data]="['Blanco','Meztillo','Criollo', 'Indigena']" titulo="Raza"
-                      (selected)="tipo_doc = $event"></app-select>
-        </div>
-
-        <div class="line"></div>
-        <div class="ttl">Contacto</div>
-        <div class="item medium">
-          <app-input name="Telefono" placeholder="lugar" (texted)="apellidos = $event"></app-input>
-        </div>
-        <div class="line"></div>
-
-        <div class="item small">
-          <app-select [data]="['carrrera','calle','Transversal', 'Diagonal']" titulo="item1"
-                      (selected)="tipo_doc = $event"></app-select>
-        </div>
-        <div class="item small">
-          <app-input name="No" placeholder="lugar" (texted)="apellidos = $event"></app-input>
-        </div>
-
-        <div class="item small">
-          <app-input name="No" placeholder="lugar" (texted)="apellidos = $event"></app-input>
-        </div>
-
-
-        <div class="item small">
-          <app-select [data]="['casa','apto','Unidad', 'Finca']" titulo="vivienda"
-                      (selected)="tipo_doc = $event"></app-select>
-        </div>
-
-        <div class="item small">
-          <app-input name="Barrio" placeholder="lugar" (texted)="apellidos = $event"></app-input>
-        </div>
-        <div class="item small">
-          <app-input name="Ciudad" placeholder="lugar" (texted)="apellidos = $event"></app-input>
-        </div>
-
-
-        <div class="item small">
-          <app-input name="Departamento" placeholder="Dept" (texted)="apellidos = $event"></app-input>
-        </div>
-
-        <div class="item medium">
-          <app-input name="email" placeholder="email" (texted)="apellidos = $event"></app-input>
-        </div>
-        <div class="line"></div>
-        <div class="ttl">Datos Personales</div>
-        <div class="item small">
-          <app-select [data]="['Estudiante','independiente','Asalareado']" titulo="Ocupación"
-                      (selected)="tipo_doc = $event"></app-select>
-        </div>
-
-        <div class="item medium">
-          <app-input name="Institción" placeholder="Institución" (texted)="apellidos = $event"></app-input>
-        </div>
-
-        <div class="item small">
-          <app-select [data]="['carrrera','calle','Transversal', 'Diagonal']" titulo="item1"
-                      (selected)="tipo_doc = $event"></app-select>
-        </div>
-        <div class="item small">
-          <app-input name="No" placeholder="lugar" (texted)="apellidos = $event"></app-input>
-        </div>
-
-        <div class="item small">
-          <app-input name="No" placeholder="lugar" (texted)="apellidos = $event"></app-input>
-        </div>
-
-        <div class="item small">
-          <app-select [data]="['casa','apto','Unidad', 'Finca']" titulo="vivienda"
-                      (selected)="tipo_doc = $event"></app-select>
-        </div>
-
-        <div class="item small">
-          <app-input name="Barrio" placeholder="lugar" (texted)="apellidos = $event"></app-input>
-        </div>
-        <div class="item small">
-          <app-input name="Ciudad" placeholder="lugar" (texted)="apellidos = $event"></app-input>
-        </div>
-
-        <div class="item small">
-          <app-input name="Departamento" placeholder="Dept" (texted)="apellidos = $event"></app-input>
-        </div>
-
-        <div class="line"></div>
-        <div class="item small">
-          <app-select [data]="['soltera/o','viuda/o','casada/o', 'Unión libre','Separada/a']" titulo="Estado civil"
-                      (selected)="tipo_doc = $event"></app-select>
-        </div>
-      </div>
-      <!--<div class="line"></div>-->
-      <!--<div class="ttl">Responsables del Paciente</div>-->
+      <app-hc-basic></app-hc-basic>
     </app-tab>
-    <app-tab tabTitle="Anamnesis"></app-tab>
-
-    <app-tab tabTitle="Antecedentes">antecedentes</app-tab>
-
+    <app-tab tabTitle="Revisión por sistemas">
+      <app-hc-revision-por-sistem></app-hc-revision-por-sistem>
+    </app-tab>
+    <app-tab tabTitle="Exámen Fisico">
+      <app-hc-examen-fisico></app-hc-examen-fisico>
+    </app-tab>
     <app-tab tabTitle="Odontograma">
       <app-pg-odontograma></app-pg-odontograma>
     </app-tab>
-
-    <app-tab tabTitle="Diagnostico">Hola</app-tab>
-    <app-tab tabTitle="Final">Tab 2 Content</app-tab>
-
+    <app-tab tabTitle="Requerimientos de paciente">
+      <app-hc-examen-fisico></app-hc-examen-fisico>
+    </app-tab>
+    <app-tab tabTitle="Evolución">
+    </app-tab>
+    <app-tab tabTitle="Requerimientos">
+      <app-hc-requerimientos></app-hc-requerimientos>
+    </app-tab>
   </app-tabs>
-
-  <!--<div class="magicspace"></div>-->
-
-
-  <!--<div class="sttc">-->
-  <!--<div class="line">-->
-  <!--</div>-->
-  <!--<div class="btn" (click)="finalizarIngreso()">Finalizar Ingreso</div>-->
 </div>

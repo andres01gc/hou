@@ -39,7 +39,8 @@
   overflow-y: hidden;
 }
 
-.tabs li {
+.tb_hc {
+  font-weight: 300;
   margin-right: 2em;
   float: left;
   opacity: .3;
@@ -47,11 +48,17 @@
   color: #00234E;
 }
 
-.tabs li:hover {
-  opacity: 1;
+.tb_hc:hover {
   cursor: pointer;
-  color: #00234E;
+  opacity: .8;
+
 }
+
+.active {
+  font-weight: 500;
+  opacity: 1;
+}
+
 
 .hc_rbar {
 
@@ -79,8 +86,8 @@
 .hc-lf {
   padding: .5em;
   width: 80%;
-  height: 51em;
-  overflow-y: scroll;
+  height: 63em;
+  overflow-y: auto;
 }
 
 .hc-rg {
@@ -89,3 +96,4 @@
   width: 20%;
   height: 51em;
 }
+
