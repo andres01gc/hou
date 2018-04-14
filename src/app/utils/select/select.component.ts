@@ -9,7 +9,6 @@ export class SelectComponent implements OnInit {
   @Input() titulo: string;
   @Input() data: any[];
   @Output() selected = new EventEmitter();
-
   // @Input() placeholder: string;
   constructor() {
   }

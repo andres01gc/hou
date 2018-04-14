@@ -62,6 +62,8 @@ import {UserResumenComponent} from './user-resumen/user-resumen.component';
 import { HcRequerimientosComponent } from './hc-requerimientos/hc-requerimientos.component';
 import { UserResponsableComponent } from './user-responsable/user-responsable.component';
 import { CardEvolucionComponent } from './card-evolucion/card-evolucion.component';
+import { AppMintabComponent } from './app-mintab/app-mintab.component';
+import {SupportDataService} from './services/datasuport';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -183,12 +185,13 @@ export const environment = {
     UserResumenComponent,
     HcRequerimientosComponent,
     UserResponsableComponent,
-    CardEvolucionComponent],
+    CardEvolucionComponent,
+    AppMintabComponent],
 
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, AngularFireModule.initializeApp(environment.firebase), AngularFireDatabaseModule,
     AngularFireAuthModule, FormsModule],
-  providers: [AuthService, DataService],
+  providers: [AuthService, DataService,SupportDataService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

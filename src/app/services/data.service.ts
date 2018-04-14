@@ -10,7 +10,6 @@ export class DataService {
   houUser: { email; nombres: any | string; apellidos: any | string; sexo: any | string; especialidad: any | string };
   db: AngularFireDatabase;
   paciente_buscado: any;
-
   constructor(db: AngularFireDatabase) {
     this.db = db;
   }

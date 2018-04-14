@@ -30,18 +30,16 @@ export class LoginComponent implements OnInit {
       .signInWithEmailAndPassword(email, pass)
 
       .then(auth => {
-          console.log('si entró my nigga!');
+          console.log('¡usuario identificado!');
           this.data.showmenu = true;
           this.getInfoCurrentUser(auth);
         }
       )
       .catch(err => {
-        // console.log('nonas, no entró');
         console.log(err);
         if (err.code.indexOf('auth/user-not-found') >= 0) {
           this.msg = 'Parece que ese usuario no existe... :/';
         }
-
         if (err.code.indexOf('auth/wrong-password') >= 0) {
           this.msg = 'parece que la contraseña es incorrecta.';
         }
@@ -54,7 +52,7 @@ export class LoginComponent implements OnInit {
   getInfoCurrentUser(auth: any) {
     this.db.object('users/' + auth.uid).valueChanges().subscribe(item => {
         console.log(item);
-        this.router.navigate(['/perfil/servicios']);
+        this.router.navigate(['/perfil/']);
       }
     );
   }
