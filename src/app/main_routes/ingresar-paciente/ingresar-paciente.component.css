@@ -86,15 +86,21 @@
 
 }
 
+.inpc {
+  height: 100%;
+  width: 100%;
+}
+
 .ip_main {
   /*background-color: #00ABA0;*/
-  height: 72vh;
+  height: 92.5%;
   width: auto;
-  /*min-height: 100%;*/
   overflow-y: auto;
   margin: 0;
   padding: 0;
 }
+
+
 
 .small {
   flex-basis: 16.5%;

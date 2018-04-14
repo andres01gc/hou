@@ -12,7 +12,7 @@ import {AngularFireDatabase} from 'angularfire2/database';
 })
 export class NavbarComponent implements OnInit, AfterViewInit {
   active = false;
-  private mostrarIngreso = true;
+  private mostrarIngreso = false;
   today = Date.now();
 
   @ViewChild(SnakbarComponent)
