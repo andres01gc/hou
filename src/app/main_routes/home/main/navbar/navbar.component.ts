@@ -12,7 +12,7 @@ import {AngularFireDatabase} from 'angularfire2/database';
 })
 export class NavbarComponent implements OnInit, AfterViewInit {
   active = false;
-  private mostrarIngreso = false;
+  private mostrarIngreso = true;
   today = Date.now();
 
   @ViewChild(SnakbarComponent)
@@ -32,7 +32,6 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 // TODO POR AHORA, LAS BUSQUEDAS SOLO FUNCIONAN PARA CÉDULAS
     this.db.object('pacientes/cc/' + (<HTMLInputElement>event.target).value).valueChanges().subscribe(item => {
         if (item != null) {
-          // TODO REMPLAZAR LA INFORMACIÓN DE LA PANTALLA DE PACIENTE!
           console.log(item);
           this.data.paciente_buscado = item;
           this.router.navigate(['/paciente']);
