@@ -16,9 +16,8 @@ export class IngresarPacienteComponent implements OnInit {
   @ViewChild(HcBasicComponent) basicComponent: HcBasicComponent;
   @ViewChild(HcRevisionPorSistemComponent) revision_sistema: HcRevisionPorSistemComponent;
   @ViewChild(HcExamenFisicoComponent) examen_fisico: HcExamenFisicoComponent;
-  // @ContentChildren(PgOdontogramaComponent) odontograma: PgOdontogramaComponent;
-  // @ContentChildren(HcRequerimientosComponent) requerimientos_paciente: HcRequerimientosComponent;
-
+  @ViewChild(PgOdontogramaComponent) odontograma: PgOdontogramaComponent;
+  @ViewChild(HcRequerimientosComponent) requerimientos_paciente: HcRequerimientosComponent;
 
   constructor(private data: DataService) {
   }
@@ -34,6 +33,8 @@ export class IngresarPacienteComponent implements OnInit {
   testing() {
     console.log(this.basicComponent.data);
     console.log(this.revision_sistema.data);
+    console.log(this.odontograma.data);
+    console.log(this.requerimientos_paciente.data);
   }
 }
 
