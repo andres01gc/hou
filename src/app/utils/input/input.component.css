@@ -15,6 +15,10 @@
   /*background-color: rgba(0, 0, 0, 0.03);*/
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: .3em;
+  /*padding-left: .8em;*/
+}
+
+.ii {
   padding-left: .8em;
 }
 

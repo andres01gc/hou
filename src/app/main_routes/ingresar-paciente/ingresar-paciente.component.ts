@@ -1,4 +1,4 @@
-import {Component, ContentChildren, OnInit, QueryList} from '@angular/core';
+import {Component, ContentChildren, OnInit, QueryList, ViewChild} from '@angular/core';
 import {DataService} from '../../services/data.service';
 import {TabComponent} from '../../tab/tab.component';
 import {HcBasicComponent} from '../../historia/hc-pages/hc-basic/hc-basic.component';
@@ -13,11 +13,11 @@ import {HcRequerimientosComponent} from '../../hc-requerimientos/hc-requerimient
   styleUrls: ['./ingresar-paciente.component.css']
 })
 export class IngresarPacienteComponent implements OnInit {
-  @ContentChildren(HcBasicComponent) basicComponent: HcBasicComponent;
-  @ContentChildren(HcBasicComponent) revision_sistema: HcRevisionPorSistemComponent;
-  @ContentChildren(HcBasicComponent) examen_fisico: HcExamenFisicoComponent;
-  @ContentChildren(HcBasicComponent) odontograma: PgOdontogramaComponent;
-  @ContentChildren(HcBasicComponent) requerimientos_paciente: HcRequerimientosComponent;
+  @ViewChild(HcBasicComponent) basicComponent: HcBasicComponent;
+  @ViewChild(HcRevisionPorSistemComponent) revision_sistema: HcRevisionPorSistemComponent;
+  @ViewChild(HcExamenFisicoComponent) examen_fisico: HcExamenFisicoComponent;
+  // @ContentChildren(PgOdontogramaComponent) odontograma: PgOdontogramaComponent;
+  // @ContentChildren(HcRequerimientosComponent) requerimientos_paciente: HcRequerimientosComponent;
 
 
   constructor(private data: DataService) {
@@ -31,8 +31,9 @@ export class IngresarPacienteComponent implements OnInit {
     // itemRef.set({nombre: this.nombre, apellidos: this.apellidos, tipo_documento: this.tipo_doc, documento: this.documento});
   }
 
-  finalizarV2() {
+  testing() {
     console.log(this.basicComponent.data);
+    console.log(this.revision_sistema.data);
   }
 }
 
