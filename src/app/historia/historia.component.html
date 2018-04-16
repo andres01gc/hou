@@ -3,15 +3,15 @@
     <li routerLink="basico" class="rsm tb_hc" routerLinkActive="active">
       Información_básica
     </li>
-    <li class="tb_hc" routerLink="anamnesis" routerLinkActive="active">
-      Anamnesis
-    </li>
-    <li class="tb_hc" routerLink="antecedentes" routerLinkActive="active">
-      Antecedentes
-    </li>
-    <li class="tb_hc" routerLink="habitos" routerLinkActive="active">
-      Hábitos
-    </li>
+    <!--<li class="tb_hc" routerLink="anamnesis" routerLinkActive="active">-->
+    <!--Anamnesis-->
+    <!--</li>-->
+    <!--<li class="tb_hc" routerLink="antecedentes" routerLinkActive="active">-->
+    <!--Antecedentes-->
+    <!--</li>-->
+    <!--<li class="tb_hc" routerLink="habitos" routerLinkActive="active">-->
+    <!--Hábitos-->
+    <!--</li>-->
     <li class="tb_hc" routerLink="revision-sistema" routerLinkActive="active">
       Revisión_por_sistema
     </li>
@@ -19,48 +19,51 @@
     <li class="tb_hc" routerLink="ex-fisico" routerLinkActive="active">
       Exámen_físico
     </li>
-    <li class="tb_hc" routerLink="ex-fisico-craneofacial" routerLinkActive="active">
-      Exámen_físico_craneofacial
-    </li>
 
-    <li class="tb_hc" routerLink="ex-estomatologico" routerLinkActive="active">
-      Examen_estomatológico
-    </li>
+    <!--<li class="tb_hc" routerLink="ex-fisico-craneofacial" routerLinkActive="active">-->
+    <!--Exámen_físico_craneofacial-->
+    <!--</li>-->
+
+    <!--<li class="tb_hc" routerLink="ex-estomatologico" routerLinkActive="active">-->
+    <!--Examen_estomatológico-->
+    <!--</li>-->
 
     <li class="tb_hc" routerLink="odontograma" routerLinkActive="active">
       Odontograma
     </li>
-    <li class="tb_hc" routerLink="periodontograma" routerLinkActive="active">
-      Periodontograma
-    </li>
-    <li class="tb_hc" routerLink="ex-periodontal" routerLinkActive="active">
-      Examen periodontal
-    </li>
-    <li class="tb_hc" routerLink="desc-radiografica" routerLinkActive="active">
-      Descripción_radiográfica
-    </li>
-    <li class="tb_hc" routerLink="diagnostico" routerLinkActive="active">
-      Diagnóstico
-    </li>
-    <li class="tb_hc" routerLink="diagnostico-por-diente" routerLinkActive="active">
-      Diagnóstico_por_diente
-    </li>
-    <li class="tb_hc" routerLink="tratamiento" routerLinkActive="active">
-      tratamiento
-    </li>
-    <li class="tb_hc" routerLink="consentimiento" routerLinkActive="active">
-      consentimiento
-    </li>
-    <li class="tb_hc" routerLink="evolucion" routerLinkActive="active">
-      evolución
-    </li>
+    <!--<li class="tb_hc" routerLink="periodontograma" routerLinkActive="active">-->
+    <!--Periodontograma-->
+    <!--</li>-->
+    <!--<li class="tb_hc" routerLink="ex-periodontal" routerLinkActive="active">-->
+    <!--Examen periodontal-->
+    <!--</li>-->
+    <!--<li class="tb_hc" routerLink="desc-radiografica" routerLinkActive="active">-->
+    <!--Descripción_radiográfica-->
+    <!--</li>-->
+    <!--<li class="tb_hc" routerLink="diagnostico" routerLinkActive="active">-->
+    <!--Diagnóstico-->
+    <!--</li>-->
+    <!--<li class="tb_hc" routerLink="diagnostico-por-diente" routerLinkActive="active">-->
+    <!--Diagnóstico_por_diente-->
+    <!--</li>-->
+    <!--<li class="tb_hc" routerLink="tratamiento" routerLinkActive="active">-->
+    <!--tratamiento-->
+    <!--</li>-->
+    <!--<li class="tb_hc" routerLink="consentimiento" routerLinkActive="active">-->
+    <!--consentimiento-->
+    <!--</li>-->
+    <!--<li class="tb_hc" routerLink="evolucion" routerLinkActive="active">-->
+    <!--evolución-->
+    <!--</li>-->
   </ul>
 
   <div class="magicspace"></div>
   <div class="hc_content">
+
     <div class="hc-lf">
-      <router-outlet></router-outlet>
+      <router-outlet (activate)="onActivate($event)"></router-outlet>
     </div>
+
     <!--<div class="hc-rg">-->
     <!--</div>-->
   </div>

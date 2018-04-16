@@ -7,28 +7,28 @@
   </div>
   <div class="magicspace"></div>
   <div class="ip_main">
-    <div (click)="testing()">a.sdjvbasjdvbasjbdvasdvbasjdbvlj</div>
+    <p (click)="testing()"></p>
     <app-tabs>
       <app-tab tabTitle="Información Básica">
-        <app-hc-basic></app-hc-basic>
+        <app-hc-basic [lock]="false"></app-hc-basic>
       </app-tab>
       <app-tab tabTitle="Revisión por sistemas">
-        <app-hc-revision-por-sistem></app-hc-revision-por-sistem>
+        <app-hc-revision-por-sistem [lock]="false"></app-hc-revision-por-sistem>
       </app-tab>
-
       <app-tab tabTitle="Exámen Fisico">
-        <app-hc-examen-fisico></app-hc-examen-fisico>
+        <app-hc-examen-fisico [lock]="false" > </app-hc-examen-fisico>
       </app-tab>
       <app-tab tabTitle="Odontograma">
-        <app-pg-odontograma></app-pg-odontograma>
+        <app-pg-odontograma [lock]="false"></app-pg-odontograma>
       </app-tab>
       <app-tab tabTitle="Requerimientos de paciente">
-        <app-hc-requerimientos></app-hc-requerimientos>
+        <app-hc-requerimientos [lock]="false"></app-hc-requerimientos>
       </app-tab>
-      <app-tab tabTitle="Evolución">
+      <app-tab tabTitle="Final">
+        <div class="finalizar_ingreso" (click)="finalizarIngreso()">Finalizar ingreso</div>
       </app-tab>
-      <app-tab tabTitle="Requerimientos">
-      </app-tab>
+      <!--<app-tab tabTitle="Requerimientos">-->
+      <!--</app-tab>-->
     </app-tabs>
   </div>
 </div>

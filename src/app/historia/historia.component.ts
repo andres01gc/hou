@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HcBasicComponent} from './hc-pages/hc-basic/hc-basic.component';
+import {DataService} from '../services/data.service';
+import {HcRevisionPorSistemComponent} from './hc-pages/hc-revision-por-sistem/hc-revision-por-sistem.component';
+import {HcExamenFisicoComponent} from './hc-pages/hc-examen-fisico/hc-examen-fisico.component';
+import {PgOdontogramaComponent} from '../pg-odontograma/pg-odontograma.component';
+import {HcRequerimientosComponent} from '../hc-requerimientos/hc-requerimientos.component';
 
 @Component({
   selector: 'app-historia',
@@ -7,9 +13,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoriaComponent implements OnInit {
 
-  constructor() { }
+  constructor(public data: DataService) {
+  }
 
   ngOnInit() {
   }
 
+  onActivate(v: any) {
+    switch (v.constructor.name) {
+      case 'HcBasicComponent':
+        v.changeData(this.data.paciente_buscado.info_basica);
+        break;
+
+      case 'HcRevisionPorSistemComponent':
+        v.changeData(this.data.paciente_buscado.revision_sistema);
+        break;
+
+      // case 'HcExamenFisicoComponent':
+      //   v.changeData(this.data.paciente_buscado.info_basica);
+      //   break;
+
+      case 'PgOdontogramaComponent':
+        v.changeData(this.data.paciente_buscado.odontograma);
+        break;
+
+      case 'HcRequerimientosComponent':
+        v.changeData(this.data.paciente_buscado.requerimientos_paciente);
+        break;
+    }
+  }
 }

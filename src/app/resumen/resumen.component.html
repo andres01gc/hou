@@ -5,27 +5,25 @@
 <main class="main">
   <div class="img_paciente">
   </div>
-  <div class="nombre">Mario Pérez Sánchez</div>
-  <div class="doc">CC 11.125.256</div>
-  <div class="mas_info">hombre, 27 años</div>
+  <div class="nombre">{{p.info_basica.identidad.nombre}} {{p.info_basica.identidad.apellidos}}</div>
+  <div class="doc">{{p.info_basica.identidad.tipo_documento}} {{p.info_basica.identidad.documento}}</div>
+  <div class="mas_info">{{p.info_basica.identidad.sexo}}, {{getAnos()}}</div>
+
   <!--<div class="rs-hl"></div>-->
-
-
   <!--<div class="noti_content">-->
-    <!--<div class="noti_cita">-->
-      <!--<div class="not_icon">-->
-        <!--<img class="icon" src="/assets/navbar/not_icon.svg">-->
-      <!--</div>-->
-      <!--<div class="prox_cita">Próxima cita: 7 feb, 7:30 am</div>-->
-    <!--</div>-->
+  <!--<div class="noti_cita">-->
+  <!--<div class="not_icon">-->
+  <!--<img class="icon" src="/assets/navbar/not_icon.svg">-->
+  <!--</div>-->
+  <!--<div class="prox_cita">Próxima cita: 7 feb, 7:30 am</div>-->
+  <!--</div>-->
   <!--</div>-->
 
   <div class="card">
     <h4 class="ttl_ult">Última evolución</h4>
     <div class="line"></div>
 
-    <div class="ult_ev"> culpa deleniti eligendi, enim eos hic nesciunt omnis quaerat quasi ratione rem repellat
-      similique ut...
+    <div class="ult_ev"> aún sin evolucionar
     </div>
 
   </div>
@@ -33,26 +31,17 @@
   <div class="card">
 
     <h4 class="ttl_ult">Información general</h4>
-
     <div class="line"></div>
 
-    <div class="item">
-      <div>telefono móvil</div>
-      <div>312 457 48 56</div>
-    </div>
-
-    <div class="item">
-      <div>teléfono fijo</div>
-      <div>385 78 56</div>
+    <div class="item" *ngFor="let tl of tels">
+      <div>{{tl.tipo}}</div>
+      <div>{{tl.num}}</div>
     </div>
 
     <div class="item">
       <div>email</div>
-      <div>correo@gmail.com</div>
+      <div>{{p.info_basica.contacto.email}}</div>
     </div>
-
   </div>
-
-
 </main>
 

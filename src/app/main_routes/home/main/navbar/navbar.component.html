@@ -1,6 +1,6 @@
 <div class="nb_ingreso" [ngClass]="{'show' : !mostrarIngreso}">
   <div class="nb_card_ingreso">
-    <app-ingresar-paciente></app-ingresar-paciente>
+    <app-ingresar-paciente (terminado)="finalizarIngreso()"></app-ingresar-paciente>
   </div>
 </div>
 
@@ -8,9 +8,7 @@
   <div class="nv-ico-logo-container">
     <img class="icon nv-ic-logo" src="/assets/navbar/logo.svg">
   </div>
-
   <div class="nv-vline"></div>
-
   <div class="nv-main-container">
     <div class="nv-name">Universidad del Valle</div>
     <div class="nv-esp">{{today | date:'fullDate'}} {{today | date:'shortTime'}}</div>

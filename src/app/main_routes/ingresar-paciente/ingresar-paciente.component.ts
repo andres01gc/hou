@@ -1,4 +1,4 @@
-import {Component, ContentChildren, OnInit, QueryList, ViewChild} from '@angular/core';
+import {Component, ContentChildren, EventEmitter, OnInit, Output, QueryList, ViewChild} from '@angular/core';
 import {DataService} from '../../services/data.service';
 import {TabComponent} from '../../tab/tab.component';
 import {HcBasicComponent} from '../../historia/hc-pages/hc-basic/hc-basic.component';
@@ -18,6 +18,7 @@ export class IngresarPacienteComponent implements OnInit {
   @ViewChild(HcExamenFisicoComponent) examen_fisico: HcExamenFisicoComponent;
   @ViewChild(PgOdontogramaComponent) odontograma: PgOdontogramaComponent;
   @ViewChild(HcRequerimientosComponent) requerimientos_paciente: HcRequerimientosComponent;
+  @Output() terminado = new EventEmitter();
 
   constructor(private data: DataService) {
   }
@@ -25,16 +26,24 @@ export class IngresarPacienteComponent implements OnInit {
   ngOnInit() {
   }
 
+
   finalizarIngreso() {
-    // const itemRef = this.data.db.object('pacientes/' + this.tipo_doc + '/' + this.documento);
-    // itemRef.set({nombre: this.nombre, apellidos: this.apellidos, tipo_documento: this.tipo_doc, documento: this.documento});
+    var itemRef = this.data.db.object('pacientes/' + this.basicComponent.data.identidad.tipo_documento + '/' + this.basicComponent.data.identidad.documento);
+    itemRef.set({
+      info_basica: this.basicComponent.data,
+      revision_sistema: this.revision_sistema.data,
+      odontograma: this.odontograma.data,
+      requerimientos_paciente: this.requerimientos_paciente.data
+    });
+
+    this.terminado.emit(true);
   }
 
   testing() {
-    console.log(this.basicComponent.data);
-    console.log(this.revision_sistema.data);
-    console.log(this.odontograma.data);
-    console.log(this.requerimientos_paciente.data);
+    // console.log(this.basicComponent.data);
+    // console.log(this.revision_sistema.data);
+    // console.log(this.odontograma.data);
+    // console.log(this.requerimientos_paciente.data);
   }
 }
 
