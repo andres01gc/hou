@@ -7,9 +7,10 @@ import {AngularFireDatabase} from 'angularfire2/database';
 export class DataService {
   showmenu = true;
   user: Observable<firebase.User>;
-  houUser: { email; nombres: any | string; apellidos: any | string; sexo: any | string; especialidad: any | string };
   db: AngularFireDatabase;
   paciente_buscado: any;
+  servicio_seleccionado: any;
+
   constructor(db: AngularFireDatabase) {
     this.db = db;
   }

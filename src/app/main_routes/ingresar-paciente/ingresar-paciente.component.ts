@@ -26,24 +26,39 @@ export class IngresarPacienteComponent implements OnInit {
   ngOnInit() {
   }
 
-
   finalizarIngreso() {
-    var itemRef = this.data.db.object('pacientes/' + this.basicComponent.data.identidad.tipo_documento + '/' + this.basicComponent.data.identidad.documento);
+    var itemRef = this.data.db.object('pacientes/' + this.basicComponent.data.identidad.tipo_documento + '/' +
+      this.basicComponent.data.identidad.documento + '/historia');
+    //  se guarda los datos en la historia clínica inicial.
     itemRef.set({
       info_basica: this.basicComponent.data,
       revision_sistema: this.revision_sistema.data,
       odontograma: this.odontograma.data,
+      examen_fisico: this.examen_fisico.data,
       requerimientos_paciente: this.requerimientos_paciente.data
     });
 
+    var items = this.data.db.object('pacientes/' + this.basicComponent.data.identidad.tipo_documento + '/' + this.basicComponent.data.identidad.documento + '/servicios/activos');
+    items.set([{
+        estado: 'ACTIVO',
+        nombre: 'Prueba de estados',
+        tipo_servicio: 'periodoncia',
+        diagnostico: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, beatae commodi fuga incidunt odit placeat quo' +
+        ' soluta vel vero voluptate. Cupiditate dolorum exercitationem maiores necessitatibus neque officiis sed sunt veritatis!',
+        evoluciones: [{fecha: '', contenido: ''}],
+        citas: {
+          id_cita: [
+            {
+              persona_asignada: {},
+              fecha_asignada: {}
+            }
+          ]
+        },
+        prox_cita: 'aún no se ha asignado cita'
+      }
+      ]
+    );
     this.terminado.emit(true);
-  }
-
-  testing() {
-    // console.log(this.basicComponent.data);
-    // console.log(this.revision_sistema.data);
-    // console.log(this.odontograma.data);
-    // console.log(this.requerimientos_paciente.data);
   }
 }
 

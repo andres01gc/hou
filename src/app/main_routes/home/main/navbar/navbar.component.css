@@ -143,6 +143,14 @@
 
 }
 
+.icon {
+  position: relative;
+  width: 15px;
+  display: flex;
+  margin: 0 auto;
+}
+
+
 .nv-vline {
   width: 1px;
   height: auto;

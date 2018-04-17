@@ -22,24 +22,25 @@ export class HistoriaComponent implements OnInit {
   onActivate(v: any) {
     switch (v.constructor.name) {
       case 'HcBasicComponent':
-        v.changeData(this.data.paciente_buscado.info_basica);
+        v.changeData(this.data.paciente_buscado.historia.info_basica);
         break;
 
       case 'HcRevisionPorSistemComponent':
-        v.changeData(this.data.paciente_buscado.revision_sistema);
+        v.changeData(this.data.paciente_buscado.historia.revision_sistema);
         break;
 
-      // case 'HcExamenFisicoComponent':
-      //   v.changeData(this.data.paciente_buscado.info_basica);
-      //   break;
+      case 'HcExamenFisicoComponent':
+        v.changeData(this.data.paciente_buscado.historia.examen_fisico);
+        break;
 
       case 'PgOdontogramaComponent':
-        v.changeData(this.data.paciente_buscado.odontograma);
+        v.changeData(this.data.paciente_buscado.historia.odontograma);
         break;
 
       case 'HcRequerimientosComponent':
-        v.changeData(this.data.paciente_buscado.requerimientos_paciente);
+        v.changeData(this.data.paciente_buscado.historia.requerimientos_paciente);
         break;
     }
   }
+
 }

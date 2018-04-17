@@ -5,18 +5,19 @@
     </div>
 
     <div class="main-info-container">
-      <p class="nombre">Extracción de cordales</p>
-      <p class="especialidad">Próxima cita: 7 de Feb. 08:40am</p>
+      <p class="nombre">{{serv.nombre}}</p>
+
+      <p class="especialidad">{{serv.prox_cita === "" ? "Aún no se ha asignado una cita" : serv.prox_cita }}</p>
+
     </div>
 
   </div>
   <div class="botton-container">
-    <p class="resumen">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aliquid aperiam assumenda
-      deleniti deserunt
-      ducimus...</p>
+    <p class="diagnostico">{{serv.diagnostico}}</p>
   </div>
 
   <div class="btns">
-    <p routerLink="/paciente/serv">Ver detalles</p>
+    <p (click)="seleccionarServicio()"routerLink="/paciente/serv">Ver detalles</p>
   </div>
+
 </div>

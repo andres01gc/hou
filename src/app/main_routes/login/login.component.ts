@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
 
   getInfoCurrentUser(auth: any) {
     this.db.object('users/' + auth.uid).valueChanges().subscribe(item => {
-        console.log(item);
+        // console.log(item);
         this.router.navigate(['/perfil/']);
       }
     );
