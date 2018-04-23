@@ -57,13 +57,14 @@ import {ItemDirComponent} from './items/item-dir/item-dir.component';
 import {AppCheckboxComponent} from './app-checkbox/app-checkbox.component';
 import {MultipleComponent} from './items/multiple/multiple.component';
 import {UserServiciosComponent} from './user-servicios/user-servicios.component';
-import {UserCitasComponent} from './user-citas/user-citas.component';
+import {ServicioUserComponent} from './user-citas/user-citas.component';
 import {UserResumenComponent} from './user-resumen/user-resumen.component';
 import {HcRequerimientosComponent} from './hc-requerimientos/hc-requerimientos.component';
 import {UserResponsableComponent} from './user-responsable/user-responsable.component';
 import {CardEvolucionComponent} from './card-evolucion/card-evolucion.component';
 import {AppMintabComponent} from './app-mintab/app-mintab.component';
 import {SupportDataService} from './services/datasuport';
+import {AdvertenciaIniciarServicioComponent} from './advertencia-iniciar-servicio/advertencia-iniciar-servicio.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -71,11 +72,9 @@ const appRoutes: Routes = [
   {
     path: '', component: MainComponent, children: [
       {
-        path: '', component: InicioComponent
-      }, {
-        path: 'perfil', component: PerfilComponent, children: [
+        path: '', component: PerfilComponent, children: [
           {path: '', component: UserServiciosComponent},
-          {path: 'citas', component: UserCitasComponent}
+          {path: 'servicio', component: ServicioUserComponent}
         ]
       },
       {
@@ -181,12 +180,13 @@ export const environment = {
     AppCheckboxComponent,
     MultipleComponent,
     UserServiciosComponent,
-    UserCitasComponent,
+    ServicioUserComponent,
     UserResumenComponent,
     HcRequerimientosComponent,
     UserResponsableComponent,
     CardEvolucionComponent,
-    AppMintabComponent],
+    AppMintabComponent,
+    AdvertenciaIniciarServicioComponent],
 
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, AngularFireModule.initializeApp(environment.firebase), AngularFireDatabaseModule,

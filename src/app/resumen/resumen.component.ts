@@ -16,7 +16,6 @@ export class ResumenComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
   getAnos(): string {
@@ -24,6 +23,5 @@ export class ResumenComponent implements OnInit {
     const bd = new Date(this.p.info_basica.identidad.fecha_nacimiento).valueOf();
     return ((as - bd) / (1000 * 60 * 60 * 24 * 365)) + ' años';
   }
-
 }
 
