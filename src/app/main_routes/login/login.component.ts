@@ -51,8 +51,19 @@ export class LoginComponent implements OnInit {
 
   getInfoCurrentUser(auth: any) {
     this.db.object('users/' + auth.uid).valueChanges().subscribe(item => {
-        // console.log(item);
+        this.data.info_usuario_logueado = item;
+        this.obtenerServiciosUsuarioLogueado();
         this.router.navigate(['/']);
+      }
+    );
+  }
+
+  obtenerServiciosUsuarioLogueado() {
+    // TODO se debe buscar los servicios propios del usuaario, para pruebas se seleccionarán todos los servicios sin asignar
+    this.db.list('servicios_sin_asignar/especialidad_x').valueChanges().subscribe(servicios => {
+        console.log(servicios);
+        this.data.info_usuario_logueado = servicios;
+        // console.log('servicios    ' + servicios.length);
       }
     );
   }

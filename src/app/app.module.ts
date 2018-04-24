@@ -65,6 +65,9 @@ import {CardEvolucionComponent} from './card-evolucion/card-evolucion.component'
 import {AppMintabComponent} from './app-mintab/app-mintab.component';
 import {SupportDataService} from './services/datasuport';
 import {AdvertenciaIniciarServicioComponent} from './advertencia-iniciar-servicio/advertencia-iniciar-servicio.component';
+import {IngresoHistoriaComponent} from './ingreso-historia/ingreso-historia.component';
+import {CancelarServicioComponent} from './cancelar-servicio/cancelar-servicio.component';
+import {ReasignarCitaComponent} from './reasignar-cita/reasignar-cita.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -74,7 +77,8 @@ const appRoutes: Routes = [
       {
         path: '', component: PerfilComponent, children: [
           {path: '', component: UserServiciosComponent},
-          {path: 'servicio', component: ServicioUserComponent}
+          {path: 'servicio/ingreso_historia', component: IngresoHistoriaComponent},
+          {path: 'servicio', component: PgServicioComponent}
         ]
       },
       {
@@ -186,7 +190,10 @@ export const environment = {
     UserResponsableComponent,
     CardEvolucionComponent,
     AppMintabComponent,
-    AdvertenciaIniciarServicioComponent],
+    AdvertenciaIniciarServicioComponent,
+    IngresoHistoriaComponent,
+    CancelarServicioComponent,
+    ReasignarCitaComponent],
 
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, AngularFireModule.initializeApp(environment.firebase), AngularFireDatabaseModule,

@@ -25,13 +25,17 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   ngOnInit() {
   }
 
+  test() {
+    console.log('probando pro');
+  }
+
   ngAfterViewInit(): void {
   }
 
   buscar(event: any) {
 // TODO POR AHORA, LAS BUSQUEDAS SOLO FUNCIONAN PARA CÉDULAS
-    this.db.object('pacientes/CC/' + (<HTMLInputElement>event.target).value).valueChanges().subscribe(item => {
-        if (item != null) {
+    this.db.object('pacientes/CC/' + (<HTMLInputElement>event.target).value).snapshotChanges().subscribe(item => {
+        if (item.payload.val() != null) {
           console.log(item);
           this.data.paciente_buscado = item;
           this.router.navigate(['/paciente']);

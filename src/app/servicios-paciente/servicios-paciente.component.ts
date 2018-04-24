@@ -19,10 +19,12 @@ export class ServiciosPacienteComponent implements OnInit {
   }
 
   organizarServicios() {
-    this.servicios_activos = this.data.paciente_buscado.servicios.activos;
-    console.log('Servicios Activos');
+    // console.log('ppppppp');
+    console.log(this.data.paciente_buscado.payload.val().servicios.activos);
+    this.servicios_activos = this.data.paciente_buscado.payload.val().servicios.activos;
+    // console.log('Servicios Activos');
     // console.log(this.servicios_activos);
-    this.servicio_finalizados = this.data.paciente_buscado.servicios.finalizados;
-    this.servicios_incompletos = this.data.paciente_buscado.servicios.incompletos;
+    // this.servicio_finalizados = this.data.paciente_buscado.servicios.finalizados;
+    // this.servicios_incompletos = this.data.paciente_buscado.servicios.incompletos;
   }
 }

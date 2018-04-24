@@ -57,7 +57,7 @@
   padding: 0;
   width: 100%;
   height: 89vh;
-  overflow-y: scroll;
+  /*overflow-y: scroll;*/
 }
 
 .rs_main_cont {

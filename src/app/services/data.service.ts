@@ -10,6 +10,10 @@ export class DataService {
   db: AngularFireDatabase;
   paciente_buscado: any;
   servicio_seleccionado: any;
+  servicio_usuario_seleccionado: any;
+  servicios_usuario_logueado: any;
+  info_usuario_logueado: any;
+
 
   constructor(db: AngularFireDatabase) {
     this.db = db;

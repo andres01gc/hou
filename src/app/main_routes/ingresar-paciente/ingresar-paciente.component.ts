@@ -38,26 +38,30 @@ export class IngresarPacienteComponent implements OnInit {
       requerimientos_paciente: this.requerimientos_paciente.data
     });
 
+    var servicio = {
+      estado: 'ACTIVO',
+      nombre: 'Prueba de estados',
+      tipo_servicio: 'periodoncia',
+      diagnostico: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, beatae commodi fuga incidunt odit placeat quo' +
+      ' soluta vel vero voluptate. Cupiditate dolorum exercitationem maiores necessitatibus neque officiis sed sunt veritatis!',
+      evoluciones: [{fecha: '', contenido: ''}],
+      citas: {
+        id_cita: [
+          {
+            persona_asignada: {},
+            fecha_asignada: {}
+          }
+        ]
+      },
+      prox_cita: 'aún no se ha asignado cita'
+    };
+
     var items = this.data.db.object('pacientes/' + this.basicComponent.data.identidad.tipo_documento + '/' + this.basicComponent.data.identidad.documento + '/servicios/activos');
-    items.set([{
-        estado: 'ACTIVO',
-        nombre: 'Prueba de estados',
-        tipo_servicio: 'periodoncia',
-        diagnostico: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, beatae commodi fuga incidunt odit placeat quo' +
-        ' soluta vel vero voluptate. Cupiditate dolorum exercitationem maiores necessitatibus neque officiis sed sunt veritatis!',
-        evoluciones: [{fecha: '', contenido: ''}],
-        citas: {
-          id_cita: [
-            {
-              persona_asignada: {},
-              fecha_asignada: {}
-            }
-          ]
-        },
-        prox_cita: 'aún no se ha asignado cita'
-      }
-      ]
+    items.set([servicio]
     );
+
+    var i = this.data.db.list('servicios_sin_asignar/especialidad_x');
+    i.push(servicio);
     this.terminado.emit(true);
   }
 }

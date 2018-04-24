@@ -7,12 +7,10 @@ import {DataService} from '../services/data.service';
   styleUrls: ['./resumen.component.css']
 })
 export class ResumenComponent implements OnInit {
-  p: any = this.data.paciente_buscado.historia;
+  p: any = this.data.paciente_buscado.payload.val().historia;
   tels: any = [];
 
   constructor(private data: DataService) {
-    // obtener telefonos
-    // this.tels = this.p.info_basica.contacto.telefonos;
   }
 
   ngOnInit() {
@@ -20,8 +18,11 @@ export class ResumenComponent implements OnInit {
 
   getAnos(): string {
     const as = (new Date().valueOf());
+    console.log('holu');
+    console.log(this.p.info_basica.identidad.fecha_nacimiento);
     const bd = new Date(this.p.info_basica.identidad.fecha_nacimiento).valueOf();
-    return ((as - bd) / (1000 * 60 * 60 * 24 * 365)) + ' años';
+    const edad = Math.trunc(((as - bd) / (1000 * 60 * 60 * 24 * 365)));
+    return edad + ' años';
   }
 }
 
