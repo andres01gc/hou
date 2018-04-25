@@ -39,7 +39,7 @@ export class IngresarPacienteComponent implements OnInit {
       tipo_servicio: 'periodoncia',
       diagnostico: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, beatae commodi fuga incidunt odit placeat quo' +
       ' soluta vel vero voluptate. Cupiditate dolorum exercitationem maiores necessitatibus neque officiis sed sunt veritatis!',
-      evoluciones: [{fecha: '', contenido: ''}],
+      // evoluciones: [{fecha: '', contenido: ''}],
       id_paciente: this.data.current_uid,
       id: '',
       prox_cita: 'aún no se ha asignado cita'
