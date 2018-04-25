@@ -31,7 +31,8 @@ export class IngresarPacienteComponent implements OnInit {
     var servicio = {
       metadata: {
         tipo_doc: this.basicComponent.data.identidad.tipo_documento,
-        documento: this.basicComponent.data.identidad.documento
+        documento: this.basicComponent.data.identidad.documento,
+        inicio_historia: false,
       },
       estado: 'ACTIVO',
       nombre: 'Prueba de estados',
@@ -54,7 +55,7 @@ export class IngresarPacienteComponent implements OnInit {
     const itemHistoriaUsuario = this.data.db.object('pacientes/' + this.basicComponent.data.identidad.tipo_documento + '/' +
       this.basicComponent.data.identidad.documento);
     //  se guarda los datos en la historia clínica inicial.
-    itemHistoriaUsuario.set({
+    itemHistoriaUsuario.update({
         historia: {
           info_basica: this.basicComponent.data,
           revision_sistema: this.revision_sistema.data,
@@ -68,8 +69,9 @@ export class IngresarPacienteComponent implements OnInit {
     );
     this.terminado.emit(true);
   }
+
   asignarServicioAUsuario(servicio: any) {
-    this.data.db.object('usuarios/' + this.data.current_uid + '/servicios_activos').set([servicio]);
+    this.data.db.object('usuarios/' + this.data.current_uid + '/servicios_activos').update([servicio]);
   }
 }
 

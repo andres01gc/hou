@@ -18,6 +18,6 @@ export class CardServicioComponent implements OnInit {
 
   seleccionarServicio() {
     // console.log('sdvasdvasdvasdvasdvasdvadv');
-    this.data.servicio_seleccionado = this.serv;
+    this.data.servicio_seleccionado_paciente = this.serv;
   }
 }

@@ -8,7 +8,7 @@ export class DataService {
   public showmenu = true;
   public db: AngularFireDatabase;
   public paciente_buscado: any;
-  public servicio_seleccionado: any;
+  public servicio_seleccionado_paciente: any;
   public servicio_usuario_seleccionado: any;
   // sobre el usuario
   public servicios_usuario_logueado: any;

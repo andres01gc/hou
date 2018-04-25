@@ -68,6 +68,7 @@ import {AdvertenciaIniciarServicioComponent} from './advertencia-iniciar-servici
 import {IngresoHistoriaComponent} from './ingreso-historia/ingreso-historia.component';
 import {CancelarServicioComponent} from './cancelar-servicio/cancelar-servicio.component';
 import {ReasignarCitaComponent} from './reasignar-cita/reasignar-cita.component';
+import { PgEvolucionComponent } from './pg-evolucion/pg-evolucion.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -193,7 +194,8 @@ export const environment = {
     AdvertenciaIniciarServicioComponent,
     IngresoHistoriaComponent,
     CancelarServicioComponent,
-    ReasignarCitaComponent],
+    ReasignarCitaComponent,
+    PgEvolucionComponent],
 
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, AngularFireModule.initializeApp(environment.firebase), AngularFireDatabaseModule,
