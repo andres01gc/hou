@@ -1,8 +1,15 @@
 <div class="hc_hc">
+
+  <div class="hc-bloqueo" [hidden]="!data.paciente_buscado.payload.val().metadata.historia">
+    <div class="hc-bloque-msg">
+      <div>Para poder ver la historia, primero se debe atender, por lo menos, el primer servicio</div>
+    </div>
+  </div>
   <ul class="tabs">
     <li routerLink="basico" class="rsm tb_hc" routerLinkActive="active">
       Información_básica
     </li>
+
     <!--<li class="tb_hc" routerLink="anamnesis" routerLinkActive="active">-->
     <!--Anamnesis-->
     <!--</li>-->
@@ -63,9 +70,10 @@
 
     <div class="hc-lf">
       <router-outlet (activate)="onActivate($event)"></router-outlet>
+      <!--<div class="hc-rg">-->
+      <!--</div>-->
     </div>
-
-    <!--<div class="hc-rg">-->
-    <!--</div>-->
   </div>
+
+
 </div>

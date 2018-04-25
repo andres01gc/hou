@@ -18,8 +18,6 @@ export class ResumenComponent implements OnInit {
 
   getAnos(): string {
     const as = (new Date().valueOf());
-    console.log('holu');
-    console.log(this.p.info_basica.identidad.fecha_nacimiento);
     const bd = new Date(this.p.info_basica.identidad.fecha_nacimiento).valueOf();
     const edad = Math.trunc(((as - bd) / (1000 * 60 * 60 * 24 * 365)));
     return edad + ' años';

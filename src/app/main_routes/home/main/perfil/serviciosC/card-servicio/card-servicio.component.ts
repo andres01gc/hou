@@ -10,7 +10,6 @@ export class CardServicioComponent implements OnInit {
   @Input() serv: any;
 
   constructor(public data: DataService) {
-    console.log('asdvsdvasd advasdv asdvas 4etbw qwfvt3p');
     console.log(this.serv);
   }
 
@@ -19,7 +18,6 @@ export class CardServicioComponent implements OnInit {
 
   seleccionarServicio() {
     // console.log('sdvasdvasdvasdvasdvasdvadv');
-
     this.data.servicio_seleccionado = this.serv;
   }
 }

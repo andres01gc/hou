@@ -14,6 +14,7 @@ import {HcRequerimientosComponent} from '../hc-requerimientos/hc-requerimientos.
 export class HistoriaComponent implements OnInit {
 
   constructor(public data: DataService) {
+
   }
 
   ngOnInit() {
@@ -22,19 +23,19 @@ export class HistoriaComponent implements OnInit {
   onActivate(v: any) {
     switch (v.constructor.name) {
       case 'HcBasicComponent':
-        v.changeData(this.data.paciente_buscado.payload.val().historia.info_basica.payload.val());
+        v.changeData(this.data.paciente_buscado.payload.val().historia.info_basica);
         break;
 
       case 'HcRevisionPorSistemComponent':
-        v.changeData(this.data.paciente_buscado.payload.val().historia.revision_sistema.payload.val());
+        v.changeData(this.data.paciente_buscado.payload.val().historia.revision_sistema);
         break;
 
       case 'HcExamenFisicoComponent':
-        v.changeData(this.data.paciente_buscado.payload.val().historia.examen_fisico.payload.val());
+        v.changeData(this.data.paciente_buscado.payload.val().historia.examen_fisico);
         break;
 
       case 'PgOdontogramaComponent':
-        v.changeData(this.data.paciente_buscado.payload.val().historia.odontograma.payload.val());
+        v.changeData(this.data.paciente_buscado.payload.val().historia.odontograma);
         break;
 
       case 'HcRequerimientosComponent':
@@ -42,5 +43,4 @@ export class HistoriaComponent implements OnInit {
         break;
     }
   }
-
 }

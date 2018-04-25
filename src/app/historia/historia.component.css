@@ -22,10 +22,33 @@
   overflow-y: scroll;
 }
 
+.hc-bloqueo {
+  position: fixed;
+  display: flex;
+  /*para el responsive, se debe poner el width en 100*/
+  width: 80%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .8);
+  z-index: 8;
+}
+
 .magicspace {
   width: 100%;
   height: 3em;
   /*background-color: #FF6D00;*/
+}
+
+.hc-bloque-msg {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  padding: 1em;
+  background-color: #FCFCFC;
+  /*width: 50%;*/
+  /*height: auto;*/
+  border-radius: .2em;
+  text-align: center;
 }
 
 .main_tabs {
@@ -60,18 +83,18 @@
   color: #FF6D00;
 }
 
-.hc_rbar {
+/*.hc_rbar {*/
 
-  width: 20%;
-  height: 90vh;
-  background-color: rgba(252, 252, 252, 1);
+/*width: 20%;*/
+/*height: 90vh;*/
+/*background-color: rgba(252, 252, 252, 1);*/
 
-  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.14);
-  -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.14);
-  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.14);
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
-  z-index: 2;
-}
+/*-webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.14);*/
+/*-moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.14);*/
+/*box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.14);*/
+/*border-left: 1px solid rgba(0, 0, 0, 0.08);*/
+/*z-index: 2;*/
+/*}*/
 
 .hc_hc {
   overflow: hidden;

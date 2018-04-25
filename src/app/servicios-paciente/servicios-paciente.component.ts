@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {DataService} from '../services/data.service';
+import {AngularFireDatabase} from 'angularfire2/database';
 
 @Component({
   selector: 'app-servicios-paciente',
@@ -11,7 +12,7 @@ export class ServiciosPacienteComponent implements OnInit {
   servicio_finalizados: any;
   servicios_incompletos: any;
 
-  constructor(public data: DataService) {
+  constructor(public db: AngularFireDatabase, public data: DataService) {
     this.organizarServicios();
   }
 
@@ -19,9 +20,11 @@ export class ServiciosPacienteComponent implements OnInit {
   }
 
   organizarServicios() {
-    // console.log('ppppppp');
-    console.log(this.data.paciente_buscado.payload.val().servicios.activos);
-    this.servicios_activos = this.data.paciente_buscado.payload.val().servicios.activos;
+    // deberia de ser servicios activos!
+    this.db.list('pacientes/CC/' + this.data.documento_paciente_buscado + '/servicios').snapshotChanges().subscribe(servicios => {
+      this.servicios_activos = servicios;
+    });
+
     // console.log('Servicios Activos');
     // console.log(this.servicios_activos);
     // this.servicio_finalizados = this.data.paciente_buscado.servicios.finalizados;

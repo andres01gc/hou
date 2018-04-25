@@ -27,17 +27,7 @@ export class IngresarPacienteComponent implements OnInit {
   }
 
   finalizarIngreso() {
-    var itemRef = this.data.db.object('pacientes/' + this.basicComponent.data.identidad.tipo_documento + '/' +
-      this.basicComponent.data.identidad.documento + '/historia');
-    //  se guarda los datos en la historia clínica inicial.
-    itemRef.set({
-      info_basica: this.basicComponent.data,
-      revision_sistema: this.revision_sistema.data,
-      odontograma: this.odontograma.data,
-      examen_fisico: this.examen_fisico.data,
-      requerimientos_paciente: this.requerimientos_paciente.data
-    });
-
+    // creo el servicio
     var servicio = {
       estado: 'ACTIVO',
       nombre: 'Prueba de estados',
@@ -45,24 +35,38 @@ export class IngresarPacienteComponent implements OnInit {
       diagnostico: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, beatae commodi fuga incidunt odit placeat quo' +
       ' soluta vel vero voluptate. Cupiditate dolorum exercitationem maiores necessitatibus neque officiis sed sunt veritatis!',
       evoluciones: [{fecha: '', contenido: ''}],
-      citas: {
-        id_cita: [
-          {
-            persona_asignada: {},
-            fecha_asignada: {}
-          }
-        ]
-      },
+      id_paciente: this.data.current_uid,
+      id: '',
       prox_cita: 'aún no se ha asignado cita'
     };
 
-    var items = this.data.db.object('pacientes/' + this.basicComponent.data.identidad.tipo_documento + '/' + this.basicComponent.data.identidad.documento + '/servicios/activos');
-    items.set([servicio]
-    );
+    // subo el servicio general
+    const dbServicio = this.data.db.list('servicios');
+    const keyServicio = dbServicio.push(servicio).key;
 
-    var i = this.data.db.list('servicios_sin_asignar/especialidad_x');
-    i.push(servicio);
+    servicio.id = keyServicio;
+    this.asignarServicioAUsuario(servicio);
+
+    const itemHistoriaUsuario = this.data.db.object('pacientes/' + this.basicComponent.data.identidad.tipo_documento + '/' +
+      this.basicComponent.data.identidad.documento);
+    //  se guarda los datos en la historia clínica inicial.
+    itemHistoriaUsuario.set({
+        historia: {
+          info_basica: this.basicComponent.data,
+          revision_sistema: this.revision_sistema.data,
+          odontograma: this.odontograma.data,
+          examen_fisico: this.examen_fisico.data,
+          requerimientos_paciente: this.requerimientos_paciente.data,
+        },
+        servicios: [servicio],
+        metadata: {historia: false}
+      }
+    );
     this.terminado.emit(true);
+  }
+
+  asignarServicioAUsuario(servicio: any) {
+    this.data.db.object('usuarios/' + this.data.current_uid + '/servicios_activos').set([servicio]);
   }
 }
 

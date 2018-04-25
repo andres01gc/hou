@@ -23,12 +23,10 @@ export class RegistroComponent implements OnInit {
   }
 
   pushData() {
-    console.log('se presiona!');
-    const itemRef = this.db.object('users');
-    itemRef.set({name: 'new nombres!'});
-    console.log(this.email);
-
-
+    // console.log('se presiona!');
+    // const itemRef = this.db.object('users');
+    // itemRef.set({name: 'new nombres!'});
+    // console.log(this.email);
     this.createBasicAccount(this.email, this.pass);
   }
 

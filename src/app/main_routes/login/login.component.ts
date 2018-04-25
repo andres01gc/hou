@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
       .then(auth => {
           console.log('¡usuario identificado!');
           this.data.showmenu = true;
+          // console.log(auth);
           this.getInfoCurrentUser(auth);
         }
       )
@@ -49,8 +50,11 @@ export class LoginComponent implements OnInit {
   }
 
 
-  getInfoCurrentUser(auth: any) {
-    this.db.object('users/' + auth.uid).valueChanges().subscribe(item => {
+  getInfoCurrentUser(th: any) {
+    this.db.object('users/' + th.uid).valueChanges().subscribe(item => {
+        this.data.current_uid = th.uid;
+        // console.log(this.data.current_uid);
+        // console.log(item);
         this.data.info_usuario_logueado = item;
         this.obtenerServiciosUsuarioLogueado();
         this.router.navigate(['/']);
@@ -61,7 +65,7 @@ export class LoginComponent implements OnInit {
   obtenerServiciosUsuarioLogueado() {
     // TODO se debe buscar los servicios propios del usuaario, para pruebas se seleccionarán todos los servicios sin asignar
     this.db.list('servicios_sin_asignar/especialidad_x').valueChanges().subscribe(servicios => {
-        console.log(servicios);
+        // console.log(servicios);
         this.data.info_usuario_logueado = servicios;
         // console.log('servicios    ' + servicios.length);
       }
