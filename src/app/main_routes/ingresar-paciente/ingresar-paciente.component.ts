@@ -29,6 +29,10 @@ export class IngresarPacienteComponent implements OnInit {
   finalizarIngreso() {
     // creo el servicio
     var servicio = {
+      metadata: {
+        tipo_doc: this.basicComponent.data.identidad.tipo_documento,
+        documento: this.basicComponent.data.identidad.documento
+      },
       estado: 'ACTIVO',
       nombre: 'Prueba de estados',
       tipo_servicio: 'periodoncia',
@@ -64,7 +68,6 @@ export class IngresarPacienteComponent implements OnInit {
     );
     this.terminado.emit(true);
   }
-
   asignarServicioAUsuario(servicio: any) {
     this.data.db.object('usuarios/' + this.data.current_uid + '/servicios_activos').set([servicio]);
   }

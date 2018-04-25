@@ -5,17 +5,17 @@ import {AngularFireDatabase} from 'angularfire2/database';
 
 @Injectable()
 export class DataService {
-  showmenu = true;
-  db: AngularFireDatabase;
-  paciente_buscado: any;
-  servicio_seleccionado: any;
-  servicio_usuario_seleccionado: any;
+  public showmenu = true;
+  public db: AngularFireDatabase;
+  public paciente_buscado: any;
+  public servicio_seleccionado: any;
+  public servicio_usuario_seleccionado: any;
   // sobre el usuario
-  servicios_usuario_logueado: any;
-  user: Observable<firebase.User>;
-  info_usuario_logueado: any;
-  current_uid: any;
-  documento_paciente_buscado: string;
+  public servicios_usuario_logueado: any;
+  public user: Observable<firebase.User>;
+  public info_usuario_logueado: any;
+  public current_uid: any;
+  public documento_paciente_buscado: string;
 
   constructor(db: AngularFireDatabase) {
     this.db = db;
