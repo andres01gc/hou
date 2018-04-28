@@ -7,17 +7,22 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class InputComponent implements OnInit {
   @Input() name: string;
-  @Input() placeholder: string;
+  @Input() placeholder = '';
   @Input() lock = true;
   @Input() type = 'text';
   @Input() value;
-
+  @Input() cagetegoria = '';
+  @Input() sub_cagetegoria = '';
+  @Input() nombre_db = '';
   @Output() texted = new EventEmitter();
 
   constructor() {
   }
 
   ngOnInit() {
+    if (this.placeholder === '') {
+      this.placeholder = this.name;
+    }
   }
 
   onKey(event: KeyboardEvent) {

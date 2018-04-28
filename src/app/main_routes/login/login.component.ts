@@ -28,12 +28,10 @@ export class LoginComponent implements OnInit {
       .firebaseAuth
       .auth
       .signInWithEmailAndPassword(email, pass)
-
       .then(auth => {
-          console.log('¡usuario identificado!');
+          console.log('usuario encontrado');
+          this.obtenerInfoUsuario(auth);
           this.data.showmenu = true;
-          // console.log(auth);
-          this.getInfoCurrentUser(auth);
         }
       )
       .catch(err => {
@@ -49,26 +47,23 @@ export class LoginComponent implements OnInit {
       });
   }
 
-
-  getInfoCurrentUser(th: any) {
-    this.db.object('users/' + th.uid).valueChanges().subscribe(item => {
-        this.data.current_uid = th.uid;
-        // console.log(this.data.current_uid);
-        // console.log(item);
-        this.data.info_usuario_logueado = item;
-        this.obtenerServiciosUsuarioLogueado();
+  obtenerInfoUsuario(auth: any) {
+    this.db.object('usuarios/' + auth.uid).snapshotChanges().subscribe(item => {
+        console.log('se encuentra información');
+        this.data.current_uid = auth.uid;
+        this.data.informacion_usuario = item;
         this.router.navigate(['/']);
       }
     );
   }
 
-  obtenerServiciosUsuarioLogueado() {
-    // TODO se debe buscar los servicios propios del usuaario, para pruebas se seleccionarán todos los servicios sin asignar
-    this.db.list('servicios_sin_asignar/especialidad_x').valueChanges().subscribe(servicios => {
-        // console.log(servicios);
-        this.data.info_usuario_logueado = servicios;
-        // console.log('servicios    ' + servicios.length);
-      }
-    );
-  }
+  // obtenerServiciosUsuarioLogueado() {
+  //   // TODO se debe buscar los servicios propios del usuaario, para pruebas se seleccionarán todos los servicios sin asignar
+  //   this.db.list('servicios_sin_asignar/especialidad_x').valueChanges().subscribe(servicios => {
+  //       // console.log(servicios);
+  //       this.sub_categorias.informacion_usuario = servicios;
+  //       // console.log('servicios    ' + servicios.length);
+  //     }
+  //   );
+  // }
 }

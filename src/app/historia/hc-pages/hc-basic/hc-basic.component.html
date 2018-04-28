@@ -1,0 +1,232 @@
+<!--<p (click)="toggle()">Editar</p>-->
+<app-cnt [ocultar]="false" titulo="Identidad">
+  <div class="frm">
+    <app-input value='{{data?.identidad.nombre }}' [lock]="lock" class="item medium" type="text" name="Nombre"
+               placeholder="Nombre"
+               (texted)="data?.identidad.nombre = $event"></app-input>
+
+    <app-input value='{{data?.identidad.apellidos}}' [lock]="lock" class="item medium" name="Apellidos"
+               placeholder="Apellidos"
+               (texted)="data?.identidad.apellidos = $event"></app-input>
+
+    <app-input value='{{data?.identidad.fecha_nacimiento}}' [lock]="lock" class="item small" type="date"
+               name="Nacimiento" placeholder="dd/mm/aa"
+               (texted)="data?.identidad.fecha_nacimiento = $event"></app-input>
+
+    <app-input value='{{data?.identidad.lugar_nacimiento}}' [lock]="lock" class="item small" name="Lugar"
+               placeholder="lugar"
+               (texted)="data?.identidad.lugar_nacimiento = $event"></app-input>
+
+    <app-select value="{{data?.identidad.tipo_documento}}" [lock]="lock" [lock]="lock" class="item small"
+                [data]="['CC','TI','NIT','PPT']"
+                titulo="Tipo doc."
+                (selected)="data?.identidad.tipo_documento = $event"></app-select>
+
+    <app-input value='{{data?.identidad.documento}}' [lock]="lock" class="item small" name="Documento"
+               placeholder="Documento"
+               (texted)="data?.identidad.documento= $event"></app-input>
+
+    <app-input value='{{data?.identidad.lugar_expedicion}}' [lock]="lock" class="item small" name="Expedida en"
+               placeholder="Lugar"
+               (texted)="data?.identidad.lugar_expedicion= $event"></app-input>
+
+    <app-select value="{{data?.identidad.sexo}}" [lock]="lock" [lock]="lock" class="item small"
+                [data]="['Hombre','Mujer','Otro']"
+                titulo="Sexo"
+                (selected)="data?.identidad.sexo = $event"></app-select>
+
+    <app-select value="{{data?.identidad.rh}}" [lock]="lock" [lock]="lock" class="item small"
+                [data]="['O+','O-','A+','A+','A-','B+','B-','AB+','AB-']"
+                titulo="RH"
+                (selected)="data?.identidad.tipo_sangre = $event"></app-select>
+
+    <app-select value="{{data?.identidad.raza}}" [lock]="lock" [lock]="lock" class="item small"
+                [data]="['Blanco','Meztillo','Criollo', 'Indigena']"
+                titulo="Raza"
+                (selected)="data?.identidad.raza = $event"></app-select>
+
+    <app-select value="{{data?.identidad.tipo_paciente}}" [lock]="lock" [lock]="lock" class="item small"
+                [data]="['Niño','Adolecente','Adulto']"
+                titulo="Tipo de paciente"
+                (selected)="data?.identidad.tipo_paciente = $event"></app-select>
+
+  </div>
+</app-cnt>
+
+<app-cnt titulo="Contacto">
+  <div class="ccontent">
+    <div class="ln">
+      <!--<app-item-dir [lock]="lock" (result)="dt.contacto.dir=$event"></app-item-dir>-->
+    </div>
+
+    <!--<div class="ln">-->
+    <!--<app-item-tel [telefonos]="dt.contacto.telefonos" [lock]="lock"-->
+    <!--(result)="dt.contacto.telefonos=$event"></app-item-tel>-->
+    <!--</div>-->
+
+    <div class="frm">
+      <app-input value="{{data?.contacto.email}}" [lock]="lock" class="item medium" name="Correo electrónico"
+                 placeholder="Correo electrónico"
+                 (texted)="data?.contacto.email = $event"></app-input>
+    </div>
+  </div>
+</app-cnt>
+
+<app-cnt titulo="Información Personal">
+  <div class="ccontent">
+    <div class="frm">
+      <app-select value="{{data?.info_personal.ocupacion}}" [lock]="lock" [lock]="lock" class="item small"
+                  [data]="['Estudiante','independiente','Asalareado']"
+                  titulo="Ocupación"
+                  (selected)="data?.info_personal.ocupacion = $event"></app-select>
+
+      <app-input value="{{data?.info_personal.estrato}}" [lock]="lock" class="item small" name="Estrato"
+                 placeholder="Estrato"
+                 (texted)="data?.info_personal.estrato = $event"></app-input>
+
+      <div class="item small">
+        <app-select value="{{data?.info_personal.estado_civil}}" [lock]="lock" [lock]="lock"
+                    [data]="['soltera/o','viuda/o','casada/o', 'Unión libre','Separada/a']"
+                    titulo="Estado civil"
+                    (selected)="data?.info_personal.estado_civil = $event"></app-select>
+      </div>
+
+      <!--Esta parte debe aparecer de acuerdo a la selección anterior-->
+
+      <div class="jmp"></div>
+
+      <app-input value="{{data?.info_personal?.insitucion}}" [lock]="lock" class="item medium" name="lugar de trabajo"
+                 placeholder="Institución"
+                 (texted)="data?.info_personal.insitucion = $event"></app-input>
+      <div class="jmp"></div>
+
+      <app-select value="{{data?.contacto.dir.departamento}}" [lock]="lock" [lock]="lock" class="item small"
+                  [data]="['carrrera','calle','Transversal', 'Diagonal']"
+                  titulo="Departamento"
+                  (selected)="data?.contacto.dir.departamento = $event"></app-select>
+
+      <app-select value="{{data?.contacto.dir.municipio}}" [lock]="lock" [lock]="lock" class="item small"
+                  [data]="['carrrera','calle','Transversal', 'Diagonal']"
+                  titulo="Municipio"
+                  (selected)="data?.contacto.dir.municipio = $event"></app-select>
+
+      <app-select value="{{data?.contacto.dir.a}}" [lock]="lock" [lock]="lock" class="item small"
+                  [data]="['carrrera','calle','Transversal', 'Diagonal']"
+                  titulo="Dirección"
+                  (selected)="data?.contacto.dir.a = $event"></app-select>
+
+      <app-input value="{{data?.contacto.dir.b}}" [lock]="lock" class="item min" name="No" placeholder="lugar"
+                 (texted)="data?.contacto.dir.b = $event"></app-input>
+
+      <app-input value="{{data?.contacto.dir.c}}" [lock]="lock" class="item min" name="No" placeholder="lugar"
+                 (texted)="data?.contacto.dir.c = $event"></app-input>
+
+      <app-select value="{{data?.contacto.dir.d_tipo}}" [lock]="lock" [lock]="lock" class="item small"
+                  [data]="['casa','apto','Unidad', 'Finca']"
+                  titulo="vivienda"
+                  (selected)="data?.contacto.dir.d_tipo= $event"></app-select>
+
+      <app-input value="{{data?.contacto.dir.e_detalles}}"
+                 [lock]="lock" class="item small" name="detalles" placeholder="Detalles"
+                 (texted)="data?.contacto.dir.e_detalles = $event"></app-input>
+
+      <!--<div class="item small">-->
+      <!--<app-input  [lock]="lock" name="Departamento" placeholder="Dept"-->
+      <!--(texted)="dir.f_departamento = $event"></app-input>-->
+      <!--</div>-->
+
+      <!--<div class="item small">-->
+      <!--<app-input [lock]="lock" name="Ciudad" placeholder="lugar" (texted)="apellidos = $event"></app-input>-->
+      <!--</div>-->
+
+      <!--<div class="item small">-->
+      <!--<app-input [lock]="lock" name="Barrio" placeholder="lugar" (texted)="apellidos = $event"></app-input>-->
+      <!--</div>-->
+
+      <!--____________________________________________________________________________________________________________-->
+
+
+    </div>
+
+    <!--<div class="ln">-->
+    <!--<div class="ttl">Conyugue</div>-->
+    <!--<app-item-referencia [ref]="dt.info_personal.info_conyugue" [lock]="lock"-->
+    <!--(texted)="dt.info_personal.info_conyugue=$event"></app-item-referencia>-->
+
+    <!--<div class="ttl">Padre</div>-->
+    <!--<app-item-referencia [ref]="dt.info_personal.info_padres" [lock]="lock"-->
+    <!--(texted)="dt.info_personal.info_padres=$event"></app-item-referencia>-->
+
+    <!--<div class="ttl">Madre</div>-->
+    <!--<app-item-referencia-->
+    <!--[ref]="dt.info_personal.info_madre" [lock]="lock"-->
+    <!--(texted)="dt.info_personal.info_madre=$event"></app-item-referencia>-->
+    <!--</div>-->
+
+  </div>
+</app-cnt>
+
+<app-cnt titulo="Seguridad social">
+  <div class="ccontent">
+    <div class="frm">
+      <app-select value="{{data?.seguridad_social.plan_atencion}}" [lock]="lock" [lock]="lock" class="item small"
+                  [data]="['porrr','otr','Otro']"
+                  titulo="Plan de atención"
+                  (selected)="data?.seguridad_social.plan_atencion = $event"></app-select>
+      <app-select value="{{data?.seguridad_social.seguridad_social}}" [lock]="lock" [lock]="lock" class="item small"
+                  [data]="['porrr','otr','Otro']" titulo="eps"
+                  (selected)="data?.seguridad_social.eps = $event"></app-select>
+      <app-select value="{{data?.seguridad_social.tipo_vinculacion}}" [lock]="lock" [lock]="lock" class="item small"
+                  [data]="['porrr','otr','Otro']"
+                  titulo="tipo de vinculación"
+                  (selected)="data?.seguridad_social.tipo_vinculacion = $event"></app-select>
+      <app-select value="{{data?.seguridad_social.ips}}" [lock]="lock" [lock]="lock" class="item small"
+                  [data]="['porrr','otr','Otro']" titulo="I.P.S"
+                  (selected)="data?.seguridad_social.ips= $event"></app-select>
+      <app-select value="{{data?.seguridad_social.regimen}}" [lock]="lock" [lock]="lock" class="item small"
+                  [data]="['porrr','otr','Otro']" titulo="Régimen"
+                  (selected)="data?.seguridad_social.regimen = $event"></app-select>
+      <app-select value="{{data?.seguridad_social.cooperativa}}" [lock]="lock" [lock]="lock" class="item small"
+                  [data]="['porrr','otr','Otro']" titulo="Cooperativa"
+                  (selected)="data?.seguridad_social.cooperativa = $event"></app-select>
+    </div>
+  </div>
+</app-cnt>
+
+<app-cnt titulo="Referencias">
+  <div class="ccontent">
+    <div class="ln">
+      <!--<app-item-referencia [ref]="dt.referencias" [lock]="lock"-->
+      <!--(texted)="dt.referencias=$event; test(dt)"></app-item-referencia>-->
+    </div>
+  </div>
+</app-cnt>
+
+<app-cnt titulo="Responsables">
+  <div class="ccontent">
+    <div class="frm">
+      <div class="item small">
+        <app-input value="{{data?.responsables.medico_tratante}}" [lock]="lock" name="Medico tratante"
+                   placeholder="lugar"
+                   (texted)="data?.responsables.medico_tratante = $event"></app-input>
+      </div>
+      <div class="item small">
+        <app-input value="{{data?.responsables.remitido_por}}" [lock]="lock" name="Remitido por" placeholder="lugar"
+                   (texted)="data?.responsables.remitido_por = $event"></app-input>
+      </div>
+      <div class="item small">
+
+        <app-input value="{{data?.responsables.estudiante_responsable}}" [lock]="lock" name="Estudiante Responsable"
+                   (texted)="data?.responsables.estudiante_responsable = $event"
+                   placeholder="lugar"></app-input>
+
+      </div>
+      <div class="item small">
+        <app-input value="{{data?.responsables.docente_a_cargo}}" [lock]="lock" name="Docente a cargo"
+                   placeholder="lugar"
+                   (texted)="data?.responsables.docente_a_cargo = $event"></app-input>
+
+      </div>
+    </div>
+  </div>
+</app-cnt>

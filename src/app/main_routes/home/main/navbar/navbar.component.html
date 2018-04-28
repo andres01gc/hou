@@ -1,6 +1,6 @@
 <div class="nb_ingreso" [ngClass]="{'show' : !mostrarIngreso}">
   <div class="nb_card_ingreso">
-    <app-ingresar-paciente (terminado)="finalizarIngreso()"></app-ingresar-paciente>
+    <app-nuevo-ingreso (terminado)="finalizarIngreso()"></app-nuevo-ingreso>
   </div>
 </div>
 
@@ -33,12 +33,13 @@
       </div>
     </div>
 
-
     <!--información del usuario-->
     <div class="nv-info-container" routerLink="/">
       <div class="nv-user-container">
-        <div class="nv-name">Andrés González C.</div>
-        <div class="nv-esp">Code Master Pro</div>
+        <div class="nv-name">
+          <!--{{sub_categorias.informacion_usuario.payload.val().nombres+' '+sub_categorias.informacion_usuario.payload.val().apellidos}}-->
+        </div>
+        <!--<div class="nv-esp">{{sub_categorias.informacion_usuario.payload.val().especialidad}}</div>-->
       </div>
 
       <div class="icon-container">

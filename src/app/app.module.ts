@@ -4,7 +4,7 @@ import {AppComponent} from './app.component';
 import {ServiciosComponent} from './main_routes/home/main/perfil/serviciosC/inicio.component';
 import {RouterModule, Routes} from '@angular/router';
 import {PacienteComponent} from './main_routes/paciente/paciente.component';
-import {IngresarPacienteComponent} from './main_routes/ingresar-paciente/ingresar-paciente.component';
+import {NuevoIngresoComponent} from './main_routes/ingresar-paciente/nuevo-ingreso.component';
 import {CitasComponent} from './main_routes/home/main/perfil/citas/citas.component';
 import {CardServicioComponent} from './main_routes/home/main/perfil/serviciosC/card-servicio/card-servicio.component';
 import {InputComponent} from './utils/input/input.component';
@@ -35,22 +35,7 @@ import {PgServicioComponent} from './pg-servicio/pg-servicio.component';
 import {TabsComponent} from './tabs/tabs.component';
 import {TabComponent} from './tab/tab.component';
 import {InfoSujetoComponent} from './items/info-sujeto/info-sujeto.component';
-import {HcBasicComponent} from './historia/hc-pages/hc-basic/hc-basic.component';
 import {ItemTelComponent} from './items/item-tel/item-tel.component';
-import {HcAnamnesisComponent} from './historia/hc-pages/hc-anamnesis/hc-anamnesis.component';
-import {HcAntecedentesComponent} from './historia/hc-pages/hc-antecedentes/hc-antecedentes.component';
-import {HcHabitosComponent} from './historia/hc-pages/hc-habitos/hc-habitos.component';
-import {HcRevisionPorSistemComponent} from './historia/hc-pages/hc-revision-por-sistem/hc-revision-por-sistem.component';
-import {HcExamenFisicoComponent} from './historia/hc-pages/hc-examen-fisico/hc-examen-fisico.component';
-import {HcExamenFisicoCrnfacialComponent} from './historia/hc-pages/hc-examen-fisico-crnfacial/hc-examen-fisico-crnfacial.component';
-import {HcExamenEstomatologicoComponent} from './historia/hc-pages/hc-examen-estomatologico/hc-examen-estomatologico.component';
-import {HcPeriodontogramaComponent} from './historia/hc-pages/hc-periodontograma/hc-periodontograma.component';
-import {HcExamenPeriodontalComponent} from './historia/hc-pages/hc-examen-periodontal/hc-examen-periodontal.component';
-import {HcDescripcionRadiograficaComponent} from './historia/hc-pages/hc-descripcion-radiografica/hc-descripcion-radiografica.component';
-import {HcDiagnosticoComponent} from './historia/hc-pages/hc-diagnostico/hc-diagnostico.component';
-import {HcDiagnosticoPorDienteComponent} from './historia/hc-pages/hc-diagnostico-por-diente/hc-diagnostico-por-diente.component';
-import {HcTratamientoComponent} from './historia/hc-pages/hc-tratamiento/hc-tratamiento.component';
-import {HcConsentimientoComponent} from './historia/hc-pages/hc-consentimiento/hc-consentimiento.component';
 import {ItemReferenciaComponent} from './items/item-referencia/item-referencia.component';
 import {CntComponent} from './cnt/cnt.component';
 import {ItemDirComponent} from './items/item-dir/item-dir.component';
@@ -62,13 +47,15 @@ import {UserResumenComponent} from './user-resumen/user-resumen.component';
 import {HcRequerimientosComponent} from './hc-requerimientos/hc-requerimientos.component';
 import {UserResponsableComponent} from './user-responsable/user-responsable.component';
 import {CardEvolucionComponent} from './card-evolucion/card-evolucion.component';
-import {AppMintabComponent} from './app-mintab/app-mintab.component';
 import {SupportDataService} from './services/datasuport';
 import {AdvertenciaIniciarServicioComponent} from './advertencia-iniciar-servicio/advertencia-iniciar-servicio.component';
 import {IngresoHistoriaComponent} from './ingreso-historia/ingreso-historia.component';
 import {CancelarServicioComponent} from './cancelar-servicio/cancelar-servicio.component';
 import {ReasignarCitaComponent} from './reasignar-cita/reasignar-cita.component';
-import { PgEvolucionComponent } from './pg-evolucion/pg-evolucion.component';
+import {PgEvolucionComponent} from './pg-evolucion/pg-evolucion.component';
+import {PaginaHistoriaComponent} from './pagina-historia/pagina-historia.component';
+import {AppMintabComponent} from './app-mintab/app-mintab.component';
+import {CondicionalComponent} from './condicional/condicional.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -94,28 +81,30 @@ const appRoutes: Routes = [
             path: 'serv', component: PgServicioComponent
           },
           {
-            path: 'historia', component: HistoriaComponent, children: [
-              {path: 'basico', component: HcBasicComponent},
-              {path: 'anamnesis', component: HcAnamnesisComponent},
-              {path: 'antecedentes', component: HcAntecedentesComponent},
-              {path: 'habitos', component: HcHabitosComponent},
-              {path: 'revision-sistema', component: HcRevisionPorSistemComponent},
-              {path: 'ex-fisico', component: HcExamenFisicoComponent},
-              {path: 'ex-fisico-craneofacial', component: HcExamenFisicoCrnfacialComponent},
-              {path: 'ex-estomatologico', component: HcExamenEstomatologicoComponent},
-              {path: 'odontograma', component: PgOdontogramaComponent},
-              {path: 'periodontograma', component: HcPeriodontogramaComponent},
-              {path: 'ex-periodontal', component: HcExamenPeriodontalComponent},
-              {path: 'desc-radiografica', component: HcDescripcionRadiograficaComponent},
-              {path: 'diagnostico', component: HcDiagnosticoComponent},
-              {path: 'diagnostico-por-diente', component: HcDiagnosticoPorDienteComponent},
-              {path: 'tratamiento', component: HcTratamientoComponent},
-              {path: 'consentimiento', component: HcConsentimientoComponent}
-            ]
+            path: 'historia', component: HistoriaComponent
+
+            // children: [
+            //   {path: 'basico', component: HcBasicComponent},
+            //   {path: 'anamnesis', component: HcAnamnesisComponent},
+            //   {path: 'antecedentes', component: HcAntecedentesComponent},
+            //   {path: 'habitos', component: HcHabitosComponent},
+            //   {path: 'revision-sistema', component: HcRevisionPorSistemComponent},
+            //   {path: 'ex-fisico', component: HcExamenFisicoComponent},
+            //   {path: 'ex-fisico-craneofacial', component: HcExamenFisicoCrnfacialComponent},
+            //   {path: 'ex-estomatologico', component: HcExamenEstomatologicoComponent},
+            //   {path: 'odontograma', component: PgOdontogramaComponent},
+            //   {path: 'periodontograma', component: HcPeriodontogramaComponent},
+            //   {path: 'ex-periodontal', component: HcExamenPeriodontalComponent},
+            //   {path: 'desc-radiografica', component: HcDescripcionRadiograficaComponent},
+            //   {path: 'diagnostico', component: HcDiagnosticoComponent},
+            //   {path: 'diagnostico-por-diente', component: HcDiagnosticoPorDienteComponent},
+            //   {path: 'tratamiento', component: HcTratamientoComponent},
+            //   {path: 'consentimiento', component: HcConsentimientoComponent}
+            // ]
           },
           {path: 'detalles', component: PgServicioComponent}]
       },
-      {path: 'ingreso', component: IngresarPacienteComponent},
+      {path: 'ingreso', component: NuevoIngresoComponent},
       {path: 'configuraciones', component: ConfiguracionesComponent}
     ]
   }, {path: '**', component: PagenotfoundComponent}
@@ -138,7 +127,7 @@ export const environment = {
     AppComponent,
     ServiciosComponent,
     PacienteComponent,
-    IngresarPacienteComponent,
+    NuevoIngresoComponent,
     CitasComponent,
     CardServicioComponent,
     InputComponent,
@@ -163,22 +152,7 @@ export const environment = {
     PgServicioComponent,
     TabsComponent,
     InfoSujetoComponent,
-    HcBasicComponent,
     ItemTelComponent,
-    HcAnamnesisComponent,
-    HcAntecedentesComponent,
-    HcHabitosComponent,
-    HcRevisionPorSistemComponent,
-    HcExamenFisicoComponent,
-    HcExamenFisicoCrnfacialComponent,
-    HcExamenEstomatologicoComponent,
-    HcPeriodontogramaComponent,
-    HcExamenPeriodontalComponent,
-    HcDescripcionRadiograficaComponent,
-    HcDiagnosticoComponent,
-    HcDiagnosticoPorDienteComponent,
-    HcTratamientoComponent,
-    HcConsentimientoComponent,
     ItemReferenciaComponent,
     CntComponent,
     ItemDirComponent,
@@ -190,12 +164,14 @@ export const environment = {
     HcRequerimientosComponent,
     UserResponsableComponent,
     CardEvolucionComponent,
-    AppMintabComponent,
     AdvertenciaIniciarServicioComponent,
     IngresoHistoriaComponent,
     CancelarServicioComponent,
     ReasignarCitaComponent,
-    PgEvolucionComponent],
+    PgEvolucionComponent,
+    AppMintabComponent,
+    CondicionalComponent,
+    PaginaHistoriaComponent],
 
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, AngularFireModule.initializeApp(environment.firebase), AngularFireDatabaseModule,

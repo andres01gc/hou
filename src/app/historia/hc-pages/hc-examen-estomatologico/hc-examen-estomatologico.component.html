@@ -1,0 +1,80 @@
+<app-cnt titulo="Examen Extraoral">
+  <div class="frm">
+    <app-multiple class="item big"
+      [base_titulos]="['Cóncavo','Convexo','Recto','Asimetrico']"
+    ></app-multiple>
+    <app-input class="item big" name="Articulación temporomandibular) (Palpación lat. Post. Boca abierta, boca cerrada">
+    </app-input>
+    <app-input class="item medium" name="Región subliminar">
+    </app-input>
+    <app-input class="item medium" name="cuello">
+    </app-input>
+  </div>
+</app-cnt>
+<app-cnt titulo="Región labial">
+  <div class="frm">
+    <div class="ttl">Labio superior</div>
+    <app-select name="Labio superior" class="item medium" [data]="['Normal','Anormal']">
+    </app-select>
+    <app-multiple class="item big" name="Labio superior" class="item medium"
+                  [base_titulos]="['Funcional','Hiperfuncional','Hipofuncional']">
+    </app-multiple>
+    <app-input name="Comentarios" placeholder="Comentarios"></app-input>
+    <div class="ttl">Labio inferior</div>
+    <app-select name="Labio inferior" class="item medium" [data]="['Normal','Anormal']">
+    </app-select>
+    <app-input name="Comentarios" placeholder="Comentarios"></app-input>
+    <div class="ttl">Tonicidad</div>
+    <app-select name="Tonicidad" class="item medium" [data]="['Hipotónico','Hipertónico','Normotónico']">
+    </app-select>
+    <app-input name="Comentarios" placeholder="Comentarios"></app-input>
+    <div class="ttl">Selle labial</div>
+    <app-select name="Selle" class="item medium" [data]="['Competencia','Incopetencia','Normotónico']">
+    </app-select>
+    <app-input name="Comentarios" placeholder="Comentarios"></app-input>
+  </div>
+</app-cnt>
+
+<app-cnt titulo="Examen Intraorarl">
+  <div class="frm">
+    <app-input class="item medium" placeholder="Vestíbulo" name="Vestíbulo"></app-input>
+    <app-input class="item medium" placeholder="Bucas-Carrilos" name="Bucas-Carrilos"></app-input>
+    <app-input class="item medium" placeholder="Rebordes Alveolares" name="Rebordes Alveolares"></app-input>
+    <app-input class="item medium" placeholder="Piso de boca" name="Piso de boca"></app-input>
+    <div class="ttl">Paladar duro</div>
+    <app-select class="item medium" name="Profundidad" [data]="['Alto','Medio','Bajo']"></app-select>
+    <app-select class="item medium" name="Color" [data]="['Normal','Anormal']"></app-select>
+    <app-select class="item medium" name="Ancho" [data]="['Normal','Estrecho']"></app-select>
+    <app-checkbox name="Torus" [active]="false"></app-checkbox>
+    <app-checkbox name="Rugas" [active]="false"></app-checkbox>
+    <div class="ttl">Paladar blando</div>
+    <app-select class="item medium" name="Tipo" [data]="['Normmal','Anormal']"></app-select>
+    <app-checkbox name="Submocoso" [active]="false"></app-checkbox>
+    <app-checkbox name="Úvula bífida" [active]="false"></app-checkbox>
+    <app-select [data]="['Normales','Hipertróficas', 'Ausentes']" name="Amígdalas"></app-select>
+    <div class="ttl">Lengua</div>
+    <app-select class="item medium" name="Tamaño" [data]="['Normal','Grande', 'Pequeño']"></app-select>
+    <app-select class="item medium" name="Movilidad" [data]="['Normal','Anormal']"></app-select>
+    <app-select class="item medium" name="Posición" [data]="['Normal','Prostituída']"></app-select>
+    <app-select class="item medium" name="Frenillo Lingual" [data]="['Normal','Anormal']"></app-select>
+    <app-select class="item medium" name="Función Gustativa" [data]="['Normal','Anormal']"></app-select>
+    <div class="ttl">Forma de Arcada</div>
+    <app-input class="item medium" placeholder="superior" name="superior"></app-input>
+    <app-input class="item medium" placeholder="inferior" name="inferior"></app-input>
+    <div class="ttl">Tipos de Arcos</div>
+    <app-input class="item medium" placeholder="superior" name="superior"></app-input>
+    <app-input class="item medium" placeholder="inferior" name="inferior"></app-input>
+    <div class="ttl">Relación entre caninos permanetes</div>
+    <app-input class="item medium" placeholder="Derecho" name="Derecho"></app-input>
+    <app-input class="item medium" placeholder="Izquierdo" name="Izquierdo"></app-input>
+    <div class="ttl">Relación Sagital de dientes 2do Morales deciduos SUP</div>
+    <app-input class="item medium" placeholder="Derecho" name="Derecho"></app-input>
+    <app-input class="item medium" placeholder="Izquierdo" name="Izquierdo"></app-input>
+    <div class="ttl">Relación Sagital de dientes 2do Morales deciduos INF</div>
+    <app-input class="item medium" placeholder="Derecho" name="Derecho"></app-input>
+    <app-input class="item medium" placeholder="Izquierdo" name="Izquierdo"></app-input>
+    <div class="ttl">Zonas edéntulas</div>
+    <app-select class="item medium" [data]="['Colapsado','No colapsado', 'Exostosis']" name="Amígdalas"></app-select>
+    <app-input class="item medium" placeholder="Observación" name="Observación"></app-input>
+  </div>
+</app-cnt>

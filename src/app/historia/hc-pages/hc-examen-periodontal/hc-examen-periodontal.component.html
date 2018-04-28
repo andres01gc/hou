@@ -1,0 +1,15 @@
+<app-cnt titulo="Periodontal">
+  <div class="fmr">
+    <app-checkbox class="item small" titulo="Sano" [active]="false"></app-checkbox>
+    <app-select titulo="Color" [data]="['Normal','Anormal', 'Pigmentaciones']"></app-select>
+    <app-multiple titulo="Color" [base_titulos]="['Marginal', 'Papilar', 'Difusa']"></app-multiple>
+    <app-checkbox class="item small" titulo="Periodintitis"></app-checkbox>
+    <app-multiple class="item big" titulo="Opciones Periodintitis"
+                  [base_titulos]="['Leve', 'Moderada', 'Avanzada','Localizada','Generalizada']"></app-multiple>
+
+    <app-multiple class="item big" titulo="Signos Clínicos"
+                  [base_titulos]="['Forma', 'Tamaño', 'Consistencia','Textura','Sangrado espontaneo', 'Exudad','Movilidad dental', 'Absceso', 'Fístula', 'Cálculos']"></app-multiple>
+
+    <app-input class="item big" name="Observacions" placeholder="Escribe las observaciones"></app-input>
+  </div>
+</app-cnt>

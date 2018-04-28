@@ -343,9 +343,9 @@
 }
 
 .nb_card_ingreso {
-
-  width: 70%;
-  height: 90%;
+  width: 70vw;
+  height: auto;
+  /*height: 90%;*/
 }
 
 /*//modo tablet*/

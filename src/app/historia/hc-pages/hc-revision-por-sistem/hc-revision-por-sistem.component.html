@@ -1,0 +1,122 @@
+<app-cnt titulo="Sistema nervioso">
+  <div class="frm">
+    <app-multiple
+      [data]="data?.nervioso.padecimientos"
+      [lock]="lock"
+      (selected)="data?.nervioso.padecimientos= $event"
+      titulo="Padecimientos"
+      [base_titulos]='["Ansiedad","Irritabilidad","Sincopes","Convulsiones","Paresias","Cefaleas","Depresión","Liptimias","Epilepsia", "Neuralgias","Parálisis", "Migraña", "accidente cerebro vascular"]'
+      class="item big"></app-multiple>
+
+    <app-input value="{{data?.nervioso.observaciones}}" [lock]="lock"
+               (texted)="data?.nervioso.observaciones= $event"
+               class="item big" name="Observaciones"></app-input>
+
+  </div>
+</app-cnt>
+<app-cnt titulo="Sistema Respiratorio">
+
+  <app-multiple
+    [data]="data?.respiratorio.padecimientos"
+    [lock]="lock"
+    (selected)="data?.respiratorio.padecimientos= $event"
+    titulo="Padecimientos"
+    [base_titulos]='["Tos","Hemoptisis","Disnea","Asma","Rinitis","TBC","Pulmonares","Micosis"]'
+    class="item  big">
+  </app-multiple>
+
+  <app-input
+    value="{{data?.respiratorio.observaciones}}"
+    [lock]="lock"
+    (texted)="data?.respiratorio.observaciones= $event"
+    class="item big" name="Observaciones"></app-input>
+</app-cnt>
+<app-cnt titulo="Sistema Cardivascular">
+
+  <app-multiple
+    [data]="data?.gastrointestinal.padecimientos"
+    [lock]="lock"
+    (selected)="data?.cardiovascular.padecimientos= $event"
+    titulo="Padecimientos"
+    [base_titulos]='["Arritmias","Cianosis","Anasarca","HTA","Cardiopatías congénitas","Varices"]'
+    class="item big">
+  </app-multiple>
+
+  <app-input value="{{data?.cardiovascular.observaciones}}" [lock]="lock"
+             (texted)="data?.cardiovascular.observaciones= $event"
+             class="item big" name="Observaciones"></app-input>
+</app-cnt>
+<app-cnt titulo="Sistema Gastrointestinal">
+  <app-multiple
+    [data]="data?.gastrointestinal.padecimientos"
+    [lock]="lock"
+    (selected)="data?.gastrointestinal.padecimientos= $event"
+    titulo="Padecimientos"
+    [base_titulos]='["Diarrea","Gastritis","Hepatitis","Amibiasis","Ulceras","Ictericia"]'
+    class="item big"></app-multiple>
+
+  <app-input value="{{data?.gastrointestinal.observaciones}}" [lock]="lock"
+             (texted)="data?.gastrointestinal.observaciones= $event"
+             class="item big" name="Observaciones"></app-input>
+
+</app-cnt>
+<app-cnt titulo="Sistema Genitourinario">
+  <app-multiple
+    [data]="data?.genitourinario.padecimientos"
+    [lock]="lock"
+    (selected)="data?.genitourinario.padecimientos= $event"
+    titulo="Padecimientos"
+    [base_titulos]='["Infecciones Vaginales","Insuficiencia Renal","Cistitis","Dismenorrea","Embarazo","Abortos","Planificación","HIV","Sifilis","Gonorrea"]'
+    class="item big"></app-multiple>
+
+  <app-input value="{{data?.genitourinario.observaciones}}" [lock]="lock"
+             (texted)="data?.genitourinario.observaciones= $event"
+             class="item big" name="Observaciones"></app-input>
+</app-cnt>
+<app-cnt titulo="Sistema Endocrino">
+  <app-multiple
+    [data]="data?.endocrino.padecimientos"
+    [lock]="lock"
+    (selected)="data?.endocrino.padecimientos= $event"
+
+    titulo="Padecimientos"
+    [base_titulos]='["Enanismo","Gigantismo","Acromegalia","Cretinismo","Diabetes"]'
+    class="item big"></app-multiple>
+
+  <app-input value="{{data?.endocrino.observaciones}}" [lock]="lock"
+             (texted)="data?.endocrino.observaciones= $event"
+             class="item big" name="Observaciones"></app-input>
+
+</app-cnt>
+<app-cnt titulo="Sistema Osteoarticular">
+
+  <app-multiple
+    [data]="data?.osteoarticular.padecimientos"
+    [lock]="lock"
+    (selected)="data?.osteoarticular.padecimientos= $event"
+    titulo="Padecimientos"
+    [base_titulos]='["Artritis","Artrosis","Espasmos","Dolores articulares","Tics"]'
+    class="item big"></app-multiple>
+
+  <app-input value="{{data?.osteoarticular.observaciones}}" [lock]="lock"
+             (texted)="data?.osteoarticular.observaciones= $event"
+             class="item big" name="Observaciones"></app-input>
+
+</app-cnt>
+<app-cnt titulo="Epidermis">
+  <app-multiple
+    [data]="data?.epidermis.padecimientos"
+    [lock]="lock"
+    (selected)="data?.epidermis.padecimientos= $event"
+    titulo="Padecimientos"
+    [base_titulos]='["Erupciones cutáneas","Psoriasis","Micosis"]'
+    class="item big"></app-multiple>
+
+  <app-input value="{{data?.epidermis.observaciones}}" [lock]="lock"
+             (texted)="data?.epidermis.observaciones= $event"
+             class="item big" name="Observaciones"></app-input>
+
+</app-cnt>
+
+<app-cnt titulo="Comentarios">
+</app-cnt>
