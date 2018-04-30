@@ -12,7 +12,6 @@ export class DataService {
   public servicio_seleccionado_paciente: any;
   public servicio_usuario_seleccionado: any;
   // sobre el usuario
-  public servicios_usuario_logueado: any;
   public user: Observable<firebase.User>;
   public informacion_usuario: any;
   public current_uid: any;
@@ -22,6 +21,7 @@ export class DataService {
     this.db = db;
   }
 
+  categorias_ingreso = ['Información Básica'];
   public informacion_categorias = [
     {
       titulo: 'Información Básica',
@@ -90,7 +90,8 @@ export class DataService {
                 opciones: ['Hombre', 'Mujer', 'Otro'],
                 nombre: 'Sexo',
                 tam: 's'
-              }, {
+              },
+              {
                 tipo_item: 'select',
                 type: 'text',
                 opciones: ['O+', 'O-', 'A+', 'A+', 'A-', 'B+', 'B-', 'AB+', 'AB-'],
@@ -101,8 +102,13 @@ export class DataService {
                 tipo_item: 'select',
                 type: 'text',
                 opciones: ['Blanco', 'Meztillo', 'Criollo', 'Indigena'],
-                nombre: 'Raza',
+                nombre: 'prueba item multiple',
                 tam: 's'
+              }, {
+                tipo_item: 'multiple',
+                opciones: ['p1', 'p2', 'p3', 'p4'],
+                nombre: 'Raza',
+                tam: 'l'
               },
             ]
           },
@@ -190,6 +196,9 @@ export class DataService {
             ]
           }
         ]
+    },
+    {
+      titulo: 'Odontograma', sub_categorias: {}
     },
     {
       titulo: 'Final',

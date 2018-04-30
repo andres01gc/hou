@@ -10,10 +10,10 @@ export class CardServicioComponent implements OnInit {
   @Input() serv: any;
 
   constructor(public data: DataService) {
-    console.log(this.serv);
   }
 
   ngOnInit() {
+    console.log(this.serv);
   }
 
   seleccionarServicio() {

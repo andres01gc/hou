@@ -12,7 +12,7 @@ import {AngularFireDatabase} from 'angularfire2/database';
 })
 export class NavbarComponent implements OnInit, AfterViewInit {
   active = false;
-  private mostrarIngreso = true;
+  private mostrarIngreso = false;
   today = Date.now();
 
   @ViewChild(SnakbarComponent)
@@ -20,15 +20,9 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
   constructor(private db: AngularFireDatabase, public data: DataService, private router: Router) {
     this.active = data.showmenu;
-    // console.log('tett.asjdv.asdv')
-    // console.log(sub_categorias.informacion_usuario.payload.val().apellidos);
   }
 
   ngOnInit() {
-  }
-
-  test() {
-    console.log('probando pro');
   }
 
   ngAfterViewInit(): void {

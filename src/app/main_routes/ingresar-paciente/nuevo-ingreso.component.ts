@@ -2,6 +2,7 @@ import {Component, ContentChildren, EventEmitter, OnInit, Output, QueryList, Vie
 import {DataService} from '../../services/data.service';
 import {TabComponent} from '../../tab/tab.component';
 import {PaginaHistoriaComponent} from '../../pagina-historia/pagina-historia.component';
+import {PgOdontogramaComponent} from '../../pg-odontograma/pg-odontograma.component';
 
 @Component({
   selector: 'app-nuevo-ingreso',
@@ -11,6 +12,8 @@ import {PaginaHistoriaComponent} from '../../pagina-historia/pagina-historia.com
 export class NuevoIngresoComponent implements OnInit {
   @Output() terminado = new EventEmitter();
   @ViewChildren(PaginaHistoriaComponent) paginas: QueryList<PaginaHistoriaComponent>;
+  @ViewChild(PgOdontogramaComponent) odonto: PgOdontogramaComponent;
+
   data_ingreso = {};
 
   constructor(public  data: DataService) {
@@ -21,46 +24,51 @@ export class NuevoIngresoComponent implements OnInit {
   }
 
   finalizarIngreso() {
+    //  traigo toda la información de las paginas y la guardo en data ingreso
     this.paginas.forEach(paginas => {
         if (paginas.titulo_pag !== 'Final') {
           this.data_ingreso[paginas.titulo_pag] = paginas.data_pag;
         }
       }
     );
-    console.log(this.data_ingreso);
+
+    this.data_ingreso['Odontograma'] = this.odonto.data;
+
+//  creo el servicio inicial
+    const servicio = {
+      metadata: {
+        tipo_doc: this.data_ingreso['Información Básica']['Identidad']['Tipo_doc'],
+        documento: this.data_ingreso['Información Básica']['Identidad']['Documento'],
+        inicio_historia: false,
+      },
+      estado: 'ACTIVO',
+      nombre: 'Prueba de estados',
+      tipo_servicio: 'periodoncia',
+      diagnostico: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, beatae commodi fuga incidunt odit placeat quo' +
+      ' soluta vel vero voluptate. Cupiditate dolorum exercitationem maiores necessitatibus neque officiis sed sunt veritatis!',
+      //  SOLO PARA NO LOGUEARSE TODO EL TIEMPO AL INICIO
+      id_profesional: 'Iiw8teN0C1YRq4kIPD6Ie2epXuz2',
+      id_servicio: '',
+      prox_cita: 'aún no se ha asignado cita'
+    };
     // subo el servicio general
-    // const dbServicio = this.sub_categorias.db.list('servicios');
-    // const keyServicio = dbServicio.push(servicio).key;
-    //  se guarda los datos en la historia clínica inicial.
-    const itemHistoriaUsuario = this.data.db.object('pacientes/CC/123456/historia');
-    itemHistoriaUsuario.update(this.data_ingreso);
+    const dbServicio = this.data.db.list('servicios');
+    // Obtengo la key de ese servicio
+    // const keyServicio =;
+    servicio.id_servicio = dbServicio.push(servicio).key;
+
+
+    const itemHistoriaUsuario = this.data.db.object('pacientes/' +
+      this.data_ingreso['Información Básica']['Identidad']['Tipo_doc'] + '/' +
+      this.data_ingreso['Información Básica']['Identidad']['Documento'] + '');
+    itemHistoriaUsuario.update({'historia': this.data_ingreso, 'servicios': [servicio]});
     this.terminado.emit(true);
   }
 
   asignarServicioAUsuario(servicio: any) {
-    this.data.db.object('usuarios/' + this.data.current_uid + '/servicios_activos').update([servicio]);
+    // this.data.db.object('usuarios/' + this.data.current_uid + '/servicios_activos').update([servicio]);
   }
 
-
-  crearServicio() {
-    // creo el servicio
-    // var servicio = {
-    //   metadata: {
-    //     tipo_doc: this.basicComponent.sub_categorias.identidad.tipo_documento,
-    //     documento: this.basicComponent.sub_categorias.identidad.documento,
-    //     inicio_historia: false,
-    //   },
-    //   estado: 'ACTIVO',
-    //   nombre: 'Prueba de estados',
-    //   tipo_servicio: 'periodoncia',
-    //   diagnostico: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, beatae commodi fuga incidunt odit placeat quo' +
-    //   ' soluta vel vero voluptate. Cupiditate dolorum exercitationem maiores necessitatibus neque officiis sed sunt veritatis!',
-    //   // evoluciones: [{fecha: '', contenido: ''}],
-    //   id_paciente: this.sub_categorias.current_uid,
-    //   id: '',
-    //   prox_cita: 'aún no se ha asignado cita'
-    // };
-  }
 
 }
 

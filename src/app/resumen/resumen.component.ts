@@ -7,10 +7,12 @@ import {DataService} from '../services/data.service';
   styleUrls: ['./resumen.component.css']
 })
 export class ResumenComponent implements OnInit {
-  p: any = this.data.paciente_buscado.payload.val().historia;
   tels: any = [];
+  historia: any ;
 
   constructor(private data: DataService) {
+    this.historia = this.data.paciente_buscado.payload.val().historia;
+    console.log(this.historia);
   }
 
   ngOnInit() {
@@ -18,9 +20,10 @@ export class ResumenComponent implements OnInit {
 
   getAnos(): string {
     const as = (new Date().valueOf());
-    const bd = new Date(this.p.info_basica.identidad.fecha_nacimiento).valueOf();
+    const bd = new Date(this.historia['Información Básica']['Identidad']['Nacimiento']).valueOf();
     const edad = Math.trunc(((as - bd) / (1000 * 60 * 60 * 24 * 365)));
     return edad + ' años';
   }
+
 }
 

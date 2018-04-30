@@ -10,7 +10,7 @@ export class InputComponent implements OnInit {
   @Input() placeholder = '';
   @Input() lock = true;
   @Input() type = 'text';
-  @Input() value;
+  @Input() value = 'no value';
   @Input() cagetegoria = '';
   @Input() sub_cagetegoria = '';
   @Input() nombre_db = '';
