@@ -17,12 +17,14 @@ export class DataService {
   public current_uid: any;
   public documento_paciente_buscado: string;
 
+  public informacion_categorias: any = [];
+
   constructor(db: AngularFireDatabase) {
     this.db = db;
   }
 
   categorias_ingreso = ['Información Básica'];
-  public informacion_categorias = [
+  public info_local: any[] = [
     {
       titulo: 'Información Básica',
       sub_categorias:
@@ -111,7 +113,7 @@ export class DataService {
                 tam: 'm'
               }, {
                 tipo_item: 'condicional',
-                tam: 'l',//intocable, siempre debe ser l
+                tam: 'l', // intocable, siempre debe ser l
                 nombre: 'prueba',
                 seleccionables: ['a', 'b', 'c', 'd', 'e'],
                 condicionables: {

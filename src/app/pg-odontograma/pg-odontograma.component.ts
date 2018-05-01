@@ -87,13 +87,13 @@ export class PgOdontogramaComponent implements OnInit {
       var ob = {};
       ob['id'] = final_id;
       ob['general'] = '';
-      ob[this.partes_dientes['a']] = 'b';
-      ob[this.partes_dientes['b']] = 'm';
-      ob[this.partes_dientes['c']] = 'b';
-      ob[this.partes_dientes['d']] = 'b';
-      ob[this.partes_dientes['e']] = 'm';
-      ob[this.partes_dientes['f']] = 'm';
-      ob[this.partes_dientes['g']] = 'm';
+      ob[this.partes_dientes['a']] = '';
+      ob[this.partes_dientes['b']] = '';
+      ob[this.partes_dientes['c']] = '';
+      ob[this.partes_dientes['d']] = '';
+      ob[this.partes_dientes['e']] = '';
+      ob[this.partes_dientes['f']] = '';
+      ob[this.partes_dientes['g']] = '';
       this.data.push(ob);
     }
     console.log(this.data);

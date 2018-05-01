@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit, AfterViewInit {
 
   buscar(event: any) {
     this.data.documento_paciente_buscado = (<HTMLInputElement>event.target).value;
-// TODO POR AHORA, LAS BUSQUEDAS SOLO FUNCIONAN PARA CÉDULAS
+    // TODO POR AHORA, LAS BUSQUEDAS SOLO FUNCIONAN PARA CÉDULAS
     this.db.object('pacientes/CC/' + this.data.documento_paciente_buscado).snapshotChanges().subscribe(item => {
         if (item.payload.val() != null) {
           console.log(item);
@@ -51,4 +51,5 @@ export class NavbarComponent implements OnInit, AfterViewInit {
   initIngreso() {
     this.mostrarIngreso = true;
   }
+
 }

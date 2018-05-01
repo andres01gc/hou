@@ -17,10 +17,18 @@ export class NuevoIngresoComponent implements OnInit {
   data_ingreso = {};
 
   constructor(public  data: DataService) {
-    // this.obternerInformacionBaseHistoria();
+
+    this.data.db.object('informacion_categorias').set(this.data.info_local);
+    this.traerInfoHistoria();
   }
 
   ngOnInit() {
+  }
+
+  traerInfoHistoria() {
+    this.data.db.list('informacion_categorias').valueChanges().subscribe(item => {
+      this.data.informacion_categorias = item;
+    });
   }
 
   finalizarIngreso() {
@@ -31,7 +39,8 @@ export class NuevoIngresoComponent implements OnInit {
         }
       }
     );
-    
+
+
     this.data_ingreso['Odontograma'] = this.odonto.data;
 
 //  creo el servicio inicial
@@ -69,6 +78,6 @@ export class NuevoIngresoComponent implements OnInit {
     // this.data.db.object('usuarios/' + this.data.current_uid + '/servicios_activos').update([servicio]);
   }
 
-
 }
+
 
