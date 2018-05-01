@@ -1,0 +1,26 @@
+<div class="frm">
+  <app-select [lock]="lock" class="item small" [data]="['carrrera','calle','Transversal', 'Diagonal']"
+              titulo="Departamento"
+              (selected)="dir.departamento = $event"></app-select>
+
+  <app-select [lock]="lock" class="item small" [data]="['carrrera','calle','Transversal', 'Diagonal']"
+              titulo="Municipio"
+              (selected)="dir.municipio = $event"></app-select>
+
+  <app-input [lock]="lock" class="item small" name="Barrio" placeholder="Barrio"
+             (texted)="dir.barrio= $event"></app-input>
+
+  <app-select [lock]="lock" class="item small" [data]="['carrrera','calle','Transversal', 'Diagonal']"
+              titulo="Dirección"
+              (selected)="dir.a = $event"></app-select>
+
+  <app-input [lock]="lock" class="item min" name="No" placeholder="lugar" (texted)="dir.b = $event"></app-input>
+  <app-input [lock]="lock" class="item min" name="No" placeholder="lugar" (texted)="dir.c= $event"></app-input>
+
+  <app-select [lock]="lock" class="item small" [data]="['casa','apto','Unidad', 'Finca']" titulo="vivienda"
+              (selected)="dir.tipo_vivienda = $event"></app-select>
+
+
+  <app-input [lock]="lock" class="item big" name="detalles" placeholder="Detalles"
+             (texted)="dir.detalles = $event"></app-input>
+</div>

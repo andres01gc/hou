@@ -1,0 +1,21 @@
+.c-ev-card {
+  width: auto;
+  height: auto;
+  background: #FCFCFC;
+  border: 1px solid #cccccc;
+  margin-bottom: 1em;
+  border-radius: .2em;
+  padding: 1em;
+}
+
+.c-ev-cnt-up {
+  /*padding: .5em;*/
+  display: flex;
+  justify-content: space-between;
+}
+
+.c-ev-cnt {
+  opacity: .7;
+  font-weight: 400;
+  padding-top: 1em;
+}

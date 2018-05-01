@@ -1,0 +1,82 @@
+<app-advertencia-iniciar-servicio (advertido)="iniciarHistoria()" [hidden]="!verAdv"></app-advertencia-iniciar-servicio>
+<app-reasignar-cita [hidden]="!reasignar"></app-reasignar-cita>
+<app-cancelar-servicio [hidden]="!cancelar"></app-cancelar-servicio>
+<app-pg-evolucion [hidden]="!evolucionar" (evolucion)="subirEvolucion($event)"
+                  (cancelar)="evolucionar= $event"></app-pg-evolucion>
+
+<div class="pgs_main">
+  <div class="pgs_main_bar">
+    <div class="pgs_back" routerLink="../">Atras</div>
+    <div class="pgs_cnt_ttl">
+      <div class="pgs_ttl">Titulo del servicio</div>
+      <div class="pgs_subttl">
+        <div class="txt">{{data.servicio_seleccionado_paciente.payload.val().estado}}</div>
+        <div class="sub_ttl">Servicio de {{data.servicio_seleccionado_paciente.payload.val().tipo_servicio}} AW3D1</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pgs_magic"></div>
+<div class="pgs_rg">
+  <div class="pgs_infouser">
+    <div class="pgs_itm">
+      <div class="pgs_tttl">Responsable del Servicio</div>
+      <div class="pgs_cnt_responsable">
+        <div class="pgs-ico-logo-container">
+          <img class="icon nv-ic-logo" src="/assets/navbar/logo.svg">
+        </div>
+        <div class="nv-vline"></div>
+        <div class="nv-main-container">
+          <div class="nv-name">Servicio sin asignar</div>
+          <div class="nv-esp">Asignar servicio</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pgs_itm">
+      <div class="pgs_tttl">Próxima cita</div>
+      <div class="pgs_cnt_responsable">
+
+        <div class="pgs-ico-logo-container">
+          <img class="icon pgs-ico-not" src="/assets/navbar/not_ico.svg">
+        </div>
+
+        <div class="nv-vline"></div>
+        <div class="nv-main-container">
+          <div class="nv-name">Cita sin asignar</div>
+          <div class="pgs-ops">
+            <div class="pgs_opcionees" (click)="reasignar=true">Opciones</div>
+            |
+            <div class="pgs_cancelar" (click)="cancelar=true">Cancelar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!data.servicio_seleccionado_paciente.payload.val().metadata.inicio_historia;else other_content">
+    <div class="btt_evolucionar" (click)="mostrarAdv()">
+      Iniciar/Revisar historia
+    </div>
+  </div>
+
+  <!--<ng-template #other_content>-->
+    <div class="btt_evolucionar" (click)="evolucionarServicio()">
+      Evolucionar servicio
+    </div>
+  <!--</ng-template>-->
+
+  <div class="pgs_tttl">Tratamiento</div>
+
+  <div class="cnt">FASE Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aut beatae consequatur
+    cupiditate eveniet harum, inventore, magni molestiae neque nisi quidem.
+    <div class="pgs_tttl">Diagnóstico</div>
+    <div class="cnt">{{data.servicio_seleccionado_paciente.payload.val().diagnostico}}
+    </div>
+
+    <div class="pgs_tttl">Evoluciones</div>
+    <app-card-evolucion *ngFor="let ev of evoluciones?.reverse(); let i = index"
+                        [evolucion]="ev" [id]="evoluciones.length-i"></app-card-evolucion>
+  </div>
+</div>

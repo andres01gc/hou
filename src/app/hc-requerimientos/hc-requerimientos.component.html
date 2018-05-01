@@ -1,0 +1,28 @@
+<app-cnt titulo="Tratamiento sugerido" [ocultar]="false">
+  <app-multiple [lock]='lock' titulo="Tratamientos Básico" (selected)="data.sugeridos.tratamiento_basico=$event"
+                [base_titulos]="['paquete preventivo', 'Urgencia']"></app-multiple>
+  <app-multiple [lock]='lock' titulo="Endodoncia" (selected)="data.sugeridos.endondoncia=$event"
+                [base_titulos]="['Uniradicular', 'Biradicular','Multiradicular']"></app-multiple>
+
+  <app-multiple [lock]='lock' titulo="Cirugía"
+                (selected)="data.sugeridos.cirugia=$event"
+                [base_titulos]="['Exodoncia simple', 'Exodoncia semi-incluido','Exodoncia incluido','Biopsia', 'Otra cirugia']"></app-multiple>
+
+  <app-multiple [lock]='lock' titulo="Operatoria"
+                (selected)="data.sugeridos.operatoria=$event"
+                [base_titulos]="['Exodoncia simple', 'Exodoncia semi-incluido','Exodoncia incluido','Biopsia', 'Otra cirugia']"></app-multiple>
+  <app-select [lock]='lock' titulo="Prostodoncia" (selected)="data.sugeridos.prostodoncia=$event"
+              [data]="['Placas','Cosmética','Prótesis fija', 'Removible', 'Total']"></app-select>
+  <app-multiple [lock]='lock' titulo="Especilidades periodoncia"
+                (selected)="data.sugeridos.especialidades_periodoncia=$event"
+                [base_titulos]="['Odontopediatia especialista', 'ortodoncia','Rehabilitación especialista']"></app-multiple>
+</app-cnt>
+
+<app-cnt titulo="Evolución Paciente" [ocultar]="false">
+</app-cnt>
+
+<app-cnt titulo="Remisión interna" [ocultar]="false">
+</app-cnt>
+
+<app-cnt titulo="Sugerencia remisión" [ocultar]="false">
+</app-cnt>

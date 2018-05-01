@@ -1,0 +1,13 @@
+<div class="mtl-ttl">{{nombre}}</div>
+<div class="mtl-mn" [class.active]="centrar" [class.nn]="lock">
+
+  <div class="" *ngFor="let item of dt ; let i = index">
+    <div class="mtl-item" *ngIf="(!lock || item.activo)" [class.active]="item.activo" (click)="activarItem(i)">
+      <div class="mtl-item-cnt" [class.n]="lock">
+        {{item.nombre}}
+      </div>
+    </div>
+  </div>
+
+</div>
+

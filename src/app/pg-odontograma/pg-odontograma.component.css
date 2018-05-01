@@ -1,0 +1,244 @@
+.formm:hover {
+  cursor: pointer;
+  opacity: .5;
+  stroke-width: 3px;
+  stroke-opacity: .7;
+}
+
+.formm {
+  opacity: 0;
+  fill: #00ABA0;
+}
+
+.diente_select {
+  opacity: 1;
+}
+
+.partes {
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  stroke-width: 3px;
+}
+
+.grupo_partes {
+  pointer-events: none;
+}
+
+.odt_dt_part {
+  stroke-miterlimit: 10;
+  stroke-width: .5px;
+  stroke: #000;
+  pointer-events: none;
+}
+
+.content {
+  /*position: absolute;*/
+  /*left: 50%;*/
+  /*top: 50%;*/
+  /*transform: translate(-50%, -50%);*/
+  /*margin: 0 auto;*/
+
+  padding: .2em;
+  width: 50%;
+}
+
+.sub_ttl {
+  padding-left: .4em;
+}
+
+.odg_left {
+  /*background-color: #00ABA0;*/
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.odg_main_bar {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  /*position: fixed;*/
+  width: auto;
+  padding: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.odg_cnt_ttl {
+  /*width: 70em;*/
+  padding: .5em;
+}
+
+.odg_subttl {
+  font-size: .8em;
+  display: flex;
+  align-items: center;
+}
+
+.odg-dt-ttl {
+  display: flex;
+  width: 3em;
+  height: 3em;
+  /*background: #DB3650;*/
+  justify-content: center;
+  align-items: center;
+}
+
+.dt {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #DB3650;
+}
+
+.odg_vdos {
+  position: absolute;
+  right: 0;
+  width: 30%;
+  height: 76.4vh;
+  background-color: rgba(0, 0, 0, .01);
+}
+
+.odg_main {
+  display: flex;
+  width: 50vw;
+  height: 76.4vh;
+  /*background: #2196F3;*/
+}
+
+#dd:hover {
+  background-color: #00ABA0;
+}
+
+.st0 {
+  opacity: 0.3;
+  fill: #DBDBDB;
+  stroke: #D8D8D8;
+  /*stroke-width: 0.5;*/
+  stroke-miterlimit: 10;
+}
+
+/*PARTES DEL DIENTE SELECCIONADO */
+.st1 {
+  fill: #F44336;
+}
+
+.st2 {
+  fill: #2196F3;
+}
+
+.st3 {
+  fill: #C6C6C6;
+}
+
+.odg-cnt-dt {
+  /*background: #DB3650;*/
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dt-part {
+  fill: rgba(0, 0, 0, .05);
+  opacity: .4;
+}
+
+.dt-part:hover {
+  cursor: pointer;
+  stroke: rgba(0, 171, 160, 0.42);
+  stroke-width: 4px;
+  opacity: .8;
+
+}
+
+.parte_diente_select {
+  stroke: rgba(0, 171, 160, 1);
+  stroke-width: 3px;
+  stroke-opacity: .5;
+  opacity: .8;
+}
+
+.st4 {
+  opacity: 0.3;
+}
+
+.st5 {
+  fill: #DBDBDB;
+}
+
+.st6 {
+  fill: #D8D8D8;
+}
+
+.odg-predet {
+  width: 80%;
+  height: 3em;
+  background-color: rgba(0, 0, 0, .02);
+  border-radius: .2em;
+  margin: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.opa {
+  opacity: .3;
+}
+
+.cnt {
+  padding: 1em;
+}
+
+.odg-cnt-ic {
+  width: 3em;
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1em;
+  margin-right: 1em;
+  cursor: pointer;
+}
+
+.icon {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  width: 1.5em;
+}
+
+.odg-ss {
+  width: 100%;
+  height: 3em;
+  background-color: rgba(0, 0, 0, .02);
+  border-radius: .2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: .8;
+}
+
+.odg-part-ttl {
+  width: 100%;
+  height: 3em;
+  background-color: rgba(0, 0, 0, .02);
+  border-radius: .2em;
+  /*margin: 1em;*/
+  display: flex;
+  /*justify-content: space-between;*/
+  justify-content: center;
+  align-items: center;
+  opacity: .8;
+}
+
+.ttm {
+  /*padding: 1em;*/
+}
+
+.spc {
+  padding: 1em;
+}
+

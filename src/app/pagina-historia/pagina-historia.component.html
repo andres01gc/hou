@@ -1,0 +1,56 @@
+<app-cnt *ngFor="let sub_cat of sub_categorias; let i= index"
+         [titulo]="sub_cat.sub_titulo"
+         [ocultar]="!(i===0)">
+
+  <div class="frm">
+    <div *ngFor="let item of sub_cat.items" class="item {{item.tam}}">
+      <app-input
+        (texted)="data_pag[sub_cat.sub_titulo][item.nombre]=$event"
+        *ngIf="'input'===item.tipo_item"
+        [lock]="lock"
+        [type]="item.type"
+        [name]="item.nombre"
+        [value]="data_pag[sub_cat.sub_titulo][item.nombre]"
+        [placeholder]="item.placehoder">
+      </app-input>
+
+      <div class="line" *ngIf="'line'===item.tipo_item"></div>
+
+      <app-select
+        *ngIf="'select'===item.tipo_item"
+        [lock]="lock"
+        [data]="item.opciones"
+        [titulo]="item.nombre"
+        [value]="data_pag[sub_cat.sub_titulo][item.nombre]"
+        (selected)="data_pag[sub_cat.sub_titulo][item.nombre]=$event"></app-select>
+
+      <app-multiple
+        *ngIf="'multiple'===item.tipo_item"
+        [lock]='lock'
+        [nombre]="item.nombre"
+        (selected)="data_pag[sub_cat.sub_titulo][item.nombre]=$event"
+        [base_titulos]="item.opciones">
+      </app-multiple>
+
+      <app-item-tel
+        [telefonos]="data_pag[sub_cat.sub_titulo][item.nombre]"
+        (result)="data_pag[sub_cat.sub_titulo][item.nombre]=$event"
+        *ngIf="'telefono'===item.tipo_item"
+        [lock]="lock">
+      </app-item-tel>
+
+      <app-multiple
+        *ngIf="'multiple'===item.tipo_item"
+        [lock]='lock'
+        [nombre]="item.nombre"
+        (selected)="data_pag[sub_cat.sub_titulo][item.nombre]=$event"
+        [base_titulos]="item.opciones">
+      </app-multiple>
+
+      <app-condicional *ngIf="'condicional'===item.tipo_item"
+                       [data]="item"
+                       (selected)="data_pag[sub_cat.sub_titulo][item.nombre]=$event">
+      </app-condicional>
+    </div>
+  </div>
+</app-cnt>
