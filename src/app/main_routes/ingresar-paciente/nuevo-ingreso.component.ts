@@ -31,7 +31,7 @@ export class NuevoIngresoComponent implements OnInit {
         }
       }
     );
-
+    
     this.data_ingreso['Odontograma'] = this.odonto.data;
 
 //  creo el servicio inicial
