@@ -11,7 +11,6 @@ export class DataService {
   public info_paciente_buscado: any;
   public servicio_seleccionado_paciente: any;
   public servicio_usuario_seleccionado: any;
-  // sobre el usuario
   public user: Observable<firebase.User>;
   public informacion_usuario: any;
   public current_uid: any;
@@ -1527,3 +1526,5 @@ export class DataService {
     }
   ];
 }
+
+
