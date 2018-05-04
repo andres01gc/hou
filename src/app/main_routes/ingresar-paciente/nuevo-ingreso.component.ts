@@ -25,9 +25,9 @@ export class NuevoIngresoComponent implements OnInit {
 
   traerInfoHistoria() {
     // linea para subir la información de la historia.
-    // this.data_pag.db.object('informacion_categorias').set(this.data_pag.info_local);
-    this.data.informacion_categorias = this.data.info_local;
-
+    this.data.db.object('informacion_categorias').set(this.data.info_local);
+  //  this.data.informacion_categorias = this.data.info_local;
+console.log('test');
     // this.data_pag.db.list('informacion_categorias').valueChanges().subscribe(item => {
     //   this.data_pag.informacion_categorias = item;
     // });
