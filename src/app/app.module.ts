@@ -56,6 +56,7 @@ import {PgEvolucionComponent} from './pg-evolucion/pg-evolucion.component';
 import {PaginaHistoriaComponent} from './pagina-historia/pagina-historia.component';
 import {AppMintabComponent} from './app-mintab/app-mintab.component';
 import {CondicionalComponent} from './condicional/condicional.component';
+import {ItemEnfermedadComponent} from './item-enfermedad/item-enfermedad.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -82,25 +83,6 @@ const appRoutes: Routes = [
           },
           {
             path: 'historia', component: HistoriaComponent
-
-            // children: [
-            //   {path: 'basico', component: HcBasicComponent},
-            //   {path: 'anamnesis', component: HcAnamnesisComponent},
-            //   {path: 'antecedentes', component: HcAntecedentesComponent},
-            //   {path: 'habitos', component: HcHabitosComponent},
-            //   {path: 'revision-sistema', component: HcRevisionPorSistemComponent},
-            //   {path: 'ex-fisico', component: HcExamenFisicoComponent},
-            //   {path: 'ex-fisico-craneofacial', component: HcExamenFisicoCrnfacialComponent},
-            //   {path: 'ex-estomatologico', component: HcExamenEstomatologicoComponent},
-            //   {path: 'odontograma', component: PgOdontogramaComponent},
-            //   {path: 'periodontograma', component: HcPeriodontogramaComponent},
-            //   {path: 'ex-periodontal', component: HcExamenPeriodontalComponent},
-            //   {path: 'desc-radiografica', component: HcDescripcionRadiograficaComponent},
-            //   {path: 'diagnostico', component: HcDiagnosticoComponent},
-            //   {path: 'diagnostico-por-diente', component: HcDiagnosticoPorDienteComponent},
-            //   {path: 'tratamiento', component: HcTratamientoComponent},
-            //   {path: 'consentimiento', component: HcConsentimientoComponent}
-            // ]
           },
           {path: 'detalles', component: PgServicioComponent}]
       },
@@ -171,7 +153,8 @@ export const environment = {
     PgEvolucionComponent,
     AppMintabComponent,
     CondicionalComponent,
-    PaginaHistoriaComponent],
+    PaginaHistoriaComponent,
+    ItemEnfermedadComponent],
 
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, AngularFireModule.initializeApp(environment.firebase), AngularFireDatabaseModule,

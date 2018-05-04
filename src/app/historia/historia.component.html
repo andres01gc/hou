@@ -1,28 +1,25 @@
 <div class="hc_hc">
-
-  <!--<div class="magicspace"></div>-->
-
   <div class="hc_content">
-
-    <div class="inpc_magicspace"></div>
+    <!--<div class="inpc_magicspace"></div>-->
     <div class="ip_cnt_tabs">
       <app-tabs>
         <app-tab
           *ngFor="let tbs of data.informacion_categorias; let i= index"
           [tab_activa]="i===0"
           [tabTitle]="tbs.titulo">
-
           <app-pagina-historia
-            [lock]="lock"
             [titulo_pag]="tbs.titulo"
-            [data_pag]="historia[tbs.titulo]"
             *ngIf="tbs.titulo!=='Odontograma'"
+            [data_pag]="data.info_paciente_buscado.historia[tbs.titulo]"
             [sub_categorias]="tbs.sub_categorias">
           </app-pagina-historia>
-          <!--<app-pg-odontograma-->
-          <!--*ngIf="tbs.titulo==='Odontograma'"-->
-          <!--[lock]="false">-->
-          <!--</app-pg-odontograma>-->
+
+          <app-pg-odontograma
+            *ngIf="tbs.titulo==='Odontograma'"
+            [lock]="false"
+            [data_pag]="data.info_paciente_buscado.historia[tbs.titulo]">
+
+          </app-pg-odontograma>
         </app-tab>
       </app-tabs>
 
@@ -31,6 +28,6 @@
       <!--<router-outlet (activate)="onActivate($event)"></router-outlet>-->
       <!--&lt;!&ndash;<div class="hc-rg">&ndash;&gt;-->
       <!--&lt;!&ndash;</div>&ndash;&gt;-->
-      <!--</div>-->
     </div>
   </div>
+</div>

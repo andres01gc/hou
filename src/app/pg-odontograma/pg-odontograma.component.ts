@@ -15,13 +15,13 @@ export class PgOdontogramaComponent implements OnInit {
   partes_dientes: any = {
     a: 'parte_uno',
     b: 'parte_dos',
-    c: 'parte_tres',
+    c: 'vestibular',
     d: 'parte_cuatro',
-    e: 'parte_cinco',
+    e: 'lingual o palatino', // TODO palatina
     f: 'parte_seis',
-    g: 'parte_siete'
+    g: 'Oclusal'
   };
-  @Input() data: any = [];
+  @Input() data_pag: any = [];
 
   dientesInfo = [
     {id: 11, nombre: 'Incisivo central'},
@@ -63,7 +63,7 @@ export class PgOdontogramaComponent implements OnInit {
 
   changeData(nData: any) {
     console.log('remplazando...');
-    this.data = nData;
+    this.data_pag = nData;
   }
 
 
@@ -94,9 +94,9 @@ export class PgOdontogramaComponent implements OnInit {
       ob[this.partes_dientes['e']] = '';
       ob[this.partes_dientes['f']] = '';
       ob[this.partes_dientes['g']] = '';
-      this.data.push(ob);
+      this.data_pag.push(ob);
     }
-    console.log(this.data);
+    console.log(this.data_pag);
   }
 
 
@@ -106,7 +106,7 @@ export class PgOdontogramaComponent implements OnInit {
     if (id === 0) {
       des_final = '';
     } else {
-      des_final = this.data[this.data.map(x => x.id).indexOf(id)][parteDiente];
+      des_final = this.data_pag[this.data_pag.map(x => x.id).indexOf(id)][parteDiente];
     }
     // console.log(des_final);
 
@@ -167,10 +167,15 @@ export class PgOdontogramaComponent implements OnInit {
   }
 
   editar(color: string) {
-    this.data[this.data.map(x => x.id).indexOf(this.diente)][this.parteSelected] = color;
+    this.data_pag[this.data_pag.map(x => x.id).indexOf(this.diente)][this.parteSelected] = color;
   }
 
   editarGeneral(g: string) {
-    this.data[this.data.map(x => x.id).indexOf(this.diente)]['general'] = g;
+    const este = this.data_pag[this.data_pag.map(x => x.id).indexOf(this.diente)]['general'];
+    if (este === g) {
+      this.data_pag[this.data_pag.map(x => x.id).indexOf(this.diente)]['general'] = '';
+    } else {
+      this.data_pag[this.data_pag.map(x => x.id).indexOf(this.diente)]['general'] = g;
+    }
   }
 }

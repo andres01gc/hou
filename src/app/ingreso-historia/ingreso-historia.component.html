@@ -10,11 +10,9 @@
         *ngFor="let tbs of data.informacion_categorias; let i= index"
         [tab_activa]="i===0"
         [tabTitle]="tbs.titulo">
-
         <app-pagina-historia
           [titulo_pag]="tbs.titulo"
           *ngIf="tbs.titulo!=='Odontograma'"
-          [data_pag]="historia[tbs.titulo]"
           [sub_categorias]="tbs.sub_categorias">
         </app-pagina-historia>
 
@@ -23,9 +21,10 @@
           [lock]="false">
         </app-pg-odontograma>
 
-        <div class="asd" *ngIf="tbs.titulo==='Final'">
-          <!--<div class="finalizar_ingreso" (click)="finalizarIngreso()">Finalizar ingreso</div>-->
+        <div class="frm" *ngIf="tbs.titulo==='Final'">
+          <div class="finalizar_ingreso" (click)="finalizarIngreso()">Finalizar ingreso</div>
         </div>
+
       </app-tab>
     </app-tabs>
   </div>

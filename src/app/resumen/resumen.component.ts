@@ -8,10 +8,11 @@ import {DataService} from '../services/data.service';
 })
 export class ResumenComponent implements OnInit {
   tels: any = [];
-  historia: any ;
+  historia: any;
 
   constructor(private data: DataService) {
-    this.historia = this.data.paciente_buscado.payload.val().historia;
+    console.log('testing pg hc');
+    this.historia = this.data.info_paciente_buscado.historia;
     console.log(this.historia);
   }
 
@@ -20,7 +21,7 @@ export class ResumenComponent implements OnInit {
 
   getAnos(): string {
     const as = (new Date().valueOf());
-    const bd = new Date(this.historia['Información Básica']['Identidad']['Nacimiento']).valueOf();
+    const bd = new Date(this.historia['Información General']['Identidad']['Nacimiento']).valueOf();
     const edad = Math.trunc(((as - bd) / (1000 * 60 * 60 * 24 * 365)));
     return edad + ' años';
   }

@@ -1,13 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
-import {SnakbarComponent} from '../utils/snakbar/snakbar.component';
 import {DataService} from '../services/data.service';
 import {AngularFireDatabase} from 'angularfire2/database';
-import {HcRequerimientosComponent} from '../hc-requerimientos/hc-requerimientos.component';
-import {HcBasicComponent} from '../historia/hc-pages/hc-basic/hc-basic.component';
-import {HcExamenFisicoComponent} from '../historia/hc-pages/hc-examen-fisico/hc-examen-fisico.component';
-import {PgOdontogramaComponent} from '../pg-odontograma/pg-odontograma.component';
-import {HcRevisionPorSistemComponent} from '../historia/hc-pages/hc-revision-por-sistem/hc-revision-por-sistem.component';
 
 @Component({
   selector: 'app-ingreso-historia',
@@ -29,15 +23,15 @@ export class IngresoHistoriaComponent implements OnInit {
 
   // ingresarHistoria() {
   //   // subo el servicio general
-  //   const itemHistoriaUsuario = this.data.db.object('pacientes/' + this.basicComponent.data.identidad.tipo_documento + '/' +
-  //     this.basicComponent.data.identidad.documento);
+  //   const itemHistoriaUsuario = this.data_pag.db.object('pacientes/' + this.basicComponent.data_pag.identidad.tipo_documento + '/' +
+  //     this.basicComponent.data_pag.identidad.documento);
   //   //  se actualiza la información de toooda la  historia,
   //   itemHistoriaUsuario.update({
   //     historia: {
-  //       info_basica: this.basicComponent.data,
-  //       revision_sistema: this.revision_sistema.data,
-  //       odontograma: this.odontograma.data,
-  //       examen_fisico: this.examen_fisico.data
+  //       info_basica: this.basicComponent.data_pag,
+  //       revision_sistema: this.revision_sistema.data_pag,
+  //       odontograma: this.odontograma.data_pag,
+  //       examen_fisico: this.examen_fisico.data_pag
   //       // requerimientos_paciente: this.requerimientos_paciente.sub_categorias,
   //     },
   //     metadata: {historia: true}

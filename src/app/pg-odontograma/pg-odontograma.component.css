@@ -14,6 +14,10 @@
   opacity: 1;
 }
 
+.sss {
+  height: 1.5em;
+}
+
 .partes {
   stroke: #fff;
   stroke-miterlimit: 10;

@@ -42,9 +42,18 @@
 
       <app-condicional *ngIf="'condicional'===item.tipo_item"
                        [data]="item"
+                       [lock]='lock'
                        (selected)="data_pag[sub_cat.sub_titulo][item.nombre]=$event">
       </app-condicional>
 
+      <app-item-referencia *ngIf="'referencia'===item.tipo_item"
+                           [lock]='lock'
+                           (texted)="data_pag[sub_cat.sub_titulo][item.nombre]=$event">
+      </app-item-referencia>
+
+      <app-item-enfermedad
+        *ngIf="'enfermedad'===item.tipo_item">
+      </app-item-enfermedad>
     </div>
   </div>
 </app-cnt>

@@ -18,30 +18,7 @@ export class HistoriaComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.historia = this.data.paciente_buscado.payload.val().historia;
-  }
-
-  onActivate(v: any) {
-    // switch (v.constructor.name) {
-    //   case 'HcBasicComponent':
-    //     v.changeData(this.data.paciente_buscado.payload.val().historia.info_basica);
-    //     break;
-    //
-    //   case 'HcRevisionPorSistemComponent':
-    //     v.changeData(this.data.paciente_buscado.payload.val().historia.revision_sistema);
-    //     break;
-    //
-    //   case 'HcExamenFisicoComponent':
-    //     v.changeData(this.data.paciente_buscado.payload.val().historia.examen_fisico);
-    //     break;
-    //
-    //   case 'PgOdontogramaComponent':
-    //     v.changeData(this.data.paciente_buscado.payload.val().historia.odontograma);
-    //     break;
-    //
-    //   case 'HcRequerimientosComponent':
-    //     v.changeData(this.data.paciente_buscado.payload.val().historia.requerimientos_paciente);
-    //     break;
-    // }
+    this.historia = this.data.info_paciente_buscado.historia;
+    console.log(this.historia);
   }
 }

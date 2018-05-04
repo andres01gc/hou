@@ -11,7 +11,7 @@
   -moz-box-shadow: 3px 4px 83px 0 rgba(0, 0, 0, 0.05);
   box-shadow: 3px 4px 83px 0 rgba(0, 0, 0, 0.05);
   align-items: center;
-  overflow: hidden;
+  overflow-y: scroll;
   list-style: none;
 }
 
@@ -36,9 +36,7 @@
   /*color: #00ABA0;*/
   font-weight: 600;
   color: #FCFCFC;
-
   background-color: #00ABA0;
-
 }
 
 .main_tab {

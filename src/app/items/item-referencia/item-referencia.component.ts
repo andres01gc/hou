@@ -7,8 +7,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class ItemReferenciaComponent implements OnInit {
   @Output() texted = new EventEmitter();
-
-  @Input() ref: any = {};
+  @Input() data: any = {};
   // value: any = {};
   @Input() lock = true;
 
@@ -16,17 +15,17 @@ export class ItemReferenciaComponent implements OnInit {
   }
 
   ngOnInit() {
-    if (this.ref == null) {
-      this.ref = {};
+    if (this.data == null) {
+      this.data = {};
     }
   }
 
   changeData(nData: any) {
     console.log('remplazando...');
-    this.ref = nData;
+    this.data = nData;
   }
 
   validar() {
-    // this.texted.emit(this.ref);
+    this.texted.emit(this.data);
   }
 }

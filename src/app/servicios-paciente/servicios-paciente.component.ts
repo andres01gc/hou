@@ -27,7 +27,7 @@ export class ServiciosPacienteComponent implements OnInit {
 
     // console.log('Servicios Activos');
     // console.log(this.servicios_activos);
-    // this.servicio_finalizados = this.sub_categorias.paciente_buscado.servicios.finalizados;
-    // this.servicios_incompletos = this.sub_categorias.paciente_buscado.servicios.incompletos;
+    // this.servicio_finalizados = this.sub_categorias.info_paciente_buscado.servicios.finalizados;
+    // this.servicios_incompletos = this.sub_categorias.info_paciente_buscado.servicios.incompletos;
   }
 }

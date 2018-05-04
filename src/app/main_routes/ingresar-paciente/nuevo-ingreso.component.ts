@@ -17,8 +17,6 @@ export class NuevoIngresoComponent implements OnInit {
   data_ingreso = {};
 
   constructor(public  data: DataService) {
-
-    this.data.db.object('informacion_categorias').set(this.data.info_local);
     this.traerInfoHistoria();
   }
 
@@ -26,28 +24,32 @@ export class NuevoIngresoComponent implements OnInit {
   }
 
   traerInfoHistoria() {
-    this.data.db.list('informacion_categorias').valueChanges().subscribe(item => {
-      this.data.informacion_categorias = item;
-    });
+    // linea para subir la información de la historia.
+    // this.data_pag.db.object('informacion_categorias').set(this.data_pag.info_local);
+    this.data.informacion_categorias = this.data.info_local;
+
+    // this.data_pag.db.list('informacion_categorias').valueChanges().subscribe(item => {
+    //   this.data_pag.informacion_categorias = item;
+    // });
   }
 
   finalizarIngreso() {
-    //  traigo toda la información de las paginas y la guardo en data ingreso
+    console.log('testing');
+    //  traigo toda la información de las paginas y la guardo en data_pag ingreso
     this.paginas.forEach(paginas => {
         if (paginas.titulo_pag !== 'Final') {
           this.data_ingreso[paginas.titulo_pag] = paginas.data_pag;
         }
       }
     );
-
-
-    this.data_ingreso['Odontograma'] = this.odonto.data;
+    console.log(this.data_ingreso);
+    this.data_ingreso['Odontograma'] = this.odonto.data_pag;
 
 //  creo el servicio inicial
     const servicio = {
       metadata: {
-        tipo_doc: this.data_ingreso['Información Básica']['Identidad']['Tipo_doc'],
-        documento: this.data_ingreso['Información Básica']['Identidad']['Documento'],
+        tipo_doc: this.data_ingreso['Información General']['Identidad']['Tipo_doc'],
+        documento: this.data_ingreso['Información General']['Identidad']['Documento'],
         inicio_historia: false,
       },
       estado: 'ACTIVO',
@@ -68,14 +70,14 @@ export class NuevoIngresoComponent implements OnInit {
 
 
     const itemHistoriaUsuario = this.data.db.object('pacientes/' +
-      this.data_ingreso['Información Básica']['Identidad']['Tipo_doc'] + '/' +
-      this.data_ingreso['Información Básica']['Identidad']['Documento'] + '');
+      this.data_ingreso['Información General']['Identidad']['Tipo_doc'] + '/' +
+      this.data_ingreso['Información General']['Identidad']['Documento'] + '');
     itemHistoriaUsuario.update({'historia': this.data_ingreso, 'servicios': [servicio]});
     this.terminado.emit(true);
   }
 
   asignarServicioAUsuario(servicio: any) {
-    // this.data.db.object('usuarios/' + this.data.current_uid + '/servicios_activos').update([servicio]);
+    // this.data_pag.db.object('usuarios/' + this.data_pag.current_uid + '/servicios_activos').update([servicio]);
   }
 
 }

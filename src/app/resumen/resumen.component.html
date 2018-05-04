@@ -5,14 +5,13 @@
 <main class="main">
   <div class="img_paciente">
   </div>
-
-  <div class="nombre">{{historia['Información Básica']['Identidad']['Nombre']}}
-    {{historia['Información Básica']['Identidad']['Apellidos']}}
+  <div class="nombre">{{historia['Información General']['Identidad']['Nombre']}}
+    {{historia['Información General']['Identidad']['Apellidos']}}
   </div>
-  <div class="doc">{{historia['Información Básica']['Identidad']['Tipo_doc']}}
-    {{historia['Información Básica']['Identidad']['Documento']}}
+  <div class="doc">{{historia['Información General']['Identidad']['Tipo_doc']}}
+    {{historia['Información General']['Identidad']['Documento']}}
   </div>
-  <div class="mas_info">{{historia['Información Básica']['Identidad']['Sexo']}}, {{getAnos()}}</div>
+  <div class="mas_info">{{historia['Información General']['Identidad']['Sexo']}}, {{getAnos()}}</div>
 
   <!--<div class="rs-hl"></div>-->
   <!--<div class="noti_content">-->
@@ -37,14 +36,14 @@
     <h4 class="ttl_ult">Información general</h4>
     <div class="line"></div>
 
-    <div class="item" *ngFor="let tl of historia['Información Básica']['Contacto']['telefonos']">
+    <div class="item" *ngFor="let tl of historia['Información General']['Contacto']['telefonos']">
       <div>{{tl.tipo_num}}</div>
       <div>{{tl.num}}</div>
     </div>
 
     <div class="item">
       <div>email</div>
-      <div>{{historia['Información Básica']['Contacto']['Correo electrónico']}}</div>
+      <div>{{historia['Información General']['Contacto']['Correo electrónico']}}</div>
     </div>
   </div>
 </main>
