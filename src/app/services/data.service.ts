@@ -1527,38 +1527,3 @@ export class DataService {
     }
   ];
 }
-
-
-// , {
-//   tipo_item: 'condicional',
-//     tam: 'l', // intocable, siempre debe ser l
-//     nombre: 'prueba',
-//     seleccionables: ['a', 'b', 'c', 'd', 'e'],
-//     condicionables: {
-//     a: [{
-//       tipo_item: 'input',
-//       type: 'text',
-//       tam: 'm',
-//       placehoder: '',
-//       nombre: 'Item a1!'
-//     }, {
-//       tipo_item: 'input',
-//       type: 'text',
-//       tam: 'm',
-//       placehoder: '',
-//       nombre: 'Item a2'
-//     }], b: [{
-//       tipo_item: 'input',
-//       type: 'text',
-//       tam: 'm',
-//       placehoder: '',
-//       nombre: 'Item b1!'
-//     }, {
-//       tipo_item: 'input',
-//       type: 'text',
-//       tam: 'm',
-//       placehoder: '',
-//       nombre: 'Item b2'
-//     }], c: [], d: [], e: []
-//   }
-// }
