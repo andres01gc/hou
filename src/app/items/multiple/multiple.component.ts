@@ -1,4 +1,5 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, HostBinding, HostListener, Input, OnInit, Output} from '@angular/core';
+import {DataService} from '../../services/data.service';
 
 @Component({
   selector: 'app-multiple',
@@ -13,8 +14,31 @@ export class MultipleComponent implements OnInit {
   @Input() data: any;
   dt: any = null;
   @Output() selected = new EventEmitter();
+  @Input() size: string;
+  @HostBinding('style.width') private ssize = '';
 
-  constructor() {
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    var ss = 0;
+    if (event.target.innerWidth < 500) {
+      // movil
+      ss = 0;
+    } else if (event.target.innerWidth < 900) {
+      ss = 1;
+      // tablet
+    } else {
+      ss = 2;
+      // pc
+    }
+
+    console.log('is workin ' + ss);
+    console.log(this.size);
+    this.ssize = this.dat.sizes[this.size][ss] + '%';
+    // event.target.innerWidth;
+  }
+
+  constructor(private dat: DataService) {
   }
 
   ngOnInit() {

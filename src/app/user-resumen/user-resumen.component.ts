@@ -42,7 +42,7 @@ export class UserResumenComponent implements OnInit {
 
   obtenerServicioSeleccionado() {
     // TODO se debe buscar los servicios propios del usuaario, para pruebas se seleccionarán todos los servicios sin asignar
-    this.db.list('usuarios/' + this.data.current_uid + '/servicios_activos').snapshotChanges().subscribe(servicios => {
+    this.db.list('usuarios/' + this.data.current_uid + '/servicios_id').snapshotChanges().subscribe(servicios => {
       this.servicios = servicios;
             //  se debe entrar a payload.val para poder, ver la sub_categorias, la metadata estará en .key, de cada objeto del array
       }

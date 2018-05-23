@@ -1,7 +1,8 @@
 <ul class="tabs_cnt">
-  <li class="main_tab" *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">
+  <li class="main_tab" *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.tab_activa">
     {{tab.tabTitle}}
   </li>
+
 </ul>
 <div class="tabs_magicspace"></div>
 <ng-content></ng-content>

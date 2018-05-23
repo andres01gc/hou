@@ -1,11 +1,8 @@
-<!--<div class="cnt-main">-->
-  <div class="cnt-card">
-    <div class="cnt-ttl" (click)="toggle()">{{titulo}}</div>
-
-    <div [hidden]="ocultar" class="cnt-cnt">
-      <ng-content>
-      </ng-content>
-    </div>
-
+<div class="cnt-card">
+  <div class="cnt_top_dt" (click)="toggle()">
+    <div class="ttl">{{titulo}}</div>
   </div>
-<!--</div>-->
+  <div *ngIf="!ocultar" class="cnt-cnt">
+    <ng-content></ng-content>
+  </div>
+</div>

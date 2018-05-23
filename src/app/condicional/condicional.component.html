@@ -1,42 +1,50 @@
-<div class="frm">
-  <div class="line"></div>
-  <div class="item {{data.tam}}">
-    <app-select [titulo]="data.nombre" [data]="data.seleccionables"
-                (selected)="seleccion= $event"></app-select>
-  </div>
-
-  <div class="line"></div>
-
-  <div *ngFor="let item of data.condicionables[seleccion]" class="item {{item.tam}}">
-    <app-input *ngIf="item.tipo_item==='input'"
-               [lock]="false"
-               [type]="item.type"
-               [name]="item.nombre"
-               (texted)="data_pag[seleccion][item.nombre]=$event"
-    >
-    </app-input>
-
-    <div class="line" *ngIf="'line'===item.tipo_item"></div>
-
-    <app-select
-      *ngIf="'select'===item.tipo_item"
-      [lock]="lock"
-      [data]="item.opciones"
-      [titulo]="item.nombre"
-      [value]="data_pag[seleccion][item.nombre]"
-      (selected)="data_pag[seleccion][item.nombre]=$event"></app-select>
-
-
-    <app-multiple
-      *ngIf="'multiple'===item.tipo_item"
-      [lock]='lock'
-      [nombre]="item.nombre"
-      (selected)="data_pag[seleccion][item.nombre]=$event"
-      [base_titulos]="item.opciones">
-    </app-multiple>
-
-  </div>
+<div class="cn">
+  <app-select
+    [titulo]="'asdv'"
+    [data]="['assdv','asdqv','asdsv']"
+    size="l">
+  </app-select>
 </div>
+
+<!--<app-input-->
+<!--[lock]="false"-->
+<!--type="text"-->
+<!--size="s"-->
+<!--name="input">-->
+<!--</app-input>-->
+<!--<div class="line"></div>-->
+
+<!--<div *ngFor="let item of estructura.condicionables[seleccion]" class="item {{item.tam}}">-->
+<!--<app-input *ngIf="item.tipo_item==='input'"-->
+<!--[lock]="false"-->
+<!--[type]="item.type"-->
+<!--[name]="item.nombre"-->
+<!--(texted)="dataGuardada[seleccion][item.nombre]=$event"-->
+<!--size="m"-->
+<!--&gt;-->
+<!--</app-input>-->
+
+<!--&lt;!&ndash;<div class="line" *ngIf="'line'===item.tipo_item"></div>&ndash;&gt;-->
+
+<!--<app-select-->
+<!--*ngIf="'select'===item.tipo_item"-->
+<!--[lock]="lock"-->
+<!--[size]="estructura.tam"-->
+<!--[estructura]="item.opciones"-->
+<!--[titulo]="item.nombre"-->
+<!--[value]="dataGuardada[seleccion][item.nombre]"-->
+<!--(selected)="dataGuardada[seleccion][item.nombre]=$event"></app-select>-->
+
+
+<!--<app-multiple-->
+<!--*ngIf="'multiple'===item.tipo_item"-->
+<!--[lock]='lock'-->
+<!--[size]="estructura.tam"-->
+<!--[nombre]="item.nombre"-->
+<!--(selected)="dataGuardada[seleccion][item.nombre]=$event"-->
+<!--[base_titulos]="item.opciones">-->
+<!--</app-multiple>-->
+<!--</div>-->
 
 
 

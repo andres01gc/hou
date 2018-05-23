@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {DataService} from '../services/data.service';
 
 @Component({
@@ -7,18 +7,22 @@ import {DataService} from '../services/data.service';
   styleUrls: ['./historia.component.css']
 })
 export class HistoriaComponent implements OnInit {
-  historia: any;
-  lock = true;
+  isLock = true;
+  @Input() data: any;
+  @Input() data_pag = null;
+  @Input() ttl: string;
+  @Input() subttl: string;
 
-  constructor(public data: DataService) {
-  }
-
-
-  getInfoHistoria() {
+  constructor(public dt: DataService) {
+    this.buscarHistoria();
   }
 
   ngOnInit() {
-    this.historia = this.data.info_paciente_buscado.historia;
-    console.log(this.historia);
+    // console.log(this.historia);
+  }
+
+  buscarHistoria() {
+    this.data = this.dt.paginas_historia;
+    this.data_pag = this.dt.info_paciente_buscado.historia;
   }
 }

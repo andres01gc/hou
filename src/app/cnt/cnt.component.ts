@@ -16,6 +16,7 @@ export class CntComponent implements OnInit {
   }
 
   toggle() {
+    console.log('está llegando');
     this.ocultar = !this.ocultar;
   }
 }

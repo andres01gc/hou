@@ -1,40 +1,40 @@
 <div class="frm">
-  <app-input value="{{data.parentesco}}" [lock]="lock" class="item small" name="Parentesco" placeholder="lugar"
-             (texted)="data.parentesco = $event; validar()"></app-input>
+  <app-input value="{{data.parentesco}}" [lock]="data.parentlock" name="Parentesco" placeholder="lugar"
+             (texted)="data.parentesco = $event; validar()" size="s"></app-input>
 
-  <app-input value="{{data.nombre}}" [lock]="lock" class="item small" type="text" name="Nombre" placeholder="Nombre"
-             (texted)="data.nombre = $event; validar()"></app-input>
+  <app-input value="{{data.nombre}}" [lock]="lock" type="text" name="Nombre" placeholder="Nombre"
+             (texted)="data.nombre = $event; validar()" size="s"></app-input>
 
-  <app-input value="{{data.apellidos}}" [lock]="lock" class="item small" name="Apellidos" placeholder="Apellidos"
-             (texted)="data.apellidos = $event; validar()"></app-input>
+  <app-input value="{{data.apellidos}}" [lock]="lock" name="Apellidos" placeholder="Apellidos"
+             (texted)="data.apellidos = $event; validar()" size="s"></app-input>
 
-  <app-input value="{{data.ocupacion}}" [lock]="lock" class="item small" name="Ocupación" placeholder="Ocupación"
-             (texted)="data.ocupacion = $event; validar()"></app-input>
+  <app-input value="{{data.ocupacion}}" [lock]="lock" name="Ocupación" placeholder="Ocupación"
+             (texted)="data.ocupacion = $event; validar()" size="s"></app-input>
 
-  <app-input value="{{data.numero_contacto}}" [lock]="lock" class="item small" name="numero de contacto"
+  <app-input value="{{data.numero_contacto}}" [lock]="lock" name="numero de contacto"
              placeholder="numero"
-             (texted)="data.numero_contacto = $event; validar()"></app-input>
+             (texted)="data.numero_contacto = $event; validar()" size="s"></app-input>
 
   <div class="line"></div>
 
   <div class="jmp"></div>
 
-  <app-select value="{{data.dir}}" [lock]="lock" class="item small"
+  <app-select value="{{data.dir}}" [lock]="lock" size="s"
               [data]="['carrrera','calle','Transversal', 'Diagonal']"
               titulo="Dirección"
               (selected)="data.dir = $event; validar()"></app-select>
 
-  <app-input value="{{data.dir_a}}" [lock]="lock" class="item min" name="No" placeholder="lugar"
+  <app-input value="{{data.dir_a}}" [lock]="lock" size="s" name="No" placeholder="lugar"
              (texted)="data.dir_a = $event; validar()"></app-input>
 
-  <app-input value="{{data.dir_b}}" [lock]="lock" class="item min" name="No" placeholder="lugar"
+  <app-input value="{{data.dir_b}}" [lock]="lock" size="s" name="No" placeholder="lugar"
              (texted)="data.dir_b = $event; validar()"></app-input>
 
-  <app-select value="{{data.tipo_vivienda}}" [lock]="lock" class="item small" [data]="['casa','apto','Unidad', 'Finca']"
+  <app-select value="{{data.tipo_vivienda}}" [lock]="lock" size="s" [data]="['casa','apto','Unidad', 'Finca']"
               titulo="vivienda"
               (selected)="data.tipo_vivienda = $event; validar()"></app-select>
 
-  <app-input value="{{data.detalles}}" [lock]="lock" class="item small" name="detalles" placeholder="Detalles"
+  <app-input value="{{data.detalles}}" [lock]="lock" size="s" name="detalles" placeholder="Detalles"
              (texted)="data.detalles = $event; validar()"></app-input>
 
 </div>

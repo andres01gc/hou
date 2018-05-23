@@ -1,9 +1,30 @@
+:host {
+  width: 100%;
+  height: 100%;
+  background-color: #6be000;
+
+}
+
+.pgs_crd {
+  width: available;
+  height: auto;
+  background-color: white;
+  margin: 1em;
+  border-radius: .4em;
+  -webkit-box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.1);
+  -moz-box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.1);
+  box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.1);
+  border: rgba(0, 0, 0, 0.11) 1px solid;
+
+}
+
 .pgs_main {
   display: flex;
-  width: 80%;
+  width: 100%;
   /*background: #DB3650;*/
   /*padding: 1em;*/
   /*height: 50em;*/
+
 }
 
 .pgs_cnt_ttl {
@@ -11,13 +32,13 @@
   padding: .5em;
 }
 
-.nv-esp {
+.esp {
   opacity: .5;
   cursor: pointer;
   font-size: .8em;
 }
 
-.nv-esp:hover {
+.esp:hover {
   opacity: .8;
 }
 
@@ -36,13 +57,19 @@
   color: #FCFCFC;
   background: #00ABA0;
   padding: .2em;
+  margin: .5em;
   border-radius: 3px;
+}
+
+.ff {
+  width: 100vw;
+  height: 100vh;
 
 }
 
 .pgs_magic {
   width: 70em;
-  height: 3.6em;
+  height: 5em;
 }
 
 .btt_evolucionar {
@@ -65,14 +92,17 @@
   display: flex;
   align-items: center;
   margin: 0;
-  position: fixed;
-  width: 80em;
+  width: 100%;
+  height: 5em;
   padding: 0;
+  background-color: #fbfbfb;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+
 }
 
 .pgs_ttl {
   display: flex;
+  font-weight: 600;
   /*width: 15em;*/
   /*height: 3em;*/
   /*background: #DB3650;*/
@@ -85,15 +115,17 @@
 }
 
 .pgs_back {
-  display: flex;
   width: 4em;
   height: 3em;
-  /*background: #DB3650;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
 }
 
 .pgs_back:hover {
   cursor: pointer;
-  background: rgba(0, 0, 0, .02);
+  background: rgba(0, 0, 0, .2);
 }
 
 .st0 {
@@ -102,15 +134,16 @@
 }
 
 .pgs_rg {
-  width: 80%;
+  width: available;
   padding: 1em;
 }
 
 .pgs_tttl {
-  font-weight: 500;
+  font-weight: 800;
+  font-size: .9em;
   width: available;
-  padding: 1em;
-  color: #DB3650;
+  padding: .5em;
+  color: #FF6D00;
 }
 
 .pgs-ico-logo-container {
@@ -132,8 +165,17 @@
   width: auto;
   height: 4em;
   align-items: center;
-  background-color: rgba(0, 0, 0, .02);
+  /*background-color: rgba(0, 0, 0, .02);*/
   border-radius: .2em;
+}
+
+.name {
+  font-weight: 600;
+}
+
+.esp {
+  font-size: .9em;
+  font-weight: 400;
 }
 
 .pgs-ops {

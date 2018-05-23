@@ -10,18 +10,22 @@ export class ItemReferenciaComponent implements OnInit {
   @Input() data: any = {};
   // value: any = {};
   @Input() lock = true;
+  @Input() parentesco = '';
+  @Input() isParentescoLock = true;
 
   constructor() {
   }
 
   ngOnInit() {
-    if (this.data == null) {
-      this.data = {};
-    }
+    // if (this.parentesco != )
+    // console.log('probando ref');
+    // if (this.estructura == null) {
+    //   this.estructura = {};
+    // }
   }
 
   changeData(nData: any) {
-    console.log('remplazando...');
+    // console.log('remplazando...');
     this.data = nData;
   }
 

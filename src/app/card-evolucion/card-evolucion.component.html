@@ -1,10 +1,38 @@
-<div class="c-ev-card">
-  <div class="c-ev-cnt-up">
-    <div class="c-ev-ttl"> Evolución #{{id}}</div>
-    <div class="c-ev-ttl"> {{evolucion.payload.val().fecha}}</div>
+<div [class.active]="editable" class="c-ev-card">
+
+  <div [class.act-ttl]="editable" class="c-ev-cnt-up">
+    <div class="c-ev-ttl">{{editable ? 'Nueva evolución': 'Evolución No.'+ ev.id}}</div>
   </div>
 
-  <div class="c-ev-cnt">
-    {{evolucion.payload.val().evolucion}}
+
+  <div class="c-ev-cnt-up">
+    <div class="c-ev-ttl_2">{{faseCorrespondiente? faseCorrespondiente : ev.fase}}</div>
+    <!--<div class="c-ev-sub_ed">Finalizar Ingreso</div>-->
+  </div>
+
+  <app-input
+    name="Evolución"
+    size="l"
+    type="text"
+    [lock]="!editable"
+    value="Lorem ipsum dolor sit amet, consectetur adipisicing elit. velit vero voluptatem!"
+    (texted)="ev['Evolución']">
+  </app-input>
+
+  <div class="mn" *ngIf="!tab_is_selected">
+
+    <div class="f-item" *ngFor="let anx of ev.anexos">
+      <div class="it-ttl" (click)="verAnexoSeleccionado(anx)">{{anx.nombre}}</div>
+    </div>
+
+    <div class="nx_add" *ngIf="editable">
+      <select class="n-anx" (change)="agregarNuevoAnexo($event.target.value)">
+        <option selected disabled hidden>+ nuevo anexo</option>
+        <option *ngFor="let opcion_anexos of this.data.paginas_anexos">{{opcion_anexos.nombre}}</option>
+      </select>
+    </div>
+  </div>
+  <div *ngIf="editable">
+    <div class="c-ev-sub_ed" (click)="alFinalizarIngreso()">Finalizar Ingreso</div>
   </div>
 </div>

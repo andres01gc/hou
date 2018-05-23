@@ -14,31 +14,55 @@
   display: flex;
   /*background-color: rgba(0, 0, 0, 0.03);*/
   border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: .3em;
+  /*border-radius: .4em;*/
   /*padding-left: .8em;*/
 }
 
 .lock {
   background-color: rgba(0, 0, 0, 0.02);
   border: 1px solid rgba(0, 0, 0, 0);
-  border-radius: .3em;
 }
 
 .ii {
-  padding-left: .8em;
+  padding-left: .4em;
 }
 
 input {
   -webkit-appearance: none;
   border: none;
-  background-color: rgba(255,255,255, 1);
-  font-family: "Fira Sans", Arial;
+  background-color: rgba(255, 255, 255, 1);
   width: 100%;
   font-size: 1em;
+  border-radius: .4em;
+}
+
+:host {
+  box-sizing: border-box;
+  padding: .5em;
 }
 
 .inn {
-  font-family: "Fira Sans", Arial;
+  width: 100%;
+  /*flex-bais: 50%;*/
+  /*box-sizing: border-box;*/
+  /*padding: .5em;*/
+}
+
+@media only screen and (max-width: 68em) {
+
+  :host {
+    width: 50%;
+    box-sizing: border-box;
+    padding: .5em;
+  }
+}
+
+@media only screen and (max-width: 42em) {
+  :host {
+    width: 100%;
+    box-sizing: border-box;
+    padding: .5em;
+  }
 
 }
 

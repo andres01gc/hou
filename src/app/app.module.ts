@@ -57,6 +57,10 @@ import {PaginaHistoriaComponent} from './pagina-historia/pagina-historia.compone
 import {AppMintabComponent} from './app-mintab/app-mintab.component';
 import {CondicionalComponent} from './condicional/condicional.component';
 import {ItemEnfermedadComponent} from './item-enfermedad/item-enfermedad.component';
+import {PopcardComponent} from './popcard/popcard.component';
+import {ItemBtComponent} from './item-bt/item-bt.component';
+import {ItemAnextabComponent} from './item-anextab/item-anextab.component';
+import {PopdateService} from './popdate.service';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -154,12 +158,14 @@ export const environment = {
     AppMintabComponent,
     CondicionalComponent,
     PaginaHistoriaComponent,
-    ItemEnfermedadComponent],
-
+    ItemEnfermedadComponent,
+    PopcardComponent,
+    ItemBtComponent,
+    ItemAnextabComponent],
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, AngularFireModule.initializeApp(environment.firebase), AngularFireDatabaseModule,
     AngularFireAuthModule, FormsModule],
-  providers: [AuthService, DataService, SupportDataService],
+  providers: [AuthService, DataService, SupportDataService, PopdateService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

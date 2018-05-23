@@ -90,18 +90,6 @@
   padding: .5em;
 }
 
-.m {
-  flex-basis: 33%;
-}
-
-.s {
-  flex-basis: 16.2%;
-}
-
-.l {
-  flex-basis: 100%;
-}
-
 .ip_main {
   /*background-color: #00ABA0;*/
   height: 72vh;
@@ -137,13 +125,18 @@
   .s {
     flex-basis: 25%;
   }
+}
 
-  /*.formulario_ingreso {*/
-  /*display: flex;*/
-  /*flex-wrap: wrap;*/
-  /*width: 100%;*/
-  /*box-sizing: border-box;*/
-  /*}*/
+.m {
+  flex-basis: 33%;
+}
+
+.s {
+  flex-basis: 16.2%;
+}
+
+.l {
+  flex-basis: 100%;
 }
 
 @media only screen and (max-width: 42em) {

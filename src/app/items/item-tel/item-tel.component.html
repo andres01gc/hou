@@ -1,16 +1,25 @@
-<div class="frm" [hidden]="lock">
-  <app-select [hidden]="lock"  [lock]="lock" class="item small" [data]="['casa','oficina','celular']" titulo="Tipo"
-               (selected)="tipo_num = $event"></app-select>
-  <app-input [hidden]="lock"  [lock]="lock" class="item small" type="number" name="Número" placeholder="Número"
-              (texted)="num = $event"></app-input>
-  <div [hidden]="lock" class="tel-btn" (click)="agregar()">Agregar</div>
-</div>
-
 <div class="tel_ttl" *ngIf="telefonos.length!==0">Telefonos Agregados</div>
-<div class=" item big tels-cnt" *ngFor="let item of telefonos; let i = index">
+<div class="tels-cnt" *ngFor="let item of telefonos; let i = index">
   <div class="tel-tipo">{{item.tipo_num}}</div>
   <div class="tel-num">{{item.num}}</div>
-  <div [hidden]="lock" class="tel-elimnar" (click)="eliminar(i)">Eliminar</div>
+  <div [hidden]="lock" class="tel-elimnar" (click)="eliminar(i)">
+    <div class="dl"></div>
+  </div>
 </div>
+
+<div class="frm" [hidden]="lock">
+  <app-select [hidden]="lock" [lock]="lock" class="item small" [data]="['casa','oficina','celular']" titulo="Tipo"
+              (selected)="tipo_num = $event" size="m"></app-select>
+
+  <app-input [hidden]="lock" [lock]="lock" class="item small" type="number" name="Número" placeholder="Número"
+             (texted)="num = $event" size="m"></app-input>
+
+  <app-item-bt [hidden]="lock"name="Agregar" size="s" (click)="agregar()">
+  </app-item-bt>
+  <!--<div [hidden]="lock" class="tel-btn" (click)="agregar()">Agregar</div>-->
+
+</div>
+
+
 
 

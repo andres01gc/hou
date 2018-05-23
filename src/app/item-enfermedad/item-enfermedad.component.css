@@ -17,10 +17,13 @@
 
 .tel-tipo {
   padding: .5em;
+  width: 5em;
 }
 
 .tel-num {
   padding: .5em;
+  width: 5em;
+
 }
 
 .tel-elimnar {
@@ -41,12 +44,14 @@
 
 .tels-cnt {
   display: flex;
-  width: 80%;
+  width: 100%;
   /*height: 3em;*/
   background-color: rgba(0, 0, 0, .02);
   padding: 1em;
   border-radius: .2em;
   margin-bottom: .5em;
+  align-items: center;
+  justify-content: center;
 }
 
 .tel-btn:hover {

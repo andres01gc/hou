@@ -23,15 +23,15 @@ export class IngresoHistoriaComponent implements OnInit {
 
   // ingresarHistoria() {
   //   // subo el servicio general
-  //   const itemHistoriaUsuario = this.data_pag.db.object('pacientes/' + this.basicComponent.data_pag.identidad.tipo_documento + '/' +
-  //     this.basicComponent.data_pag.identidad.documento);
+  //   const itemHistoriaUsuario = this.dataGuardada.db.object('pacientes/' + this.basicComponent.dataGuardada.identidad.tipo_documento + '/' +
+  //     this.basicComponent.dataGuardada.identidad.documento);
   //   //  se actualiza la información de toooda la  historia,
   //   itemHistoriaUsuario.update({
   //     historia: {
-  //       info_basica: this.basicComponent.data_pag,
-  //       revision_sistema: this.revision_sistema.data_pag,
-  //       odontograma: this.odontograma.data_pag,
-  //       examen_fisico: this.examen_fisico.data_pag
+  //       info_basica: this.basicComponent.dataGuardada,
+  //       revision_sistema: this.revision_sistema.dataGuardada,
+  //       odontograma: this.odontograma.dataGuardada,
+  //       examen_fisico: this.examen_fisico.dataGuardada
   //       // requerimientos_paciente: this.requerimientos_paciente.sub_categorias,
   //     },
   //     metadata: {historia: true}
@@ -58,7 +58,7 @@ export class IngresoHistoriaComponent implements OnInit {
 
   // obtenerServicioSeleccionado() {
   //   // TODO se debe buscar los servicios propios del usuaario, para pruebas se seleccionarán todos los servicios sin asignar
-  //   this.db.list('usuarios/' + this.sub_categorias.current_uid + '/servicios_activos').snapshotChanges().subscribe(servicios => {
+  //   this.db.list('usuarios/' + this.sub_categorias.current_uid + '/servicios_id').snapshotChanges().subscribe(servicios => {
   //       this.servicios = servicios;
   //       //  se debe entrar a payload.val para poder, ver la sub_categorias, la metadata estará en .key, de cada objeto del array
   //     }

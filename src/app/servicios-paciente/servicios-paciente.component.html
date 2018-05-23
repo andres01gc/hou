@@ -1,4 +1,5 @@
-<main class="main">
+<div class="main">
+  <div class="bttn" (click)="presionarIngresarServicio()">Agregar nuevo servicio</div>
   <h1 class="rs_ttl">Servicios Activos</h1>
-  <app-card-servicio *ngFor="let s_a of servicios_activos" [serv]="s_a"></app-card-servicio>
-</main>
+  <app-card-servicio *ngFor="let id of servicios_id" [id_serv]="id"></app-card-servicio>
+</div>

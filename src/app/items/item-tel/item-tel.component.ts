@@ -23,7 +23,6 @@ export class ItemTelComponent implements OnInit {
     }
   }
 
-
   agregar() {
     // console.log(this.num);
     if (this.tipo_num !== 'Tipo' && this.num !== '') {

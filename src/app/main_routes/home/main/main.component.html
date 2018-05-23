@@ -1,4 +1,12 @@
-<!--esta pantalla es la principal y desde la que se navega una vez el usuario se loguea-->
-<app-navbar></app-navbar>
+<app-snakbar></app-snakbar>
+<!--[dataGuardada]="this.popdate.dataGuardada"-->
+<app-popcard
+  [ttl]="this.popdate.ttl"
+  [subttl]="this.popdate.subttl"
+  [estructura]="this.popdate.paginas_data"
+  (cancelar)="this.popdate.alCancelar($event)"
+  (finalizar)="this.popdate.alFinalizar($event)">
+</app-popcard>
+<app-navbar (presiona_ingresar)="ejecutarIngreso()"></app-navbar>
 <router-outlet></router-outlet>
 

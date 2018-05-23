@@ -1,17 +1,14 @@
-<div class="nb_ingreso" [ngClass]="{'show' : !mostrarIngreso}">
-  <div class="nb_card_ingreso">
-    <app-nuevo-ingreso (terminado)="finalizarIngreso()"></app-nuevo-ingreso>
-  </div>
-</div>
-
+<!--<div class="nb_card_ingreso">-->
+<!--&lt;!&ndash;<app-nuevo-ingreso (terminado)="finalizarIngreso()"></app-nuevo-ingreso>&ndash;&gt;-->
+<!--</div>-->
 <nav class="main_nav">
-  <div class="nv-ico-logo-container">
+  <div class="nv-ico-logo-container" routerLink="/">
     <img class="icon nv-ic-logo" src="/assets/navbar/logo.svg">
   </div>
   <div class="nv-vline"></div>
   <div class="nv-main-container">
     <div class="nv-name">Universidad del Valle</div>
-    <div class="nv-esp">{{today | date:'fullDate'}} {{today | date:'shortTime'}}</div>
+    <div class="esp">{{today | date:'fullDate'}} {{today | date:'shortTime'}}</div>
   </div>
 
   <div class="nv-right">
@@ -21,15 +18,15 @@
           <img class="icon nv-ic-not" src="/assets/navbar/search.svg">
         </div>
 
-        <select value="qwefqef" class="slct">
+        <select value="" class="nv-b-select" (change)="this.data.tipo_doc_paciente_buscado=$event.target.value">
           <option selected>CC</option>
           <option>TI</option>
           <option>NIT</option>
         </select>
-        <input type="text" class="nv-text" placeholder="Buscar Documento" (keyup.enter)="buscar($event)">
+
+        <input type=" text" class="nv-text" placeholder="Buscar Documento" (keyup.enter)="buscar($event)">
       </div>
     </div>
-
     <div class="nv-btn-ingresar-container">
       <div class="nv-btn-ingresar">
         <div class="nv-ico-ingresar">
@@ -65,4 +62,3 @@
   </div>
 </nav>
 <div class="cc"></div>
-<app-snakbar></app-snakbar>

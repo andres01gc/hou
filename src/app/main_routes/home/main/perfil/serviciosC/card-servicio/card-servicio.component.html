@@ -5,13 +5,14 @@
     </div>
 
     <div class="main-info-container">
-      <p class="nombre">{{serv.payload.val().nombre}}</p>
+      <p class="nombre">{{serv?.metadata.nombre_estado}}</p>
       <!--<historia class="especialidad">{{serv.prox_cita === "" ? "Aún no se ha asignado una cita" : serv.prox_cita }}</historia>-->
     </div>
 
   </div>
+
   <div class="botton-container">
-    <p class="diagnostico">{{serv.payload.val().diagnostico}}</p>
+    <p class="diagnostico">{{serv?.metadata.diagnostico}}</p>
   </div>
 
   <div class="btns">

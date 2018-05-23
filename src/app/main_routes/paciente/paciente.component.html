@@ -1,3 +1,12 @@
+<div class="bg" *ngIf="data.mostrarIngresarServicio">
+  <app-popcard
+    *ngIf="data.mostrarIngresarServicio"
+    [estructura]="this.data.paginas_ingreso"
+    (cancelar)="data.mostrarIngresarServicio=false"
+    (finalizar)="finalizarIngresoServicio($event)">
+  </app-popcard>
+</div>
+
 <div class="resum_container">
   <app-resumen></app-resumen>
 </div>
@@ -19,7 +28,7 @@
 
   <div class="magicspace"></div>
   <div class="pct_main_content">
-    <router-outlet></router-outlet>
+    <router-outlet (ingresar_servicio)="iniciarIngresoServicio()"></router-outlet>
   </div>
 </div>
 

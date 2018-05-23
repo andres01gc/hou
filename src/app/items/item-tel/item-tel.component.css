@@ -1,3 +1,9 @@
+:host {
+  box-sizing: border-box;
+  padding: .5em;
+  width: 100%;
+}
+
 .top_info {
   position: fixed;
   width: 100%;
@@ -9,18 +15,21 @@
 }
 
 .tel-btn {
-  margin-top: 2em;
-  height: auto;
-
+  /*margin-top: 1.5em;*/
+  /*height: auto;*/
   color: #00ABA0;
+  background-color: rgba(0, 171, 160, 0.11);
+  padding: .5em;
 }
 
 .tel-tipo {
-  padding: .5em;
+  /*padding: .5em;*/
+  width: 5em;
 }
 
 .tel-num {
-  padding: .5em;
+  /*padding: .5em;*/
+  width: 5em;
 }
 
 .tel-elimnar {
@@ -39,14 +48,23 @@
   /*background-color: rgba(0, 0, 0, .02);*/
 }
 
+.dl {
+  width: 2em;
+  height: 2em;
+  background-color: rgba(224, 0, 13, 0.2);
+  border-radius: 5em;
+}
+
 .tels-cnt {
   display: flex;
-  width: 80%;
-  /*height: 3em;*/
+  width: 100%;
   background-color: rgba(0, 0, 0, .02);
-  padding: 1em;
+  /*padding: 1em;*/
   border-radius: .2em;
-  margin-bottom: .5em;
+  align-items: center;
+  padding-left: 1em;
+  /*justify-content: center;*/
+  /*margin-bottom: .5em;*/
 }
 
 .tel-btn:hover {

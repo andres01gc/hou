@@ -8,6 +8,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 export class CondicionalComponent implements OnInit {
   seleccion: string;
   data_pag: any = {};
+
   @Input() data = {
     tam: 'm',
     nombre: 'prueba',

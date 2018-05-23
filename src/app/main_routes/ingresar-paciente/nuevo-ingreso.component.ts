@@ -17,7 +17,7 @@ export class NuevoIngresoComponent implements OnInit {
   data_ingreso = {};
 
   constructor(public  data: DataService) {
-    this.traerInfoHistoria();
+    // this.traerInfoHistoria();
   }
 
   ngOnInit() {
@@ -25,24 +25,23 @@ export class NuevoIngresoComponent implements OnInit {
 
   traerInfoHistoria() {
     // linea para subir la información de la historia.
-    this.data.db.object('informacion_categorias').set(this.data.info_local);
-  //  this.data.informacion_categorias = this.data.info_local;
-console.log('test');
-    // this.data_pag.db.list('informacion_categorias').valueChanges().subscribe(item => {
-    //   this.data_pag.informacion_categorias = item;
-    // });
+    // this.estructura.db.object('informacion_categorias').set(this.estructura.paginas_ingreso);
+    //  this.estructura.informacion_categorias = this.estructura.paginas_ingreso;
+    //   console.log('test');
+    this.data.db.list('informacion_categorias').valueChanges().subscribe(item => {
+      this.data.informacion_categorias = item;
+    });
   }
 
   finalizarIngreso() {
     console.log('testing');
-    //  traigo toda la información de las paginas y la guardo en data_pag ingreso
+    //  traigo toda la información de las paginas_ingreso y la guardo en dataGuardada ingreso
     this.paginas.forEach(paginas => {
         if (paginas.titulo_pag !== 'Final') {
           this.data_ingreso[paginas.titulo_pag] = paginas.data_pag;
         }
       }
     );
-    console.log(this.data_ingreso);
     this.data_ingreso['Odontograma'] = this.odonto.data_pag;
 
 //  creo el servicio inicial
@@ -62,24 +61,20 @@ console.log('test');
       id_servicio: '',
       prox_cita: 'aún no se ha asignado cita'
     };
-    // subo el servicio general
-    const dbServicio = this.data.db.list('servicios');
-    // Obtengo la key de ese servicio
-    // const keyServicio =;
-    servicio.id_servicio = dbServicio.push(servicio).key;
 
+    const dbServicio = this.data.db.list('servicios');
+    servicio.id_servicio = dbServicio.push(servicio).key;
 
     const itemHistoriaUsuario = this.data.db.object('pacientes/' +
       this.data_ingreso['Información General']['Identidad']['Tipo_doc'] + '/' +
-      this.data_ingreso['Información General']['Identidad']['Documento'] + '');
+      this.data_ingreso['Información General']['Identidad']['Documento']);
     itemHistoriaUsuario.update({'historia': this.data_ingreso, 'servicios': [servicio]});
     this.terminado.emit(true);
   }
 
   asignarServicioAUsuario(servicio: any) {
-    // this.data_pag.db.object('usuarios/' + this.data_pag.current_uid + '/servicios_activos').update([servicio]);
+    // this.dataGuardada.db.object('usuarios/' + this.dataGuardada.current_uid + '/servicios_id').update([servicio]);
   }
-
 }
 
 

@@ -4,15 +4,16 @@
 
   <div class="frm">
     <div *ngFor="let item of sub_cat.items" class="item {{item.tam}}">
+
       <app-input
         (texted)="data_pag[sub_cat.sub_titulo][item.nombre]=$event"
         *ngIf="'input'===item.tipo_item"
         [lock]="lock"
         [type]="item.type"
         [name]="item.nombre"
-        [value]="data_pag[sub_cat.sub_titulo][item.nombre]"
         [placeholder]="item.placehoder">
       </app-input>
+      <!--[value]="data_pag[sub_cat.sub_titulo][item.nombre]"-->
 
       <div class="line" *ngIf="'line'===item.tipo_item"></div>
 
@@ -37,8 +38,13 @@
         [nombre]="item.nombre"
         (selected)="data_pag[sub_cat.sub_titulo][item.nombre]=$event"
         [base_titulos]="item.opciones">
-
       </app-multiple>
+
+      <app-item-referencia *ngIf="'referencia'===item.tipo_item"
+                           [lock]='lock'
+                           (texted)="data_pag[sub_cat.sub_titulo][item.nombre]=$event">
+      </app-item-referencia>
+
 
       <app-condicional *ngIf="'condicional'===item.tipo_item"
                        [data]="item"
@@ -46,10 +52,6 @@
                        (selected)="data_pag[sub_cat.sub_titulo][item.nombre]=$event">
       </app-condicional>
 
-      <app-item-referencia *ngIf="'referencia'===item.tipo_item"
-                           [lock]='lock'
-                           (texted)="data_pag[sub_cat.sub_titulo][item.nombre]=$event">
-      </app-item-referencia>
 
       <app-item-enfermedad
         *ngIf="'enfermedad'===item.tipo_item">

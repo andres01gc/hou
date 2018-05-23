@@ -1,11 +1,60 @@
+
+:host {
+  width: 100%;
+}
+
+.active {
+  border: 1px #FF6D00 solid;
+}
+
+.act-ttl {
+  color: #FF6D00;
+}
+
 .c-ev-card {
-  width: auto;
-  height: auto;
-  background: #FCFCFC;
-  border: 1px solid #cccccc;
-  margin-bottom: 1em;
+  background: #ffffff;
+  width: available;
+  /*margin: .5em;*/
+  height: available;
+  /*border: 1px solid #f4f4f4;*/
+  /*margin-bottom: 1em;*/
+  border-radius: .4em;
+  padding: 1.5em;
+  box-sizing: border-box;
+  margin-top: .5em;
+}
+
+.c-ev-ttl {
+  font-weight: 600;
+  /*color: #00234E;*/
+  font-size: 1.1em;
+}
+
+.c-ev-ttl_2 {
+  font-weight: 400;
+  font-size: .9em;
+}
+
+.c-ev-subttl {
+  font-weight: 800;
+  font-size: .8em;
+}
+
+.c-ev-sub_ed {
+  color: #FCFCFC;
+  background-color: #FF6D00;
   border-radius: .2em;
-  padding: 1em;
+  padding: .5em;
+  font-weight: 600;
+  font-size: 1em;
+  margin: .5em;
+  cursor: pointer;
+  opacity: .7;
+  text-align: center;
+}
+
+.c-ev-sub_ed:hover {
+  opacity: 1;
 }
 
 .c-ev-cnt-up {
@@ -18,4 +67,46 @@
   opacity: .7;
   font-weight: 400;
   padding-top: 1em;
+}
+
+.mn {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.f-item {
+  padding: .4em;
+  /*width: 12em;*/
+  /*height: 3em;*/
+  border: 1px solid #FF6D00;
+  border-radius: .2em;
+  color: #FF6D00;
+  margin: .5em;
+  opacity: .6;
+  cursor: pointer;
+  font-size: .9em;
+
+}
+
+.n-anx {
+  padding: .4em;
+  border-radius: .2em;
+  color: #FF6D00;
+  border: 1px solid #FCFCFC;
+  font-size: .9em;
+
+}
+
+.nx_add {
+  padding-left: .5em;
+  /*font-weight: 800;*/
+  color: #FF6D00;
+  cursor: pointer;
+  opacity: .7;
+}
+
+.nx_add:hover {
+  opacity: 1;
 }
