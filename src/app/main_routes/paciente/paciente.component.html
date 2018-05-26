@@ -1,12 +1,3 @@
-<div class="bg" *ngIf="data.mostrarIngresarServicio">
-  <app-popcard
-    *ngIf="data.mostrarIngresarServicio"
-    [estructura]="this.data.paginas_ingreso"
-    (cancelar)="data.mostrarIngresarServicio=false"
-    (finalizar)="finalizarIngresoServicio($event)">
-  </app-popcard>
-</div>
-
 <div class="resum_container">
   <app-resumen></app-resumen>
 </div>

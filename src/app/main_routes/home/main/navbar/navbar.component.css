@@ -35,8 +35,8 @@
   background-color: rgba(0, 0, 0, 0.73);
   width: 100vw;
   height: 100vh;
-
 }
+
 
 .show {
   display: none;
@@ -87,6 +87,16 @@
   margin: 0 auto;
   align-items: center;
   /*justify-content: center;*/
+}
+.nv-ico-logo-container {
+  width: 2em;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1em;
+  margin-right: 1em;
+  cursor: pointer;
 }
 
 .nv-right {
@@ -309,16 +319,6 @@
   /*background-color: #00ABA0;*/
 }
 
-.nv-ico-logo-container {
-  width: 2em;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 1em;
-  margin-right: 1em;
-  cursor: pointer;
-}
 
 .nv-info-container:hover {
   cursor: pointer;

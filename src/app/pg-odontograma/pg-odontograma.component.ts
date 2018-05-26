@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-pg-odontograma',
@@ -22,7 +22,7 @@ export class PgOdontogramaComponent implements OnInit {
     g: 'Oclusal'
   };
   @Input() data_pag: any = [];
-
+  @Output() alLlenar = new EventEmitter();
   dientesInfo = [
     {id: 11, nombre: 'Incisivo central'},
     {id: 12, nombre: 'Incisivo lateral'},
@@ -167,7 +167,9 @@ export class PgOdontogramaComponent implements OnInit {
   }
 
   editar(color: string) {
+
     this.data_pag[this.data_pag.map(x => x.id).indexOf(this.diente)][this.parteSelected] = color;
+    this.alLlenar.emit(this.data_pag);
   }
 
   editarGeneral(g: string) {

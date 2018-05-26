@@ -14,7 +14,6 @@ export class SelectComponent implements OnInit {
   @Input() size: string;
   @Input() lock = false;
   @HostBinding('style.width') private ssize = '';
-
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     var ss = 0;

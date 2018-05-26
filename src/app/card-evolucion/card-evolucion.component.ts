@@ -9,19 +9,17 @@ import {DataService} from '../services/data.service';
 })
 export class CardEvolucionComponent implements OnInit {
   @Input() id: any;
-  @Input() editable: boolean;
+  @Input() ActivoParaEditar = false;
+  @Input() sePuedeEditar = false;
   @Input() faseCorrespondiente = 'fase correspondiente';
   @Output() finalizaIngreso = new EventEmitter();
+  @Output() alTerminarEdicion = new EventEmitter();
+
+  @Input() ev: any;
+
   anexos = [
     {}
   ];
-
-  @Input() ev: any = {
-    id: 3,
-    ['fase']: this.faseCorrespondiente,
-    'Evolución': 'Lorem, esta se supone que es la evolución',
-    anexos: []
-  };
 
   constructor(public data: DataService, public popdate: PopdateService) {
   }
@@ -30,10 +28,20 @@ export class CardEvolucionComponent implements OnInit {
   alFinalizarIngreso() {
     this.ev.fecha = new Date().getDate();
     this.finalizaIngreso.emit(this.ev);
+    this.ActivoParaEditar = false;
   }
 
   ngOnInit() {
     console.log('el numero de la evolución es ' + this.id);
+
+    if (this.ev === undefined) {
+      this.ev = {
+        'id': 'sadvjkaj',
+        'Fase': this.faseCorrespondiente,
+        'Evolución': 'a',
+        'anexos': []
+      };
+    }
   }
 
 
@@ -42,7 +50,7 @@ export class CardEvolucionComponent implements OnInit {
     console.log('se seleccionó ' + anexoSelected.nombre);
     console.log(anexo);
 
-    this.popdate.drawPop(
+    this.popdate.main_view.pCard.iniciarPopUp(
       anexoSelected.nombre,
       'Nuevo anexo',
       anexoSelected.estructura,
@@ -53,33 +61,22 @@ export class CardEvolucionComponent implements OnInit {
       (result: any): void => {
       }
     );
-
-    // console.log('se quiere ver el anexo ');
-    // console.log(anexo);
-    // this.popdate.drawPop(anexo.nombre,
-    //   'Nuevo anexo',
-    //   this.buscarEstructuraAnexosPorNombre(anexo.nombre),
-    //   null,
-    //   true,
-    //   (estructura: any): void => {
-    //   },
-    //   (result: any): void => {
-    //   }
-    // );
   }
 
   agregarNuevoAnexo(nombreAnexo: string) {
     // aquí se busca en la lista de estructuras, cual de esos corresponde con el seleccionado
     const anexoSelected = this.buscarEstructuraAnexosPorNombre(nombreAnexo);
     console.log('se seleccionó ' + anexoSelected.nombre);
-    this.popdate.drawPop(
+    this.popdate.main_view.pCard.iniciarPopUp(
       anexoSelected.nombre,
       'Nuevo anexo',
       anexoSelected.estructura,
       null,
       true,
       (data: any): void => {
-        this.anexos.push();
+        if (this.ev.anexos === undefined) {
+          this.ev.anexos = [];
+        }
         this.ev.anexos.push({
           nombre: nombreAnexo,
           data: data
@@ -102,5 +99,7 @@ export class CardEvolucionComponent implements OnInit {
     console.log('aasdvad');
   }
 
-
+  cambiarEdicion() {
+    this.ActivoParaEditar = true;
+  }
 }

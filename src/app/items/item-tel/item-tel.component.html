@@ -3,7 +3,7 @@
   <div class="tel-tipo">{{item.tipo_num}}</div>
   <div class="tel-num">{{item.num}}</div>
   <div [hidden]="lock" class="tel-elimnar" (click)="eliminar(i)">
-    <div class="dl"></div>
+    <img class="icon" src="/assets/paciente/x.svg">
   </div>
 </div>
 
@@ -14,9 +14,9 @@
   <app-input [hidden]="lock" [lock]="lock" class="item small" type="number" name="Número" placeholder="Número"
              (texted)="num = $event" size="m"></app-input>
 
-  <app-item-bt [hidden]="lock"name="Agregar" size="s" (click)="agregar()">
+  <app-item-bt [hidden]="lock" name="Agregar" size="s" (click)="agregar()">
   </app-item-bt>
-  <!--<div [hidden]="lock" class="tel-btn" (click)="agregar()">Agregar</div>-->
+  <!--<div [hidden]="sePuedeEditar" class="tel-btn" (click)="agregar()">Agregar</div>-->
 
 </div>
 

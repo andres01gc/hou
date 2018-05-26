@@ -4,7 +4,6 @@ import {AppComponent} from './app.component';
 import {ServiciosComponent} from './main_routes/home/main/perfil/serviciosC/inicio.component';
 import {RouterModule, Routes} from '@angular/router';
 import {PacienteComponent} from './main_routes/paciente/paciente.component';
-import {NuevoIngresoComponent} from './main_routes/ingresar-paciente/nuevo-ingreso.component';
 import {CitasComponent} from './main_routes/home/main/perfil/citas/citas.component';
 import {CardServicioComponent} from './main_routes/home/main/perfil/serviciosC/card-servicio/card-servicio.component';
 import {InputComponent} from './utils/input/input.component';
@@ -49,11 +48,9 @@ import {UserResponsableComponent} from './user-responsable/user-responsable.comp
 import {CardEvolucionComponent} from './card-evolucion/card-evolucion.component';
 import {SupportDataService} from './services/datasuport';
 import {AdvertenciaIniciarServicioComponent} from './advertencia-iniciar-servicio/advertencia-iniciar-servicio.component';
-import {IngresoHistoriaComponent} from './ingreso-historia/ingreso-historia.component';
 import {CancelarServicioComponent} from './cancelar-servicio/cancelar-servicio.component';
 import {ReasignarCitaComponent} from './reasignar-cita/reasignar-cita.component';
 import {PgEvolucionComponent} from './pg-evolucion/pg-evolucion.component';
-import {PaginaHistoriaComponent} from './pagina-historia/pagina-historia.component';
 import {AppMintabComponent} from './app-mintab/app-mintab.component';
 import {CondicionalComponent} from './condicional/condicional.component';
 import {ItemEnfermedadComponent} from './item-enfermedad/item-enfermedad.component';
@@ -61,6 +58,8 @@ import {PopcardComponent} from './popcard/popcard.component';
 import {ItemBtComponent} from './item-bt/item-bt.component';
 import {ItemAnextabComponent} from './item-anextab/item-anextab.component';
 import {PopdateService} from './popdate.service';
+import {PacienteService} from './paciente.service';
+import {PgTratamientoComponent} from './pg-tratamiento/pg-tratamiento.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -70,7 +69,6 @@ const appRoutes: Routes = [
       {
         path: '', component: PerfilComponent, children: [
           {path: '', component: UserServiciosComponent},
-          {path: 'servicio/ingreso_historia', component: IngresoHistoriaComponent},
           {path: 'servicio', component: PgServicioComponent}
         ]
       },
@@ -90,7 +88,6 @@ const appRoutes: Routes = [
           },
           {path: 'detalles', component: PgServicioComponent}]
       },
-      {path: 'ingreso', component: NuevoIngresoComponent},
       {path: 'configuraciones', component: ConfiguracionesComponent}
     ]
   }, {path: '**', component: PagenotfoundComponent}
@@ -113,7 +110,6 @@ export const environment = {
     AppComponent,
     ServiciosComponent,
     PacienteComponent,
-    NuevoIngresoComponent,
     CitasComponent,
     CardServicioComponent,
     InputComponent,
@@ -151,21 +147,21 @@ export const environment = {
     UserResponsableComponent,
     CardEvolucionComponent,
     AdvertenciaIniciarServicioComponent,
-    IngresoHistoriaComponent,
     CancelarServicioComponent,
     ReasignarCitaComponent,
     PgEvolucionComponent,
     AppMintabComponent,
     CondicionalComponent,
-    PaginaHistoriaComponent,
     ItemEnfermedadComponent,
     PopcardComponent,
     ItemBtComponent,
-    ItemAnextabComponent],
+    PgTratamientoComponent,
+    ItemAnextabComponent
+  ],
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, AngularFireModule.initializeApp(environment.firebase), AngularFireDatabaseModule,
     AngularFireAuthModule, FormsModule],
-  providers: [AuthService, DataService, SupportDataService, PopdateService],
+  providers: [AuthService, DataService, SupportDataService, PopdateService, PacienteService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

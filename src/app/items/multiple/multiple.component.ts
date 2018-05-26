@@ -53,7 +53,7 @@ export class MultipleComponent implements OnInit {
 
   // v1 organiza el nombre de los titulos, y le crea su propio, booleano que lo contiene. todo Sé que se puede hacer mucho mucho mas limpio
   organizarTitulosSimple() {
-    if (this.data == null) {
+    if (this.data == null || this.data === '') {
       this.dt = [];
       for (let i = 0; i < this.base_titulos.length; i++) {
         this.dt.push({'nombre': this.base_titulos[i], activo: false});

@@ -57,6 +57,4 @@ export class InputComponent implements OnInit {
   onKey(event: KeyboardEvent) {
     this.texted.emit((<HTMLInputElement>event.target).value);
   }
-
-
 }

@@ -19,7 +19,9 @@ export class PgServicioComponent implements OnInit {
   reasignar = false;
   evolucionar = false;
   evoluciones: any = [];
-  tratamientos: any = [];
+  tratamientos_id: any = [];
+  tratamientos_del_servicio: any[] = [];
+  servicio_concluido = false;
 
   constructor(public router: Router, public data: DataService, public db: AngularFireDatabase, public popdate: PopdateService) {
     this.cargarServicio();
@@ -28,28 +30,39 @@ export class PgServicioComponent implements OnInit {
   ngOnInit() {
   }
 
-  ejecutarAgregarNuevoTratamiento() {
-    this.popdate.drawPop(
-      'Agregar nuevo Tratamiento',
-      'Fase asdv ',
-      this.data.paginas_tratamiento,
+  ejecutarAgregarNuevaFaseTratamiento(faseSelected: string) {
+    console.log('se seleccionó una fase');
+    var paginasSeleccionadas: any[] = [];
+    for (let pFase of this.data.paginas_fases) {
+      if (pFase.nombre === faseSelected) {
+        console.log('se encontró una fase!');
+        paginasSeleccionadas = pFase.estructura;
+        break;
+      }
+    }
+
+    this.popdate.main_view.pCard.iniciarPopUp(
+      'Nueva' + faseSelected,
+      'ingresado por XXXX',
+      paginasSeleccionadas,
       null,
       true,
       (data: any): void => {
         // agregar datos al servicios seleccionado
-
         const nTratamiento = {
-            data: data,
-            metadata: {
-              nombre: 'Fase higienica',
-              estado: 'Activo',
-              id_servicio_perteneciente: this.data.id_servicio_seleccionado
-            }
+          data: data,
+          metadata: {
+            nombre: faseSelected,
+            estado: 'Activo',
+            id_servicio_perteneciente: this.data.id_servicio_seleccionado,
+            fecha_creacio: new Date()
           }
-        ;
-        var k = this.data.db.list('tratamientos/').push(nTratamiento).key;
-        this.data.db.list('servicios/' + this.data.id_servicio_seleccionado + '/tratamientos').push(nTratamiento);
-
+        };
+        const k = this.data.db.list('servicios/' + this.data.id_servicio_seleccionado + '/tratamientos').push(nTratamiento).key;
+        var t: any = nTratamiento;
+        t.metadata.id = {};
+        t.metadata.id = k;
+        this.data.db.object('servicios/' + this.data.id_servicio_seleccionado + '/tratamientos/' + k).set(t);
         console.log('se guarda el nuevo tratamiento');
         this.cargarServicio();
       },
@@ -58,18 +71,25 @@ export class PgServicioComponent implements OnInit {
     );
   }
 
-  iniciarHistoria() {
-    this.verAdv = false;
-    this.router.navigate(['servicio/ingreso_historia']);
-  }
 
+  ejecutarVerServicio() {
+    this.popdate.main_view.pCard.iniciarPopUp(
+      'Nombre del servicio que se está viendo',
+      'Personita que se está viendo',
+      this.data.paginas_servicio,
+      this.servicio.data,
+      !this.servicio_concluido,
+      (data: any): void => {
+        // agregar datos al servicios seleccionado
+        this.data.db.object('servicios/' + this.data.id_servicio_seleccionado).update(data);
+      },
+      (result: any): void => {
+      }
+    );
+  }
 
   mostrarAdv() {
     this.verAdv = true;
-  }
-
-  evolucionarServicio() {
-    this.evolucionar = true;
   }
 
   cargarServicio() {
@@ -77,12 +97,26 @@ export class PgServicioComponent implements OnInit {
       console.log('se trajo el siguiente servicio:');
       this.servicio = item;
       console.log(item);
+
+      if (this.servicio.metadata.estado !== 'Activo') {
+        this.servicio_concluido = true;
+      }
     });
 
+    this.cargarTratamientos();
+  }
+
+  cargarTratamientos() {
     this.data.db.list('servicios/' + this.data.id_servicio_seleccionado + '/tratamientos').valueChanges().subscribe(item => {
-      console.log('se trajo los siguientes tratamientos:');
-      this.tratamientos = item;
-      console.log(item);
+      console.log('se trajo los siguientes objectos tratamientos');
+      this.tratamientos_del_servicio = item;
+      // console.log(this.tratamientos_del_servicio);
     });
+  }
+
+  finaliarServicio() {
+    this.data.db.object('servicios/' + this.data.id_servicio_seleccionado + '/metadata/estado').set('Cerrado');
+    this.router.navigate(['paciente/']);
+    this.cargarServicio();
   }
 }

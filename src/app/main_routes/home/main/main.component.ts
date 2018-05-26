@@ -29,21 +29,21 @@ export class MainComponent implements OnInit {
     // TODO construir un metodo general para llamar un pop_card
 
     // en el primer parametro se le envia el array correspondiente al componente a pintar
-    this.popdate.drawPop(
+    this.popdate.main_view.pCard.iniciarPopUp(
       'Nuevo Ingreso de paciente',
-      'Ingresado por jsasdnv aksjndv', this.data.paginas_historia,
+      'Ingresado por jsasdnv aksjndv', this.data.paginas_ingreso,
       null,
       true,
       (data: any): void => {
         // Esta parte no la puedo hacer general, debo saber la posición del documento y su tipo para poder crear el nuevo usuario
-
         console.log('llega al finalizar del pop');
         console.log(data);
         const itemHistoriaUsuario = this.data.db.object('pacientes/' +
           data['Información General']['Identidad']['Tipo_doc'] + '/' +
           data['Información General']['Identidad']['Documento'] + '');
-        itemHistoriaUsuario.update({'historia': data, 'metadata': {fecha_ingreso: new Date().getDate()}});
+        itemHistoriaUsuario.set({'historia': data, 'metadata': {fecha_ingreso: new Date().getDate()}});
         this.mostrarIngreso = false;
+        console.log('¡Ingreso existoso!');
         this.popdate.showToast('¡Ingreso existoso!');
       },
       (result: any): void => {

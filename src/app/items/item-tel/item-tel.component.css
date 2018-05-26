@@ -33,10 +33,19 @@
 }
 
 .tel-elimnar {
-  color: #00ABA0;
+  /*background-color: #00ABA0;*/
   opacity: .5;
   padding: .5em;
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.icon {
+  margin: .2em;
+  width: 1.5em;
 }
 
 .tel-elimnar:hover {
@@ -46,6 +55,33 @@
 
 .frm {
   /*background-color: rgba(0, 0, 0, .02);*/
+}
+
+.icon-container {
+  height: available;
+  display: flex;
+}
+
+.nv-icon-container {
+  width: 2.5em;
+  height: 3em;
+  height: available;
+  display: flex;
+  /*background: #FF6D00;*/
+
+}
+
+
+
+.nv-ico-logo-container {
+  width: 2em;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1em;
+  margin-right: 1em;
+  cursor: pointer;
 }
 
 .dl {
@@ -63,6 +99,7 @@
   border-radius: .2em;
   align-items: center;
   padding-left: 1em;
+  height: 3em;
   /*justify-content: center;*/
   /*margin-bottom: .5em;*/
 }

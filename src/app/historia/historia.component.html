@@ -4,7 +4,7 @@
     <div class="ip_cnt_tabs">
       <app-tabs>
         <app-tab
-          *ngFor="let tbs of data; let i= index"
+          *ngFor="let tbs of estructura; let i= index"
           [tab_activa]="i===0"
           [tabTitle]="tbs.nombre">
 
@@ -18,13 +18,14 @@
               <ng-container *ngFor="let item of cnt.items; let j= index">
 
                 <app-input
+                  (texted)="crearVar([tbs.nombre,cnt.nombre,item.nombre], $event)"
                   *ngIf="'input'===item.tipo_item"
-                  (texted)="data_pag[tbs.nombre][cnt.nombre][item.nombre] = $event"
                   [lock]="isLock"
                   [type]="item.type"
                   [name]="item.nombre"
-                  [size]="item.tam">
-
+                  [size]="item.tam"
+                  [value]="cargarDataItem([tbs.nombre,cnt.nombre,item.nombre])"
+                >
                 </app-input>
 
                 <app-select

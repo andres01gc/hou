@@ -7,7 +7,7 @@
 </div>
 
 <!--<app-input-->
-<!--[lock]="false"-->
+<!--[sePuedeEditar]="false"-->
 <!--type="text"-->
 <!--size="s"-->
 <!--name="input">-->
@@ -16,7 +16,7 @@
 
 <!--<div *ngFor="let item of estructura.condicionables[seleccion]" class="item {{item.tam}}">-->
 <!--<app-input *ngIf="item.tipo_item==='input'"-->
-<!--[lock]="false"-->
+<!--[sePuedeEditar]="false"-->
 <!--[type]="item.type"-->
 <!--[name]="item.nombre"-->
 <!--(texted)="dataGuardada[seleccion][item.nombre]=$event"-->
@@ -28,7 +28,7 @@
 
 <!--<app-select-->
 <!--*ngIf="'select'===item.tipo_item"-->
-<!--[lock]="lock"-->
+<!--[sePuedeEditar]="sePuedeEditar"-->
 <!--[size]="estructura.tam"-->
 <!--[estructura]="item.opciones"-->
 <!--[titulo]="item.nombre"-->
@@ -38,7 +38,7 @@
 
 <!--<app-multiple-->
 <!--*ngIf="'multiple'===item.tipo_item"-->
-<!--[lock]='lock'-->
+<!--[sePuedeEditar]='sePuedeEditar'-->
 <!--[size]="estructura.tam"-->
 <!--[nombre]="item.nombre"-->
 <!--(selected)="dataGuardada[seleccion][item.nombre]=$event"-->

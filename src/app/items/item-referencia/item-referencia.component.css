@@ -4,6 +4,13 @@
   margin-top: .5em;
 }
 
+.ttl-ref {
+  font-size: 1.1em;
+  padding: .5em;
+  font-weight: 800;
+  color: #00234E;
+}
+
 .top_info {
   position: fixed;
   width: 100%;

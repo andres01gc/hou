@@ -1,12 +1,5 @@
 <app-snakbar></app-snakbar>
-<!--[dataGuardada]="this.popdate.dataGuardada"-->
-<app-popcard
-  [ttl]="this.popdate.ttl"
-  [subttl]="this.popdate.subttl"
-  [estructura]="this.popdate.paginas_data"
-  (cancelar)="this.popdate.alCancelar($event)"
-  (finalizar)="this.popdate.alFinalizar($event)">
+<app-popcard>
 </app-popcard>
 <app-navbar (presiona_ingresar)="ejecutarIngreso()"></app-navbar>
 <router-outlet></router-outlet>
-

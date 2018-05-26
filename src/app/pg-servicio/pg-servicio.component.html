@@ -6,19 +6,20 @@
 
 <div class="pgs_crd">
   <div class="pgs_main">
-    <div class="pgs_main_bar">
+    <div class="pgs_mains_bar">
       <div class="pgs_back" routerLink="../">
-        <div>Atras</div>
+        <img class="icon" src="/assets/paciente/bacck.svg">
       </div>
       <div class="pgs_cnt_ttl">
         <div class="pgs_ttl">Titulo del servicio</div>
-
         <div class="pgs_subttl">
           <div class="txt">{{this.servicio?.metadata.estado}}</div>
-          <div class="sub_ttl">Servicio de {{this.servicio?.metadata.tipo_servicio}} AW3D1
+          <div class="sub_ttl" (click)="ejecutarVerServicio()">Servicio de {{this.servicio?.metadata.tipo_servicio}}
           </div>
         </div>
-
+      </div>
+      <div *ngIf="!servicio_concluido" class="finalizar" (click)="finaliarServicio()">
+        Finalizar Servicio
       </div>
     </div>
   </div>
@@ -66,10 +67,14 @@
       type="text"
       value="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur esse facilis ipsum iusto maxime mollitia nam natus obcaecati, officiis quam quasi quibusdam quidem recusandae sint totam, velit vero voluptatem!">
     </app-input>
+
   </div>
   <div class="pgs_tttl">Tratamientos</div>
-  <app-item-anextab [tratamientos]="this?.tratamientos" (alAgregar)="ejecutarAgregarNuevoTratamiento()">
+
+  <app-item-anextab [tratamientos]="this.tratamientos_del_servicio"
+                    (alAgregar)="ejecutarAgregarNuevaFaseTratamiento($event)"
+                    [isLock]="servicio_concluido"
+                    (alActualizarTratamientos)="cargarTratamientos()">
   </app-item-anextab>
+
 </div>
-
-
