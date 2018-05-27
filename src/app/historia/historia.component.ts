@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {DataService} from '../services/data.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-historia',
@@ -13,7 +14,7 @@ export class HistoriaComponent implements OnInit {
   @Input() ttl: string;
   @Input() subttl: string;
 
-  constructor(public dt: DataService) {
+  constructor(public dt: DataService, public location: Location) {
     this.buscarHistoria();
   }
 
@@ -25,6 +26,11 @@ export class HistoriaComponent implements OnInit {
     this.estructura = this.dt.paginas_historia;
     this.data_pag = this.dt.info_paciente_buscado.historia;
     console.log('se supone que se està buscancdo la historia');
+  }
+
+
+  goBack() {
+    this.location.back();
   }
 
   cargarDataItem(params: any[]): any {

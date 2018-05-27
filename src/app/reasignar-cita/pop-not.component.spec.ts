@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ReasignarCitaComponent } from './reasignar-cita.component';
+import { PopNotComponent } from './pop-not.component';
 
-describe('ReasignarCitaComponent', () => {
-  let component: ReasignarCitaComponent;
-  let fixture: ComponentFixture<ReasignarCitaComponent>;
+describe('PopNotComponent', () => {
+  let component: PopNotComponent;
+  let fixture: ComponentFixture<PopNotComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReasignarCitaComponent ]
+      declarations: [ PopNotComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ReasignarCitaComponent);
+    fixture = TestBed.createComponent(PopNotComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

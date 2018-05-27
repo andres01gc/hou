@@ -1,3 +1,10 @@
+:host {
+
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+}
+
 .tabs {
   /*width: available;*/
   /*height: 4em;*/
@@ -100,10 +107,32 @@
   overflow: hidden;
 }
 
+.hc-ttl {
+  font-weight: 600;
+}
+
+.hc-sbttl {
+  font-size: .8em;
+}
+
 .hc_content {
   width: 100%;
   height: 51em;
   display: flex;
+  flex-direction: column;
+}
+
+.inpc_magicspace {
+  width: 100%;
+  height: 4em;
+  display: flex;
+  align-items: center;
+}
+
+.ir-atras {
+  width: 4em;
+  height: 4em;
+  /*background: #F44336;*/
 }
 
 .hc-lf {

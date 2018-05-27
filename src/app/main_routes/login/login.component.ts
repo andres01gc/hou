@@ -58,11 +58,11 @@ export class LoginComponent implements OnInit {
   }
 
   // obtenerServiciosUsuarioLogueado() {
-  //   // TODO se debe buscar los servicios propios del usuaario, para pruebas se seleccionarán todos los servicios sin asignar
-  //   this.db.list('servicios_sin_asignar/especialidad_x').valueChanges().subscribe(servicios => {
-  //       // console.log(servicios);
-  //       this.sub_categorias.informacion_usuario = servicios;
-  //       // console.log('servicios    ' + servicios.length);
+  //   // TODO se debe buscar los serviciosId propios del usuaario, para pruebas se seleccionarán todos los serviciosId sin asignar
+  //   this.db.list('servicios_sin_asignar/especialidad_x').valueChanges().subscribe(serviciosId => {
+  //       // console.log(serviciosId);
+  //       this.sub_categorias.informacion_usuario = serviciosId;
+  //       // console.log('serviciosId    ' + serviciosId.length);
   //     }
   //   );
   // }

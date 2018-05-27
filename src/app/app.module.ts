@@ -49,7 +49,7 @@ import {CardEvolucionComponent} from './card-evolucion/card-evolucion.component'
 import {SupportDataService} from './services/datasuport';
 import {AdvertenciaIniciarServicioComponent} from './advertencia-iniciar-servicio/advertencia-iniciar-servicio.component';
 import {CancelarServicioComponent} from './cancelar-servicio/cancelar-servicio.component';
-import {ReasignarCitaComponent} from './reasignar-cita/reasignar-cita.component';
+import {PopNotComponent} from './reasignar-cita/pop-not.component';
 import {PgEvolucionComponent} from './pg-evolucion/pg-evolucion.component';
 import {AppMintabComponent} from './app-mintab/app-mintab.component';
 import {CondicionalComponent} from './condicional/condicional.component';
@@ -60,6 +60,7 @@ import {ItemAnextabComponent} from './item-anextab/item-anextab.component';
 import {PopdateService} from './popdate.service';
 import {PacienteService} from './paciente.service';
 import {PgTratamientoComponent} from './pg-tratamiento/pg-tratamiento.component';
+import {CardUserServicioComponent} from './card-user-servicio/card-user-servicio.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -78,7 +79,7 @@ const appRoutes: Routes = [
             path: '',
             component: ServiciosPacienteComponent
           }, {
-            path: 'servicios', component: ServiciosPacienteComponent
+            path: 'serviciosId', component: ServiciosPacienteComponent
           },
           {
             path: 'serv', component: PgServicioComponent
@@ -148,7 +149,7 @@ export const environment = {
     CardEvolucionComponent,
     AdvertenciaIniciarServicioComponent,
     CancelarServicioComponent,
-    ReasignarCitaComponent,
+    PopNotComponent,
     PgEvolucionComponent,
     AppMintabComponent,
     CondicionalComponent,
@@ -156,7 +157,8 @@ export const environment = {
     PopcardComponent,
     ItemBtComponent,
     PgTratamientoComponent,
-    ItemAnextabComponent
+    ItemAnextabComponent,
+    CardUserServicioComponent
   ],
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, AngularFireModule.initializeApp(environment.firebase), AngularFireDatabaseModule,

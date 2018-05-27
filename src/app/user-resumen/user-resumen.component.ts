@@ -12,10 +12,11 @@ import {AngularFireDatabase} from 'angularfire2/database';
 export class UserResumenComponent implements OnInit {
   nombre = 'Andrés Gc';
   ocultarAdvertencia = true;
-  servicios = [];
+  serviciosId = [];
+  iSelected: number;
 
   constructor(public router: Router, public data: DataService, public db: AngularFireDatabase) {
-    this.obtenerServicioSeleccionado();
+    this.obtenerServiciosAsignados();
   }
 
   ngOnInit() {
@@ -30,7 +31,6 @@ export class UserResumenComponent implements OnInit {
 
 
     this.data.servicio_seleccionado_paciente = serv;
-
     this.ocultarAdvertencia = true;
     this.router.navigate(['/servicio']);
   }
@@ -40,12 +40,21 @@ export class UserResumenComponent implements OnInit {
     // this.router.navigate(['/servicio']);
   }
 
-  obtenerServicioSeleccionado() {
-    // TODO se debe buscar los servicios propios del usuaario, para pruebas se seleccionarán todos los servicios sin asignar
-    this.db.list('usuarios/' + this.data.current_uid + '/servicios_id').snapshotChanges().subscribe(servicios => {
-      this.servicios = servicios;
-            //  se debe entrar a payload.val para poder, ver la sub_categorias, la metadata estará en .key, de cada objeto del array
+  obtenerServiciosAsignados() {
+    // TODO se debe buscar los serviciosId propios del usuaario, para pruebas se seleccionarán todos los serviciosId sin asignar
+    this.db.list('usuarios/' + this.data.current_uid + '/data/servicios_asignados/').valueChanges().subscribe(servicios => {
+        this.serviciosId = servicios;
+        console.log('los servicios: ');
       }
     );
+  }
+
+  selectServicio(servicioSeleccionado: any, i: number) {
+    this.data.servicio_seleccionado_paciente = servicioSeleccionado;
+    this.iSelected = i;
+    console.log('se selecciona el puto servicio');
+    console.log(servicioSeleccionado.metadata.id);
+    this.data.id_servicio_seleccionado = servicioSeleccionado.metadata.id;
+    this.router.navigate(['/servicio']);
   }
 }

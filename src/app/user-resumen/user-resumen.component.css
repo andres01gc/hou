@@ -4,13 +4,22 @@
   padding: 0;
   margin: 0;
   width: auto;
-
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
-
   /*padding: 1em;*/
+}
+.all {
+  overflow-y: hidden;
+  height: 100%;
+
+}
+
+.scroll_content {
+  /*color: ;*/
+  overflow-y: hidden;
+  height: 69vh;
 }
 
 .card {
@@ -146,12 +155,6 @@
   font-weight: 600;
   color: #00234E;
   font-style: italic;
-}
-
-.scroll_content {
-  /*color: ;*/
-  overflow-y: auto;
-  height: 68vh;
 }
 
 .nv_serv_sub {
@@ -330,11 +333,6 @@
   height: 3.5em;
 }
 
-.all {
-  overflow-y: scroll;
-
-  height: 95vh;
-}
 
 main {
   background-color: #00234E;

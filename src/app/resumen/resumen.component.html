@@ -2,7 +2,7 @@
   <div class="tt">Paciente</div>
 </div>
 
-<main class="main">
+<div class="main">
   <div class="img_paciente">
   </div>
   <div class="nombre">{{historia['Información General']['Identidad']['Nombre']}}
@@ -13,15 +13,16 @@
   </div>
   <div class="mas_info">{{historia['Información General']['Identidad']['Sexo']}}, {{getAnos()}}</div>
 
-  <!--<div class="rs-hl"></div>-->
-  <!--<div class="noti_content">-->
-  <!--<div class="noti_cita">-->
-  <!--<div class="not_icon">-->
-  <!--<img class="icon" src="/assets/navbar/not_icon.svg">-->
-  <!--</div>-->
-  <!--<div class="prox_cita">Próxima cita: 7 feb, 7:30 am</div>-->
-  <!--</div>-->
-  <!--</div>-->
+  <div class="rs-hl"></div>
+  <div class="noti_content">
+    <div class="noti_cita">
+      <div class="not_icon">
+        <img class="icon" src="/assets/navbar/not_icon.svg">
+      </div>
+      <div class="prox_cita">Próxima cita: 7 feb, 7:30 am</div>
+    </div>
+  </div>
+  <div routerLink="/paciente/historia">Intentar ver historia</div>
 
   <div class="card">
     <h4 class="ttl_ult">Última evolución</h4>
@@ -46,5 +47,5 @@
       <div>{{historia['Información General']['Contacto']['Correo electrónico']}}</div>
     </div>
   </div>
-</main>
+</div>
 

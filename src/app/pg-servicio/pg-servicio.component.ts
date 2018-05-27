@@ -5,6 +5,7 @@ import {NavbarComponent} from '../main_routes/home/main/navbar/navbar.component'
 import {Router} from '@angular/router';
 import {AngularFireDatabase} from 'angularfire2/database';
 import {PopdateService} from '../popdate.service';
+import {PopNotComponent} from '../reasignar-cita/pop-not.component';
 
 @Component({
   selector: 'app-pg-servicio',
@@ -22,6 +23,9 @@ export class PgServicioComponent implements OnInit {
   tratamientos_id: any = [];
   tratamientos_del_servicio: any[] = [];
   servicio_concluido = false;
+  userIsCreator = false;
+  @ViewChild(PopNotComponent)
+  public pCard: PopNotComponent;
 
   constructor(public router: Router, public data: DataService, public db: AngularFireDatabase, public popdate: PopdateService) {
     this.cargarServicio();
@@ -29,6 +33,7 @@ export class PgServicioComponent implements OnInit {
 
   ngOnInit() {
   }
+
 
   ejecutarAgregarNuevaFaseTratamiento(faseSelected: string) {
     console.log('se seleccionó una fase');
@@ -48,7 +53,7 @@ export class PgServicioComponent implements OnInit {
       null,
       true,
       (data: any): void => {
-        // agregar datos al servicios seleccionado
+        // agregar datos al serviciosId seleccionado
         const nTratamiento = {
           data: data,
           metadata: {
@@ -58,11 +63,12 @@ export class PgServicioComponent implements OnInit {
             fecha_creacio: new Date()
           }
         };
-        const k = this.data.db.list('servicios/' + this.data.id_servicio_seleccionado + '/tratamientos').push(nTratamiento).key;
+        const k = this.data.db.list('serviciosId/' + this.data.id_servicio_seleccionado + '/tratamientos').push(nTratamiento).key;
         var t: any = nTratamiento;
         t.metadata.id = {};
         t.metadata.id = k;
-        this.data.db.object('servicios/' + this.data.id_servicio_seleccionado + '/tratamientos/' + k).set(t);
+
+        this.data.db.object('serviciosId/' + this.data.id_servicio_seleccionado + '/tratamientos/' + k).set(t);
         console.log('se guarda el nuevo tratamiento');
         this.cargarServicio();
       },
@@ -80,8 +86,8 @@ export class PgServicioComponent implements OnInit {
       this.servicio.data,
       !this.servicio_concluido,
       (data: any): void => {
-        // agregar datos al servicios seleccionado
-        this.data.db.object('servicios/' + this.data.id_servicio_seleccionado).update(data);
+        // agregar datos al serviciosId seleccionado
+        this.data.db.object('serviciosId/' + this.data.id_servicio_seleccionado).update(data);
       },
       (result: any): void => {
       }
@@ -101,6 +107,13 @@ export class PgServicioComponent implements OnInit {
       if (this.servicio.metadata.estado !== 'Activo') {
         this.servicio_concluido = true;
       }
+
+      // funcionaará cuando loguee
+      if (this.servicio.metadata.info_creador.user_ud === this.data.current_uid) {
+        console.log('el usuario que visita, es el creador del propio servicio');
+        this.userIsCreator = true;
+      }
+
     });
 
     this.cargarTratamientos();

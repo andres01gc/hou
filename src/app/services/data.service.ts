@@ -13,7 +13,7 @@ export class DataService {
   public servicio_usuario_seleccionado: any;
   public user: Observable<firebase.User>;
   public informacion_usuario: any;
-  public current_uid: any;
+  public current_uid: any = 'Iiw8teN0C1YRq4kIPD6Ie2epXuz2';
   public documento_paciente_buscado: string;
   public informacion_categorias: any = [];
   public mostrarIngresarServicio = false;
@@ -77,7 +77,7 @@ export class DataService {
               },
               {
                 tipo_item: 'input',
-                type: 'text',
+                type: 'number',
                 tam: 's',
                 placehoder: '',
                 nombre: 'Documento'

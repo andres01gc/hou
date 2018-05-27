@@ -24,7 +24,7 @@ export class CardServicioComponent implements OnInit {
   }
 
   bucarServicio(id: string) {
-    this.data.db.object('servicios/' + id).valueChanges().subscribe(item => {
+    this.data.db.object('serviciosId/' + id).valueChanges().subscribe(item => {
       this.serv = item;
     });
   }

@@ -31,14 +31,14 @@ export class PacienteComponent implements OnInit {
       id_servicio: '',
       prox_cita: 'aún no se ha asignado cita'
     };
-    // subo al paquete de servicios totales
-    const dbServicio = this.data.db.list('servicios');
+    // subo al paquete de serviciosId totales
+    const dbServicio = this.data.db.list('serviciosId');
     // Se obtiene  la key de ese servicio
     servicio.id_servicio = dbServicio.push(servicio).key;
 
     const itemHistoriaUsuario = this.data.db.object('pacientes/' +
       this.data.tipo_doc_paciente_buscado + '/' +
-      this.data.documento_paciente_buscado + '/servicios');
+      this.data.documento_paciente_buscado + '/serviciosId');
 
     itemHistoriaUsuario.update([servicio]);
     console.log('se finaliza el ingreso del servicio');

@@ -25,10 +25,10 @@ export class ServiciosPacienteComponent implements OnInit {
   }
 
   buscarServicios() {
-    // deberia de ser servicios activos!
+    // deberia de ser serviciosId activos!
     this.db.list('pacientes/' + this.data.tipo_doc_paciente_buscado + '/' +
-      this.data.documento_paciente_buscado + '/servicios').valueChanges().subscribe(servicios => {
-      // console.log('se encontraron servicios');
+      this.data.documento_paciente_buscado + '/serviciosId').valueChanges().subscribe(servicios => {
+      // console.log('se encontraron serviciosId');
       this.servicios_id = servicios;
       // console.log(this.servicios_id);
     });
@@ -43,11 +43,11 @@ export class ServiciosPacienteComponent implements OnInit {
     this.popdate.main_view.pCard.iniciarPopUp(
       'Nuevo Servicio',
       'Servicio creado por xxxxxxx',
-      this.data.paginas_servicio  ,
+      this.data.paginas_servicio,
       null,
       true,
       (data: any): void => {
-        // Esta parte no la puedo hacer general, debo saber la posición del documento y su tipo para poder crear el nuevo usuario
+        // ahí irá this.data.current_uid
 
         // TODO buscar los datos especificos de cada input, cuando tenga las estructuras de las páginas;
         const servicio = {
@@ -59,7 +59,13 @@ export class ServiciosPacienteComponent implements OnInit {
             diagnostico: 'aquí ira la información dianogstico',
             tipo_doc: this.data.tipo_doc_paciente_buscado,
             documento: this.data.documento_paciente_buscado,
-            fecha: 'insertar Fecha'
+            fecha: 'insertar Fecha',
+
+            info_creador: {
+              user_uid: this.data.current_uid,
+              nombre: 'Andrés Gc',
+              prof: 'Code master',
+            }
           }
         };
 
@@ -73,9 +79,13 @@ export class ServiciosPacienteComponent implements OnInit {
 
         this.buscarServicios();
         this.popdate.showToast('nuevo servicio ingresado');
+
+        this.data.db.list('usuarios/' + this.data.current_uid + '/data/servicios_asignados/').push(id);
       },
       (result: any): void => {
       }
     );
   }
+
+
 }

@@ -1,8 +1,5 @@
-<!--<app-advertencia-iniciar-servicio (advertido)="iniciarHistoria()" [hidden]="!verAdv"></app-advertencia-iniciar-servicio>-->
-<!--<app-reasignar-cita [hidden]="!reasignar"></app-reasignar-cita>-->
-<!--<app-cancelar-servicio [hidden]="!cancelar"></app-cancelar-servicio>-->
-<!--<app-pg-evolucion [hidden]="!evolucionar" (evolucion)="subirEvolucion($event)"-->
-<!--(cancelar)="evolucionar= $event"></app-pg-evolucion>-->
+<!--<app-reasignar-cita></app-reasignar-cita>-->
+<!--<app-cancelar-servicio></app-cancelar-servicio>-->
 
 <div class="pgs_crd">
   <div class="pgs_main">
@@ -23,7 +20,7 @@
       </div>
     </div>
   </div>
-
+  <div routerLink="../historia">Intentar ver historia</div>
   <div class="pgs_rg">
     <div class="pgs_infouser">
       <div class="pgs_itm">
@@ -34,8 +31,9 @@
           </div>
           <div class="nv-vline"></div>
           <div class="nv-main-container">
-            <div class="name">Servicio sin asignar</div>
-            <div class="esp">Asignar servicio</div>
+            <div class="name">{{this.servicio?.metadata.info_creador.nombre}}</div>
+            <div class="esp">{{this.servicio?.metadata.info_creador.prof}}
+            </div>
           </div>
         </div>
       </div>
@@ -52,7 +50,7 @@
           <div class="nv-main-container">
             <div class="name">Cita sin asignar</div>
             <div class="pgs-ops">
-              <div class="pgs_opcionees" (click)="reasignar=true">Opciones</div>
+              <div class="pgs_opcionees" (click)="ejecutarOpcion()">Opciones</div>
               |
               <div class="pgs_cancelar" (click)="cancelar=true">Cancelar</div>
             </div>

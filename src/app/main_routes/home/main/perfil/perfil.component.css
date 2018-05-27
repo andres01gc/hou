@@ -88,13 +88,7 @@
   height: 3em;
 }
 
-.pct_main_content {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 89vh;
-  overflow-y: scroll;
-}
+
 
 .rs_main_cont {
   padding-left: 24em;
@@ -172,6 +166,7 @@
     z-index: 30;
     /*background-color: #00ABA0;*/
   }
+
 
   .rs_main_cont {
     width: auto;
