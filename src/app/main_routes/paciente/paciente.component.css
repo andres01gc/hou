@@ -15,11 +15,13 @@
 }
 
 .rs_main_cont {
+  /*margin-top: -1em;*/
   width: 100%;
   /*padding-left: 20%;*/
   /*background: #F44336;*/
   height: 100%;
   display: flex;
+  /*background-color: #F44336;*/
 }
 
 /*.bg {*/

@@ -1,5 +1,6 @@
-<!--<app-reasignar-cita></app-reasignar-cita>-->
-<!--<app-cancelar-servicio></app-cancelar-servicio>-->
+<app-reasignar-cita></app-reasignar-cita>
+<app-cancelar-servicio></app-cancelar-servicio>
+<app-asignar-cita></app-asignar-cita>
 
 <div class="pgs_crd">
   <div class="pgs_main">
@@ -15,7 +16,7 @@
           </div>
         </div>
       </div>
-      <div *ngIf="!servicio_concluido" class="finalizar" (click)="finaliarServicio()">
+      <div *ngIf="this.userIsCreator ||!servicio_concluido" class="finalizar" (click)="finaliarServicio()">
         Finalizar Servicio
       </div>
     </div>
@@ -48,11 +49,22 @@
 
           <div class="nv-vline"></div>
           <div class="nv-main-container">
-            <div class="name">Cita sin asignar</div>
-            <div class="pgs-ops">
-              <div class="pgs_opcionees" (click)="ejecutarOpcion()">Opciones</div>
-              |
-              <div class="pgs_cancelar" (click)="cancelar=true">Cancelar</div>
+
+            <div class="name" *ngIf="!servicio_concluido">
+              {{this.servicioConCita === true ? this.servicio.metadata.fecha : 'No se ha asignado cita'}}
+            </div>
+
+            <div class="name" *ngIf="servicio_concluido">
+              Servicio concluido
+            </div>
+
+
+            <div class="pgs-ops" *ngIf="!servicio_concluido">
+              <div *ngIf="!this.servicioConCita" class="pgs_opcionees" (click)='ejecutarNuevaCita()'>Nueva cita</div>
+              <div *ngIf="this.servicioConCita" class="pgs_opcionees" (click)='ejecutarNuevaCita()'>Asignar nueva cita
+              </div>
+              <div class="" *ngIf="this.servicioConCita">|</div>
+              <div *ngIf="this.servicioConCita" class="pgs_cancelar" (click)="ejecutarCancelarCita()"> Cancelar</div>
             </div>
           </div>
         </div>

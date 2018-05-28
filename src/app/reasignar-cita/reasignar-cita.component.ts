@@ -1,11 +1,13 @@
-import {Component, HostBinding, OnInit} from '@angular/core';
+import {Component, HostBinding, Input, OnInit} from '@angular/core';
+import {DataService} from '../services/data.service';
 
 @Component({
-  selector: 'app-cancelar-servicio',
-  templateUrl: './cancelar-servicio.component.html',
-  styleUrls: ['./cancelar-servicio.component.css']
+  selector: 'app-reasignar-cita',
+  templateUrl: './reasignar-cita.component.html',
+  styleUrls: ['./reasignar-cita.component.css']
 })
-export class CancelarServicioComponent implements OnInit {
+export class ReasignarCitaComponent implements OnInit {
+
   @HostBinding('style.visibility') private visibility = 'hidden';
   cancelFun: (n: any) => void;
   asig: (n: any) => any;
@@ -23,12 +25,12 @@ export class CancelarServicioComponent implements OnInit {
     this.visibility = 'visible';
   }
 
-  alCancelarAccion() {
+  alCan() {
     this.visibility = 'hidden';
     this.asig(this.fechaAgregada);
   }
 
-  alCancelarCita() {
+  alAsg() {
     this.visibility = 'hidden';
     this.asig(false);
   }

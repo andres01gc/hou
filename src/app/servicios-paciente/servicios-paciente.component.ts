@@ -25,10 +25,10 @@ export class ServiciosPacienteComponent implements OnInit {
   }
 
   buscarServicios() {
-    // deberia de ser serviciosId activos!
+    // deberia de ser servicios activos!
     this.db.list('pacientes/' + this.data.tipo_doc_paciente_buscado + '/' +
-      this.data.documento_paciente_buscado + '/serviciosId').valueChanges().subscribe(servicios => {
-      // console.log('se encontraron serviciosId');
+      this.data.documento_paciente_buscado + '/servicios').valueChanges().subscribe(servicios => {
+      // console.log('se encontraron servicios');
       this.servicios_id = servicios;
       // console.log(this.servicios_id);
     });
@@ -59,8 +59,7 @@ export class ServiciosPacienteComponent implements OnInit {
             diagnostico: 'aquí ira la información dianogstico',
             tipo_doc: this.data.tipo_doc_paciente_buscado,
             documento: this.data.documento_paciente_buscado,
-            fecha: 'insertar Fecha',
-
+            fecha: 'null',
             info_creador: {
               user_uid: this.data.current_uid,
               nombre: 'Andrés Gc',

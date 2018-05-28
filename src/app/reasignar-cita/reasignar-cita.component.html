@@ -1,6 +1,6 @@
 <div class="card">
   <div class="ttl">
-    <div class="t">Cancelar servicio</div>
+    <div class="t">Reasignar nueva cita</div>
   </div>
   <div class="pgs-cnt">
 
@@ -9,13 +9,14 @@
       name="Cancelación de cita"
       placeholder="¿Por que vas a cancelar esta cita?"
       size="l"
+      type="datetime-local"
+      (texted)="fechaAgregada = $event"
       [lock]="false">
     </app-input>
 
     <div class="btts">
-      <div class="bt" (click)="alCancelarAccion($event)">Continuar</div>
-      <div class="bt c" (click)="alCancelarCita()">Cerrar</div>
+      <div class="bt" (click)="alCan()">Asignar</div>
+      <div class="bt c" (click)="alAsg()">Cancelar servicio</div>
     </div>
-
   </div>
 </div>
