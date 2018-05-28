@@ -1,21 +1,28 @@
 <div class="card">
-  <div class="up-container">
-    <div class="icon-container">
-      <img class="icon" src="/assets/navbar/menu.svg">
+  <div class="pgs_mains_bar">
+    <div class="pgs_ic">
+      <img class="icon_2" src="/assets/ico_2.svg">
     </div>
 
-    <div class="main-info-container">
-      <p class="nombre">Titulo del servicio</p>
-      <div class="especialidad">Aún no se ha asignado una cita</div>
+    <div class="pgs_cnt_ttl">
+      <div class="pgs_ttl">Titulo del servicio</div>
+      <div class="sub_ttl">Ver servicio</div>
+      <div class="pgs_subttl">
+        <div class="est">Activo</div>
+      </div>
     </div>
+
+
   </div>
 
-  <div class="botton-container">
-    <p class="diagnostico">{{serv?.metadata.diagnostico}}</p>
+  <div class="pgs_tttl_2">Descripción</div>
+  <div class="dscp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum magni pariatur perferendis quo vel?
+    Accusamus accusantium, aut commodi, culpa cupiditate delectus eum ipsam omnis quaerat quidem repellendus temporibus
+    tenetur, voluptatibus.
   </div>
 
-  <div class="btns">
-    <p (click)="seleccionarServicio()" routerLink="/paciente/serv">Ver detalles</p>
-  </div>
+  <!--<div class="btns">-->
+  <!--</div>-->
+    <div (click)="seleccionarServicio()" class="asvd" routerLink="/paciente/serv">Ver Servicio</div>
 
 </div>

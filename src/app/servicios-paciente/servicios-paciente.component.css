@@ -40,11 +40,11 @@
 }
 
 .rs_ttl {
-  font-family: "Fira Sans Light";
   color: rgba(0, 190, 164, 1);
   margin: .2em;
-  font-size: 1.2em;
+  font-size: 1.5em;
   padding: .5em;
+  font-weight: 800;
 }
 
 .activos {

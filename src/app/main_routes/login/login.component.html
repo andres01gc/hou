@@ -5,11 +5,10 @@
     <img class="logo" src="/assets/navbar/logo.svg">
   </div>
   <form class="ins">
-    <input type="text"value="a@b.com" #mail placeholder="Correo electrónico">
+    <input type="text" value="a@b.com" #mail placeholder="Correo electrónico">
     <input type="password" value="123456" #pass placeholder="Contraseña">
     <div class="btn-work" (click)="login(mail.value,pass.value)">¡Ingresar!</div>
   </form>
-  <p class="olvidado">¿Has olvidado tu contraseña?</p>
 </div>
 
 <div class="snack" [ngClass]="{'act': snacktive }">

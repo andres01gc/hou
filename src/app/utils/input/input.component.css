@@ -13,13 +13,13 @@
   /*background-color: #DB3650;*/
   display: flex;
   /*background-color: rgba(0, 0, 0, 0.03);*/
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  /*border: 1px solid rgba(0, 0, 0, 0.1);*/
   /*border-radius: .4em;*/
   /*padding-left: .8em;*/
 }
 
 .lock {
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: rgba(0, 0, 0, 0);
   border: 1px solid rgba(0, 0, 0, 0);
 }
 

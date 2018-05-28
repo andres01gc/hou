@@ -1,6 +1,3 @@
-<!--<div class="nb_card_ingreso">-->
-<!--&lt;!&ndash;<app-nuevo-ingreso (terminado)="finalizarIngreso()"></app-nuevo-ingreso>&ndash;&gt;-->
-<!--</div>-->
 <nav class="main_nav">
   <div class="nv-ico-logo-container" routerLink="/">
     <img class="icon nv-ic-logo" src="/assets/navbar/logo.svg">
@@ -39,6 +36,7 @@
     <!--información del usuario-->
     <div class="nv-info-container" routerLink="/">
       <div class="nv-user-container">
+
         <div class="nv-name">
           <!--{{sub_categorias.informacion_usuario.payload.val().nombres+' '+sub_categorias.informacion_usuario.payload.val().apellidos}}-->
         </div>
@@ -51,14 +49,12 @@
       </div>
     </div>
 
-    <div class="nv-icon-container">
-      <img class="icon nv-ic-not" src="/assets/navbar/not_ico.svg">
-    </div>
+    <div routerLink="login" class="salir">Salir</div>
 
-    <div class="nv-icon-container">
-      <img class="icon nv-ic-tools" routerLink="/login" src="/assets/navbar/tools.svg">
-    </div>
+
+    <!--<div class="nv-icon-container">-->
+    <!--<img class="icon nv-ic-tools" routerLink="/login" src="/assets/navbar/tools.svg">-->
+    <!--</div>-->
 
   </div>
 </nav>
-<div class="cc"></div>

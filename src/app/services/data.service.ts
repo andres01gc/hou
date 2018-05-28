@@ -27,6 +27,8 @@ export class DataService {
     xl: [0, 0, 0]
   };
   id_servicio_seleccionado: string;
+  nombres: string;
+  apellidos: string;
 
   constructor(db: AngularFireDatabase) {
     this.db = db;

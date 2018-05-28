@@ -3,32 +3,36 @@
 <app-asignar-cita></app-asignar-cita>
 
 <div class="pgs_crd">
+
   <div class="pgs_main">
     <div class="pgs_mains_bar">
-      <div class="pgs_back" routerLink="../">
-        <img class="icon" src="/assets/paciente/bacck.svg">
+      <!--<div class="pgs_back" routerLink="../">-->
+      <!--<img class="icon" src="/assets/paciente/bacck.svg">-->
+      <!--</div>-->
+      <div class="pgs_ic">
+        <img class="icon_2" src="/assets/ico_2.svg">
       </div>
       <div class="pgs_cnt_ttl">
         <div class="pgs_ttl">Titulo del servicio</div>
+        <div class="sub_ttl" (click)="ejecutarVerServicio()">Ver servicio {{this.servicio?.metadata.tipo_servicio}}
+        </div>
         <div class="pgs_subttl">
-          <div class="txt">{{this.servicio?.metadata.estado}}</div>
-          <div class="sub_ttl" (click)="ejecutarVerServicio()">Servicio de {{this.servicio?.metadata.tipo_servicio}}
+          <div class="est">Activo</div>
+          <div class="fasf">Finalizar servicio
           </div>
         </div>
-      </div>
-      <div *ngIf="this.userIsCreator ||!servicio_concluido" class="finalizar" (click)="finaliarServicio()">
-        Finalizar Servicio
+
       </div>
     </div>
   </div>
-  <div routerLink="../historia">Intentar ver historia</div>
+
   <div class="pgs_rg">
     <div class="pgs_infouser">
       <div class="pgs_itm">
         <div class="pgs_tttl">Responsable del Servicio</div>
         <div class="pgs_cnt_responsable">
           <div class="pgs-ico-logo-container">
-            <img class="icon nv-ic-logo" src="/assets/navbar/logo.svg">
+            <img class="icon nv-ic-logo" src="/assets/man.svg">
           </div>
           <div class="nv-vline"></div>
           <div class="nv-main-container">
@@ -38,13 +42,12 @@
           </div>
         </div>
       </div>
-
       <div class="pgs_itm">
         <div class="pgs_tttl">Próxima cita</div>
         <div class="pgs_cnt_responsable">
 
           <div class="pgs-ico-logo-container">
-            <img class="icon pgs-ico-not" src="/assets/navbar/not_ico.svg">
+            <img class="icon pgs-ico-not" src="/assets/cita.svg">
           </div>
 
           <div class="nv-vline"></div>
@@ -71,15 +74,19 @@
       </div>
     </div>
 
-    <app-input
-      name="Descripción"
-      size="l"
-      type="text"
-      value="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur esse facilis ipsum iusto maxime mollitia nam natus obcaecati, officiis quam quasi quibusdam quidem recusandae sint totam, velit vero voluptatem!">
-    </app-input>
-
   </div>
-  <div class="pgs_tttl">Tratamientos</div>
+  <div class="pgs_tttl_2">Descripción</div>
+  <div class="dscp">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum magni pariatur perferendis quo vel?
+    Accusamus accusantium, aut commodi, culpa cupiditate delectus eum ipsam omnis quaerat quidem repellendus temporibus
+    tenetur, voluptatibus.
+  </div>
+
+  <div class="btts">
+    <div routerLink="../historia" class="bHistoria">Ver historia</div>
+  </div>
+
+  <div class="pgs_tttl_2">Tratamientos</div>
+
 
   <app-item-anextab [tratamientos]="this.tratamientos_del_servicio"
                     (alAgregar)="ejecutarAgregarNuevaFaseTratamiento($event)"

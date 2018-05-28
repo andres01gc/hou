@@ -17,10 +17,10 @@
   /*margin: 1em;*/
   /*box-sizing: border-box;*/
   background-color: white;
-  border-radius: .2em;
-  -webkit-box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.28);
-  -moz-box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.28);
-  box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.28);
+  border-radius: .4em;
+  /*-webkit-box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.28);*/
+  /*-moz-box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.28);*/
+  /*box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.28);*/
   border: #00ABA0 1px solid;
 }
 
@@ -35,8 +35,9 @@
   padding-left: 1em;
   display: flex;
   box-sizing: border-box;
-  background-color: rgba(0, 171, 160, 0.2);
+  background-color: rgba(0, 171, 160, 0.1);
   align-items: center;
+  color: #00ABA0;
   cursor: pointer;
   width: available;
 }

@@ -49,6 +49,7 @@ export class UserResumenComponent implements OnInit {
   selectServicio(servicioSeleccionado: any, i: number) {
     this.data.servicio_seleccionado_paciente = servicioSeleccionado;
     this.iSelected = i;
+    console.log('se seleccionó ' + i);
     this.data.id_servicio_seleccionado = servicioSeleccionado.metadata.id;
     this.router.navigate(['/']);
     this.data.documento_paciente_buscado = servicioSeleccionado.metadata.documento;

@@ -5,6 +5,16 @@
   padding: 1em;
 }
 
+.hc_hc {
+  overflow: hidden;
+  width: available;
+  height: 96.8%;
+  background-color: white;
+  /*margin: 1em;*/
+  border-radius: .4em;
+  border: rgba(0, 0, 0, 0.11) 1px solid;
+}
+
 .tabs {
   /*width: available;*/
   /*height: 4em;*/
@@ -103,10 +113,6 @@
 /*z-index: 2;*/
 /*}*/
 
-.hc_hc {
-  overflow: hidden;
-}
-
 .hc-ttl {
   font-weight: 600;
 }
@@ -129,9 +135,17 @@
   align-items: center;
 }
 
+.icc {
+  width: 1em;
+}
+
 .ir-atras {
   width: 4em;
   height: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   /*background: #F44336;*/
 }
 

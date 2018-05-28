@@ -8,9 +8,7 @@
 
 .resum_container {
   width: 30em;
-  -webkit-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.1);
+
   z-index: 1;
 }
 
@@ -22,159 +20,12 @@
   height: 100%;
   display: flex;
   /*background-color: #F44336;*/
+  /*background-color: #F44336;*/
 }
-
-/*.bg {*/
-/*position: fixed;*/
-/*z-index: 100;*/
-/*background-color: #00234E;*/
-/*width: 100%;*/
-/*height: 100%;*/
-/*display: flex;*/
-/*}*/
-
-/*.tabs {*/
-/*!*width: available;*!*/
-/*!*height: 4em;*!*/
-/*list-style: none;*/
-/*padding-left: 20px;*/
-/*background-color: #FCFCFC;*/
-/*display: flex;*/
-/*align-items: center;*/
-/*margin: 0;*/
-/*position: fixed;*/
-/*width: available;*/
-/*height: 3em;*/
-/*overflow: auto;*/
-/*border-bottom: 1px solid rgba(0, 0, 0, 0.08);*/
-/*-webkit-box-shadow: 3px 4px 83px 0 rgba(0, 0, 0, 0.05);*/
-/*-moz-box-shadow: 3px 4px 83px 0 rgba(0, 0, 0, 0.05);*/
-/*box-shadow: 3px 4px 83px 0 rgba(0, 0, 0, 0.05);*/
-/*font-family: "Fira Sans";*/
-/*font-weight: 400;*/
-/*z-index: 5;*/
-/*}*/
-
-/*.active {*/
-/*font-weight: 600;*/
-/*opacity: 1;*/
-/*}*/
-
-/*.paciente_top_container {*/
-/*position: fixed;*/
-/*width: 100%;*/
-/*height: 5em;*/
-/*background-color: #00234E;*/
-/*z-index: 2;*/
-/*}*/
-
-/*.magicspace_top {*/
-/*height: 5em;*/
-/*}*/
-
-/*.ttl {*/
-/*color: white;*/
-/*padding: .5em;*/
-/*margin: 0;*/
-/*}*/
-
-/*.main_tabs {*/
-/*overflow: hidden;*/
-/*height: 3em;*/
-/*}*/
-
-/*.pct_main_content {*/
-/*margin: 0;*/
-/*padding: 0;*/
-/*width: available;*/
-/*!*height: 100%;*!*/
-/*overflow-y: scroll;*/
-/*background-color: #FF6D00;*/
-/*}*/
-
-/*.r_ms {*/
-/*width: 30em;*/
-/*height: 100%;*/
-/*display: flex;*/
-/*background-color: #FF6D00;*/
-/*}*/
-
-/*.magicspace {*/
-/*width: 100%;*/
-/*height: 2em;*/
-/*!*background-color: #333333;*!*/
-/*}*/
-
-/*.rout_conunt {*/
-/*margin: 0;*/
-/*padding: 0;*/
-/*width: auto;*/
-/*height: 100%;*/
-/*!*background: #00234E;*!*/
-/*}*/
-
-/*!*h1 {*!*/
-
-/*!*font-family: "Lato Medium";*!*/
-/*!*color: white;*!*/
-/*!*!*font-size: ;*!*!*/
-/*!*padding: 1em;*!*/
-/*!*}*!*/
-
-/*.cont {*/
-/*position: relative;*/
-/*width: auto;*/
-/*!*height: 50px;*!*/
-/*margin-left: 19em;*/
-/*!*margin-top: 4em;*!*/
-/*!*padding-left: 20em;*!*/
-/*!*padding-top: 4em;*!*/
-/*!*background-color: #DB3650;*!*/
-/*}*/
-
-/*.tb {*/
-/*margin-right: 2em;*/
-/*float: left;*/
-/*!*opacity: .3;*!*/
-/*font-size: .9em;*/
-/*color: #00234E;*/
-/*}*/
-
-/*.tabs li:hover {*/
-/*opacity: 1;*/
-/*cursor: pointer;*/
-/*color: #00234E;*/
-/*}*/
-
-/*.act {*/
-/*opacity: 1;*/
-/*color: #DB3650;*/
-/*}*/
-
-/*.rsm {*/
-/*display: none;*/
-/*}*/
 
 @media only screen and (max-width: 68em) {
   .resum_container {
     display: none;
   }
 
-  /*.rs_main_cont {*/
-  /*width: auto;*/
-  /*margin-left: 0em;*/
-  /*padding: 0;*/
-  /*}*/
-  /*.rsm {*/
-  /*display: inline-block;*/
-  /*}*/
-  /*.paciente_top_container {*/
-  /*display: none;*/
-  /*}*/
-  /*.magicspace_top {*/
-  /*display: none;*/
-  /*}*/
-  /*}*/
-  /*.cont {*/
-  /*padding-left: 2em;*/
 }

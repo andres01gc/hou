@@ -2,10 +2,15 @@
   <div class="hc_hc-content">
 
     <div class="inpc_magicspace">
-      <div class="ir-atras" (click)="goBack()"></div>
+      <div class="ir-atras" (click)="goBack()">
+
+        <img class="icc" src="../assets/paciente/bacck.svg" alt="ir atrás">
+      </div>
       <div>
-        <div class="hc-ttl">Historia clin</div>
-        <div class="hc-sbttl">Paciente xxxxxx</div>
+        <div class="hc-ttl">Historia clínica</div>
+        <div class="hc-sbttl">Paciente {{cargarDataItem(['Información General','Identidad','Nombre']) +' '
+          +cargarDataItem(['Información General','Identidad','Apellidos'])}}
+        </div>
       </div>
     </div>
     <div class="ip_cnt_tabs">

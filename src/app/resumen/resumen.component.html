@@ -1,36 +1,48 @@
-<div class="rs-tittle">
-  <div class="tt">Paciente</div>
-</div>
-
-<div class="main">
-  <div class="img_paciente">
-  </div>
-  <div class="nombre">{{historia['Información General']['Identidad']['Nombre']}}
-    {{historia['Información General']['Identidad']['Apellidos']}}
-  </div>
-  <div class="doc">{{historia['Información General']['Identidad']['Tipo_doc']}}
-    {{historia['Información General']['Identidad']['Documento']}}
-  </div>
-  <div class="mas_info">{{historia['Información General']['Identidad']['Sexo']}}, {{getAnos()}}</div>
-
-  <div class="rs-hl"></div>
-  <div class="noti_content">
-    <div class="noti_cita">
-      <div class="not_icon">
-        <img class="icon" src="/assets/navbar/not_icon.svg">
-      </div>
-      <div class="prox_cita">Próxima cita: 7 feb, 7:30 am</div>
-    </div>
-  </div>
-  <div routerLink="/paciente/historia">Intentar ver historia</div>
-
-  <div class="card">
-    <h4 class="ttl_ult">Última evolución</h4>
-    <div class="line"></div>
-
-    <div class="ult_ev"> aún sin evolucionar
+<div class="all">
+  <main class="main">
+    <div class="ur_topttitle">
+      <div>Paciente</div>
     </div>
 
+    <div class="img_paciente">
+      <img class="ico" src="/assets/man.svg">
+
+    </div>
+
+    <div class="ur_nombre">{{historia['Información General']['Identidad']['Nombre']}}
+      {{historia['Información General']['Identidad']['Apellidos']}}
+    </div>
+
+    <div class="ur_doc">{{historia['Información General']['Identidad']['Tipo_doc']}}
+      {{historia['Información General']['Identidad']['Documento']}}
+    </div>
+
+    <div class="ur_mas_info">{{historia['Información General']['Identidad']['Sexo']}}, {{getAnos()}}</div>
+
+  </main>
+
+
+  <div class="bbbt" (click)="presionarIngresarServicio()">
+    <div class="i-c">
+      <img class="c" src="../assets/man.svg" alt="asldndk">
+    </div>
+    Nuevo servicio
+  </div>
+
+  <div class="bbbt" routerLink="/paciente/historia">
+    <div class="i-c">
+      <img class="c" src="../assets/man.svg" alt="asldndk">
+    </div>
+    Ver historia
+  </div>
+
+  <div class="bbbt" routerLink="/paciente">
+    <div class="i-c">
+      <img class="c" src="../assets/man.svg" alt="asldndk">
+    </div>
+    <div>
+      Ver servicios
+    </div>
   </div>
 
   <div class="card">
@@ -38,14 +50,56 @@
     <div class="line"></div>
 
     <div class="item" *ngFor="let tl of historia['Información General']['Contacto']['telefonos']">
-      <div>{{tl.tipo_num}}</div>
+      <div class="qwe">Teléfono {{tl.tipo_num}}</div>
       <div>{{tl.num}}</div>
     </div>
 
     <div class="item">
-      <div>email</div>
+      <div class="qwe">Correo</div>
       <div>{{historia['Información General']['Contacto']['Correo electrónico']}}</div>
     </div>
+
   </div>
 </div>
+
+
+<!--<div class="main">-->
+<!--<div class="img_paciente">-->
+<!--</div>-->
+
+<!--<div class="rs-hl"></div>-->
+<!--<div class="noti_content">-->
+<!--<div class="noti_cita">-->
+<!--<div class="not_icon">-->
+<!--<img class="icon" src="/assets/navbar/not_icon.svg">-->
+<!--</div>-->
+<!--<div class="prox_cita">Próxima cita: 7 feb, 7:30 am</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div routerLink="/paciente/historia">Intentar ver historia</div>-->
+
+<!--<div class="card">-->
+<!--<h4 class="ttl_ult">Última evolución</h4>-->
+<!--<div class="line"></div>-->
+
+<!--<div class="ult_ev"> aún sin evolucionar-->
+<!--</div>-->
+
+<!--</div>-->
+
+<!--<div class="card">-->
+<!--<h4 class="ttl_ult">Información general</h4>-->
+<!--<div class="line"></div>-->
+
+<!--<div class="item" *ngFor="let tl of historia['Información General']['Contacto']['telefonos']">-->
+<!--<div>{{tl.tipo_num}}</div>-->
+<!--<div>{{tl.num}}</div>-->
+<!--</div>-->
+
+<!--<div class="item">-->
+<!--<div>email</div>-->
+<!--<div>{{historia['Información General']['Contacto']['Correo electrónico']}}</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 

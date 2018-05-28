@@ -48,22 +48,14 @@ export class LoginComponent implements OnInit {
   }
 
   obtenerInfoUsuario(auth: any) {
-    this.db.object('usuarios/' + auth.uid).snapshotChanges().subscribe(item => {
+    this.db.object('usuarios/' + auth.uid).valueChanges().subscribe(item => {
         console.log('se encuentra información');
         this.data.current_uid = auth.uid;
         this.data.informacion_usuario = item;
+        this.data.nombres = this.data.informacion_usuario.nombres;
+        this.data.apellidos = this.data.informacion_usuario.apellidos;
         this.router.navigate(['/']);
       }
     );
   }
-
-  // obtenerServiciosUsuarioLogueado() {
-  //   // TODO se debe buscar los serviciosId propios del usuaario, para pruebas se seleccionarán todos los serviciosId sin asignar
-  //   this.db.list('servicios_sin_asignar/especialidad_x').valueChanges().subscribe(serviciosId => {
-  //       // console.log(serviciosId);
-  //       this.sub_categorias.informacion_usuario = serviciosId;
-  //       // console.log('serviciosId    ' + serviciosId.length);
-  //     }
-  //   );
-  // }
 }

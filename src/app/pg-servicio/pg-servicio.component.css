@@ -6,13 +6,10 @@
 
 .pgs_crd {
   width: available;
-  height: auto;
+  height: 96.8%;
   background-color: white;
   margin: 1em;
   border-radius: .4em;
-  -webkit-box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.1);
-  -moz-box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.1);
-  box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.1);
   border: rgba(0, 0, 0, 0.11) 1px solid;
 }
 
@@ -27,8 +24,7 @@
 }
 
 .pgs_cnt_ttl {
-  width: 82%;
-  padding: .5em;
+  padding: 2em;
 }
 
 .esp {
@@ -46,16 +42,43 @@
 /*}*/
 
 .pgs_subttl {
-  font-size: .8em;
+  font-size: .9em;
   display: flex;
   align-items: center;
+}
+
+.fasf {
+  opacity: .5;
+  cursor: pointer;
+  color: #FF6D00;
+  font-weight: 500;
+}
+
+.fasf:hover {
+  opacity: .9;
+  cursor: pointer;
+}
+
+.est {
+  padding: .3em;
+  background: #00ABA0;
+  border-radius: .2em;
+  margin-right: .2em;
+  color: #FCFCFC;
+
+}
+
+.btts {
+  padding-top: 1em;
+  display: flex;
+  padding-left: 2em;
+  padding-bottom: 1em;
 }
 
 .txt {
   color: #FCFCFC;
   background: #00ABA0;
-  padding: .2em;
-  margin: .5em;
+  padding: .3em;
   border-radius: 3px;
 }
 
@@ -68,6 +91,8 @@
 .sub_ttl {
   opacity: .8;
   cursor: pointer;
+  font-size: 1.1em;
+
 }
 
 .sub_ttl:hover {
@@ -111,20 +136,18 @@
 .pgs_mains_bar {
   display: flex;
   align-items: center;
-  margin: 0;
   width: 100%;
-  height: 5em;
-  padding: 0;
-  /*background-color: rgba(19, 64, 156, 0.04);*/
+  height: 6em;
+  padding-left: 1em;
+  background-color: rgba(0, 0, 0, 0.02);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 1em;
 }
 
 .pgs_ttl {
   display: flex;
-  font-weight: 600;
-  /*width: 15em;*/
-  /*height: 3em;*/
-  /*background: #DB3650;*/
+  font-weight: 700;
+  font-size: 1.2em;
 }
 
 .pgs_subt {
@@ -140,16 +163,32 @@
   align-items: center;
   justify-content: center;
   font-weight: 800;
-}
-
-.icon {
-  width: 1.8em;
-  height: 1.8em;
+  cursor: pointer;
+  opacity: .5;
 }
 
 .pgs_back:hover {
-  cursor: pointer;
-  /*background: rgba(0, 0, 0, .2);*/
+  opacity: 1;
+}
+
+.pgs_ic {
+  width: 4em;
+  height: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  padding-left: 1em;
+}
+
+.icon {
+  width: 2em;
+  height: 2em;
+}
+
+.icon_2 {
+  width: 2.8em;
+  height: 2.8em;
 }
 
 .st0 {
@@ -159,15 +198,51 @@
 
 .pgs_rg {
   width: available;
-  padding: 1em;
+  padding-left: 2em;
 }
 
 .pgs_tttl {
   font-weight: 800;
   font-size: .9em;
   width: available;
-  padding: .5em;
   color: #FF6D00;
+  /*padding-left: 2em;*/
+}
+
+.pgs_tttl_2 {
+  padding-top: .5em;
+  padding-bottom: .5em;
+  padding-left: 1.6em;
+  color: #00234E;
+  font-size: 1.3em;
+  font-weight: 800;
+  /*display: inline-block*/
+}
+
+.dscp {
+  margin-right: 2em;
+  margin-left: 2em;
+
+}
+
+.bHistoria {
+  padding: 1em;
+  background-color: rgba(0, 171, 160, 0.1);
+  display: flex;
+  width: 7em;
+  color: #00ABA0;
+  margin-right: .1em;
+  margin-top: .1em;
+  cursor: pointer;
+  opacity: .8;
+  align-items: center;
+  justify-items: center;
+}
+
+.bHistoria:hover {
+  opacity: 1;
+  color: #00ABA0;
+  background-color: rgba(0, 171, 160, 0.4);
 }
 
 .pgs-ico-logo-container {
@@ -176,12 +251,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 1em;
+  /*margin-left: 1em;*/
   margin-right: 1em;
 }
 
 .nv-ic-logo {
-  width: 1.5em;
+  width: 2em;
 }
 
 .pgs_cnt_responsable {
@@ -240,15 +315,17 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #C6C6C6;
+  margin-bottom: 1em;
 }
 
 .pgs-ico-not {
-  width: 1em;
+  width: 2em;
   color: #DB3650;
-
 }
 
 .pgs_itm {
-  flex-basis: 49.5%;
-
+  flex-basis: 50%;
 }

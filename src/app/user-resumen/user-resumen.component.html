@@ -1,46 +1,31 @@
-<app-advertencia-iniciar-servicio (advertido)="verServicio()"
-                                  [hidden]="ocultarAdvertencia"></app-advertencia-iniciar-servicio>
-
-<app-advertencia-iniciar-servicio (advertido)="verServicio()"
-                                  [hidden]="ocultarAdvertencia"></app-advertencia-iniciar-servicio>
-
 <div class="all">
-
   <main class="main">
-    <div class="ur_topttitle"></div>
-    <div class="img_paciente">
+    <div class="ur_topttitle">
+      <div>Profesional</div>
     </div>
-    <div class="ur_nombre">{{nombre}}</div>
-    <div class="ur_doc">{{escuelas}}</div>
-    <div class="ur_mas_info">{{semestre}}</div>
-  </main>
-  <!--<div class="ur_actual_cnt">-->
-  <!--<div class="mess">¡Justo Ahora!</div>-->
-  <!--<div class="ur_actual_card">-->
-  <!--<div class="ur_card_titulo">Extracción de cordales</div>-->
-  <!--<div class="ur_card_escuela">Periodoncia</div>-->
-  <!--<div class="line"></div>-->
-  <!--<div class="card_cnt">-->
-  <!--<div class="tct">Paciente</div>-->
-  <!--<div class="icon-container">-->
-  <!--<div class="icon nv-ic-user"></div>-->
-  <!--<div class="nv-user-container">-->
-  <!--<div class="nv-name">Camilo lora Perez</div>-->
-  <!--<div class="esp">CC 12.54</div>-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--<div class="bttn_ev" (click)="verServicio()">Evolucionar servicio</div>-->
-  <!--</div>-->
-  <!--</div>-->
 
-  <div class="servis">Servicios pendientes sin cita</div>
+    <div class="img_paciente">
+      <img class="ico" src="/assets/man.svg">
+
+    </div>
+
+    <div class="ur_nombre">{{nombre}}</div>
+    <!--<div class="ur_doc">{{escuelas}}</div>-->
+    <!--<div class="ur_mas_info">{{semestre}}</div>-->
+    <div class="ur_doc">{{'Periodoncia'}}</div>
+    <!--<div class="ur_mas_info">{{''}}</div>-->
+  </main>
+
+
   <app-card-user-servicio
     *ngFor="let id of serviciosId; let i = index" [idServicio]="id"
-    (alSeleccionar)="selectServicio($event)"
+    (alSeleccionar)="selectServicio($event,i)"
     [seleccionado]="this.iSelected===i">
   </app-card-user-servicio>
+
   <!--<div class="msg-no-servicios" *ngIf="serviciosId.length===0">Aún no tienes servicios asignados</div>-->
+
+
 
   <div>
     <div></div>

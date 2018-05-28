@@ -12,7 +12,8 @@
 }
 
 .c-ev-card {
-  background: #ffffff;
+  /*background: #ffffff;*/
+  border: 1px solid #ebebeb;
   width: available;
   /*margin: .5em;*/
   height: available;
@@ -21,7 +22,7 @@
   border-radius: .4em;
   padding: 1.5em;
   box-sizing: border-box;
-  margin-top: .5em;
+  /*margin-top: .5em;*/
 }
 
 .c-ev-ttl {
@@ -33,6 +34,7 @@
 .c-ev-ttl_2 {
   font-weight: 400;
   font-size: .9em;
+  color: #FF6D00;
 }
 
 .c-ev-subttl {
@@ -96,7 +98,6 @@
   color: #FF6D00;
   border: 1px solid #FCFCFC;
   font-size: .9em;
-
 }
 
 .nx_add {

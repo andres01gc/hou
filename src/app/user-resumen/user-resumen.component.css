@@ -1,19 +1,25 @@
+:host {
+  width: 100%;
+}
+
 .main {
   /*padding: .5em;*/
   width: available;
-  padding: 0;
-  margin: 0;
-  width: auto;
+  /*margin: 0;*/
   display: flex;
   flex-direction: column;
   justify-items: center;
   align-items: center;
   /*padding: 1em;*/
+  padding-bottom: 1em;
+  border-bottom: 1px solid rgba(198, 198, 198, 0.31);
+  margin: .5em;
+  box-sizing: border-box;
 }
+
 .all {
   overflow-y: hidden;
   height: 100%;
-
 }
 
 .scroll_content {
@@ -60,8 +66,8 @@
 }
 
 .ur_nombre {
-  font-family: "Fira Sans";
-  font-weight: 500;
+  font-weight: 800;
+  font-size: 1.2em;
   color: #00ABA0;
 }
 
@@ -284,11 +290,10 @@
 
 .ur_doc {
   font-family: "Fira Sans";
-  font-weight: 500;
-  /*opacity: .6;*/
-  font-size: 1em;
-  color: #FCFCFC;
 
+  font-size: 1em;
+  font-weight: 500;
+  color: #00234E;
 }
 
 .prox_cita {
@@ -331,12 +336,17 @@
   display: flex;
   /*el punto cinco para fancy*/
   height: 3.5em;
+  text-align: center;
+  padding: .8em;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1em;
+  box-sizing: border-box;
 }
 
-
 main {
-  background-color: #00234E;
-
+  /*background-color: #00234E;*/
 }
 
 .ur_mas_info {
