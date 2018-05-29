@@ -3,6 +3,7 @@ import {DataService} from '../../../services/data.service';
 import {PopdateService} from '../../../popdate.service';
 import {SnakbarComponent} from '../../../utils/snakbar/snakbar.component';
 import {PopcardComponent} from '../../../popcard/popcard.component';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -20,18 +21,17 @@ export class MainComponent implements OnInit {
   @ViewChild(PopcardComponent)
   public pCard: PopcardComponent;
 
-  constructor(public data: DataService, public popdate: PopdateService) {
+  constructor(public data: DataService, public popdate: PopdateService, public router: Router) {
     this.popdate.main_view = this;
     this.traerInfoHistoria();
   }
 
   ejecutarIngreso() {
     // TODO construir un metodo general para llamar un pop_card
-
     // en el primer parametro se le envia el array correspondiente al componente a pintar
     this.popdate.main_view.pCard.iniciarPopUp(
       'Nuevo Ingreso de paciente',
-      'Ingresado por jsasdnv aksjndv', this.data.paginas_ingreso,
+      'Ingresado por' + this.data.nombres + ' ' + this.data.apellidos, this.data.paginas_ingreso,
       null,
       true,
       (data: any): void => {
@@ -40,11 +40,28 @@ export class MainComponent implements OnInit {
         console.log(data);
         const itemHistoriaUsuario = this.data.db.object('pacientes/' +
           data['Información General']['Identidad']['Tipo_doc'] + '/' +
-          data['Información General']['Identidad']['Documento'] + '');
+          data['Información General']['Identidad']['Documento']);
         itemHistoriaUsuario.set({'historia': data, 'metadata': {fecha_ingreso: new Date().getDate()}});
         this.mostrarIngreso = false;
         console.log('¡Ingreso existoso!');
         this.popdate.showToast('¡Ingreso existoso!');
+
+
+        this.data.documento_paciente_buscado = (<HTMLInputElement>event.target).value;
+        // TODO ya se utiliza el select para seleccionar el tipo de doc, pero por orde, deberia de llegar por parametro
+        // this.data.tipo_doc_paciente_buscado = 'CC';
+
+        this.data.db.object('pacientes/' +
+          data['Información General']['Identidad']['Tipo_doc'] + '/' +
+          data['Información General']['Identidad']['Documento']).valueChanges().subscribe(item => {
+
+            this.data.info_paciente_buscado = item;
+            console.log(this.data.info_paciente_buscado);
+            this.router.navigate(['/paciente']);
+
+          }
+        );
+
       },
       (result: any): void => {
         this.snak.show('Se ha cancelado el ingreso');

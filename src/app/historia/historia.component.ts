@@ -10,7 +10,7 @@ import {Location} from '@angular/common';
 export class HistoriaComponent implements OnInit {
   isLock = true;
   @Input() estructura: any;
-  @Input() data_pag = null;
+  @Input() dataGuardada = null;
   @Input() ttl: string;
   @Input() subttl: string;
 
@@ -24,17 +24,24 @@ export class HistoriaComponent implements OnInit {
 
   buscarHistoria() {
     this.estructura = this.dt.paginas_historia;
-    this.data_pag = this.dt.info_paciente_buscado.historia;
+    this.dataGuardada = this.dt.info_paciente_buscado.historia;
     console.log('se supone que se està buscancdo la historia');
   }
 
+  crearVar(dataStr: string[], $value: string | number | boolean) {
+    // TODO revisar que este metodo se llame despues de llenar un campo, no por cada letra, para evitar tanto calculo.
+    var actual = {};
+    actual[dataStr[0]] = this.crear(dataStr, 0, $value);
+    this.mergeDeep(this.dataGuardada, actual);
+    // console.log(this.dataGuardada);
+  }
 
   goBack() {
     this.location.back();
   }
 
   cargarDataItem(params: any[]): any {
-    var o = this.data_pag;
+    var o = this.dataGuardada;
     for (const param of params) {
       if (o !== null && o[param] !== undefined) {
         o = o[param];

@@ -9,7 +9,8 @@
 
     </div>
 
-    <div class="ur_nombre">{{nombre}}</div>
+    <!--<div class="ur_nombre">{{this.data.nombre}}</div>-->
+
     <!--<div class="ur_doc">{{escuelas}}</div>-->
     <!--<div class="ur_mas_info">{{semestre}}</div>-->
     <div class="ur_doc">{{'Periodoncia'}}</div>
@@ -23,9 +24,7 @@
     [seleccionado]="this.iSelected===i">
   </app-card-user-servicio>
 
-  <!--<div class="msg-no-servicios" *ngIf="serviciosId.length===0">Aún no tienes servicios asignados</div>-->
-
-
+  <div class="msg-no-servicios" *ngIf="serviciosId.length===0">Aún no tienes servicios asignados :)</div>
 
   <div>
     <div></div>

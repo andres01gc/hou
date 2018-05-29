@@ -46,14 +46,22 @@
                   (selected)="data_pag[tbs.nombre][cnt.nombre][item.nombre] = $event"
                   [data]="item.opciones"
                   [titulo]="item.nombre"
-                  [size]="item.tam"
-                ></app-select>
+                  [size]="item.tam">
+                </app-select>
 
                 <app-item-tel
                   *ngIf="'telefono'===item.tipo_item"
                   (result)="data_pag[tbs.nombre][cnt.nombre][item.nombre] = $event"
                   [lock]="isLock">
                 </app-item-tel>
+
+                <app-multiple
+                  (selected)="crearVar([tbs.nombre,cnt.nombre,item.nombre], $event)"
+                  *ngIf="'multiple'===item.tipo_item"
+                  [lock]='isLock'
+                  [nombre]="item.nombre"
+                  [base_titulos]="item.opciones">
+                </app-multiple>
 
                 <app-item-referencia *ngIf="'referencia'===item.tipo_item"
                                      [lock]='isLock'

@@ -1458,6 +1458,7 @@ export class DataService {
   ];
 
   paginas_historia: any[] = [...this.paginas_ingreso, ...this.paginas_servicio, ...this.paginas_tratamiento];
+
   paginas_anexos: any[] = [
     {nombre: 'Nuevo anexo', estructura: this.paginas_historia},
     {nombre: 'anexo 2', estructura: this.paginas_tratamiento},
@@ -1473,7 +1474,6 @@ export class DataService {
     {nombre: 'Fase 4', estructura: this.paginas_servicio},
     {nombre: 'Fase 5', estructura: this.paginas_historia}
   ];
-
 }
 
 

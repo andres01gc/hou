@@ -62,7 +62,7 @@ import {PacienteService} from './paciente.service';
 import {PgTratamientoComponent} from './pg-tratamiento/pg-tratamiento.component';
 import {CardUserServicioComponent} from './card-user-servicio/card-user-servicio.component';
 import {AsignarComponent} from './asignar-cita/asignar.component';
-import { AdvComponent } from './adv/adv.component';
+import {AdvComponent} from './adv/adv.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},

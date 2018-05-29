@@ -7,7 +7,7 @@ import {DataService} from '../../services/data.service';
   styleUrls: ['./multiple.component.css']
 })
 export class MultipleComponent implements OnInit {
-  @Input() base_titulos = [];
+  @Input() base_titulos = ['ADasd', 'as', 'asdv', 'asdvasdv'];
   @Input() centrar = false;
   @Input() nombre = 'testing';
   @Input() lock = false;
@@ -39,10 +39,12 @@ export class MultipleComponent implements OnInit {
   }
 
   constructor(private dat: DataService) {
+    console.log('llega el multiple');
   }
 
   ngOnInit() {
     this.organizarTitulosSimple();
+    console.log('ll');
   }
 
   activarItem(index: number) {
@@ -53,6 +55,7 @@ export class MultipleComponent implements OnInit {
 
   // v1 organiza el nombre de los titulos, y le crea su propio, booleano que lo contiene. todo Sé que se puede hacer mucho mucho mas limpio
   organizarTitulosSimple() {
+    this.data = null;
     if (this.data == null || this.data === '') {
       this.dt = [];
       for (let i = 0; i < this.base_titulos.length; i++) {

@@ -45,8 +45,12 @@ export class RegistroComponent implements OnInit {
 
   pushAllNewUserInfo(user: any) {
     const itemRef = this.db.object('usuarios/' + user.uid);
-    itemRef.set({email: this.email, nombres: this.nombres, apellidos: this.apellidos, sexo: this.sexo, especialidad: this.especialidad});
-    this.router.navigate(['/']);
+    itemRef.set({
+      email: this.email,
+      nombres: this.nombres,
+      apellidos: this.apellidos, sexo: this.sexo, especialidad: this.especialidad
+    });
+    this.router.navigate(['/login']);
   }
 }
 

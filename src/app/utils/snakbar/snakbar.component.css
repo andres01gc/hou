@@ -27,5 +27,7 @@
   color: #FCFCFC;
   border-radius: .5em;
   background-color: #DB3650;
-  font-family: "Fira Sans Light";
+  /*font-family: "Fira Sans Light";*/
+  font-weight: 800;
+  font-size: 1.2em;
 }

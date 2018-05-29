@@ -4,6 +4,10 @@
 
 <div class="rs_main_cont">
   <router-outlet></router-outlet>
+  <div class="mssg" *ngIf="this.router.url==='/'">
+    <img src="../assets/navbar/logo.svg" alt="">
+    <div>HISTORIA ODONTOLÓGICA ÚNICA</div>
+  </div>
 </div>
 
 

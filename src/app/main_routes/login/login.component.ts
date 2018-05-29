@@ -48,9 +48,11 @@ export class LoginComponent implements OnInit {
   }
 
   obtenerInfoUsuario(auth: any) {
+    // console.log(auth);
+    this.data.current_uid = auth.uid;
+    console.log(auth.uid);
     this.db.object('usuarios/' + auth.uid).valueChanges().subscribe(item => {
         console.log('se encuentra información');
-        this.data.current_uid = auth.uid;
         this.data.informacion_usuario = item;
         this.data.nombres = this.data.informacion_usuario.nombres;
         this.data.apellidos = this.data.informacion_usuario.apellidos;

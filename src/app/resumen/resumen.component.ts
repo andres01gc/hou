@@ -24,7 +24,7 @@ export class ResumenComponent implements OnInit {
     console.log('se intenta agregar un nuevo servicio a un paciente');
     this.popdate.main_view.pCard.iniciarPopUp(
       'Nuevo Servicio',
-      'Servicio creado por xxxxxxx',
+      'Ingresado por' + this.data.nombres + ' ' + this.data.apellidos,
       this.data.paginas_servicio,
       null,
       true,

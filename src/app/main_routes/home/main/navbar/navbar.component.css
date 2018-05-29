@@ -228,6 +228,13 @@
   border: 1px solid #FF6D00;
 }
 
+.nv-esp {
+  color: #FCFCFC;
+  font-size: .9em;
+  opacity: .8;
+  font-weight: 400;
+}
+
 .salir {
   color: #FCFCFC;
   font-weight: 800;

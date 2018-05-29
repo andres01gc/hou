@@ -2,4 +2,5 @@
   <!--<div class="bttn" (click)="presionarIngresarServicio()">Agregar nuevo servicio</div>-->
   <h1 class="rs_ttl">Servicios Activos</h1>
   <app-card-servicio *ngFor="let id of servicios_id" [id_serv]="id"></app-card-servicio>
+  <div class="mmsg" *ngIf="servicios_id.length===0">Ningún serivio por aquí :)</div>
 </div>

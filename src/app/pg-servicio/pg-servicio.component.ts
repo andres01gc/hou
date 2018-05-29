@@ -53,7 +53,7 @@ export class PgServicioComponent implements OnInit {
 
     this.popdate.main_view.pCard.iniciarPopUp(
       'Nueva' + faseSelected,
-      'ingresado por XXXX',
+      'Ingresado por' + this.data.nombres + ' ' + this.data.apellidos,
       paginasSeleccionadas,
       null,
       true,
@@ -86,7 +86,7 @@ export class PgServicioComponent implements OnInit {
   ejecutarVerServicio() {
     this.popdate.main_view.pCard.iniciarPopUp(
       'Nombre del servicio que se está viendo',
-      'Personita que se está viendo',
+      'Ingresado por' + this.data.nombres + ' ' + this.data.apellidos,
       this.data.paginas_servicio,
       this.servicio.data,
       !this.servicio_concluido,
