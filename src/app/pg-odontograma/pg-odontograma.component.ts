@@ -68,14 +68,18 @@ export class PgOdontogramaComponent implements OnInit {
 
 
   constructor() {
-    this.iniciarEstructuraDatos();
   }
 
   ngOnInit() {
-
+    this.iniciarEstructuraDatos();
   }
 
   iniciarEstructuraDatos() {
+    if (this.data_pag === '') {
+      this.data_pag = [];
+      console.log('B)');
+    }
+
     for (var cont = 0, t_id = 10, i = 0; i < 32; i++) {
       if (cont === 8) {
         cont = 0;

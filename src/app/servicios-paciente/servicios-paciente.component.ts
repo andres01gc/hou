@@ -9,7 +9,7 @@ import {PopdateService} from '../popdate.service';
   styleUrls: ['./servicios-paciente.component.css']
 })
 export class ServiciosPacienteComponent implements OnInit {
-  servicios_id: any;
+  servicios_id: any = [];
   servicio_finalizados: any;
   servicios_incompletos: any;
   mostrarIngreso = true;
@@ -25,6 +25,8 @@ export class ServiciosPacienteComponent implements OnInit {
   }
 
   buscarServicios() {
+    this.servicios_id = [];
+
     // deberia de ser servicios activos!
     this.db.list('pacientes/' + this.data.tipo_doc_paciente_buscado + '/' +
       this.data.documento_paciente_buscado + '/servicios').valueChanges().subscribe(servicios => {

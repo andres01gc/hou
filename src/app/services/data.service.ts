@@ -34,6 +34,26 @@ export class DataService {
     this.db = db;
   }
 
+
+  pg_odo: any[] = [{
+    tipo_item: 'pag', nombre: 'Odonotográma',
+    items:
+      [
+        {
+          tipo_item: 'cnt', nombre: 'Odontográma',
+          items: [
+            {
+              tipo_item: 'odo',
+              type: 'text',
+              tam: 'l',
+              placehoder: '',
+              nombre: 'Nombre'
+            }
+          ]
+        }
+      ]
+  }];
+
   paginas_ingreso: any[] = [
     {
       tipo_item: 'pag', nombre: 'Información General',
@@ -1114,8 +1134,7 @@ export class DataService {
         ]
     }
   ];
-  paginas_servicio: any[] = [
-    {
+  paginas_servicio: any[] = [{
       tipo_item: 'pag', nombre: 'Diagnósticos',
       items:
         [
@@ -1211,31 +1230,7 @@ export class DataService {
           ]
         }
         ]
-    },
-    {
-      tipo_item: 'pag', nombre: 'Johnny Test',
-      items:
-        [
-          {
-            tipo_item: 'cnt', nombre: 'Identidad',
-            items: [
-              {
-                tipo_item: 'enfermedad',
-                nombre: 'Enfermedades',
-                tam: 'l'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Conducta a seguir'
-              }
-            ]
-          }
-        ]
-    },
-    {
+    }, {
       tipo_item: 'pag', nombre: 'Revisión por sistemas',
       items:
         [
@@ -1244,7 +1239,8 @@ export class DataService {
             items: [
               {
                 tipo_item: 'multiple',
-                opciones: ['Ansiedad', 'Irritabilidad', 'Sincopes', 'Convulsiones', 'Paresias', 'Cefaleas', 'Depresión', 'Lipotimias', 'Epilepsia', 'Neuralgias', 'Parálisis', 'Migraña', 'Accidente cerebro vascular'],
+                opciones: ['Ansiedad', 'Irritabilidad', 'Sincopes', 'Convulsiones', 'Paresias', 'Cefaleas', 'Depresión', 'Lipotimias',
+                  'Epilepsia', 'Neuralgias', 'Parálisis', 'Migraña', 'Accidente cerebro vascular'],
                 nombre: 'ss',
                 tam: 'l'
               },
@@ -1376,103 +1372,27 @@ export class DataService {
                 nombre: 'vew'
               }
             ]
-          }
-
-        ]
-    },
-    {
-      tipo_item: 'pag', nombre: 'Odonotográma',
-      items:
-        [
-          {
-            tipo_item: 'cnt', nombre: 'Odontográma',
-            items: [
-              {
-                tipo_item: 'odo',
-                type: 'text',
-                tam: 'l',
-                placehoder: '',
-                nombre: 'Nombre'
-              }
-            ]
           },
-          {
-            tipo_item: 'cnt', nombre: 'Contacto',
-            items: [
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Correo electrónico'
-              },
-              {
-                tipo_item: 'telefono',
-                nombre: 'telefonos',
-                tam: 'l'
-              }
-            ]
-          },
-          {
-            tipo_item: 'cnt', nombre: 'Información Personal',
-            items: [
-              {
-                tipo_item: 'input',
-                type: 'number',
-                tam: 's',
-                placehoder: '',
-                nombre: 'Estrato'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 's',
-                placehoder: '',
-                nombre: 'Dirección'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Barrio'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Ciudad'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Municipio'
-              }
-            ]
-          }
         ]
-    }
+    }, ...this.pg_odo
   ];
 
   paginas_historia: any[] = [...this.paginas_ingreso, ...this.paginas_servicio, ...this.paginas_tratamiento];
 
   paginas_anexos: any[] = [
-    {nombre: 'Nuevo anexo', estructura: this.paginas_historia},
-    {nombre: 'anexo 2', estructura: this.paginas_tratamiento},
+    {nombre: 'Nuevo anexo', estructura: this},
+    {nombre: 'anexo 2', estructura: this.pg_odo},
     {nombre: 'anexo 3', estructura: this.paginas_historia},
     {nombre: 'anexo 4', estructura: this.paginas_servicio},
     {nombre: 'anexo 5', estructura: this.paginas_historia},
   ];
 
   paginas_fases: any[] = [
-    {nombre: 'Fase 1', estructura: this.paginas_historia},
-    {nombre: 'Fase 2', estructura: this.paginas_tratamiento},
-    {nombre: 'Fase 3', estructura: this.paginas_historia},
-    {nombre: 'Fase 4', estructura: this.paginas_servicio},
-    {nombre: 'Fase 5', estructura: this.paginas_historia}
+    {nombre: 'Fase Higiénica', estructura: this.paginas_historia},
+    {nombre: 'Fase Reevaluativa', estructura: this.paginas_tratamiento},
+    {nombre: 'Fase Corrección inicial', estructura: this.paginas_historia},
+    {nombre: 'Fase correctiva final', estructura: this.paginas_servicio},
+    {nombre: 'Fase de mantenimiento', estructura: this.paginas_historia}
   ];
 }
 
