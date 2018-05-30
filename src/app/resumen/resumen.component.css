@@ -68,7 +68,7 @@
 .ur_nombre {
   font-weight: 800;
   font-size: 1.2em;
-  color: #00ABA0;
+  color: #FF6D00;
 }
 
 .mess {
@@ -332,7 +332,7 @@
 }
 
 .ur_topttitle {
-  color: #FF6D00;
+  /*color: #FF6D00;*/
   width: 100%;
   display: flex;
   /*el punto cinco para fancy*/

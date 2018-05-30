@@ -34,7 +34,6 @@ export class DataService {
     this.db = db;
   }
 
-
   pg_odo: any[] = [{
     tipo_item: 'pag', nombre: 'Odonotográma',
     items:
@@ -51,6 +50,758 @@ export class DataService {
             }
           ]
         }
+      ]
+  }];
+
+  nx_revision_sistema = [{
+    tipo_item: 'pag', nombre: 'Revisión por sistemas',
+    items:
+      [
+        {
+          tipo_item: 'cnt', nombre: 'Sistema nervioso',
+          items: [
+            {
+              tipo_item: 'multiple',
+              opciones: ['Ansiedad', 'Irritabilidad', 'Sincopes', 'Convulsiones', 'Paresias', 'Cefaleas', 'Depresión', 'Lipotimias',
+                'Epilepsia', 'Neuralgias', 'Parálisis', 'Migraña', 'Accidente cerebro vascular'],
+              nombre: 'ss',
+              tam: 'l'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'l',
+              placehoder: '',
+              nombre: 'Observaciones'
+            }
+          ]
+        },
+        {
+          tipo_item: 'cnt', nombre: 'Sistema Respiratorio',
+          items: [
+            {
+              tipo_item: 'multiple',
+              opciones: ['Tos', 'Hemoptisis', 'Disnea', 'Asma', 'Rinitis', 'TBC', 'Pulmonares', 'Micosis'],
+              nombre: 'ss',
+              tam: 'l'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'l',
+              placehoder: '',
+              nombre: 'Observaciones'
+            }
+          ]
+        },
+        {
+          tipo_item: 'cnt', nombre: 'Sistema Cardiovascular',
+          items: [
+            {
+              tipo_item: 'multiple',
+              opciones: ['Arritmias', 'Cianosis', 'Anasarca', 'HTA', 'Cardiopatías congénitas', 'Varices'],
+              nombre: 'sssa',
+              tam: 'l'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'l',
+              placehoder: '',
+              nombre: 'Observaciones'
+            }
+          ]
+        },
+        {
+          tipo_item: 'cnt', nombre: 'Sistema Gastrointestinal',
+          items: [
+            {
+              tipo_item: 'multiple',
+              opciones: ['Diarrea', 'Gastritis', 'Hepatitis', 'Amibiasis', 'Ulceras Ictericia'],
+              nombre: 'vasd',
+              tam: 'l'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'l',
+              placehoder: '',
+              nombre: 'Observaciones'
+            }
+          ]
+        },
+        {
+          tipo_item: 'cnt', nombre: 'Sistema Endocrino',
+          items: [
+            {
+              tipo_item: 'multiple',
+              opciones: ['Enanismo', 'Gigantismo', 'Acromegalia', 'Cretinismo', 'Diabetes'],
+              nombre: 'ge',
+              tam: 'l'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'l',
+              placehoder: '',
+              nombre: 'Observaciones'
+            }
+          ]
+        },
+        {
+          tipo_item: 'cnt', nombre: 'Sistema Osteoarticular',
+          items: [
+            {
+              tipo_item: 'multiple',
+              opciones: ['Artritis', 'Artrosis', 'Espasmos', 'Dolores Articulares', 'Tics'],
+              nombre: 'asdv',
+              tam: 'l'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'l',
+              placehoder: '',
+              nombre: 'Observaciones'
+            }
+          ]
+        },
+        {
+          tipo_item: 'cnt', nombre: 'Piel y Anexos',
+          items: [
+            {
+              tipo_item: 'multiple',
+              opciones: ['Erupciones cutáneas', 'Psoriasis', 'Micosis'],
+              nombre: 'avsd',
+              tam: 'l'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'l',
+              placehoder: '',
+              nombre: 'Observaciones'
+            }
+          ]
+        },
+        {
+          tipo_item: 'cnt', nombre: 'Comentarios',
+          items: [
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'l',
+              placehoder: '',
+              nombre: 'vew'
+            }
+          ]
+        },
+      ]
+  }];
+  nx_examen_fisico = [{
+    tipo_item: 'pag', nombre: 'Examen físico',
+    items:
+      [
+        {
+          tipo_item: 'cnt', nombre: 'General',
+          items: [
+            {
+              tipo_item: 'input',
+              type: 'number',
+              tam: 's',
+              placehoder: '',
+              nombre: 'Talla (cm)'
+            },
+            {
+              tipo_item: 'input',
+              type: 'number',
+              tam: 's',
+              placehoder: '',
+              nombre: 'Peso (kg)'
+            },
+            {
+              tipo_item: 'input',
+              type: 'number',
+              tam: 's',
+              placehoder: '',
+              nombre: 'Temperatura (°C)'
+            },
+            {
+              tipo_item: 'input',
+              type: 'number',
+              tam: 's',
+              placehoder: '',
+              nombre: 'Tensión Arterial (mmhg)'
+            },
+            {
+              tipo_item: 'input',
+              type: 'number',
+              tam: 's',
+              placehoder: '',
+              nombre: 'Frecuencia respiratoria (CPM)'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'l',
+              placehoder: '',
+              nombre: 'Observaciones'
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Blanco', 'Indio', 'Mulato', 'Meztillo', 'Criollo', 'Indigena'],
+              nombre: 'Etnia',
+              tam: 's'
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Ectomorfo', 'Mesomorfo', 'Endomorfo'],
+              nombre: 'Contextura',
+              tam: 's'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'm',
+              placehoder: '',
+              nombre: 'Órganos de los sentidos'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'm',
+              placehoder: '',
+              nombre: 'Orientación en el tiempo y espacio'
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Normal', 'Anormal'],
+              nombre: 'Apariencia nutricional',
+              tam: 's'
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Estable', 'Acelerado', 'Decreciente'],
+              nombre: 'Picos de crecimiento',
+              tam: 's'
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Similar', 'Aumentado', 'Disminuido'],
+              nombre: 'Crecimiento comparado',
+              tam: 'm'
+            }
+          ]
+        },
+        {
+          tipo_item: 'cnt', nombre: 'Ojos',
+          items: [
+            {
+              tipo_item: 'multiple',
+              opciones: ['Ptergios', 'Exoftalmos', 'Ptosis', 'Estrabismo', 'Hipertelorismo'],
+              nombre: 'Vev',
+              tam: 'l'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'l',
+              placehoder: '',
+              nombre: 'Descripción'
+            }
+          ]
+        },
+        {
+          tipo_item: 'cnt', nombre: 'Nariz y senos paranasales',
+          items: [
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Pequeño', 'Mediano', 'Grande'],
+              nombre: 'Tamaño',
+              tam: 's'
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Recta', 'Convexa', 'Cóncava'],
+              nombre: 'Contorno',
+              tam: 's'
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Normal', 'Amplias', 'Estrechas'],
+              nombre: 'Narinas',
+              tam: 's'
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Normal', 'Desviado izq', 'Desviado der'],
+              nombre: 'Tabique',
+              tam: 's'
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Normal', 'Hipertrífico izq', 'Hipertrófico der'],
+              nombre: 'Cornetes',
+              tam: 's'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'l',
+              placehoder: '',
+              nombre: 'Descripción'
+            }
+          ]
+        },
+        {
+          tipo_item: 'cnt', nombre: 'Oídos',
+          items: [
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Normal', 'Anormal'],
+              nombre: 'Forma',
+              tam: 's'
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Normal', 'Normal'],
+              nombre: 'Localización',
+              tam: 's'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'l',
+              placehoder: '',
+              nombre: 'Descripción'
+            }
+          ]
+        }
+      ]
+  }];
+  nx_examen_periodontal = [{
+    tipo_item: 'pag', nombre: 'Examen Periodontal',
+    items:
+      [
+        {
+          tipo_item: 'cnt', nombre: 'Estado',
+          items: [
+            {
+              tipo_item: 'multiple',
+              opciones: ['Sano'],
+              nombre: '¿es?',
+              tam: 's'
+            }, {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Normal', 'Anormal', 'Pigmentaciones'],
+              nombre: 'Color',
+              tam: 's'
+            }, {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['No', 'Marginal', 'Papilar', 'Difusa'],
+              nombre: 'Gingivitis',
+              tam: 'm'
+            }, {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['No', 'Leve', 'Moderada', 'Avanzada', 'Localizada', 'Generalizada'],
+              nombre: 'Periodontitis',
+              tam: 'm'
+            }, {
+              tipo_item: 'multiple',
+              opciones: ['Forma', 'Tamaño', 'Consistencia',
+                'Textura', 'Sangrado espontáneo',
+                'Sangrado al estímulo', 'Exudad',
+                'Movilidad dental', 'Absceso', 'Fístula', 'Cálculos'],
+              nombre: 'Signos clínicos',
+              tam: 'l'
+            }, {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'l',
+              placehoder: '',
+              nombre: 'Observaciones'
+            }
+          ]
+        }, {
+        tipo_item: 'cnt', nombre: 'Descripción radiográfica',
+        items: [
+          {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'l',
+            placehoder: '',
+            nombre: 'Panorámica'
+          },
+          {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'l',
+            placehoder: '',
+            nombre: 'Periapicales'
+          },
+          {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'l',
+            placehoder: '',
+            nombre: 'Tomografía'
+          },
+          {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'l',
+            placehoder: '',
+            nombre: 'Otras'
+          }
+        ]
+      }
+      ]
+  }];
+  nx_examen_estomatologico = [{
+    tipo_item: 'pag', nombre: 'Examen estomatológico',
+    items:
+      [
+        {
+          tipo_item: 'cnt', nombre: 'Extraoral',
+          items: [
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Cóncavo', 'Convexo', 'Recto', 'Asimétrico'],
+              nombre: 'Tipo de perfil',
+              tam: 'm'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'm',
+              placehoder: '',
+              nombre: 'ATM (articulación temporomandibular)'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'm',
+              placehoder: '',
+              nombre: 'Región submandibular'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'm',
+              placehoder: '',
+              nombre: 'Cuello'
+            }, {
+              tipo_item: 'line',
+              tam: 'l',
+            }, {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Normal', 'Normal'],
+              nombre: 'Labio superior, selección',
+              tam: 'm'
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Funcional', 'Corto', 'Hiperfuncional', 'Hipofuncional'],
+              nombre: 'Labio superior, funcionalidad',
+              tam: 'm'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'm',
+              placehoder: '',
+              nombre: 'Comentarios'
+            }, {
+              tipo_item: 'line',
+              tam: 'l',
+            }, {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Normal', 'Normal'],
+              nombre: 'Labio Inferior, selección',
+              tam: 'm'
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Funcional', 'Corto', 'Hiperfuncional', 'Hipofuncional'],
+              nombre: 'Labio Inferior, funcionalidad',
+              tam: 'm'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'm',
+              placehoder: '',
+              nombre: 'Comentarios'
+            }, {
+              tipo_item: 'line',
+              tam: 'l',
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Hipotónico', 'Hipertónico', 'Normotónico'],
+              nombre: 'Tonalidad',
+              tam: 'm'
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Competencia', 'Incompetencia'],
+              nombre: 'Selle labial',
+              tam: 'm'
+            }
+          ]
+        },
+        {
+          tipo_item: 'cnt', nombre: 'Intraoral',
+          items: [
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'm',
+              placehoder: '',
+              nombre: 'Vestíbulo'
+            }, {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'm',
+              placehoder: '',
+              nombre: 'Bucas-Carrillos'
+            }, {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'm',
+              placehoder: '',
+              nombre: 'Rebordes Alveolares'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'm',
+              placehoder: '',
+              nombre: 'Piso de boca'
+            }, {
+              tipo_item: 'line',
+              tam: 'l',
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Alto', 'Medio', 'Bajo'],
+              nombre: 'Paladar duro, profundidad',
+              tam: 'm'
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Normal', 'Anormal'],
+              nombre: 'Paladar duro, color',
+              tam: 'm'
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Normal', 'Estrecho'],
+              nombre: 'Paladar duro, Ancho',
+              tam: 'm'
+            },
+            {
+              tipo_item: 'multiple',
+              opciones: ['Torus'],
+              nombre: 'vsad',
+              tam: 's'
+            }, {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'm',
+              placehoder: '',
+              nombre: 'Rugas'
+            }, {
+              tipo_item: 'line',
+              tam: 'l',
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Normal', 'Anormal'],
+              nombre: 'Paladar blando, tipo',
+              tam: 'm'
+            }, {
+              tipo_item: 'multiple',
+              opciones: ['Submucoso', 'Úvula bífida'],
+              nombre: 'wADVB',
+              tam: 'm'
+            }, {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Normales', 'Hipertróficas', 'Ausentes'],
+              nombre: 'Amígdalas',
+              tam: 'm'
+            }, {
+              tipo_item: 'line',
+              tam: 'l',
+            }, {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Normal', 'Grande', 'Pequeño'],
+              nombre: 'Lengua, tamaño',
+              tam: 's'
+            }, {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Normal', 'Anormal'],
+              nombre: 'Lengua, movilidad',
+              tam: 's'
+            }, {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Normal', 'Protuída'],
+              nombre: 'Lengua, Posición',
+              tam: 's'
+            }, {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Normal', 'Anormal'],
+              nombre: 'Lengua, Frenillo',
+              tam: 's'
+            }, {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Normal', 'Anormal'],
+              nombre: 'Lengua, Función gustativa',
+              tam: 's'
+            }
+
+          ]
+        }, {
+        tipo_item: 'cnt', nombre: 'Intraoral pt 2',
+        items: [
+          {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Forma de arcada superior'
+          }, {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Forma de arcada inferior'
+          }, {
+            tipo_item: 'line',
+            tam: 'l',
+          }, {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Tipo de arco superior'
+          }, {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Tipo de arco inferior'
+          }, {
+            tipo_item: 'line',
+            tam: 'l',
+          }, {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Relación entre caninos permanentes derechos'
+          }, {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Relación entre caninos permanentes izquierdos'
+          }, {
+            tipo_item: 'line',
+            tam: 'l',
+          }, {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Relación entre caninos Deciduos derechos'
+          }, {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Relación entre caninos Deciduos izquierdos'
+          }, {
+            tipo_item: 'line',
+            tam: 'l',
+          }, {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Relación sagital de dientes 2do Morales deciduos superior derechos'
+          }, {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Relación sagital de dientes 2do Morales deciduos superior izquierdos'
+          }, {
+            tipo_item: 'line',
+            tam: 'l',
+          }, {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Relación sagital de dientes 2do Morales deciduos inferior derechos'
+          }, {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Relación sagital de dientes 2do Morales deciduos inferior izquierdos'
+          }, {
+            tipo_item: 'line',
+            tam: 'l',
+          }, {
+            tipo_item: 'select',
+            type: 'text',
+            opciones: ['Colapsado', 'No Colapsado', 'Exostosis'],
+            nombre: 'Zonas edéntulas, Altura',
+            tam: 'm'
+          }, {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Observaciones'
+          }
+
+        ]
+      }
       ]
   }];
 
@@ -526,873 +1277,254 @@ export class DataService {
         ]
     }
   ];
-  paginas_tratamiento: any[] = [
-    {
-      tipo_item: 'pag', nombre: 'Examen físico',
-      items:
-        [
-          {
-            tipo_item: 'cnt', nombre: 'General',
-            items: [
-              {
-                tipo_item: 'input',
-                type: 'number',
-                tam: 's',
-                placehoder: '',
-                nombre: 'Talla (cm)'
-              },
-              {
-                tipo_item: 'input',
-                type: 'number',
-                tam: 's',
-                placehoder: '',
-                nombre: 'Peso (kg)'
-              },
-              {
-                tipo_item: 'input',
-                type: 'number',
-                tam: 's',
-                placehoder: '',
-                nombre: 'Temperatura (°C)'
-              },
-              {
-                tipo_item: 'input',
-                type: 'number',
-                tam: 's',
-                placehoder: '',
-                nombre: 'Tensión Arterial (mmhg)'
-              },
-              {
-                tipo_item: 'input',
-                type: 'number',
-                tam: 's',
-                placehoder: '',
-                nombre: 'Frecuencia respiratoria (CPM)'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'l',
-                placehoder: '',
-                nombre: 'Observaciones'
-              },
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Blanco', 'Indio', 'Mulato', 'Meztillo', 'Criollo', 'Indigena'],
-                nombre: 'Etnia',
-                tam: 's'
-              },
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Ectomorfo', 'Mesomorfo', 'Endomorfo'],
-                nombre: 'Contextura',
-                tam: 's'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Órganos de los sentidos'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Orientación en el tiempo y espacio'
-              },
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Normal', 'Anormal'],
-                nombre: 'Apariencia nutricional',
-                tam: 's'
-              },
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Estable', 'Acelerado', 'Decreciente'],
-                nombre: 'Picos de crecimiento',
-                tam: 's'
-              },
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Similar', 'Aumentado', 'Disminuido'],
-                nombre: 'Crecimiento comparado',
-                tam: 'm'
-              }
-            ]
-          },
-          {
-            tipo_item: 'cnt', nombre: 'Ojos',
-            items: [
-              {
-                tipo_item: 'multiple',
-                opciones: ['Ptergios', 'Exoftalmos', 'Ptosis', 'Estrabismo', 'Hipertelorismo'],
-                nombre: 'Vev',
-                tam: 'l'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'l',
-                placehoder: '',
-                nombre: 'Descripción'
-              }
-            ]
-          },
-          {
-            tipo_item: 'cnt', nombre: 'Nariz y senos paranasales',
-            items: [
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Pequeño', 'Mediano', 'Grande'],
-                nombre: 'Tamaño',
-                tam: 's'
-              },
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Recta', 'Convexa', 'Cóncava'],
-                nombre: 'Contorno',
-                tam: 's'
-              },
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Normal', 'Amplias', 'Estrechas'],
-                nombre: 'Narinas',
-                tam: 's'
-              },
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Normal', 'Desviado izq', 'Desviado der'],
-                nombre: 'Tabique',
-                tam: 's'
-              },
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Normal', 'Hipertrífico izq', 'Hipertrófico der'],
-                nombre: 'Cornetes',
-                tam: 's'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'l',
-                placehoder: '',
-                nombre: 'Descripción'
-              }
-            ]
-          },
-          {
-            tipo_item: 'cnt', nombre: 'Oídos',
-            items: [
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Normal', 'Anormal'],
-                nombre: 'Forma',
-                tam: 's'
-              },
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Normal', 'Normal'],
-                nombre: 'Localización',
-                tam: 's'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'l',
-                placehoder: '',
-                nombre: 'Descripción'
-              }
-            ]
-          }
-        ]
-    },
-    {
-      tipo_item: 'pag', nombre: 'Examen estomatológico',
-      items:
-        [
-          {
-            tipo_item: 'cnt', nombre: 'Extraoral',
-            items: [
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Cóncavo', 'Convexo', 'Recto', 'Asimétrico'],
-                nombre: 'Tipo de perfil',
-                tam: 'm'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'ATM (articulación temporomandibular)'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Región submandibular'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Cuello'
-              }, {
-                tipo_item: 'line',
-                tam: 'l',
-              }, {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Normal', 'Normal'],
-                nombre: 'Labio superior, selección',
-                tam: 'm'
-              },
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Funcional', 'Corto', 'Hiperfuncional', 'Hipofuncional'],
-                nombre: 'Labio superior, funcionalidad',
-                tam: 'm'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Comentarios'
-              }, {
-                tipo_item: 'line',
-                tam: 'l',
-              }, {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Normal', 'Normal'],
-                nombre: 'Labio Inferior, selección',
-                tam: 'm'
-              },
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Funcional', 'Corto', 'Hiperfuncional', 'Hipofuncional'],
-                nombre: 'Labio Inferior, funcionalidad',
-                tam: 'm'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Comentarios'
-              }, {
-                tipo_item: 'line',
-                tam: 'l',
-              },
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Hipotónico', 'Hipertónico', 'Normotónico'],
-                nombre: 'Tonalidad',
-                tam: 'm'
-              },
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Competencia', 'Incompetencia'],
-                nombre: 'Selle labial',
-                tam: 'm'
-              }
-            ]
-          },
-          {
-            tipo_item: 'cnt', nombre: 'Intraoral',
-            items: [
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Vestíbulo'
-              }, {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Bucas-Carrillos'
-              }, {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Rebordes Alveolares'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Piso de boca'
-              }, {
-                tipo_item: 'line',
-                tam: 'l',
-              },
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Alto', 'Medio', 'Bajo'],
-                nombre: 'Paladar duro, profundidad',
-                tam: 'm'
-              },
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Normal', 'Anormal'],
-                nombre: 'Paladar duro, color',
-                tam: 'm'
-              },
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Normal', 'Estrecho'],
-                nombre: 'Paladar duro, Ancho',
-                tam: 'm'
-              },
-              {
-                tipo_item: 'multiple',
-                opciones: ['Torus'],
-                nombre: 'vsad',
-                tam: 's'
-              }, {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Rugas'
-              }, {
-                tipo_item: 'line',
-                tam: 'l',
-              },
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Normal', 'Anormal'],
-                nombre: 'Paladar blando, tipo',
-                tam: 'm'
-              }, {
-                tipo_item: 'multiple',
-                opciones: ['Submucoso', 'Úvula bífida'],
-                nombre: 'wADVB',
-                tam: 'm'
-              }, {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Normales', 'Hipertróficas', 'Ausentes'],
-                nombre: 'Amígdalas',
-                tam: 'm'
-              }, {
-                tipo_item: 'line',
-                tam: 'l',
-              }, {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Normal', 'Grande', 'Pequeño'],
-                nombre: 'Lengua, tamaño',
-                tam: 's'
-              }, {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Normal', 'Anormal'],
-                nombre: 'Lengua, movilidad',
-                tam: 's'
-              }, {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Normal', 'Protuída'],
-                nombre: 'Lengua, Posición',
-                tam: 's'
-              }, {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Normal', 'Anormal'],
-                nombre: 'Lengua, Frenillo',
-                tam: 's'
-              }, {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Normal', 'Anormal'],
-                nombre: 'Lengua, Función gustativa',
-                tam: 's'
-              }
-
-            ]
-          }, {
-          tipo_item: 'cnt', nombre: 'Intraoral pt 2',
+  paginas_tratamiento: any[] = [{
+    tipo_item: 'pag', nombre: 'Tratamiento',
+    items:
+      [
+        {
+          tipo_item: 'cnt',
+          nombre: 'Inicial',
           items: [
             {
               tipo_item: 'input',
               type: 'text',
               tam: 'm',
               placehoder: '',
-              nombre: 'Forma de arcada superior'
-            }, {
+              nombre: 'Detalles',
+            },
+            {
               tipo_item: 'input',
               type: 'text',
               tam: 'm',
               placehoder: '',
-              nombre: 'Forma de arcada inferior'
-            }, {
-              tipo_item: 'line',
+              nombre: 'Secuencia mecánica',
+            }
+          ]
+        },
+        {
+          tipo_item: 'cnt', nombre: 'Sistema nervioso',
+          items: [
+            {
+              tipo_item: 'multiple',
+              opciones: ['Ansiedad', 'Irritabilidad', 'Sincopes', 'Convulsiones', 'Paresias', 'Cefaleas', 'Depresión', 'Lipotimias',
+                'Epilepsia', 'Neuralgias', 'Parálisis', 'Migraña', 'Accidente cerebro vascular'],
+              nombre: 'ss',
+              tam: 'l'
+            },
+
+          ]
+        },
+        {
+          tipo_item: 'cnt', nombre: 'Sistema Respiratorio',
+          items: [
+            {
+              tipo_item: 'multiple',
+              opciones: ['Tos', 'Hemoptisis', 'Disnea', 'Asma', 'Rinitis', 'TBC', 'Pulmonares', 'Micosis'],
+              nombre: 'ss',
+              tam: 'l'
+            },
+            {
+              tipo_item: 'input',
+              type: 'text',
               tam: 'l',
-            }, {
+              placehoder: '',
+              nombre: 'Observaciones'
+            }
+          ]
+        },
+        {
+          tipo_item: 'cnt', nombre: 'Sistema Cardiovascular',
+          items: [
+            {
+              tipo_item: 'multiple',
+              opciones: ['Arritmias', 'Cianosis', 'Anasarca', 'HTA', 'Cardiopatías congénitas', 'Varices'],
+              nombre: 'sssa',
+              tam: 'l'
+            },
+            {
               tipo_item: 'input',
               type: 'text',
-              tam: 'm',
-              placehoder: '',
-              nombre: 'Tipo de arco superior'
-            }, {
-              tipo_item: 'input',
-              type: 'text',
-              tam: 'm',
-              placehoder: '',
-              nombre: 'Tipo de arco inferior'
-            }, {
-              tipo_item: 'line',
               tam: 'l',
-            }, {
+              placehoder: '',
+              nombre: 'Observaciones'
+            }
+          ]
+        },
+        {
+          tipo_item: 'cnt', nombre: 'Piel y Anexos',
+          items: [
+            {
+              tipo_item: 'multiple',
+              opciones: ['Erupciones cutáneas', 'Psoriasis', 'Micosis'],
+              nombre: 'avsd',
+              tam: 'l'
+            },
+            {
               tipo_item: 'input',
               type: 'text',
-              tam: 'm',
-              placehoder: '',
-              nombre: 'Relación entre caninos permanentes derechos'
-            }, {
-              tipo_item: 'input',
-              type: 'text',
-              tam: 'm',
-              placehoder: '',
-              nombre: 'Relación entre caninos permanentes izquierdos'
-            }, {
-              tipo_item: 'line',
               tam: 'l',
-            }, {
+              placehoder: '',
+              nombre: 'Observaciones'
+            }
+          ]
+        },
+        {
+          tipo_item: 'cnt', nombre: 'Comentarios',
+          items: [
+            {
               tipo_item: 'input',
               type: 'text',
-              tam: 'm',
-              placehoder: '',
-              nombre: 'Relación entre caninos Deciduos derechos'
-            }, {
-              tipo_item: 'input',
-              type: 'text',
-              tam: 'm',
-              placehoder: '',
-              nombre: 'Relación entre caninos Deciduos izquierdos'
-            }, {
-              tipo_item: 'line',
               tam: 'l',
-            }, {
+              placehoder: '',
+              nombre: 'vew'
+            }
+          ]
+        },
+      ]
+  }];
+  paginas_servicio: any[] = [{
+    tipo_item: 'pag', nombre: 'Servicio',
+    items:
+      [
+        {
+          tipo_item: 'cnt',
+          nombre: 'Inicial',
+          items: [
+            {
               tipo_item: 'input',
               type: 'text',
               tam: 'm',
               placehoder: '',
-              nombre: 'Relación sagital de dientes 2do Morales deciduos superior derechos'
-            }, {
+              nombre: 'Titulo del Servicio',
+            },
+            {
+              tipo_item: 'select',
+              type: 'text',
+              opciones: ['Periodoncia', 'Salud oral', 'Endodoncia',
+                'Salud oral', 'Odontopediatría', 'Ortodoncia'],
+              nombre: 'Tipo de servicio',
+              tam: 'm'
+            },
+            {
               tipo_item: 'input',
               type: 'text',
-              tam: 'm',
-              placehoder: '',
-              nombre: 'Relación sagital de dientes 2do Morales deciduos superior izquierdos'
-            }, {
-              tipo_item: 'line',
               tam: 'l',
-            }, {
-              tipo_item: 'input',
-              type: 'text',
-              tam: 'm',
               placehoder: '',
-              nombre: 'Relación sagital de dientes 2do Morales deciduos inferior derechos'
-            }, {
-              tipo_item: 'input',
+              nombre: 'Descripción básica',
+            }
+          ]
+        },
+
+        {
+          tipo_item: 'cnt', nombre: 'Diagnóstico general',
+          items: [
+            {
+              tipo_item: 'select',
               type: 'text',
-              tam: 'm',
-              placehoder: '',
-              nombre: 'Relación sagital de dientes 2do Morales deciduos inferior izquierdos'
-            }, {
-              tipo_item: 'line',
-              tam: 'l',
+              opciones: ['01: Confirmado nuevo', '02: Confirmado repetido', '03: Descripción diagnóstica',
+                '04: Presuntivo', '05: Definitivo', '06: Otro'],
+              nombre: 'Código de diagnóstico',
+              tam: 'm'
             }, {
               tipo_item: 'select',
               type: 'text',
-              opciones: ['Colapsado', 'No Colapsado', 'Exostosis'],
-              nombre: 'Zonas edéntulas, Altura',
+              opciones: ['General', 'Dental', 'Periodontal', 'Oclusal', 'Pulpar', 'Muscular',
+                'Articular', 'Sistémico', 'Esquelético', 'Tejidos blandos', 'Funcional', 'Otro'],
+              nombre: 'Tipo de diagnóstico',
               tam: 'm'
             }, {
               tipo_item: 'input',
               type: 'text',
               tam: 'm',
               placehoder: '',
-              nombre: 'Observaciones'
+              nombre: 'Ayuda diagnóstica'
+            }, {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'm',
+              placehoder: '',
+              nombre: 'Descripción'
+            }, {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'm',
+              placehoder: '',
+              nombre: 'Pronóstico'
+            }, {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'm',
+              placehoder: '',
+              nombre: 'Plan de tratamiento inicial'
+            }, {
+              tipo_item: 'input',
+              type: 'text',
+              tam: 'l',
+              placehoder: '',
+              nombre: 'Comentarios examinador'
             }
-
           ]
-        }
-        ]
-    },
-    {
-      tipo_item: 'pag', nombre: 'Examen Periodontal',
-      items:
-        [
+        }, {
+        tipo_item: 'cnt', nombre: 'Diagnóstico por diente',
+        items: [
           {
-            tipo_item: 'cnt', nombre: 'Estado',
-            items: [
-              {
-                tipo_item: 'multiple',
-                opciones: ['Sano'],
-                nombre: '¿es?',
-                tam: 's'
-              }, {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['Normal', 'Anormal', 'Pigmentaciones'],
-                nombre: 'Color',
-                tam: 's'
-              }, {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['No', 'Marginal', 'Papilar', 'Difusa'],
-                nombre: 'Gingivitis',
-                tam: 'm'
-              }, {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['No', 'Leve', 'Moderada', 'Avanzada', 'Localizada', 'Generalizada'],
-                nombre: 'Periodontitis',
-                tam: 'm'
-              }, {
-                tipo_item: 'multiple',
-                opciones: ['Forma', 'Tamaño', 'Consistencia',
-                  'Textura', 'Sangrado espontáneo',
-                  'Sangrado al estímulo', 'Exudad',
-                  'Movilidad dental', 'Absceso', 'Fístula', 'Cálculos'],
-                nombre: 'Signos clínicos',
-                tam: 'l'
-              }, {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'l',
-                placehoder: '',
-                nombre: 'Observaciones'
-              }
-            ]
+            tipo_item: 'input',
+            type: 'number',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Número de diente'
           }, {
-          tipo_item: 'cnt', nombre: 'Descripción radiográfica',
-          items: [
-            {
-              tipo_item: 'input',
-              type: 'text',
-              tam: 'l',
-              placehoder: '',
-              nombre: 'Panorámica'
-            },
-            {
-              tipo_item: 'input',
-              type: 'text',
-              tam: 'l',
-              placehoder: '',
-              nombre: 'Periapicales'
-            },
-            {
-              tipo_item: 'input',
-              type: 'text',
-              tam: 'l',
-              placehoder: '',
-              nombre: 'Tomografía'
-            },
-            {
-              tipo_item: 'input',
-              type: 'text',
-              tam: 'l',
-              placehoder: '',
-              nombre: 'Otras'
-            }
-          ]
-        }
-        ]
-    }
-  ];
-  paginas_servicio: any[] = [{
-      tipo_item: 'pag', nombre: 'Diagnósticos',
-      items:
-        [
-          {
-            tipo_item: 'cnt', nombre: 'Diagnóstico general',
-            items: [
-              {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['01: Confirmado nuevo', '02: Confirmado repetido', '03: Descripción diagnóstica',
-                  '04: Presuntivo', '05: Definitivo', '06: Otro'],
-                nombre: 'Código de diagnóstico',
-                tam: 'm'
-              }, {
-                tipo_item: 'select',
-                type: 'text',
-                opciones: ['General', 'Dental', 'Periodontal', 'Oclusal', 'Pulpar', 'Muscular',
-                  'Articular', 'Sistémico', 'Esquelético', 'Tejidos blandos', 'Funcional', 'Otro'],
-                nombre: 'Tipo de diagnóstico',
-                tam: 'm'
-              }, {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Ayuda diagnóstica'
-              }, {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Descripción'
-              }, {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Pronóstico'
-              }, {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Plan de tratamiento inicial'
-              }, {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'l',
-                placehoder: '',
-                nombre: 'Comentarios examinador'
-              }
-            ]
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Diagnóstico'
           }, {
-          tipo_item: 'cnt', nombre: 'Diagnóstico por diente',
-          items: [
-            {
-              tipo_item: 'input',
-              type: 'number',
-              tam: 'm',
-              placehoder: '',
-              nombre: 'Número de diente'
-            }, {
-              tipo_item: 'input',
-              type: 'text',
-              tam: 'm',
-              placehoder: '',
-              nombre: 'Diagnóstico'
-            }, {
-              tipo_item: 'input',
-              type: 'text',
-              tam: 'm',
-              placehoder: '',
-              nombre: 'Pronóstico Periodontal'
-            }, {
-              tipo_item: 'input',
-              type: 'text',
-              tam: 'm',
-              placehoder: '',
-              nombre: 'Pronóstico endodóntico'
-            }, {
-              tipo_item: 'input',
-              type: 'text',
-              tam: 'm',
-              placehoder: '',
-              nombre: 'Pronóstico prostodóntico'
-            }, {
-              tipo_item: 'input',
-              type: 'text',
-              tam: 'm',
-              placehoder: '',
-              nombre: 'Conducta a seguir'
-            }
-          ]
-        }
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Pronóstico Periodontal'
+          }, {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Pronóstico endodóntico'
+          }, {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Pronóstico prostodóntico'
+          }, {
+            tipo_item: 'input',
+            type: 'text',
+            tam: 'm',
+            placehoder: '',
+            nombre: 'Conducta a seguir'
+          }
         ]
-    }, {
-      tipo_item: 'pag', nombre: 'Revisión por sistemas',
-      items:
-        [
-          {
-            tipo_item: 'cnt', nombre: 'Sistema nervioso',
-            items: [
-              {
-                tipo_item: 'multiple',
-                opciones: ['Ansiedad', 'Irritabilidad', 'Sincopes', 'Convulsiones', 'Paresias', 'Cefaleas', 'Depresión', 'Lipotimias',
-                  'Epilepsia', 'Neuralgias', 'Parálisis', 'Migraña', 'Accidente cerebro vascular'],
-                nombre: 'ss',
-                tam: 'l'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'l',
-                placehoder: '',
-                nombre: 'Observaciones'
-              }
-            ]
-          },
-          {
-            tipo_item: 'cnt', nombre: 'Sistema Respiratorio',
-            items: [
-              {
-                tipo_item: 'multiple',
-                opciones: ['Tos', 'Hemoptisis', 'Disnea', 'Asma', 'Rinitis', 'TBC', 'Pulmonares', 'Micosis'],
-                nombre: 'ss',
-                tam: 'l'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'l',
-                placehoder: '',
-                nombre: 'Observaciones'
-              }
-            ]
-          },
-          {
-            tipo_item: 'cnt', nombre: 'Sistema Cardiovascular',
-            items: [
-              {
-                tipo_item: 'multiple',
-                opciones: ['Arritmias', 'Cianosis', 'Anasarca', 'HTA', 'Cardiopatías congénitas', 'Varices'],
-                nombre: 'sssa',
-                tam: 'l'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'l',
-                placehoder: '',
-                nombre: 'Observaciones'
-              }
-            ]
-          },
-          {
-            tipo_item: 'cnt', nombre: 'Sistema Gastrointestinal',
-            items: [
-              {
-                tipo_item: 'multiple',
-                opciones: ['Diarrea', 'Gastritis', 'Hepatitis', 'Amibiasis', 'Ulceras Ictericia'],
-                nombre: 'vasd',
-                tam: 'l'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'l',
-                placehoder: '',
-                nombre: 'Observaciones'
-              }
-            ]
-          },
-          {
-            tipo_item: 'cnt', nombre: 'Sistema Endocrino',
-            items: [
-              {
-                tipo_item: 'multiple',
-                opciones: ['Enanismo', 'Gigantismo', 'Acromegalia', 'Cretinismo', 'Diabetes'],
-                nombre: 'ge',
-                tam: 'l'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'l',
-                placehoder: '',
-                nombre: 'Observaciones'
-              }
-            ]
-          },
-          {
-            tipo_item: 'cnt', nombre: 'Sistema Osteoarticular',
-            items: [
-              {
-                tipo_item: 'multiple',
-                opciones: ['Artritis', 'Artrosis', 'Espasmos', 'Dolores Articulares', 'Tics'],
-                nombre: 'asdv',
-                tam: 'l'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'l',
-                placehoder: '',
-                nombre: 'Observaciones'
-              }
-            ]
-          },
-          {
-            tipo_item: 'cnt', nombre: 'Piel y Anexos',
-            items: [
-              {
-                tipo_item: 'multiple',
-                opciones: ['Erupciones cutáneas', 'Psoriasis', 'Micosis'],
-                nombre: 'avsd',
-                tam: 'l'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'l',
-                placehoder: '',
-                nombre: 'Observaciones'
-              }
-            ]
-          },
-          {
-            tipo_item: 'cnt', nombre: 'Comentarios',
-            items: [
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'l',
-                placehoder: '',
-                nombre: 'vew'
-              }
-            ]
-          },
-        ]
-    }, ...this.pg_odo
-  ];
+      }
+      ]
+  }, ...this.nx_revision_sistema, ...this.pg_odo];
 
   paginas_historia: any[] = [...this.paginas_ingreso, ...this.paginas_servicio, ...this.paginas_tratamiento];
 
+
   paginas_anexos: any[] = [
-    {nombre: 'Nuevo anexo', estructura: this},
-    {nombre: 'anexo 2', estructura: this.pg_odo},
-    {nombre: 'anexo 3', estructura: this.paginas_historia},
-    {nombre: 'anexo 4', estructura: this.paginas_servicio},
-    {nombre: 'anexo 5', estructura: this.paginas_historia},
+    {nombre: 'Revisión por sistemas', estructura: this.nx_revision_sistema},
+    {nombre: 'Exámen estomatológico', estructura: this.nx_examen_estomatologico},
+    {nombre: 'Exámen fisico', estructura: this.nx_examen_fisico},
+    {nombre: 'Exámen periodontal', estructura: this.nx_examen_periodontal}
   ];
 
   paginas_fases: any[] = [
-    {nombre: 'Fase Higiénica', estructura: this.paginas_historia},
+    {nombre: 'Fase Higiénica', estructura: this.paginas_tratamiento},
     {nombre: 'Fase Reevaluativa', estructura: this.paginas_tratamiento},
-    {nombre: 'Fase Corrección inicial', estructura: this.paginas_historia},
-    {nombre: 'Fase correctiva final', estructura: this.paginas_servicio},
-    {nombre: 'Fase de mantenimiento', estructura: this.paginas_historia}
+    {nombre: 'Fase Corrección inicial', estructura: this.paginas_tratamiento},
+    {nombre: 'Fase correctiva final', estructura: this.paginas_tratamiento},
+    {nombre: 'Fase de mantenimiento', estructura: this.paginas_tratamiento}
   ];
 }
 

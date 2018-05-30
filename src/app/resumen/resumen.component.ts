@@ -22,6 +22,7 @@ export class ResumenComponent implements OnInit {
 
   presionarIngresarServicio() {
     console.log('se intenta agregar un nuevo servicio a un paciente');
+
     this.popdate.main_view.pCard.iniciarPopUp(
       'Nuevo Servicio',
       'Ingresado por' + this.data.nombres + ' ' + this.data.apellidos,
@@ -30,15 +31,18 @@ export class ResumenComponent implements OnInit {
       true,
       (data: any): void => {
         // ahí irá this.data.current_uid
+        console.log('se ingresa!');
+        console.log(data);
+
 
         // TODO buscar los datos especificos de cada input, cuando tenga las estructuras de las páginas;
         const servicio = {
           data: data,
           metadata: {
             estado: 'Activo',
-            tipo_servicio: 'ni idea aún',
-            nombre: 'nombre servicio',
-            diagnostico: 'aquí ira la información dianogstico',
+            tipo_servicio: data['Servicio']['Inicial']['Tipo de servicio'],
+            nombre: data['Servicio']['Inicial']['Titulo del Servicio'],
+            diagnostico: data['Servicio']['Inicial']['Descripción básica'],
             tipo_doc: this.data.tipo_doc_paciente_buscado,
             documento: this.data.documento_paciente_buscado,
             fecha: 'null',

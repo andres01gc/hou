@@ -8,7 +8,7 @@ import {Location} from '@angular/common';
   styleUrls: ['./historia.component.css']
 })
 export class HistoriaComponent implements OnInit {
-  isLock = true;
+  isLock = false;
   @Input() estructura: any;
   @Input() dataGuardada = null;
   @Input() ttl: string;
@@ -26,6 +26,9 @@ export class HistoriaComponent implements OnInit {
     this.estructura = this.dt.paginas_historia;
     this.dataGuardada = this.dt.info_paciente_buscado.historia;
     console.log('se supone que se està buscancdo la historia');
+  }
+
+  guardarDeNuevo() {
   }
 
   crearVar(dataStr: string[], $value: string | number | boolean) {

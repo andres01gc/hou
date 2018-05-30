@@ -43,16 +43,16 @@
 }
 
 .c-ev-sub_ed {
-  border: 1px solid #FF6D00;
+  /*border: 1px solid #FF6D00;*/
   color: #FF6D00;
-  border-radius: .2em;
-  padding: .5em;
-  font-weight: 600;
-  font-size: 1em;
-  margin: .5em;
-  cursor: pointer;
+  /*border-radius: .2em;*/
+  /*padding: .5em;*/
+  /*font-weight: 600;*/
+  /*font-size: 1em;*/
+  /*margin: .5em;*/
+  /*cursor: pointer;*/
   opacity: .7;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 .c-ev-sub_ed:hover {
