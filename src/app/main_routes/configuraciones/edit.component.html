@@ -1,0 +1,15 @@
+<div class="resum_container">
+  <!--<app-resumen></app-resumen>-->
+  <div class="tttl">Páginas editables</div>
+
+  <div class="oit" *ngFor="let pg of data.paginas_all;  let ia=index" [class.active]="ia===this.i"
+       (click)="seleccionarPg(pg,ia)">
+    {{pg.nombre}}
+  </div>
+</div>
+
+<div class="rs_main_cont">
+  <app-editor></app-editor>
+</div>
+
+

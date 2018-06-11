@@ -19,7 +19,7 @@ import {NavbarComponent} from './main_routes/home/main/navbar/navbar.component';
 import {DataService} from './services/data.service';
 import {MainComponent} from './main_routes/home/main/main.component';
 import {PerfilComponent} from './main_routes/home/main/perfil/perfil.component';
-import {ConfiguracionesComponent} from './main_routes/configuraciones/configuraciones.component';
+import {EditComponent} from './main_routes/configuraciones/edit.component';
 import {MiscComponent} from './misc/misc.component';
 import {AnexosComponent} from './anexos/anexos.component';
 import {HistoriaComponent} from './historia/historia.component';
@@ -63,6 +63,7 @@ import {PgTratamientoComponent} from './pg-tratamiento/pg-tratamiento.component'
 import {CardUserServicioComponent} from './card-user-servicio/card-user-servicio.component';
 import {AsignarComponent} from './asignar-cita/asignar.component';
 import {AdvComponent} from './adv/adv.component';
+import { EditorComponent } from './editor/editor.component';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -92,7 +93,7 @@ const appRoutes: Routes = [
           },
           {path: 'detalles', component: PgServicioComponent}]
       },
-      {path: 'configuraciones', component: ConfiguracionesComponent}
+      {path: 'edit', component: EditComponent}
     ]
   }, {path: '**', component: PagenotfoundComponent}
 ];
@@ -124,7 +125,7 @@ export const environment = {
     NavbarComponent,
     MainComponent,
     PerfilComponent,
-    ConfiguracionesComponent,
+    EditComponent,
     MiscComponent,
     AnexosComponent,
     HistoriaComponent,
@@ -163,7 +164,8 @@ export const environment = {
     ItemAnextabComponent,
     CardUserServicioComponent,
     AsignarComponent,
-    AdvComponent
+    AdvComponent,
+    EditorComponent
   ],
   imports: [RouterModule.forRoot(appRoutes),
     BrowserModule, AngularFireModule.initializeApp(environment.firebase), AngularFireDatabaseModule,

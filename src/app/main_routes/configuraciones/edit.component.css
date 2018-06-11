@@ -1,0 +1,55 @@
+:host {
+  /*position: absolute;*/
+  width: 100%;
+  height: 100%;
+  /*background-color: rgba(255, 109, 0, 0.09);*/
+  display: flex;
+}
+
+.resum_container {
+  width: 30em;
+  /*background-color: #FF6D00;*/
+  z-index: 1;
+}
+
+.oit {
+  opacity: .5;
+  cursor: pointer;
+  padding: 1em;
+  border-radius: .5em;
+}
+
+.oit:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.active {
+  font-weight: 700;
+  color: #FF6D00;
+  opacity: 1;
+}
+
+.tttl {
+  font-size: 1.4em;
+  font-weight: 800;
+  margin: 1em;
+}
+
+.rs_main_cont {
+  /*margin-top: -1em;*/
+  width: 100%;
+  /*padding-left: 20%;*/
+  /*background: #F44336;*/
+  height: 100%;
+  display: flex;
+  /*background-color: #F44336;*/
+  /*background-color: #F44336;*/
+}
+
+@media only screen and (max-width: 68em) {
+  .resum_container {
+    display: none;
+  }
+
+}

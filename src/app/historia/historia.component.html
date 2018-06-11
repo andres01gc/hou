@@ -62,23 +62,15 @@
                   [nombre]="item.nombre"
                   [base_titulos]="item.opciones">
                 </app-multiple>
-
                 <app-item-referencia *ngIf="'referencia'===item.tipo_item"
                                      [lock]='isLock'
                                      [data]="item">
                 </app-item-referencia>
-
               </ng-container>
-
             </app-cnt>
-
           </ng-container>
-
         </app-tab>
-
       </app-tabs>
-
-
     </div>
   </div>
 </div>

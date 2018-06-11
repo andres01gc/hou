@@ -30,6 +30,7 @@ export class DataService {
   nombres: string;
   apellidos: string;
 
+
   constructor(db: AngularFireDatabase) {
     this.db = db;
   }
@@ -52,7 +53,6 @@ export class DataService {
         }
       ]
   }];
-
   nx_revision_sistema = [{
     tipo_item: 'pag', nombre: 'Revisión por sistemas',
     items:
@@ -804,7 +804,6 @@ export class DataService {
       }
       ]
   }];
-
   paginas_ingreso: any[] = [
     {
       tipo_item: 'pag', nombre: 'Información General',
@@ -1508,23 +1507,29 @@ export class DataService {
       }
       ]
   }, ...this.nx_revision_sistema, ...this.pg_odo];
-
   paginas_historia: any[] = [...this.paginas_ingreso, ...this.paginas_servicio, ...this.paginas_tratamiento];
-
-
   paginas_anexos: any[] = [
     {nombre: 'Revisión por sistemas', estructura: this.nx_revision_sistema},
     {nombre: 'Exámen estomatológico', estructura: this.nx_examen_estomatologico},
     {nombre: 'Exámen fisico', estructura: this.nx_examen_fisico},
     {nombre: 'Exámen periodontal', estructura: this.nx_examen_periodontal}
   ];
-
   paginas_fases: any[] = [
     {nombre: 'Fase Higiénica', estructura: this.paginas_tratamiento},
     {nombre: 'Fase Reevaluativa', estructura: this.paginas_tratamiento},
     {nombre: 'Fase Corrección inicial', estructura: this.paginas_tratamiento},
     {nombre: 'Fase correctiva final', estructura: this.paginas_tratamiento},
     {nombre: 'Fase de mantenimiento', estructura: this.paginas_tratamiento}
+  ];
+
+  paginas_all: any[] = [
+    {nombre: 'Ingreso', estructura: this.paginas_ingreso},
+    {nombre: 'Nuevo Tratamiento', estructura: this.paginas_tratamiento},
+    {nombre: 'Nuevo Anexo', estructura: this.paginas_anexos},
+    {nombre: 'Revisión por sistemas', estructura: this.nx_revision_sistema},
+    {nombre: 'Exámen estomatológico', estructura: this.nx_examen_estomatologico},
+    {nombre: 'Exámen fisico', estructura: this.nx_examen_fisico},
+    {nombre: 'Exámen periodontal', estructura: this.nx_examen_periodontal}
   ];
 }
 
