@@ -1,10 +1,12 @@
 <ul class="tabs_cnt">
   <li class="main_tab" *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.tab_activa">
-    {{tab.tabTitle}}
+    <div>
+      {{tab.tabTitle}}
+    </div>
   </li>
-
+  <li *ngIf="agregable" class="main_tab alAg" (click)="alAgregar.emit(true)">Agregar Nueva pestaña</li>
 </ul>
-<div class="tabs_magicspace"></div>
+<!--<div class="tabs_magicspace"></div>-->
 <ng-content></ng-content>
 
 
