@@ -1,0 +1,13 @@
+<div class="main">
+  <div [class.sss]="this.seleccionado" class="card" (click)="alSelecct()">
+    <div class="ima">
+      <img class="ico" src="/assets/ico_2.svg">
+    </div>
+    <div class="cnt">
+      <div class="ttl">{{sv?.metadata.nombre}}</div>
+      <div class="fecha">Servicio de {{sv?.metadata.tipo_servicio}}</div>
+      <div class="fecha">{{this.conCita ? this.fechaBonita: 'Cita sin asignar' }}</div>
+      <!--<div class="fecha" [class.active]="this.conCita">En curso</div>-->
+    </div>
+  </div>
+</div>

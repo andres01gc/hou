@@ -1,0 +1,18 @@
+<div class="top_info">
+  <div class="bac" (click)="tab_is_selected=false">
+  </div>
+  <div class="toptt">
+    <div class="ttl_sl">asdvasdv</div>
+    <div class="sub_ttl_sl">Ver detalles</div>
+    <div class="sub_ttl_sl">Finalizar Servicio</div>
+  </div>
+</div>
+
+<div class="b_info">
+  <!--(finalizaIngreso)="agregarEvolucionATratamiento($event)"-->
+  <!--la primera carta corresponde a la que se mostrará cuando se va a ingresar una nueva evolución, una vez hecho, se ocultará-->
+  <app-card-evolucion [ActivoParaEditar]="true"></app-card-evolucion>
+  <app-card-evolucion></app-card-evolucion>
+  <!--<app-card-evolucion *ngFor="let ev of evoluciones?.reverse(); let i = index"-->
+  <!--[evolucion]="ev" [id]="evoluciones.length-i"></app-card-evolucion>-->
+</div>

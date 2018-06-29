@@ -1,0 +1,86 @@
+:host {
+  width: 100%;
+}
+
+.main {
+  width: 100%;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  padding-left: .5em;
+  box-sizing: border-box;
+  /*margin: .5em;*/
+  cursor: pointer;
+  display: flex;
+}
+
+.sss {
+  border: 1px solid #d6d6d6;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  /*height: 4em;*/
+  align-items: center;
+  padding: .8em;
+  /*margin: .5em;*/
+  border-radius: .4em;
+  /*border: 1px solid rgba(255, 255, 255, 0);*/
+  margin-top: .5px;
+  margin-bottom: .5px;
+}
+
+.card:hover {
+  background-color: rgba(198, 198, 198, .01);
+  border: 1px solid #d2d2d2;
+  margin: 0;
+}
+
+.ttl {
+  font-weight: 600;
+  font-size: 1.1em;
+  padding: .1em;
+}
+
+.cnt {
+  padding-left: 4em;
+}
+
+.fase {
+  font-weight: 400;
+}
+
+.ico {
+  width: 2.5em;
+}
+
+.fecha {
+  font-size: 1em;
+  font-weight: 400;
+  padding: .1em;
+}
+
+.active {
+  background: #00ABA0;
+  border-radius: .4em;
+  width: 4em;
+  text-align: center;
+  color: #FCFCFC;
+  padding: .2em;
+}
+
+.ima {
+  height: 2.5em;
+  width: 2.5em;
+  /*background-color: #F44336;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+/*.card_hora {*/
+/*width: 3em;*/
+/*height: 3em;*/
+/*}*/

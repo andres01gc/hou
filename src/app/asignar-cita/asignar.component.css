@@ -1,0 +1,86 @@
+:host {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .8);
+  z-index: 20;
+}
+
+.t {
+  color: #00234E;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.1em;
+}
+
+.pgs-cnt {
+  padding: 1em;
+}
+
+.txt {
+  padding: 2em;
+}
+
+.card {
+  top: 50%;
+  left: 50%;
+  transform: translate(calc(-50% - 12em), -80%);
+  position: absolute;
+  background-color: #FCFCFC;
+  width: 30em;
+  border-radius: .4em;
+  border: 2px solid #00234E;
+
+  -webkit-box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.18);
+  -moz-box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.18);
+  box-shadow: 0px 0px 9px 0px rgba(50, 50, 50, 0.18);
+}
+
+.btts {
+  text-align: center;
+  padding: 1em;
+  opacity: .5;
+  cursor: pointer;
+  color: #00ABA0;
+  display: flex;
+  align-items: right;
+}
+
+.btts {
+  color: #00ABA0;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  width: 100%;
+}
+
+.bt {
+  padding-right: .8em;
+  font-weight: 500;
+  opacity: .6;
+  cursor: pointer;
+}
+
+.c {
+  color: #F44336;
+}
+
+.bt:hover {
+  opacity: 1;
+}
+
+.cancel_inpt {
+}
+
+.ttl {
+
+  padding: 1em;
+  height: 2em;
+  width: auto;
+  color: #00234E;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

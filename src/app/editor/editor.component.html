@@ -1,0 +1,90 @@
+<!--<div class="hc_hc">-->
+<div class="hc_hc-content">
+
+</div>
+<div class="ip_cnt_tabs">
+  <app-tabs (alAgregar)="agregarPg($event)" (tabSeleccionada)="nombreTab=$event">
+    <app-tab
+
+      *ngFor="let tbs of estructura; let i= index"
+      [tab_activa]="i===0"
+      [tabTitle]="tbs.nombre">
+
+
+      <div class="n_pg" (click)="editarPg()">Editar Página</div>
+      <div class="n_pg" (click)="eliminarPg()">Eliminar Página</div>
+
+      <ng-container
+        *ngFor="let cnt of tbs.items; let i= index">
+
+        <app-cnt
+          *ngIf="'cnt'===cnt.tipo_item"
+          [titulo]="cnt.nombre"
+          [ocultar]="!(i===0)">
+
+          <ng-container *ngFor="let item of cnt.items; let j= index">
+
+
+            <div class="hui">
+
+              <app-input
+                (texted)="crearVar([tbs.nombre,cnt.nombre,item.nombre], $event)"
+                *ngIf="'input'===item.tipo_item"
+                [lock]="isLock"
+                [type]="item.type"
+                [name]="item.nombre"
+                [size]="item.tam"
+                [value]="cargarDataItem([tbs.nombre,cnt.nombre,item.nombre])">
+              </app-input>
+            </div>
+
+            <app-select
+              *ngIf="'select'===item.tipo_item"
+              [lock]="isLock"
+              (selected)="data_pag[tbs.nombre][cnt.nombre][item.nombre] = $event"
+              [data]="item.opciones"
+              [titulo]="item.nombre"
+              [size]="item.tam">
+            </app-select>
+
+            <app-item-tel
+              *ngIf="'telefono'===item.tipo_item"
+              (result)="data_pag[tbs.nombre][cnt.nombre][item.nombre] = $event"
+              [lock]="isLock">
+            </app-item-tel>
+
+            <app-multiple
+              (selected)="crearVar([tbs.nombre,cnt.nombre,item.nombre], $event)"
+              *ngIf="'multiple'===item.tipo_item"
+              [lock]='isLock'
+              [nombre]="item.nombre"
+              [base_titulos]="item.opciones">
+            </app-multiple>
+            <app-item-referencia *ngIf="'referencia'===item.tipo_item"
+                                 [lock]='isLock'
+                                 [data]="item">
+            </app-item-referencia>
+          </ng-container>
+
+          <select class="nn" (change)="agregarEntrada('tipo',cnt.nombre)" title="nueva entrada">
+            <option selected disabled hidden>+ Nueva entrada</option>
+            <option *ngFor="let tipo of this.tipos_inputs">{{tipo}}</option>
+          </select>
+
+        </app-cnt>
+      </ng-container>
+
+      <li class="alg">
+        <div class="alAg">
+
+          <input class="Nuevo_Contenedor" [(ngModel)]="nombreCnt" type="text"
+                 id="fname" name="nombre"
+                 placeholder="Nuevo Contenedor">
+
+          <div class="bt" (click)="agregarCnt()">+</div>
+
+        </div>
+      </li>
+    </app-tab>
+  </app-tabs>
+</div>

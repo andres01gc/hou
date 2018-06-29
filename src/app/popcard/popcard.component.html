@@ -1,0 +1,91 @@
+<div class="pc_card">
+  <!--<div>alsjdvaldvn</div>-->
+  <div class="pc_top_dt">
+    <div class="pc_top_izq">
+      <div class="pcimg">
+        <!--<img src="../assets/paciente/servcice.svg" alt="">-->
+      </div>
+      <div>
+        <div class="pc_ttl">{{ttl}}</div>
+        <div class="pc_subttl">{{subttl}}</div>
+      </div>
+      <div class="pc_top_der">
+        <div class="bt" (click)="finalizarPop()">Finalizar</div>
+        <div class="bt" (click)="cancelarPop()">Cancelar</div>
+        <!--<div class="bt" (click)="isLock=!isLock">Editar</div>-->
+      </div>
+    </div>
+  </div>
+
+  <app-tabs>
+    <app-tab
+      *ngFor="let tbs of estructura; let i= index"
+      [tab_activa]="i===0"
+      [tabTitle]="tbs.nombre">
+
+      <ng-container
+        *ngFor="let cnt of tbs.items; let i= index">
+        <app-cnt
+          *ngIf="'cnt'===cnt.tipo_item"
+          [titulo]="cnt.nombre"
+          [ocultar]="!(i===0)">
+          <ng-container *ngFor="let item of cnt.items; let j= index">
+            <app-input
+              (texted)="crearVar([tbs.nombre,cnt.nombre,item.nombre], $event)"
+              *ngIf="'input'===item.tipo_item"
+              [lock]="isLock"
+              [type]="item.type"
+              [name]="item.nombre"
+              [size]="item.tam"
+              [value]="cargarDataItem([tbs.nombre,cnt.nombre,item.nombre])"
+            >
+            </app-input>
+
+            <!--[value]="crearVar([tbs.nombre,cnt.nombre,item.nombre], '')"-->
+            <app-select
+              (selected)="crearVar([tbs.nombre,cnt.nombre,item.nombre], $event)"
+              *ngIf="'select'===item.tipo_item"
+              [lock]="isLock"
+              [data]="item.opciones"
+              [titulo]="item.nombre"
+              [size]="item.tam"
+            ></app-select>
+
+            <app-multiple
+              (selected)="crearVar([tbs.nombre,cnt.nombre,item.nombre], $event)"
+              *ngIf="'multiple'===item.tipo_item"
+              [lock]='isLock'
+              [nombre]="item.nombre"
+              [base_titulos]="item.opciones">
+            </app-multiple>
+
+            <app-item-tel
+              (result)="crearVar([tbs.nombre,cnt.nombre,item.nombre], $event)"
+              *ngIf="'telefono'===item.tipo_item"
+              [lock]="isLock">
+            </app-item-tel>
+
+            <app-item-referencia
+              *ngIf="'referencia'===item.tipo_item"
+              [lock]='isLock'
+              [data]="item"
+              (texted)="crearVar([tbs.nombre,cnt.nombre,item.nombre], $event)">
+            </app-item-referencia>
+
+            <!--[data_pag]="cargarDataItem([tbs.nombre,cnt.nombre,item.nombre])"-->
+            <!--(alLlenar)="crearVar([tbs.nombre,cnt.nombre,item.nombre], $event)"-->
+
+            <app-pg-odontograma
+              *ngIf="'odo'===item.tipo_item"
+              [lock]='isLock'
+              data_pag
+
+            >
+            </app-pg-odontograma>
+
+          </ng-container>
+        </app-cnt>
+      </ng-container>
+    </app-tab>
+  </app-tabs>
+</div>

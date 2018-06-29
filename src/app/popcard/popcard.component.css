@@ -1,0 +1,85 @@
+:host {
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.70);
+  padding: 1em;
+  box-sizing: border-box;
+  z-index: 10000;
+  position: fixed;
+}
+
+.pc_card {
+  width: 90%;
+  min-height: 95%;
+  background-color: white;
+  border-radius: .2em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pc_top_izq {
+  display: flex;
+  align-items: center;
+}
+
+.pc_top_der {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.pc_card_content {
+  width: 100%;
+  padding: 1em;
+  height: available;
+  display: flex;
+  background-color: #6be000;
+  box-sizing: border-box;
+}
+
+.bt {
+  padding: .5em;
+  margin: .5em;
+  background-color: rgba(0, 171, 160, 0.2);
+  border-radius: .4em;
+  cursor: pointer;
+  opacity: .5;
+  font-weight: 600;
+  color: #00ABA0;
+}
+
+.bt:hover {
+  opacity: .9;
+}
+
+.pc_top_dt {
+  width: 100%;
+  height: 4em;
+  background-color: rgba(0, 35, 78, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pc_ttl {
+  font-weight: 800;
+}
+
+.pc_subttl {
+  font-weight: 400;
+  font-size: .8em
+}
+
+.pcimg {
+  width: 2.5em;
+  height: 2.5em;
+  background-color: rgba(0, 35, 78, 0.22);
+  box-sizing: border-box;
+  margin: 1em;
+  border-radius: 2em;
+}

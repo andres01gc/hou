@@ -1,0 +1,67 @@
+<div class="mn" *ngIf="!isTratamientoSeleccionado">
+  <div class="f-item" *ngFor="let tratamiento of tratamientos"
+       (click)="verTratamientoSeleccionado(tratamiento)">
+    <div class="ccc">
+      <img class="icon_2" src="/assets/paciente/service.svg">
+    </div>
+    <div class="sss">
+      <div class="it-ttl">{{tratamiento.metadata.nombre}}</div>
+      <div class="it-sbttl">{{tratamiento.metadata.estado}}</div>
+    </div>
+  </div>
+
+  <div class="f-item" *ngIf="!isLock">
+    <select class="n-anx" (change)="alAgregar.emit($event.target.value)">
+      <option selected disabled hidden>+ Nueva fase</option>
+      <option *ngFor="let opcion_anexos of this.data.paginas_fases">{{opcion_anexos.nombre}}</option>
+    </select>
+  </div>
+</div>
+
+<!--cuando se selecciona algún compoennte-->
+<div class="n_card" *ngIf="isTratamientoSeleccionado">
+  <div class="top_info">
+
+    <div class="bac" (click)="isTratamientoSeleccionado=false">
+      <img class="icon" src="/assets/paciente/bacck.svg">
+    </div>
+
+    <div class="ccc">
+      <img class="icon_2" src="/assets/paciente/service.svg">
+    </div>
+
+    <div class="toptt">
+      <div class="ttl_sl">{{tratamientoSeleccinado.metadata.nombre}}</div>
+      <div class="sub_ttl_sl" (click)="verDetallesTratamientos()">Ver detalles</div>
+      <div class="sq">
+
+        <div class="sub_ttl_sl">estado: {{tratamientoSeleccinado.metadata.estado}}</div>
+
+        <div class="sub_ttl_sl"
+             *ngIf=" tratamientoSeleccinado.metadata.estado !== 'Finalizado'"
+             (click)="finalizarTratamiento()">Finalizar
+          Tratamiento
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="b_info">
+    <!--la primera carta corresponde a la que se mostrará cuando se va a ingresar una nueva evolución, una vez hecho, se ocultará-->
+    <ng-container *ngIf="verNuevaEvolucion &&  !isLock">
+      <app-card-evolucion
+        [ActivoParaEditar]="true"
+        [sePuedeEditar]="true"
+        (finalizaIngreso)="agregarEvolucionATratamiento($event)">
+      </app-card-evolucion>
+    </ng-container>
+
+    <app-card-evolucion *ngFor="let ev of evoluciones.reverse(); let i = index"
+                        [ev]="ev" [id]="evoluciones.length-i"
+                        [ActivoParaEditar]="false"
+                        [sePuedeEditar]="!verNuevaEvolucion && permitirEditarUltima && i===0 &&  !isLock"
+                        (finalizaIngreso)="actualizarEvolucion($event,i)"></app-card-evolucion>
+  </div>
+</div>
+

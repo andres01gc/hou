@@ -1,0 +1,271 @@
+:host {
+
+  width: 100%;
+  height: 100%;
+  padding: 1em;
+}
+
+.hc_hc {
+  /*overflow: hidden;*/
+  width: available;
+  height: 96.8%;
+  background-color: white;
+  /*margin: 1em;*/
+  border-radius: .4em;
+  border: rgba(0, 0, 0, 0.11) 1px solid;
+}
+
+.nuevo_nombre {
+  margin-left: .5em;
+  border-radius: .4em;
+  /*border: 1px solid #FF6D00;*/
+  padding: .5em;
+  width: 7em;
+}
+
+.alg {
+  display: flex;
+}
+
+input {
+  -webkit-appearance: none;
+  border: none;
+  /*background-color: rgba(255, 255, 255, 1);*/
+  width: 100%;
+  font-family: "Fira Sans", Arial;
+  font-size: 1em;
+  border-radius: .4em;
+}
+
+.bt {
+  cursor: pointer;
+  opacity: .5;
+  /*border: 1px solid #FF6D00;*/
+  border-radius: .4em;
+  /*margin: .8em;*/
+  /*padding: .5em;*/
+  font-weight: 800;
+  color: #FF6D00;
+
+  padding: .2em .5em;
+
+  font-size: 1.5em;
+  background: rgba(255, 109, 0, 0.1);
+}
+
+.alAg {
+  display: flex;
+  border-radius: .4em;
+  border: 1px solid #FF6D00;
+  align-items: center;
+  padding: .2em;
+  margin: .5em;
+}
+
+.bt:hover {
+  background: rgba(255, 109, 0, 0.2);
+}
+
+
+.tabs {
+  /*width: available;*/
+  /*height: 4em;*/
+  list-style: none;
+  padding-left: 20px;
+  /*background-color: #FCFCFC;*/
+  /*background-color: #333333;*/
+  /*height: 50px;*/
+  display: flex;
+  align-items: center;
+  margin: 0;
+  position: fixed;
+  width: 800em;
+  height: 3em;
+  z-index: 1;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  -webkit-box-shadow: 3px 4px 83px 0 rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 3px 4px 83px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 3px 4px 83px 0 rgba(0, 0, 0, 0.05);
+  font-family: "Fira Sans";
+  font-weight: 400;
+  overflow-y: scroll;
+}
+
+.hc-bloqueo {
+  position: fixed;
+  display: flex;
+  /*para el responsive, se debe poner el width en 100*/
+  width: 80%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .8);
+  z-index: 8;
+}
+
+.magicspace {
+  width: 100%;
+  height: 3em;
+  /*background-color: #FF6D00;*/
+}
+
+.hc-bloque-msg {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+  padding: 1em;
+  background-color: #FCFCFC;
+  /*width: 50%;*/
+  /*height: auto;*/
+  border-radius: .2em;
+  text-align: center;
+}
+
+.main_tabs {
+  overflow: hidden;
+  background-color: #DB3650;
+}
+
+.hc_main {
+  background-color: #00ABA0;
+  width: 100%;
+  overflow-y: hidden;
+}
+
+.tb_hc {
+  font-weight: 300;
+  margin-right: 2em;
+  float: left;
+  opacity: .3;
+  font-size: .9em;
+  color: #00234E;
+}
+
+.tb_hc:hover {
+  cursor: pointer;
+  opacity: .8;
+
+}
+
+.otro_test {
+  position: absolute;
+  background: #FF6D00;
+  display: flex;
+}
+
+.hui {
+  /*background: #FF6D00;*/
+}
+
+.active {
+  font-weight: 500;
+  opacity: 1;
+  color: #FF6D00;
+}
+
+.nn {
+  border: 1px solid #FF6D00;
+  color: #FF6D00;
+  font-size: 1em;
+  font-weight: 500;
+  background: none;
+  padding: .4em;
+  margin-top: 1em;
+  border-radius: .4em;
+}
+
+.n_cnt {
+  cursor: pointer;
+  opacity: .5;
+  border: 1px solid #FF6D00;
+  border-radius: .4em;
+  /*margin: .8em;*/
+  padding: .5em;
+  font-weight: 400;
+  color: #FF6D00;
+  background: rgba(255, 46, 54, 0.02);
+}
+
+.n_cnt:hover {
+  background: rgba(255, 46, 54, 0.1);
+}
+
+.n_pg {
+  cursor: pointer;
+  opacity: .5;
+  border: 1px solid #FF6D00;
+  border-radius: .4em;
+
+  margin-right: .8em;
+  margin-bottom: .8em;
+
+  padding: .5em;
+  font-weight: 400;
+  color: #FF6D00;
+  background: rgba(255, 46, 54, 0.02);
+
+}
+
+.n_pg:hover {
+  background: rgba(255, 46, 54, 0.1);
+}
+
+.thi {
+  width: auto;
+  height: auto;
+  position: absolute;
+  display: flex;
+  background: #FF6D00;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-ttl {
+  font-weight: 700;
+  font-size: 1.3em;
+  margin: 1em;
+}
+
+.hc-sbttl {
+  font-size: .8em;
+}
+
+.hc_content {
+  width: 100%;
+  height: 51em;
+  display: flex;
+  flex-direction: column;
+}
+
+.inpc_magicspace {
+  width: 100%;
+  height: 4em;
+  display: flex;
+  align-items: center;
+}
+
+.icc {
+  width: 1em;
+}
+
+.ir-atras {
+  width: 4em;
+  height: 4em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hc-lf {
+  padding: .5em;
+  width: 100%;
+  height: 63em;
+  overflow-y: auto;
+}
+
+.hc-rg {
+  display: flex;
+  background-color: #FF6D00;
+  width: 20%;
+  height: 51em;
+}
+
