@@ -1,10 +1,16 @@
 <div class="resum_container">
   <!--<app-resumen></app-resumen>-->
-  <div class="tttl">Páginas editables</div>
+  <div class="cnnt">
+    <img class="ico_back" src="../assets/paciente/bacck.svg" alt="">
+    <div class="tttl">Páginas editables</div>
+  </div>
 
   <div class="oit" *ngFor="let pg of data.paginas_all;  let ia=index" [class.active]="ia===this.i"
        (click)="seleccionarPg(pg,ia)">
-    {{pg.nombre}}
+    <img class="pg_img" src="/assets/pg.svg">
+    <div class="tittle">
+      {{pg.nombre}}
+    </div>
   </div>
 </div>
 

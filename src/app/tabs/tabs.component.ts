@@ -7,17 +7,24 @@ import {TabComponent} from '../tab/tab.component';
   styleUrls: ['./tabs.component.css']
 })
 export class TabsComponent implements AfterContentInit {
-  @Input() agregable = true;
+  @Input() agregable = false;
   @ContentChildren(TabComponent) tabs: QueryList<TabComponent>;
   @Output() alAgregar = new EventEmitter();
+  public nombreEscrito: String;
+  @Output() tabSeleccionada = new EventEmitter();
 
   ngAfterContentInit() {
+    this.tabSeleccionada.emit(this.tabs[0].tabTitle);
   }
 
   selectTab(tab: TabComponent) {
-    // TODO averiguar, porque se llama este método al crearse este compmonente! :/, tocó crear ese if para evitar el error
     this.tabs.toArray().forEach(tb => tb.tab_activa = false);
     tab.tab_activa = true;
+    this.tabSeleccionada.emit(tab.tabTitle);
   }
 
+  alAgregarse() {
+    this.alAgregar.emit(this.nombreEscrito);
+    this.nombreEscrito = '';
+  }
 }

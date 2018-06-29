@@ -4,10 +4,10 @@ import {EditorComponent} from '../../editor/editor.component';
 
 @Component({
   selector: 'app-configuraciones',
-  templateUrl: './edit.component.html',
-  styleUrls: ['./edit.component.css']
+  templateUrl: './edit-page.component.html',
+  styleUrls: ['./edit-page.component.css']
 })
-export class EditComponent implements OnInit {
+export class EditPageComponent implements OnInit {
 
   pg_selected: any = this.data.paginas_ingreso;
   i: any;

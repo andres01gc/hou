@@ -19,7 +19,7 @@ import {NavbarComponent} from './main_routes/home/main/navbar/navbar.component';
 import {DataService} from './services/data.service';
 import {MainComponent} from './main_routes/home/main/main.component';
 import {PerfilComponent} from './main_routes/home/main/perfil/perfil.component';
-import {EditComponent} from './main_routes/configuraciones/edit.component';
+import {EditPageComponent} from './main_routes/configuraciones/edit-page.component';
 import {MiscComponent} from './misc/misc.component';
 import {AnexosComponent} from './anexos/anexos.component';
 import {HistoriaComponent} from './historia/historia.component';
@@ -93,7 +93,7 @@ const appRoutes: Routes = [
           },
           {path: 'detalles', component: PgServicioComponent}]
       },
-      {path: 'edit', component: EditComponent}
+      {path: 'edit', component: EditPageComponent}
     ]
   }, {path: '**', component: PagenotfoundComponent}
 ];
@@ -125,7 +125,7 @@ export const environment = {
     NavbarComponent,
     MainComponent,
     PerfilComponent,
-    EditComponent,
+    EditPageComponent,
     MiscComponent,
     AnexosComponent,
     HistoriaComponent,

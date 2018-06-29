@@ -898,7 +898,7 @@ export class DataService {
                 tipo_item: 'select',
                 type: 'text',
                 opciones: ['Blanco', 'Meztillo', 'Criollo', 'Indigena', 'Negro'],
-                nombre: 'Raza',
+                nombre: 'Etnia',
                 tam: 's'
               }
             ]
@@ -933,20 +933,6 @@ export class DataService {
               {
                 tipo_item: 'input',
                 type: 'text',
-                tam: 's',
-                placehoder: '',
-                nombre: 'Dirección'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
-                tam: 'm',
-                placehoder: '',
-                nombre: 'Barrio'
-              },
-              {
-                tipo_item: 'input',
-                type: 'text',
                 tam: 'm',
                 placehoder: '',
                 nombre: 'Ciudad'
@@ -957,6 +943,20 @@ export class DataService {
                 tam: 'm',
                 placehoder: '',
                 nombre: 'Municipio'
+              },
+              {
+                tipo_item: 'input',
+                type: 'text',
+                tam: 's',
+                placehoder: '',
+                nombre: 'Dirección'
+              },
+              {
+                tipo_item: 'input',
+                type: 'text',
+                tam: 'm',
+                placehoder: '',
+                nombre: 'Barrio'
               }
             ]
           }
@@ -1521,7 +1521,6 @@ export class DataService {
     {nombre: 'Fase correctiva final', estructura: this.paginas_tratamiento},
     {nombre: 'Fase de mantenimiento', estructura: this.paginas_tratamiento}
   ];
-
   paginas_all: any[] = [
     {nombre: 'Ingreso', estructura: this.paginas_ingreso},
     {nombre: 'Nuevo Tratamiento', estructura: this.paginas_tratamiento},
