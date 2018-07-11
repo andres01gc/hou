@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostListener, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Component({
@@ -7,13 +7,19 @@ import {Router} from '@angular/router';
   styleUrls: ['./perfil.component.css']
 })
 export class PerfilComponent implements OnInit {
+   innerWidth: number;
 
   constructor(public router: Router) {
-    console.log('inicia!');
+    // console.log('inicia!');
     console.log(this.router.url);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
+    console.log('holi' + this.innerWidth);
   }
 
   ngOnInit() {
   }
-
 }

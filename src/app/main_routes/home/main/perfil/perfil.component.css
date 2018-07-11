@@ -158,9 +158,35 @@
 /*.rsm {*/
 /*display: none;*/
 /*}*/
+.otr {
+  display: inline;
+}
 
 @media only screen and (max-width: 68em) {
-  .resum_container {
+  .peq {
+    display: none;
+  }
+
+  .otr {
+    display: none;
+  }
+
+  .pqe {
+    display: flex;
+    width: 100%;
+    height: auto;
+  }
+
+  .pq {
+    display: none;
+  }
+
+  .solo {
+    display: inline;
+    width: 100%;
+  }
+
+  .en_ruta {
     display: none;
   }
 

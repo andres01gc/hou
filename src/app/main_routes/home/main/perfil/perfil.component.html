@@ -1,13 +1,16 @@
-<div class="resum_container">
+<div class="resum_container" [class.pqe]="this.router.url==='/'" [class.otr]="this.router.url!=='/' && innerWidth < 1088">
   <app-user-resumen></app-user-resumen>
 </div>
 
-<div class="rs_main_cont">
+
+<div class="rs_main_cont" [class.peq]="this.router.url==='/'">
   <router-outlet></router-outlet>
+
   <div class="mssg" *ngIf="this.router.url==='/'">
     <img src="../assets/navbar/logo.svg" alt="">
     <div>HISTORIA ODONTOLÓGICA ÚNICA</div>
   </div>
+
 </div>
 
 
