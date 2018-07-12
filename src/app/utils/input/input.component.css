@@ -10,18 +10,12 @@
   margin: 0;
   padding-bottom: .5em;
   height: 1em;
-
 }
 
 .ss {
   height: 2em;
   width: available;
-  /*background-color: #DB3650;*/
   display: flex;
-  /*background-color: rgba(0, 0, 0, 0.03);*/
-  /*border: 1px solid rgba(0, 0, 0, 0.1);*/
-  /*border-radius: .4em;*/
-  /*padding-left: .8em;*/
 }
 
 .lock {
@@ -31,6 +25,7 @@
 
 .ii {
   padding-left: .4em;
+  background: rgba(0, 0, 0, 0.02);
 }
 
 input {
@@ -42,6 +37,11 @@ input {
   border-radius: .4em;
 }
 
+input:focus {
+  background: #FCFCFC;
+
+  border-radius: .6em;
+}
 
 .inn {
   width: 100%;

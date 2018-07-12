@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {EventListener} from '@angular/core/src/debug/debug_node';
 
 @Component({
   selector: 'app-cnt',
@@ -8,6 +9,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class CntComponent implements OnInit {
   @Input() titulo: string;
   @Input() ocultar = false;
+  @Output() presiona = new EventEmitter();
 
   constructor() {
   }
@@ -17,6 +19,7 @@ export class CntComponent implements OnInit {
 
   toggle() {
     console.log('está llegando');
+    // this.presiona.emit(this);
     this.ocultar = !this.ocultar;
   }
 }

@@ -3,9 +3,13 @@
     {{name}}
   </div>
   <div class="ss">
-    <input value="{{value}}" [disabled]="lock" [class.lock]="lock" class="ii" ng-model="nombre" type="{{type}}"
-           id="fname" name="nombre"
-           placeholder="{{placeholder}}"
-           (keyup)="onKey($event)">
+
+    <input
+      value="{{value}}" [disabled]="lock" [class.lock]="lock" class="ii" ng-model="nombre" type="{{type}}"
+      id="fname" name="nombre"
+      placeholder="{{placeholder}}"
+      (keyup)="onKey($event)">
+
   </div>
+
 </div>

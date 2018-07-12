@@ -12,7 +12,9 @@
       <div class="pc_top_der">
         <div class="bt" (click)="finalizarPop()">Finalizar</div>
         <div class="bt" (click)="cancelarPop()">Cancelar</div>
+
         <!--<div class="bt" (click)="isLock=!isLock">Editar</div>-->
+
       </div>
     </div>
   </div>
@@ -27,8 +29,8 @@
         *ngFor="let cnt of tbs.items; let i= index">
         <app-cnt
           *ngIf="'cnt'===cnt.tipo_item"
-          [titulo]="cnt.nombre"
-          [ocultar]="!(i===0)">
+          [titulo]="cnt.nombre">
+
           <ng-container *ngFor="let item of cnt.items; let j= index">
             <app-input
               (texted)="crearVar([tbs.nombre,cnt.nombre,item.nombre], $event)"

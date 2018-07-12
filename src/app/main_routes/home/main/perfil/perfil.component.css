@@ -19,7 +19,12 @@
 
 .resum_container {
   width: 30em;
+  /*background: #FF6D00;*/
 
+}
+
+.fx {
+  position: fixed;
 }
 
 .rs_main_cont {
@@ -158,6 +163,7 @@
 /*.rsm {*/
 /*display: none;*/
 /*}*/
+
 .otr {
   display: inline;
 }

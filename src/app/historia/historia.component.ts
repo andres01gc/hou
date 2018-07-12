@@ -28,9 +28,6 @@ export class HistoriaComponent implements OnInit {
     console.log('se supone que se està buscancdo la historia');
   }
 
-  guardarDeNuevo() {
-  }
-
   crearVar(dataStr: string[], $value: string | number | boolean) {
     // TODO revisar que este metodo se llame despues de llenar un campo, no por cada letra, para evitar tanto calculo.
     var actual = {};

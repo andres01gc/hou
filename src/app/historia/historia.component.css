@@ -1,13 +1,13 @@
 :host {
   width: 100%;
-  height: 100%;
+  height: auto;
   padding: 1em;
 }
 
 .hc_hc {
-  overflow: hidden;
+  /*overflow: hidden;*/
   width: available;
-  height: 96.8%;
+  /*height: 96.8%;*/
   background-color: white;
   /*margin: 1em;*/
   border-radius: .4em;
@@ -15,13 +15,9 @@
 }
 
 .tabs {
-  /*width: available;*/
-  /*height: 4em;*/
+
   list-style: none;
   padding-left: 20px;
-  /*background-color: #FCFCFC;*/
-  /*background-color: #333333;*/
-  /*height: 50px;*/
   display: flex;
   align-items: center;
   margin: 0;
@@ -61,8 +57,6 @@
   transform: translate(-50%, -50%);
   padding: 1em;
   background-color: #FCFCFC;
-  /*width: 50%;*/
-  /*height: auto;*/
   border-radius: .2em;
   text-align: center;
 }
@@ -99,19 +93,6 @@
   color: #FF6D00;
 }
 
-/*.hc_rbar {*/
-
-/*width: 20%;*/
-/*height: 90vh;*/
-/*background-color: rgba(252, 252, 252, 1);*/
-
-/*-webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.14);*/
-/*-moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.14);*/
-/*box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.14);*/
-/*border-left: 1px solid rgba(0, 0, 0, 0.08);*/
-/*z-index: 2;*/
-/*}*/
-
 .hc-ttl {
   font-weight: 600;
 }
@@ -144,8 +125,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /*background: #F44336;*/
 }
 
 .hc-lf {
